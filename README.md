@@ -10,7 +10,7 @@ PUT A SHORT SUMMARY OF YOUR GAME HERE
 - Unnie Jansson
 
 ## Planning
-- [Project Plan](https://miro.com/app/board/uXjVNO2nCFM)
+- [Project Plan](https://miro.com/app/board/uXjVNO2nCFM=/)
 - [TDD (Replace URL)](https://docs.google.com)
 - [Board ](https://trello.com/b/CZAInfq1/epic)
 
