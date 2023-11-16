@@ -12,7 +12,7 @@ PUT A SHORT SUMMARY OF YOUR GAME HERE
 ## Planning
 - [Project Plan](https://miro.com/app/board/uXjVNO2nCFM)
 - [TDD (Replace URL)](https://docs.google.com)
-- [Board ](https://trello.com/b/CZAInfq1/epic))
+- [Board ](https://trello.com/b/CZAInfq1/epic)
 
 ## Final Deliverables
 - [itch.io Build (Replace URL)](https://itch.io)
