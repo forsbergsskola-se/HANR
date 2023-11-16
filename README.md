@@ -1,18 +1,18 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/UXPWzrRN)
-# INSERT YOUR GAME TITLE HERE
+# Harmony's Ascendance: Nature's Rebirth
 
 PUT A SHORT SUMMARY OF YOUR GAME HERE
 
 ## TeamName
-- Team Member 1
-- Team Member 2
-- Team Member 3
-- Team Member 4
+- Filip Renemark
+- Mandel Cohan
+- Meet Rakhola
+- Unnie Jansson
 
 ## Planning
-- [Project Plan (Replace URL)](https://miro.com)
+- [Project Plan (Replace URL)](https://miro.com/app/board/uXjVNO2nCFM)
 - [TDD (Replace URL)](https://docs.google.com)
-- [Board (Replace URL)](https://trello.com)
+- [Board (Replace URL)]([https://trello.com](https://trello.com/b/CZAInfq1/epic))
 
 ## Final Deliverables
 - [itch.io Build (Replace URL)](https://itch.io)
