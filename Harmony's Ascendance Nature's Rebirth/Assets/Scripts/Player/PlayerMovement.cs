@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Player
@@ -21,34 +22,23 @@ namespace Player
             player = GameObject.FindWithTag("Player");
         }
 
-        private void Update()
-        {
-            FindCursorPos();
-        }
-
         private void FixedUpdate()
         {
-            RotatePlayer();
-            MoveToCursorPos();
-        }
-
-        private void FindCursorPos()
-        {
-            mousePosition = Input.mousePosition;
-        }
-
-        private void RotatePlayer()
-        {   // where is the player looking now, where is the mouse, update looking direction
-            float result = Vector3.Angle(player.transform.forward, mousePosition);
-            Quaternion target = Quaternion.Euler(0, result, 0);
-            transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * smooth);
-            
+            RotatePlayer1();
         }
         
-        private void MoveToCursorPos()
+        private void RotatePlayer1()
         {
-            if (Input.GetKeyDown(KeyCode.Mouse1))
+            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            var hit = Physics.Raycast(ray, out var raycastHit);
+
+            if (hit)
             {
+                var point = raycastHit.point;
+                point.y = transform.position.y;
+                //Vector3 destination = Vector3.Lerp(transform.forward, point, smooth); kanske lerp för framtiden? Måste nog låsa y på något sätt med lerp
+                transform.LookAt(point);
                 
             }
         }
