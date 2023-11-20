@@ -22,7 +22,7 @@ public class PlayerHud : MonoBehaviour
         
         magicText.text = "Magic: " + GetComponent<PlayerStats>().magic;
         expText.text = "Exp: " + GetComponent<PlayerStats>().exp; 
-        levelText.text = "Level: " + GetComponent<PlayerStats>().level;
+        levelText.text = "Lv: " + GetComponent<PlayerStats>().level;
     }
 }
 
