@@ -63,7 +63,7 @@ namespace Player
             
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(1))
             {
                 Debug.Log("1");
                 iswalking = true;
@@ -85,22 +85,22 @@ namespace Player
             }
 
             Debug.Log(Destination);
-            //Does not round up exactly cordinates so we checked if it was bigger after it started walking. Need to determine what direction we are walking to set the velocity to set velocity.zero when we have moved further then the destination
-            if (iswalking)
-            {
-                //ANGLE! IT IS THE ANGLE!
-                if (Destination.z > transform.position.z)
-                {
-                    
-                }
-
-                if (Destination.z < transform.position.z)
-                {
-                    
-                }
-            }
-            
-            rg.velocity = Vector3.zero;
+            // //Does not round up exactly cordinates so we checked if it was bigger after it started walking. Need to determine what direction we are walking to set the velocity to set velocity.zero when we have moved further then the destination
+            // if (iswalking)
+            // {
+            //     //ANGLE! IT IS THE ANGLE!
+            //     if (Destination.z > transform.position.z)
+            //     {
+            //         
+            //     }
+            //
+            //     if (Destination.z < transform.position.z)
+            //     {
+            //         
+            //     }
+            // }
+            //
+            // rg.velocity = Vector3.zero;
             
         }
 
