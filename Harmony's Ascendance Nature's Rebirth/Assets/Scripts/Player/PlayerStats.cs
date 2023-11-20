@@ -1,0 +1,12 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerStats : MonoBehaviour
+{
+    public float health = 100;
+    public float magic = 50;
+    public float exp = 0;
+    public int level = 1;
+    
+}
