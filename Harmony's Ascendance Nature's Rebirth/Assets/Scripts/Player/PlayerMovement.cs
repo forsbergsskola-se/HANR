@@ -1,8 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
+using Vector3 = UnityEngine.Vector3;
 
 namespace Player
 {
@@ -10,24 +13,33 @@ namespace Player
     
     public class PlayerMovement : MonoBehaviour
     {
-        private GameObject player;
+        private Rigidbody rg;
         private Vector3 mousePosition;
         private Vector3 playerDestination;
+        [SerializeField] private float walkDistance;
         [SerializeField] private float smooth;
-        
-        
-    
-        void Start()
+
+
+        private void Start()
         {
-            player = GameObject.FindWithTag("Player");
+            rg = GetComponent<Rigidbody>();
+        }
+
+        void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Mouse1))
+            {
+                Debug.Log("MOVE!");
+                MovePlayer();
+            }
         }
 
         private void FixedUpdate()
         {
-            RotatePlayer1();
+            RotatePlayer();
         }
         
-        private void RotatePlayer1()
+        private void RotatePlayer()
         {
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -41,6 +53,23 @@ namespace Player
                 transform.LookAt(point);
                 
             }
+        }
+
+        private void MovePlayer()
+        {
+            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out var raycastHit))
+            { 
+                if (raycastHit.transform.gameObject.CompareTag("Ground"))
+                {
+                    rg.velocity = Vector3.MoveTowards(transform.position, raycastHit.point, walkDistance * Time.deltaTime);
+
+                }
+                
+            }
+            
+
         }
 
     }
