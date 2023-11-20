@@ -1,10 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Numerics;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 using Vector3 = UnityEngine.Vector3;
 
 namespace Player
@@ -14,11 +8,11 @@ namespace Player
     public class PlayerMovement : MonoBehaviour
     {
         private Rigidbody rg;
+        private Vector3 Destination;
+        private bool iswalking = false;
         private Vector3 mousePosition;
         private Vector3 playerDestination;
-        [SerializeField] private float walkDistance;
-        [SerializeField] private float smooth;
-
+        [SerializeField] private float walkSpeed;
 
         private void Start()
         {
@@ -27,11 +21,7 @@ namespace Player
 
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Mouse1))
-            {
-                Debug.Log("MOVE!");
-                MovePlayer();
-            }
+            MovePlayer();
         }
 
         private void FixedUpdate()
@@ -55,21 +45,63 @@ namespace Player
             }
         }
 
-        private void MovePlayer()
+        private void click()
         {
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
             if (Physics.Raycast(ray, out var raycastHit))
-            { 
+            {
                 if (raycastHit.transform.gameObject.CompareTag("Ground"))
                 {
-                    rg.velocity = Vector3.MoveTowards(transform.position, raycastHit.point, walkDistance * Time.deltaTime);
 
                 }
+            }
+
+        }
+        private void MovePlayer()
+        {
+            
+            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            
+            if (Input.GetMouseButtonDown(0))
+            {
+                Debug.Log("1");
+                iswalking = true;
                 
+                if (Physics.Raycast(ray, out var raycastHit))
+                {
+                    Debug.Log("2");
+                    Destination = raycastHit.point;
+                    if (raycastHit.transform.gameObject.CompareTag("Ground"))
+                    {
+                        Debug.Log("3");
+                        Vector3 targetPosition =
+                            new Vector3(raycastHit.point.x, transform.position.y, raycastHit.point.z);
+                        Vector3 moveDirection = (targetPosition - transform.position).normalized;
+
+                        rg.velocity = moveDirection * walkSpeed;
+                    }
+                }
+            }
+
+            Debug.Log(Destination);
+            //Does not round up exactly cordinates so we checked if it was bigger after it started walking. Need to determine what direction we are walking to set the velocity to set velocity.zero when we have moved further then the destination
+            if (iswalking)
+            {
+                //ANGLE! IT IS THE ANGLE!
+                if (Destination.z > transform.position.z)
+                {
+                    
+                }
+
+                if (Destination.z < transform.position.z)
+                {
+                    
+                }
             }
             
-
+            rg.velocity = Vector3.zero;
+            
         }
 
     }
