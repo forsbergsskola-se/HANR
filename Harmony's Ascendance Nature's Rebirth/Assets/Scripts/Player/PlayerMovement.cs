@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 using Vector3 = UnityEngine.Vector3;
 
 namespace Player
@@ -12,22 +13,25 @@ namespace Player
         private bool iswalking = false;
         private Vector3 mousePosition;
         private Vector3 playerDestination;
+        public NavMeshAgent agent;
         [SerializeField] private float walkSpeed;
 
         private void Start()
         {
             rg = GetComponent<Rigidbody>();
+            agent.speed = walkSpeed;
         }
 
         void Update()
         {
-            MovePlayer();
+            // MovePlayer();
+            MovePlayerWithNavMesh();
         }
 
-        private void FixedUpdate()
-        {
-            RotatePlayer();
-        }
+        // private void FixedUpdate()
+        // {
+        //     // RotatePlayer();
+        // }
         
         private void RotatePlayer()
         {
@@ -63,7 +67,7 @@ namespace Player
             
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             
-            if (Input.GetMouseButtonDown(1))
+            if (Input.GetMouseButtonDown(0))
             {
                 Debug.Log("1");
                 iswalking = true;
@@ -85,22 +89,44 @@ namespace Player
             }
 
             Debug.Log(Destination);
-            // //Does not round up exactly cordinates so we checked if it was bigger after it started walking. Need to determine what direction we are walking to set the velocity to set velocity.zero when we have moved further then the destination
-            // if (iswalking)
-            // {
-            //     //ANGLE! IT IS THE ANGLE!
-            //     if (Destination.z > transform.position.z)
-            //     {
-            //         
-            //     }
-            //
-            //     if (Destination.z < transform.position.z)
-            //     {
-            //         
-            //     }
-            // }
-            //
-            // rg.velocity = Vector3.zero;
+            //Does not round up exactly cordinates so we checked if it was bigger after it started walking. Need to determine what direction we are walking to set the velocity to set velocity.zero when we have moved further then the destination
+            if (iswalking)
+            {
+                //ANGLE! IT IS THE ANGLE!
+                if (Destination.z > transform.position.z)
+                {
+                    
+                }
+
+                if (Destination.z < transform.position.z)
+                {
+                    
+                }
+            }
+            
+            rg.velocity = Vector3.zero;
+            
+        }
+
+        private void MovePlayerWithNavMesh()
+        {
+            if (Input.GetMouseButtonDown(1))
+            {
+                if (Camera.main != null)
+                {
+                    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                    if (Physics.Raycast(ray, out RaycastHit raycastHit))
+                    {
+                        if (raycastHit.transform.CompareTag("Ground"))
+                        {
+                            Destination = raycastHit.point;
+                            agent.speed = walkSpeed;
+                            agent.SetDestination(Destination);
+                        }
+                    }
+                }
+                
+            }
             
         }
 

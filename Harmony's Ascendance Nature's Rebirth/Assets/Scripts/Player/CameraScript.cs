@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Player
@@ -8,11 +9,18 @@ namespace Player
         private Transform cameraPos;
         private Vector3 currentVelocity;
         [SerializeField] private float smoothTime = 0.3f;
-        [SerializeField] private Vector3 offset = new Vector3(0f, 0f, 0f);
+        [SerializeField] private Vector3 offset = new Vector3(10f, 10f, 0f);
+        private GameObject CameraPosObject;
 
-        void FixedUpdate()
+        private void Start()
         {
-            GameObject CameraPosObject = GameObject.Find("CameraPos");
+            // Instead of this we should assign a  class to the cameraPos GameObject and then use that to find this game object.
+            // Using the get component method
+            CameraPosObject = this.GetComponentInChildren<CameraPosObject>().gameObject;
+        }
+
+        void Update()
+        {
             cameraPos = CameraPosObject.transform;
             Vector3 newPosition = transform.position + offset;
             cameraPos.position = newPosition;
