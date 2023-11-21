@@ -7,6 +7,7 @@ namespace Player
     public class PlayerMovement : MonoBehaviour
     {
         private Transform player;
+        private Quaternion toRotation;
         private Vector3 destination;
         private Vector3 mousePosition;
         public NavMeshAgent agent;
@@ -21,6 +22,19 @@ namespace Player
         }
 
         void Update()
+        { 
+            MouseInput();
+            IsRotating();
+
+            if (move)
+            {
+                MovePlayerWithNavMesh();
+            }
+            
+        }
+
+
+        private void MouseInput()
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
@@ -33,18 +47,22 @@ namespace Player
                         {
                             destination = raycastHit.point;
                             isRotating = true;
-
+                            
                         }
                     }
                 }
                 
             }
-            
+        }
+
+
+        private void IsRotating()
+        {
             if (isRotating)
             {
-                RotateTowards(destination);
+                RotateToClick();
                 // Check if the rotation is close enough to the target rotation
-                if (Quaternion.Angle(transform.rotation, agent.transform.rotation) < 1f)
+                if (Quaternion.Angle(transform.rotation, toRotation) < 1f)
                 {
                     Debug.Log("I stopped");
                     isRotating = false;
@@ -53,14 +71,7 @@ namespace Player
                 }
                 
             }
-
-            if (move)
-            {
-                MovePlayerWithNavMesh();
-            }
-            
         }
-        
         
         private void MovePlayerWithNavMesh()
         {
@@ -70,15 +81,14 @@ namespace Player
 
         }
         
-        void RotateTowards(Vector3 targetPosition)
+        void RotateToClick()
         {
-            isRotating = true;
             Debug.Log("I rotated");
-            Vector3 direction = targetPosition - transform.position;
-            direction.y = 0; // Keep the rotation only in the horizontal plane
+            Vector3 direction = (destination - transform.position).normalized;
+            direction.y = 0;
             
-            Quaternion toRotation = Quaternion.LookRotation(direction);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, Time.deltaTime * 1000f);
+            toRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, Time.deltaTime * 360f);
         }
         
 
