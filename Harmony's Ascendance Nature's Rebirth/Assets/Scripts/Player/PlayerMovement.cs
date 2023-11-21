@@ -31,7 +31,7 @@ namespace Player
         
         private void MouseInput()
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetKeyDown(KeyCode.Mouse1))
             {
                 if (Camera.main != null)
                 {
