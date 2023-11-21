@@ -12,6 +12,7 @@ namespace Player
         public NavMeshAgent agent;
         [SerializeField] private float walkSpeed;
         private bool isRotating = false;
+        private bool move = false;
         
 
         private void Start()
@@ -21,19 +22,41 @@ namespace Player
 
         void Update()
         {
-            RotateTowards(destination);
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                if (Camera.main != null)
+                {
+                    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                    if (Physics.Raycast(ray, out RaycastHit raycastHit))
+                    {
+                        if (raycastHit.transform.CompareTag("Ground"))
+                        {
+                            destination = raycastHit.point;
+                            isRotating = true;
+
+                        }
+                    }
+                }
+                
+            }
             
             if (isRotating)
             {
+                RotateTowards(destination);
                 // Check if the rotation is close enough to the target rotation
-                if (Quaternion.Angle(transform.rotation, agent.transform.rotation) < 5f)
+                if (Quaternion.Angle(transform.rotation, agent.transform.rotation) < 1f)
                 {
-                    // Stop rotating when close enough
+                    Debug.Log("I stopped");
                     isRotating = false;
+                    move = true;
 
-                    // Set the destination for the NavMeshAgent
-                    MovePlayerWithNavMesh();
                 }
+                
+            }
+
+            if (move)
+            {
+                MovePlayerWithNavMesh();
             }
             
         }
@@ -41,32 +64,16 @@ namespace Player
         
         private void MovePlayerWithNavMesh()
         {
-            if (Input.GetMouseButtonDown(1))
-            {
-                if (Camera.main != null)
-                {
-                    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                    if (Physics.Raycast(ray, out RaycastHit raycastHit))
-                    {
-                        RotateTowards(destination);
-                        
-                        if (raycastHit.transform.CompareTag("Ground"))
-                        {
-                            destination = raycastHit.point;
-                            agent.speed = walkSpeed;
-                            agent.SetDestination(destination);
-                        }
-                    }
-                }
-                
-            }
-            
+            agent.speed = walkSpeed;
+            agent.SetDestination(destination);
+            move = false;
+
         }
         
         void RotateTowards(Vector3 targetPosition)
         {
             isRotating = true;
-            
+            Debug.Log("I rotated");
             Vector3 direction = targetPosition - transform.position;
             direction.y = 0; // Keep the rotation only in the horizontal plane
             
