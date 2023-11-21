@@ -12,18 +12,40 @@ public class PlayerHud : MonoBehaviour
     public TMP_Text expText;
     public TMP_Text levelText;
 
-    public Slider healthBarUI;
-    private float healthBarValue;
+    public float healthBarValue;
+    public float magicBarValue;
+    public float expBarValue;
+    public int levelBarValue;
+    public PlayerStats playerStats;
+
+    public Slider healthSlider;
+    public Slider magicSlider;
+    public Slider expSlider;
     
-    private void Update()
+    void UpdateStats()
     {
-        healthText.text = "Health:" + GetComponent<PlayerStats>().health;
-        healthBarValue = GetComponent<PlayerStats>().health;
+        healthBarValue = playerStats.health;
+        magicBarValue = playerStats.magic;
+        expBarValue = playerStats.exp;
+        levelBarValue = playerStats.level;
+    }
+
+    void Update() // TODO
+    {
+        healthSlider.maxValue = 100f;
+        healthSlider.value = playerStats.health; //Current value
+        healthSlider.minValue = 0f;
+        magicSlider.maxValue = 100f;
+        magicSlider.value = playerStats.magic; //Current value
+        magicSlider.minValue = 0f;
+        expSlider.maxValue = 100f;
+        expSlider.value = playerStats.exp; //Current value
+        expSlider.minValue = 0f;
         
+        healthText.text = "Health:" + GetComponent<PlayerStats>().health;
         magicText.text = "Magic: " + GetComponent<PlayerStats>().magic;
         expText.text = "Exp: " + GetComponent<PlayerStats>().exp; 
         levelText.text = "Lv: " + GetComponent<PlayerStats>().level;
+        UpdateStats();
     }
 }
-
-
