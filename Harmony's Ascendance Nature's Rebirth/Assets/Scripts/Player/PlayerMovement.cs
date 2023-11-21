@@ -11,8 +11,8 @@ namespace Player
         private Vector3 mousePosition;
         public NavMeshAgent agent;
         [SerializeField] private float walkSpeed;
-        [SerializeField] private float turnRate;
-        [SerializeField] private Quaternion targetRotation = Quaternion.identity;
+        private bool isRotating = false;
+        
 
         private void Start()
         {
@@ -22,18 +22,20 @@ namespace Player
         void Update()
         {
             RotateTowards(destination);
-            MovePlayerWithNavMesh();
-        }
-        
-        void RotateTowards(Vector3 targetPosition)
-        {
-            // Calculate the direction to the target
-            Vector3 direction = targetPosition - transform.position;
-            direction.y = 0; // Keep the rotation only in the horizontal plane
+            
+            if (isRotating)
+            {
+                // Check if the rotation is close enough to the target rotation
+                if (Quaternion.Angle(transform.rotation, agent.transform.rotation) < 5f)
+                {
+                    // Stop rotating when close enough
+                    isRotating = false;
 
-            // Rotate towards the target
-            Quaternion toRotation = Quaternion.LookRotation(direction);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, Time.deltaTime * 1000f);
+                    // Set the destination for the NavMeshAgent
+                    MovePlayerWithNavMesh();
+                }
+            }
+            
         }
         
         
@@ -46,6 +48,8 @@ namespace Player
                     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                     if (Physics.Raycast(ray, out RaycastHit raycastHit))
                     {
+                        RotateTowards(destination);
+                        
                         if (raycastHit.transform.CompareTag("Ground"))
                         {
                             destination = raycastHit.point;
@@ -58,6 +62,18 @@ namespace Player
             }
             
         }
+        
+        void RotateTowards(Vector3 targetPosition)
+        {
+            isRotating = true;
+            
+            Vector3 direction = targetPosition - transform.position;
+            direction.y = 0; // Keep the rotation only in the horizontal plane
+            
+            Quaternion toRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, Time.deltaTime * 1000f);
+        }
+        
 
     }
 }
