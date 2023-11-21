@@ -51,11 +51,10 @@ namespace Player
         
         void RotateToClick()
         {
-            Debug.Log("I rotated");
-
             if (agent.velocity != Vector3.zero)
             {
-                Vector3 direction = (agent.destination - transform.position).normalized;
+                // This rotates the player to the local path direction and not the final destination
+                Vector3 direction = agent.velocity.normalized;
                 direction.y = 0;
                 toRotation = Quaternion.LookRotation(direction);
                 transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, Time.deltaTime*turnRate);
