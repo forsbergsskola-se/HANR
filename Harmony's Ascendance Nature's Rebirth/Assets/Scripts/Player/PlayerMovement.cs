@@ -28,10 +28,11 @@ namespace Player
             MovePlayerWithNavMesh();
         }
 
-        // private void FixedUpdate()
-        // {
-        //     // RotatePlayer();
-        // }
+        /* private void FixedUpdate()
+         {
+            // RotatePlayer();
+        
+         }
         
         private void RotatePlayer()
         {
@@ -86,9 +87,9 @@ namespace Player
                         rg.velocity = moveDirection * walkSpeed;
                     }
                 }
-            }
+            } 
 
-            Debug.Log(Destination);
+           
             //Does not round up exactly cordinates so we checked if it was bigger after it started walking. Need to determine what direction we are walking to set the velocity to set velocity.zero when we have moved further then the destination
             if (iswalking)
             {
@@ -107,7 +108,7 @@ namespace Player
             rg.velocity = Vector3.zero;
             
         }
-
+    */
         private void MovePlayerWithNavMesh()
         {
             if (Input.GetMouseButtonDown(1))
