@@ -6,7 +6,6 @@ using UnityEngine.Events;
 
 public class PlayerUser : MonoBehaviour
 {
-    public UnityEvent UpdatePlayerHUD = new UnityEvent();
     public PlayerStats playerStats;
     void Update() //TODO : create a method, only called when stats changes, use unity-event
     {
@@ -22,10 +21,5 @@ public class PlayerUser : MonoBehaviour
             playerStats.exp -= 100;
             playerStats.level++;
         }
-    }
-    private void OnCollisionEnter(Collision other)
-    { 
-        playerStats.health -= 30;
-        UpdatePlayerHUD.Invoke();
     }
 }
