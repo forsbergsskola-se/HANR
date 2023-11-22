@@ -16,6 +16,12 @@ public class PlayerUser : MonoBehaviour
         {
             playerStats.health = 0;
         }
+
+        if (playerStats.exp > 100)
+        {
+            playerStats.exp -= 100;
+            playerStats.level++;
+        }
     }
     private void OnCollisionEnter(Collision other)
     { 

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -32,20 +33,24 @@ public class PlayerHud : MonoBehaviour
         expSlider.minValue = 0;
         expSlider.maxValue = 100;
     }
-    void Update()//TODO : create a method, only called when stats changes
+    
+    private void UpdatePlayerHealth()
     {
         healthSlider.value = playerStats.health; //Current value
-        
-        magicSlider.value = playerStats.magic; //Current value
-       
-        expSlider.value = playerStats.exp; //Current value
-
         healthText.text = "Health:" + playerStats.health;
+        // TODO FindObjectOfType<PlayerUser>().UpdatePlayerHUD.();
+    }
+
+    private void UpdatePlayerMagic()
+    {
+        magicSlider.value = playerStats.magic; //Current value
         magicText.text = "Magic: " + playerStats.magic;
+    }
+
+    private void UpdatePlayerExp()
+    {
+        expSlider.value = playerStats.exp; //Current value
         expText.text = "Exp: " + playerStats.exp;
         levelText.text = "Lv: " + playerStats.level;
     }
-    private void UpdatePlayerHealth()
-    {
-        }
 }
