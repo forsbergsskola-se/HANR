@@ -14,13 +14,15 @@ namespace Player
         [SerializeField] private float walkSpeed;
         [SerializeField] private float turnRate;
         [SerializeField] private ParticleSystem clickEffect;
+        [SerializeField] private float clickEffectDuration = 2.0f;
+
 
         private void Start()
         {
             agent.speed = walkSpeed;
         }
 
-        void Update()
+        void FixedUpdate()
         { 
             MouseInput();
             RotateToClick();
@@ -41,8 +43,9 @@ namespace Player
                             agent.destination = raycastHit.point;
                             if (clickEffect != null)
                             {
-                                Instantiate(clickEffect, raycastHit.point += new Vector3(0, 0.3f, 0),
+                                ParticleSystem instantiatedEffect =  Instantiate(clickEffect, raycastHit.point += new Vector3(0, 0.3f, 0),
                                     clickEffect.transform.rotation);
+                                Destroy(instantiatedEffect.gameObject, clickEffectDuration);
                             }
                         }
                     }
@@ -57,7 +60,7 @@ namespace Player
                 Vector3 direction = agent.velocity.normalized;
                 direction.y = 0;
                 toRotation = Quaternion.LookRotation(direction);
-                transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, Time.deltaTime*turnRate);
+                transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, Time.fixedDeltaTime*turnRate);
             }
         }
     }
