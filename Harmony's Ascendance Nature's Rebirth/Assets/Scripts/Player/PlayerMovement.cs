@@ -13,9 +13,7 @@ namespace Player
         public NavMeshAgent agent;
         [SerializeField] private float walkSpeed;
         [SerializeField] private float turnRate;
-        private bool isRotating = false;
-        private bool move = false;
-        
+        [SerializeField] private ParticleSystem ClickEffect;
 
         private void Start()
         {
@@ -26,7 +24,6 @@ namespace Player
         { 
             MouseInput();
             RotateToClick();
-            
         }
         
         private void MouseInput()
@@ -42,6 +39,11 @@ namespace Player
                         {
                             agent.speed = walkSpeed;
                             agent.destination = raycastHit.point;
+                            if (ClickEffect != null)
+                            {
+                                Instantiate(ClickEffect, raycastHit.point += new Vector3(0, 0.5f, 0),
+                                    ClickEffect.transform.rotation);
+                            }
                         }
                     }
                 }
