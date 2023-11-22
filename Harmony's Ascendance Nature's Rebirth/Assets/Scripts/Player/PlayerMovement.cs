@@ -5,7 +5,7 @@ using Vector3 = UnityEngine.Vector3;
 
 namespace Player
 {
-    public class PlayerMovement : MonoBehaviour
+    public class NPCMove : MonoBehaviour
     {
         private Transform player;
         private Quaternion toRotation;
