@@ -1402,7 +1402,7 @@ MonoBehaviour:
   agent: {fileID: 511393004}
   walkSpeed: 4
   turnRate: 20
-  ClickEffect: {fileID: 6324159433293498405, guid: e7643c446931441d28f1e7591bec741a, type: 3}
+  clickEffect: {fileID: 0}
 --- !u!114 &511393006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3170,9 +3170,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5344342510902555159, guid: e7643c446931441d28f1e7591bec741a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c26f3dc2706e5764eb5100c273a349d7, type: 2}
+    - target: {fileID: 6324159433293498405, guid: e7643c446931441d28f1e7591bec741a, type: 3}
+      propertyPath: lengthInSec
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6324159433293498405, guid: e7643c446931441d28f1e7591bec741a, type: 3}
       propertyPath: InitialModule.startSize.scalar
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6324159433293498405, guid: e7643c446931441d28f1e7591bec741a, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.13251539
+      objectReference: {fileID: 0}
+    - target: {fileID: 6324159433293498405, guid: e7643c446931441d28f1e7591bec741a, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.509434
+      objectReference: {fileID: 0}
+    - target: {fileID: 6324159433293498405, guid: e7643c446931441d28f1e7591bec741a, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7941266285869916736, guid: e7643c446931441d28f1e7591bec741a, type: 3}
       propertyPath: m_Name
