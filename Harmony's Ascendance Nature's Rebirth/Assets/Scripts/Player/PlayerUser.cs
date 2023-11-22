@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -21,5 +22,11 @@ public class PlayerUser : MonoBehaviour
             playerStats.exp -= 100;
             playerStats.level++;
         }
+        
+    }
+
+    public void OnCollisionEnter(Collision other)
+    {
+        playerStats.setValueExp(70);
     }
 }
