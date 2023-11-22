@@ -35,7 +35,7 @@ public class PlayerStats : ScriptableObject
     public void setValueExp(float newValue)
     {
         exp += newValue;
-        if (getValueExp()>100)
+        if (exp>100)
         {
             exp -= 100;
             level++;
@@ -47,11 +47,7 @@ public class PlayerStats : ScriptableObject
     {
         return exp;
     }
-    public void setValueLevel(int newValue)
-    {
-        level = newValue;
-        UpdatePlayerHUD.Invoke();
-    }
+    
     public int getValueLevel()
     {
         return level;

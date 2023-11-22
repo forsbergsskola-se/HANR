@@ -32,13 +32,22 @@ public class PlayerHud : MonoBehaviour
         magicSlider.maxValue = 100;
         expSlider.minValue = 0;
         expSlider.maxValue = 100;
+        playerStats.UpdatePlayerHUD.AddListener(UpdatePlayerHealth);
+        playerStats.UpdatePlayerHUD.AddListener(UpdatePlayerMagic);
+        playerStats.UpdatePlayerHUD.AddListener(UpdatePlayerExp); // Will display level too
+    }
+    
+    private void OnDestroy()
+    {
+        playerStats.UpdatePlayerHUD.RemoveListener(UpdatePlayerHealth);
+        playerStats.UpdatePlayerHUD.RemoveListener(UpdatePlayerMagic);
+        playerStats.UpdatePlayerHUD.RemoveListener(UpdatePlayerExp);
     }
     
     private void UpdatePlayerHealth()
     {
         healthSlider.value = playerStats.health; //Current value
         healthText.text = "Health:" + playerStats.health;
-        // TODO FindObjectOfType<PlayerUser>().UpdatePlayerHUD.();
     }
 
     private void UpdatePlayerMagic()
