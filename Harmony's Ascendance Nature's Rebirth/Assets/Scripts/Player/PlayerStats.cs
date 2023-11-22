@@ -10,4 +10,6 @@ public class PlayerStats : ScriptableObject
     public float magic;
     public float exp;
     public int level;
+    
+    
 }
