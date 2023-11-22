@@ -13,7 +13,7 @@ namespace Player
         public NavMeshAgent agent;
         [SerializeField] private float walkSpeed;
         [SerializeField] private float turnRate;
-        [SerializeField] private ParticleSystem ClickEffect;
+        [SerializeField] private ParticleSystem clickEffect;
 
         private void Start()
         {
@@ -39,15 +39,14 @@ namespace Player
                         {
                             agent.speed = walkSpeed;
                             agent.destination = raycastHit.point;
-                            if (ClickEffect != null)
+                            if (clickEffect != null)
                             {
-                                Instantiate(ClickEffect, raycastHit.point += new Vector3(0, 0.5f, 0),
-                                    ClickEffect.transform.rotation);
+                                Instantiate(clickEffect, raycastHit.point += new Vector3(0, 0.5f, 0),
+                                    clickEffect.transform.rotation);
                             }
                         }
                     }
                 }
-                
             }
         }
         
@@ -55,15 +54,11 @@ namespace Player
         {
             if (agent.velocity != Vector3.zero)
             {
-                // This rotates the player to the local path direction and not the final destination
                 Vector3 direction = agent.velocity.normalized;
                 direction.y = 0;
                 toRotation = Quaternion.LookRotation(direction);
                 transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, Time.deltaTime*turnRate);
             }
-            
         }
-        
-
     }
 }
