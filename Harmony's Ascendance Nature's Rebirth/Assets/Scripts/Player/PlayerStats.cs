@@ -19,4 +19,41 @@ public class PlayerStats : ScriptableObject
         health = newValue;
         UpdatePlayerHUD.Invoke();
     }
+    public float getValueHealth()
+    {
+        return health;
+    }
+    public void setValueMagic(float newValue)
+    {
+        magic = newValue;
+        UpdatePlayerHUD.Invoke();
+    }
+    public float getValueMagic()
+    {
+        return magic;
+    }
+    public void setValueExp(float newValue)
+    {
+        exp += newValue;
+        if (getValueExp()>100)
+        {
+            exp -= 100;
+            level++;
+        }
+        UpdatePlayerHUD.Invoke();
+        
+    }
+    public float getValueExp()
+    {
+        return exp;
+    }
+    public void setValueLevel(int newValue)
+    {
+        level = newValue;
+        UpdatePlayerHUD.Invoke();
+    }
+    public int getValueLevel()
+    {
+        return level;
+    }
 }
