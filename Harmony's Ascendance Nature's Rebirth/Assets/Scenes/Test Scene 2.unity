@@ -3876,7 +3876,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 2058516636}
   walkSpeed: 4
-  turnRate: 0
+  turnRate: 20
   clickEffect: {fileID: 6324159433293498405, guid: e7643c446931441d28f1e7591bec741a, type: 3}
 --- !u!54 &2058516642
 Rigidbody:
