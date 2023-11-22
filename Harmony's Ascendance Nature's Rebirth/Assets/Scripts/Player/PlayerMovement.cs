@@ -41,7 +41,7 @@ namespace Player
                             agent.destination = raycastHit.point;
                             if (clickEffect != null)
                             {
-                                Instantiate(clickEffect, raycastHit.point += new Vector3(0, 0.1f, 0),
+                                Instantiate(clickEffect, raycastHit.point += new Vector3(0, 0.3f, 0),
                                     clickEffect.transform.rotation);
                             }
                         }

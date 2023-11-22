@@ -1402,7 +1402,7 @@ MonoBehaviour:
   agent: {fileID: 511393004}
   walkSpeed: 4
   turnRate: 20
-  clickEffect: {fileID: 0}
+  clickEffect: {fileID: 6324159433293498405, guid: e7643c446931441d28f1e7591bec741a, type: 3}
 --- !u!114 &511393006
 MonoBehaviour:
   m_ObjectHideFlags: 0
