@@ -14,8 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UpdatePlayerHUD:
     m_PersistentCalls:
-      m_Calls: []
-  health: 70
-  magic: 50
-  exp: 60
-  level: 3
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  health: 20
+  magic: 30
+  exp: 10
+  level: 2
