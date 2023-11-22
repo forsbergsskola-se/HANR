@@ -55,7 +55,7 @@ namespace Player
         
         void RotateToClick()
         {
-            if (agent.velocity != Vector3.zero)
+            if (agent.velocity != Vector3.zero && agent.hasPath)
             {
                 Vector3 direction = agent.velocity.normalized;
                 direction.y = 0;
