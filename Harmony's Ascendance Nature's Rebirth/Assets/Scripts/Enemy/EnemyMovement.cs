@@ -9,6 +9,7 @@ public class EnemyMovement : MonoBehaviour
 {
     private GameObject player;
     private Vector3 orginalEnemyPosition;
+    private Quaternion orginalEnemyrotation;
     [SerializeField] private NavMeshAgent agent;
     public BoolVariable playerInEnemyRange;
     [SerializeField] private float walkSpeed;
@@ -20,6 +21,7 @@ public class EnemyMovement : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player");
         orginalEnemyPosition = this.gameObject.transform.position;
+        orginalEnemyrotation = this.transform.rotation;
     }
 
     private void Awake()
@@ -58,6 +60,11 @@ public class EnemyMovement : MonoBehaviour
             direction.y = 0;
             Quaternion toRotation = Quaternion.LookRotation(direction);
             transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, Time.fixedDeltaTime*turnRate);
+        }
+
+        if (agent.velocity == Vector3.zero && !playerInEnemyRange.getValue())
+        {
+            this.transform.rotation = orginalEnemyrotation;
         }
     }
     
