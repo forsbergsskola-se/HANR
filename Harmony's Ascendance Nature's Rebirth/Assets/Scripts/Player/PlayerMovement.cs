@@ -73,7 +73,6 @@ namespace Player
             else if(agent.remainingDistance < 0.05f && agent.hasPath)
             {
                 transform.rotation = toRotation;
-                transform.position = agent.destination;
             }
         }
     }

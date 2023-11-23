@@ -3036,7 +3036,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInRange: {fileID: 11400000, guid: 63dde8e959fbfea42a14743bfd011da1, type: 2}
-  player: {fileID: 0}
+  player: {fileID: 337535885}
   detectionRange: 10
   unDetectionRange: 15
 --- !u!1 &1644328894
