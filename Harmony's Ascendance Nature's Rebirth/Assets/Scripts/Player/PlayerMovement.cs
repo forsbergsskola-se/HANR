@@ -17,15 +17,14 @@ namespace Player
         [SerializeField] private float clickEffectDuration = 1.0f;
         public Animator animator;
 
-
         private void Start()
         {
             agent.speed = walkSpeed;
         }
 
-        void Update()
+        void LateUpdate()
         {
-            if (agent.velocity.magnitude > 0.1)
+            if (agent.velocity.magnitude > walkSpeed/2)
             {
                 animator.SetBool("isMoving",true);
             }
@@ -64,13 +63,17 @@ namespace Player
         
         void RotateToClick()
         {
-            if (agent.velocity.magnitude > 0.01 && agent.hasPath)
+            if (agent.velocity.magnitude > 0.01f && agent.hasPath)
             {
-                Debug.Log(agent.velocity.magnitude);
                 Vector3 direction = agent.velocity.normalized;
                 direction.y = 0;
                 toRotation = Quaternion.LookRotation(direction);
                 transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, Time.deltaTime*turnRate);
+            }
+            else if(agent.remainingDistance < 0.05f && agent.hasPath)
+            {
+                transform.rotation = toRotation;
+                transform.position = agent.destination;
             }
         }
     }
