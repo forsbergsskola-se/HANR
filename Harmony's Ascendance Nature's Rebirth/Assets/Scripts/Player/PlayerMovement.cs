@@ -5,7 +5,7 @@ using Vector3 = UnityEngine.Vector3;
 
 namespace Player
 {
-    public class NPCMove : MonoBehaviour
+    public class PlayerMovement : MonoBehaviour
     {
         private Transform player;
         private Quaternion toRotation;
@@ -15,6 +15,7 @@ namespace Player
         [SerializeField] private float turnRate;
         [SerializeField] private ParticleSystem clickEffect;
         [SerializeField] private float clickEffectDuration = 1.0f;
+        public Animator animator;
 
 
         private void Start()
@@ -22,8 +23,16 @@ namespace Player
             agent.speed = walkSpeed;
         }
 
-        void FixedUpdate()
-        { 
+        void Update()
+        {
+            if (agent.velocity.magnitude > 0.1)
+            {
+                animator.SetBool("isMoving",true);
+            }
+            else
+            {
+                animator.SetBool("isMoving", false);
+            }
             MouseInput();
             RotateToClick();
         }
@@ -55,12 +64,13 @@ namespace Player
         
         void RotateToClick()
         {
-            if (agent.velocity != Vector3.zero && agent.hasPath)
+            if (agent.velocity.magnitude > 0.01 && agent.hasPath)
             {
+                Debug.Log(agent.velocity.magnitude);
                 Vector3 direction = agent.velocity.normalized;
                 direction.y = 0;
                 toRotation = Quaternion.LookRotation(direction);
-                transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, Time.fixedDeltaTime*turnRate);
+                transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, Time.deltaTime*turnRate);
             }
         }
     }
