@@ -12,6 +12,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private NavMeshAgent agent;
     public BoolVariable playerInEnemyRange;
     [SerializeField] private float walkSpeed;
+    [SerializeField] private float turnRate;
 
     
     // Start is called before the first frame update
@@ -31,6 +32,11 @@ public class EnemyMovement : MonoBehaviour
         playerInEnemyRange.ValueChanged.RemoveListener(startMovement);
     }
 
+    private void FixedUpdate()
+    {
+        RotateToClick();
+    }
+
     private void startMovement(bool playerInRange)
     {
         if (playerInRange)
@@ -41,6 +47,17 @@ public class EnemyMovement : MonoBehaviour
         else
         {
             agent.destination = orginalEnemyPosition;
+        }
+    }
+    
+    void RotateToClick()
+    {
+        if (agent.velocity != Vector3.zero && agent.hasPath)
+        {
+            Vector3 direction = agent.velocity.normalized;
+            direction.y = 0;
+            Quaternion toRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, Time.fixedDeltaTime*turnRate);
         }
     }
     

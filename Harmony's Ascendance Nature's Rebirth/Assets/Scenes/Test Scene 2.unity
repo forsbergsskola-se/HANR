@@ -2208,7 +2208,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 1615649809}
   playerInEnemyRange: {fileID: 11400000, guid: 63dde8e959fbfea42a14743bfd011da1, type: 2}
-  walkSpeed: 1.5
+  walkSpeed: 3
+  turnRate: 50
 --- !u!195 &1615649809
 NavMeshAgent:
   m_ObjectHideFlags: 0
