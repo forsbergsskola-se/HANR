@@ -14,7 +14,7 @@ namespace Player
         [SerializeField] private float walkSpeed;
         [SerializeField] private float turnRate;
         [SerializeField] private ParticleSystem clickEffect;
-        [SerializeField] private float clickEffectDuration = 2.0f;
+        [SerializeField] private float clickEffectDuration = 1.0f;
 
 
         private void Start()
