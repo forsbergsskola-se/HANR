@@ -965,7 +965,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1067925524328404, guid: 6bbfea6690ef7724ba495c866081f855, type: 3}
       propertyPath: m_Name
-      value: PBR_Golem
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 1067925524328404, guid: 6bbfea6690ef7724ba495c866081f855, type: 3}
       propertyPath: m_TagString
@@ -2208,6 +2208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 1615649809}
   playerInEnemyRange: {fileID: 11400000, guid: 63dde8e959fbfea42a14743bfd011da1, type: 2}
+  walkSpeed: 1.5
 --- !u!195 &1615649809
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2219,7 +2220,7 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
-  m_Acceleration: 9999
+  m_Acceleration: 15
   avoidancePriority: 50
   m_AngularSpeed: 0
   m_StoppingDistance: 0
@@ -4139,7 +4140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 2058516636}
-  walkSpeed: 4
+  walkSpeed: 5
   turnRate: 20
   clickEffect: {fileID: 6324159433293498405, guid: e7643c446931441d28f1e7591bec741a, type: 3}
   clickEffectDuration: 2

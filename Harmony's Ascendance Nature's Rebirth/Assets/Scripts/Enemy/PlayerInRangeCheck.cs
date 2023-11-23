@@ -10,8 +10,8 @@ namespace Enemy
         public BoolVariable playerInRange;
         private Vector3 playerPosition;
         [SerializeField]private GameObject player;
-        [SerializeField] public float detectionRange;
-        [SerializeField] public float unDetectionRange;
+        [SerializeField] private float detectionRange;
+        [SerializeField] private float unDetectionRange;
 
         private void Update()
         {

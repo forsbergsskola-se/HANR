@@ -11,6 +11,8 @@ public class EnemyMovement : MonoBehaviour
     private Vector3 orginalEnemyPosition;
     [SerializeField] private NavMeshAgent agent;
     public BoolVariable playerInEnemyRange;
+    [SerializeField] private float walkSpeed;
+
     
     // Start is called before the first frame update
     void Start()
@@ -33,12 +35,11 @@ public class EnemyMovement : MonoBehaviour
     {
         if (playerInRange)
         {
-            Debug.Log("A");
+            agent.speed = walkSpeed;
             agent.destination = player.transform.position;
         }
         else
         {
-            Debug.Log("B");
             agent.destination = orginalEnemyPosition;
         }
     }
