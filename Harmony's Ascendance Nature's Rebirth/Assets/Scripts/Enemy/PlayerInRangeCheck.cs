@@ -8,10 +8,12 @@ namespace Enemy
     public class PlayerInRangeCheck : MonoBehaviour
     {
         public BoolVariable playerInRange;
+        public BoolVariable playerInAttackRange;
         private Vector3 playerPosition;
         [SerializeField]private GameObject player;
         [SerializeField] private float detectionRange;
         [SerializeField] private float unDetectionRange;
+        [SerializeField] private float attackRange;
 
         private void Update()
         {
@@ -31,6 +33,15 @@ namespace Enemy
             if (distance >= unDetectionRange)
             {
                 playerInRange.setValue(false);
+            }
+
+            if (distance <= attackRange)
+            {
+                playerInAttackRange.setValue(true);
+            }
+            else
+            {
+                playerInAttackRange.setValue(false);
             }
         }
     }

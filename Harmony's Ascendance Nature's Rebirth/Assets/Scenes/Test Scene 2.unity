@@ -834,7 +834,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d96ac839911ec4b15b6b23a6ab7322bf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.18
+      value: 2.98
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d96ac839911ec4b15b6b23a6ab7322bf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1873,6 +1873,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 95380085654935804, guid: 6bbfea6690ef7724ba495c866081f855, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 5b762cc8de31e9648a1c07fe828e2ef1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1886,9 +1890,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1067925524328404, guid: 6bbfea6690ef7724ba495c866081f855, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1615649808}
-    - targetCorrespondingSourceObject: {fileID: 1067925524328404, guid: 6bbfea6690ef7724ba495c866081f855, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1615649807}
     - targetCorrespondingSourceObject: {fileID: 1067925524328404, guid: 6bbfea6690ef7724ba495c866081f855, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1615649810}
@@ -2964,27 +2965,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &1615649807
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1615649802}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 5, y: 5, z: 5}
-  m_Center: {x: 0, y: 2, z: 0}
 --- !u!114 &1615649808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2999,8 +2979,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 1615649809}
   playerInEnemyRange: {fileID: 11400000, guid: 63dde8e959fbfea42a14743bfd011da1, type: 2}
+  playerInAttackRange: {fileID: 11400000, guid: a1327ebfafbb0ae4cb285095666b73cf, type: 2}
   walkSpeed: 3
   turnRate: 50
+  animator: {fileID: 1615649811}
 --- !u!195 &1615649809
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3036,9 +3018,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInRange: {fileID: 11400000, guid: 63dde8e959fbfea42a14743bfd011da1, type: 2}
+  playerInAttackRange: {fileID: 11400000, guid: a1327ebfafbb0ae4cb285095666b73cf, type: 2}
   player: {fileID: 337535885}
   detectionRange: 10
   unDetectionRange: 15
+  attackRange: 5
+--- !u!95 &1615649811 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95380085654935804, guid: 6bbfea6690ef7724ba495c866081f855, type: 3}
+  m_PrefabInstance: {fileID: 808393673}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1644328894
 GameObject:
   m_ObjectHideFlags: 0
