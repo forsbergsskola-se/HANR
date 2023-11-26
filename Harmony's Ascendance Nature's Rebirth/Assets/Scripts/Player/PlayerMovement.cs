@@ -40,8 +40,10 @@ namespace Player
         {
             if (Input.GetKeyDown(KeyCode.Mouse1))
             {
+                Debug.Log("M1");
                 if (Camera.main != null)
                 {
+                    Debug.Log("Yes Cam");
                     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                     if (Physics.Raycast(ray, out RaycastHit raycastHit))
                     {
