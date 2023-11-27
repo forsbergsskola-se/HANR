@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class ClickCheck : MonoBehaviour
 {
     public UnityEvent<RaycastHit> MovePlayer;
-    public UnityEvent AttackEnemy = new UnityEvent();
+    public UnityEvent<RaycastHit> AttackEnemy;
     public RaycastHit rayHit;
     private void Update()
     {
@@ -24,17 +24,16 @@ public class ClickCheck : MonoBehaviour
                 Debug.Log("Yes Cam");
                 if (Physics.Raycast(ray, out RaycastHit raycastHit))
                 {
+                    rayHit = raycastHit;
                     if (raycastHit.transform.CompareTag("Ground")) //Invoke MovePlayer event
                     {
                         MovePlayer?.Invoke(raycastHit);
                         Debug.Log("Yes Hit");
-                        rayHit = raycastHit;
                     }
                     if (raycastHit.transform.CompareTag("Enemy")) //Invoke AttackEnemy event
                     {
-                        AttackEnemy.Invoke();
-                        Debug.Log("Yes Hit");
-
+                        AttackEnemy?.Invoke(raycastHit);
+                        Debug.Log("Enemy Hit");
                     }
                 }
             }
