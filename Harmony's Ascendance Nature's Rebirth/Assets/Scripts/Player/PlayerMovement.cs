@@ -32,8 +32,20 @@ namespace Player
             {
                 animator.SetBool("isMoving", false);
             }
-            MouseInput();
+            //MouseInput();
             RotateToClick();
+        }
+
+        private void MoveToClick()
+        {
+            agent.speed = walkSpeed;
+            agent.destination = raycastHit.point;
+            if (clickEffect != null)
+            {
+                ParticleSystem instantiatedEffect =  Instantiate(clickEffect, raycastHit.point += new Vector3(0, 0.3f, 0),
+                    clickEffect.transform.rotation);
+                Destroy(instantiatedEffect.gameObject, clickEffectDuration);
+            }
         }
         
         private void MouseInput()
