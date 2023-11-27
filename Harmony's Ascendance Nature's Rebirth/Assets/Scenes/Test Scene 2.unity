@@ -875,11 +875,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1067925524328404, guid: 746502fd00bd07448b4afcfa0b24cbc3, type: 3}
-      insertIndex: -1
+      insertIndex: 4
       addedObject: {fileID: 1709405541}
     - targetCorrespondingSourceObject: {fileID: 1067925524328404, guid: 746502fd00bd07448b4afcfa0b24cbc3, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1709405546}
+      addedObject: {fileID: 1709405547}
   m_SourcePrefab: {fileID: 100100000, guid: 746502fd00bd07448b4afcfa0b24cbc3, type: 3}
 --- !u!1001 &864568199
 PrefabInstance:
@@ -2099,7 +2099,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1709405546
+--- !u!114 &1709405547
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2108,12 +2108,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1709405538}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a95e1e563f34fee89bfaaf420ca272e, type: 3}
+  m_Script: {fileID: 11500000, guid: 44142419377a54a888bc02a1d67e01f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rock: {fileID: 1375754531036840, guid: 71497ec4178769a4c8cdb38563f01fc0, type: 3}
-  playerInEnemyRange: {fileID: 11400000, guid: 63dde8e959fbfea42a14743bfd011da1, type: 2}
-  enemyThrowAttackCooldown: {fileID: 11400000, guid: 73141c12bd069744f8c6dcd67bf7060d, type: 2}
 --- !u!1 &1947690863
 GameObject:
   m_ObjectHideFlags: 0

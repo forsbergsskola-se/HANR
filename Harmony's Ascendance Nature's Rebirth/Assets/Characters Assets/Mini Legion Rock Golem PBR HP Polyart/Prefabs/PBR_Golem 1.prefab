@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 95380085654935804}
   - component: {fileID: 3324986740080053919}
   - component: {fileID: 1263688537526821945}
+  - component: {fileID: 7462943007307053544}
   - component: {fileID: 6342173935298566472}
   m_Layer: 0
   m_Name: PBR_Golem 1
@@ -162,6 +163,20 @@ MonoBehaviour:
   walkSpeed: 5
   turnRate: 20
   animator: {fileID: 95380085654935804}
+--- !u!114 &7462943007307053544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067925524328404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a95e1e563f34fee89bfaaf420ca272e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rock: {fileID: 1375754531036840, guid: 71497ec4178769a4c8cdb38563f01fc0, type: 3}
+  enemyThrowAttackCooldown: {fileID: 11400000, guid: 73141c12bd069744f8c6dcd67bf7060d, type: 2}
 --- !u!114 &6342173935298566472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,6 +203,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4835780311418736}
+  - component: {fileID: 7810768350578940610}
   m_Layer: 0
   m_Name: Index_Proximal_L
   m_TagString: Untagged
@@ -210,6 +226,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4894528786394434}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7810768350578940610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088256926929212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee33e44423494472a6ebc75501939ba1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1124596519333206
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,7 +609,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4818361460809012}
-  - component: {fileID: 6073445497874191010}
   m_Layer: 0
   m_Name: Index_Proximal_R
   m_TagString: Untagged
@@ -604,18 +631,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4699477660470766}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6073445497874191010
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1620575693851942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee33e44423494472a6ebc75501939ba1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1623131121118994
 GameObject:
   m_ObjectHideFlags: 0
