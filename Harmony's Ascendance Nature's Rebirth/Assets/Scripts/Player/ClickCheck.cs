@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Player;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,6 +10,9 @@ public class ClickCheck : MonoBehaviour
     public UnityEvent<RaycastHit> MovePlayer;
     public UnityEvent<RaycastHit> AttackEnemy;
     public RaycastHit rayHit;
+    public PlayerMovement playerMovement;
+    public PlayerAttack playerAttack;
+
     private void Update()
     {
         MouseInput();
@@ -21,19 +25,20 @@ public class ClickCheck : MonoBehaviour
             if (Camera.main != null)
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                Debug.Log("Yes Cam");
                 if (Physics.Raycast(ray, out RaycastHit raycastHit))
                 {
-                    rayHit = raycastHit;
-                    if (raycastHit.transform.CompareTag("Ground")) //Invoke MovePlayer event
+                    if (raycastHit.transform.CompareTag("Ground"))
                     {
-                        MovePlayer?.Invoke(raycastHit);
-                        Debug.Log("Yes Hit");
+                        rayHit = raycastHit;
+                        playerMovement = GetComponent<PlayerMovement>();
+                        playerMovement.MoveToClick(rayHit);
+                        playerMovement.RotateToClick();
                     }
-                    if (raycastHit.transform.CompareTag("Enemy")) //Invoke AttackEnemy event
+                    if (raycastHit.transform.CompareTag("Enemy"))
                     {
-                        AttackEnemy?.Invoke(raycastHit);
-                        Debug.Log("Enemy Hit");
+                        rayHit = raycastHit;
+                        playerAttack = GetComponent<PlayerAttack>();
+                        playerAttack.AttackEnemy(rayHit);
                     }
                 }
             }

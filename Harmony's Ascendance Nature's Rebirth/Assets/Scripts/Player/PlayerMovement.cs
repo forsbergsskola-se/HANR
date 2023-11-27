@@ -33,15 +33,15 @@ namespace Player
                 animator.SetBool("isMoving", false);
             }
             //MouseInput();
-            ClickCheck clickCheck = GetComponent<ClickCheck>();
-            MoveToClick(clickCheck.rayHit);
-            RotateToClick();
+            //RotateToClick();
         }
 
-        private void MoveToClick(RaycastHit raycastHit)
+        public void MoveToClick(RaycastHit raycastHit)
         {
             agent.speed = walkSpeed;
             agent.destination = raycastHit.point;
+            RotateToClick();
+            Debug.Log("Player Moving");
             if (clickEffect != null)
             {
                 ParticleSystem instantiatedEffect =  Instantiate(clickEffect, raycastHit.point += new Vector3(0, 0.3f, 0),
@@ -49,8 +49,25 @@ namespace Player
                 Destroy(instantiatedEffect.gameObject, clickEffectDuration);
             }
         }
+        public void RotateToClick() //Can be put in MoveToClick method? TODO does not rotate properly
+        {
+            Debug.Log("Rotating");
+            if (agent.velocity.magnitude > 0.01f && agent.hasPath)
+            {
+                Vector3 direction = agent.velocity.normalized;
+                direction.y = 0;
+                toRotation = Quaternion.LookRotation(direction);
+                transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, Time.deltaTime*turnRate);
+            }
+            else if(agent.remainingDistance < 0.05f && agent.hasPath)
+            {
+                transform.rotation = toRotation;
+            }
+        }
         
-        private void MouseInput()
+        
+        //Moved the raycast part to a new script, and movement to another method
+        /*private void MouseInput()
         {
             if (Input.GetKeyDown(KeyCode.Mouse1))
             {
@@ -74,22 +91,6 @@ namespace Player
                         }
                     }
                 }
-            }
-        }
-        
-        void RotateToClick()
-        {
-            if (agent.velocity.magnitude > 0.01f && agent.hasPath)
-            {
-                Vector3 direction = agent.velocity.normalized;
-                direction.y = 0;
-                toRotation = Quaternion.LookRotation(direction);
-                transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, Time.deltaTime*turnRate);
-            }
-            else if(agent.remainingDistance < 0.05f && agent.hasPath)
-            {
-                transform.rotation = toRotation;
-            }
-        }
+            }*/
     }
 }

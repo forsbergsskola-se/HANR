@@ -5,13 +5,7 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    void LateUpdate()
-    {
-        ClickCheck clickCheck = GetComponent<ClickCheck>();
-        AttackEnemy(clickCheck.rayHit);
-    }
-
-    private void AttackEnemy(RaycastHit raycastHit)
+    public void AttackEnemy(RaycastHit raycastHit)
     {
         Debug.Log("Enemy Hit");
     }
