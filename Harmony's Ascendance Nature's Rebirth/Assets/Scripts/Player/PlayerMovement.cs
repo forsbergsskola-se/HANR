@@ -7,6 +7,7 @@ namespace Player
 {
     public class PlayerMovement : MonoBehaviour
     {
+        private ClickCheck clickTarget;
         private Transform player;
         private Quaternion toRotation;
         private Vector3 mousePosition;
@@ -33,6 +34,7 @@ namespace Player
                 animator.SetBool("isMoving", false);
             }
             //MouseInput();
+            MoveToClick(clickTarget.rey);
             RotateToClick();
         }
 
