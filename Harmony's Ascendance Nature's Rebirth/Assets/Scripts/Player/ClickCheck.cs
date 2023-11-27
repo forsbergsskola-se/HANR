@@ -24,11 +24,11 @@ public class ClickCheck : MonoBehaviour
                 {
                     if (raycastHit.transform.CompareTag("Ground")) //Invoke MovePlayer event
                     {
-                        MovePlayer.Invoke(raycastHit)
+                        MovePlayer.Invoke(raycastHit);
                     }
                     if (raycastHit.transform.CompareTag("Enemy")) //Invoke AttackEnemy event
                     {
-                        AttackEnemy.Invoke(raycastHit)
+                        AttackEnemy.Invoke(raycastHit);
                     }
                 }
             }
