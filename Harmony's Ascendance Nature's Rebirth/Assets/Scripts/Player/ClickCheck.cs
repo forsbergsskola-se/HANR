@@ -8,7 +8,6 @@ public class ClickCheck : MonoBehaviour
 {
     //public UnityEvent<RaycastHit> MovePlayer;
     public UnityEvent AttackEnemy = new UnityEvent();
-    public RaycastHit rey;
     private void Update()
     {
         MouseInput();
@@ -28,8 +27,6 @@ public class ClickCheck : MonoBehaviour
                     {
                         //MovePlayer.Invoke(raycastHit);
                         Debug.Log("Yes Hit");
-                        rey = raycastHit;
-
                     }
                     if (raycastHit.transform.CompareTag("Enemy")) //Invoke AttackEnemy event
                     {

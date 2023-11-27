@@ -34,7 +34,7 @@ namespace Player
                 animator.SetBool("isMoving", false);
             }
             //MouseInput();
-            MoveToClick(clickTarget.rey);
+            //MoveToClick();
             RotateToClick();
         }
 
