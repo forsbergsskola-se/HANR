@@ -862,6 +862,14 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 5b762cc8de31e9648a1c07fe828e2ef1, type: 2}
+    - target: {fileID: 1263688537526821945, guid: 746502fd00bd07448b4afcfa0b24cbc3, type: 3}
+      propertyPath: agent
+      value: 
+      objectReference: {fileID: 1709405541}
+    - target: {fileID: 6342173935298566472, guid: 746502fd00bd07448b4afcfa0b24cbc3, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 919132149155446097, guid: c116fdd80fe483b4d9b353b03c4204e4, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -871,10 +879,7 @@ PrefabInstance:
       addedObject: {fileID: 1709405541}
     - targetCorrespondingSourceObject: {fileID: 1067925524328404, guid: 746502fd00bd07448b4afcfa0b24cbc3, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1709405540}
-    - targetCorrespondingSourceObject: {fileID: 1067925524328404, guid: 746502fd00bd07448b4afcfa0b24cbc3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1709405539}
+      addedObject: {fileID: 1709405546}
   m_SourcePrefab: {fileID: 100100000, guid: 746502fd00bd07448b4afcfa0b24cbc3, type: 3}
 --- !u!1001 &864568199
 PrefabInstance:
@@ -1494,6 +1499,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 751d09fb39b0f484c9cef723b125d852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MovePlayer:
+    m_PersistentCalls:
+      m_Calls: []
+  AttackEnemy:
+    m_PersistentCalls:
+      m_Calls: []
+  playerMovement: {fileID: 0}
+  playerAttack: {fileID: 0}
 --- !u!114 &957999536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1586,7 +1599,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInRange: {fileID: 11400000, guid: 63dde8e959fbfea42a14743bfd011da1, type: 2}
   playerInAttackRange: {fileID: 11400000, guid: a1327ebfafbb0ae4cb285095666b73cf, type: 2}
-  player: {fileID: 957999527}
   detectionRange: 10
   unDetectionRange: 15
   attackRange: 10
@@ -2065,42 +2077,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1067925524328404, guid: 746502fd00bd07448b4afcfa0b24cbc3, type: 3}
   m_PrefabInstance: {fileID: 798033578}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1709405539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1709405538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39a562caf34b4ebba2493a72871479f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerInRange: {fileID: 11400000, guid: 63dde8e959fbfea42a14743bfd011da1, type: 2}
-  playerInAttackRange: {fileID: 11400000, guid: a1327ebfafbb0ae4cb285095666b73cf, type: 2}
-  player: {fileID: 957999527}
-  detectionRange: 10
-  unDetectionRange: 15
-  attackRange: 5
---- !u!114 &1709405540
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1709405538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8bd513c00a3b174498452a2039654c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 1709405541}
-  playerInEnemyRange: {fileID: 11400000, guid: 63dde8e959fbfea42a14743bfd011da1, type: 2}
-  playerInAttackRange: {fileID: 11400000, guid: a1327ebfafbb0ae4cb285095666b73cf, type: 2}
-  walkSpeed: 4
-  turnRate: 20
-  animator: {fileID: 1709405542}
 --- !u!195 &1709405541
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2123,11 +2099,21 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!95 &1709405542 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 95380085654935804, guid: 746502fd00bd07448b4afcfa0b24cbc3, type: 3}
-  m_PrefabInstance: {fileID: 798033578}
+--- !u!114 &1709405546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709405538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a95e1e563f34fee89bfaaf420ca272e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rock: {fileID: 1375754531036840, guid: 71497ec4178769a4c8cdb38563f01fc0, type: 3}
+  playerInEnemyRange: {fileID: 11400000, guid: 63dde8e959fbfea42a14743bfd011da1, type: 2}
+  enemyThrowAttackCooldown: {fileID: 11400000, guid: 73141c12bd069744f8c6dcd67bf7060d, type: 2}
 --- !u!1 &1947690863
 GameObject:
   m_ObjectHideFlags: 0

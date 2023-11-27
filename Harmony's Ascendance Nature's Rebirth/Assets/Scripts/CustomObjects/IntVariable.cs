@@ -15,7 +15,7 @@ namespace CustomObjects
             ValueChanged.Invoke(value);
         }
 
-        public float getValue()
+        public int getValue()
         {
             return value;
         }

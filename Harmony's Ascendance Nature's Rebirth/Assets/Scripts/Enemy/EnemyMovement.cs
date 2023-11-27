@@ -80,7 +80,7 @@ public class EnemyMovement : MonoBehaviour
 
         if (agent.velocity == Vector3.zero && !playerInEnemyRange.getValue())
         {
-            this.transform.rotation = orginalEnemyrotation;
+            transform.rotation = Quaternion.Slerp(transform.rotation, orginalEnemyrotation, Time.fixedDeltaTime*turnRate);
         }
     }
     

@@ -10,10 +10,14 @@ namespace Enemy
         public BoolVariable playerInRange;
         public BoolVariable playerInAttackRange;
         private Vector3 playerPosition;
-        [SerializeField]private GameObject player;
+        private GameObject player;
         [SerializeField] private float detectionRange;
         [SerializeField] private float unDetectionRange;
         [SerializeField] private float attackRange;
+
+        private void Start()
+        {
+            player = GameObject.FindGameObjectWithTag("Player");        }
 
         private void Update()
         {
