@@ -9,6 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Lake_Meadows
   m_Shader: {fileID: 4800000, guid: ad8e030ef04669d4aba092657d5d84b4, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -17,6 +19,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -130,8 +133,8 @@ Material:
     - _WorldtoObjectPosition: 0
     - __dirty: 0
     m_Colors:
-    - _ColorDeep: {r: 0, g: 0.31132072, b: 0.41509432, a: 1}
-    - _ColorShallow: {r: 0.043120317, g: 0.4397011, b: 0.4811321, a: 0}
+    - _ColorDeep: {r: 0.062080607, g: 0.0072089676, b: 0.16981131, a: 1}
+    - _ColorShallow: {r: 0.15993075, g: 0.1214845, b: 0.24528301, a: 0}
     - _Deep: {r: 0, g: 0.29965103, b: 0.40566036, a: 1}
     - _Deep1: {r: 0.12130647, g: 0.34791896, b: 0.5471698, a: 0}
     - _FoamColor: {r: 1, g: 1, b: 1, a: 0.14509805}

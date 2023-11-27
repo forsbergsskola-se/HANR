@@ -9,6 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Grass_01
   m_Shader: {fileID: 4800000, guid: 70ff6e3a81c1f424c9f9da756571a30f, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords:
   - _ALPHATEST_ON
@@ -29,6 +31,7 @@ Material:
   - TransparentDepthPrepass
   - TransparentDepthPostpass
   - TransparentBackface
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -178,9 +181,9 @@ Material:
     - __dirty: 0
     m_Colors:
     - _Color: {r: 0.5923446, g: 0.8113208, b: 0.27171594, a: 1}
-    - _ColorBottom: {r: 0.44743934, g: 0.7830189, b: 0, a: 0}
-    - _ColorTop: {r: 0.18652916, g: 0.3679245, b: 0, a: 0}
-    - _ColorTopVariation: {r: 0.735849, g: 0.7036047, b: 0, a: 0}
+    - _ColorBottom: {r: 0.13207549, g: 0.12061311, b: 0.120238535, a: 0}
+    - _ColorTop: {r: 0.36862746, g: 0.04713782, b: 0, a: 0}
+    - _ColorTopVariation: {r: 0.1792453, g: 0.07285789, b: 0.07186722, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GlossRemap: {r: 0, g: 1, b: 0, a: 0}
     - _HSL: {r: 0.02, g: 0.05, b: 0.1, a: 0}

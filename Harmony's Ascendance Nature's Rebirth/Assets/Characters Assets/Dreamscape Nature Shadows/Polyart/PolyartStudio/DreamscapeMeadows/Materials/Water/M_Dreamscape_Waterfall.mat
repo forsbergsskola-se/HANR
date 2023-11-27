@@ -2,20 +2,24 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Dreamscape_Waterfall
   m_Shader: {fileID: 4800000, guid: 66906d5c57c4a9c4eb411e5bca74e37c, type: 3}
-  m_ShaderKeywords: 
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2450
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -67,6 +71,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _ColorDepthFade: 0.43
     - _DisplaceStrength: 0
@@ -101,7 +106,8 @@ Material:
     - _WaveTiling3: 3
     - __dirty: 0
     m_Colors:
-    - _ColorDeep: {r: 0.06581525, g: 0.8207547, b: 0.7680069, a: 0}
-    - _ColorShallow: {r: 0.35323954, g: 0.8556219, b: 0.9245283, a: 1}
+    - _ColorDeep: {r: 0.1137255, g: 0.121568635, b: 0.22352943, a: 0}
+    - _ColorShallow: {r: 0.39609292, g: 0.4142965, b: 0.6509434, a: 1}
     - _DisplacementMovement: {r: 0, g: 1, b: 0, a: 0}
     - _LineColor: {r: 0.44811314, g: 1, b: 0.9224879, a: 1}
+  m_BuildTextureStacks: []
