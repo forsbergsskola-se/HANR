@@ -1409,6 +1409,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 751d09fb39b0f484c9cef723b125d852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MovePlayer:
+    m_PersistentCalls:
+      m_Calls: []
   AttackEnemy:
     m_PersistentCalls:
       m_Calls: []

@@ -6,8 +6,9 @@ using UnityEngine.Events;
 
 public class ClickCheck : MonoBehaviour
 {
-    //public UnityEvent<RaycastHit> MovePlayer;
+    public UnityEvent<RaycastHit> MovePlayer;
     public UnityEvent AttackEnemy = new UnityEvent();
+    public RaycastHit rayHit;
     private void Update()
     {
         MouseInput();
@@ -25,8 +26,9 @@ public class ClickCheck : MonoBehaviour
                 {
                     if (raycastHit.transform.CompareTag("Ground")) //Invoke MovePlayer event
                     {
-                        //MovePlayer.Invoke(raycastHit);
+                        MovePlayer?.Invoke(raycastHit);
                         Debug.Log("Yes Hit");
+                        rayHit = raycastHit;
                     }
                     if (raycastHit.transform.CompareTag("Enemy")) //Invoke AttackEnemy event
                     {
