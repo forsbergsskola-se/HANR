@@ -36,7 +36,7 @@ namespace Player
             RotateToClick();
         }
 
-        private void MoveToClick()
+        private void MoveToClick(RaycastHit raycastHit)
         {
             agent.speed = walkSpeed;
             agent.destination = raycastHit.point;

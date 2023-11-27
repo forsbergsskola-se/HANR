@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class ClickCheck : MonoBehaviour
 {
+    public UnityEvent MovePlayer;
+    public UnityEvent AttackEnemy;
+    
     private void LateUpdate()
     {
         MouseInput();
@@ -21,11 +24,11 @@ public class ClickCheck : MonoBehaviour
                 {
                     if (raycastHit.transform.CompareTag("Ground")) //Invoke MovePlayer event
                     {
-                        
+                        MovePlayer.Invoke(raycastHit)
                     }
                     if (raycastHit.transform.CompareTag("Enemy")) //Invoke AttackEnemy event
                     {
-                        
+                        AttackEnemy.Invoke(raycastHit)
                     }
                 }
             }
