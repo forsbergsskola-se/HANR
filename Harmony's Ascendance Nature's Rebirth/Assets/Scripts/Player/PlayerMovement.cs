@@ -28,6 +28,11 @@ namespace Player
             playerMoving.ValueChanged.AddListener(MoveToClick);
         }
 
+        private void OnDestroy()
+        {
+            playerMoving.ValueChanged.RemoveListener(MoveToClick);
+        }
+
         private void Start()
         {
             agent.speed = walkSpeed;
@@ -45,7 +50,7 @@ namespace Player
             }
         }
 
-        public void MoveToClick(bool playerMoving)
+        private void MoveToClick(bool playerMoving)
         {
             if (playerMoving)
             {
