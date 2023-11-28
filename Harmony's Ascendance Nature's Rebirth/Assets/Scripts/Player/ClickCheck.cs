@@ -10,7 +10,7 @@ public class ClickCheck : MonoBehaviour
 {
     public BoolVariable playerMoving;
     public BoolVariable playerAttacking;
-    
+    public TargetPoint hit;
     
     public GameObject itemPickUp;
 
@@ -28,6 +28,8 @@ public class ClickCheck : MonoBehaviour
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 if (Physics.Raycast(ray, out RaycastHit raycastHit))
                 {
+                    hit.SetValue(raycastHit.point);
+                    
                     if (raycastHit.transform.CompareTag("Ground"))
                     {
                         playerMoving.setValue(true);
