@@ -38,6 +38,11 @@ namespace Player
             agent.speed = walkSpeed;
         }
 
+        private void Update()
+        {
+            RotateToClick();
+        }
+
         void LateUpdate()
         {
             if (agent.velocity.magnitude > walkSpeed/2)
@@ -68,7 +73,7 @@ namespace Player
             }
         }
         
-        public void RotateToClick() //Can be put in MoveToClick method? TODO does not rotate properly
+        private void RotateToClick() //I put this method in Update for now/ Mandel
         {
             if (agent.velocity.magnitude > 0.01f && agent.hasPath)
             {
