@@ -1,15 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using CustomObjects;
 using Player;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class ClickCheck : MonoBehaviour
 {
-    public UnityEvent<RaycastHit> MovePlayer;
-    public UnityEvent<RaycastHit> AttackEnemy;
-    public RaycastHit rayHit;
+    public BoolVariable playerMoving;
+    public BoolVariable playerAttacking;
     public PlayerMovement playerMovement;
     public PlayerAttack playerAttack;
     public GameObject itemPickUp;
@@ -30,16 +30,11 @@ public class ClickCheck : MonoBehaviour
                 {
                     if (raycastHit.transform.CompareTag("Ground"))
                     {
-                        rayHit = raycastHit;
-                        playerMovement = GetComponent<PlayerMovement>();
-                        playerMovement.MoveToClick(rayHit);
-                        playerMovement.RotateToClick();
+                        playerMoving.setValue(true);
                     }
                     if (raycastHit.transform.CompareTag("Enemy"))
                     {
-                        rayHit = raycastHit;
-                        playerAttack = GetComponent<PlayerAttack>();
-                        playerAttack.AttackEnemy(rayHit);
+                        playerAttacking.setValue(true);
                     }
 
                     if (raycastHit.transform.CompareTag("Item"))
