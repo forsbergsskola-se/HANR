@@ -12,6 +12,7 @@ namespace Enemy
         [SerializeField] private GameObject rock;
         public BoolVariable isEnemyThrowAttack;
         public BoolVariable PlayerInEnemyRange;
+        public BoolVariable PlayerInAttackRange;
         private GameObject enemyHand;
         private Animator animator;
         private bool attackStarted;
@@ -23,13 +24,20 @@ namespace Enemy
         {
             PlayerInEnemyRange.ValueChanged.AddListener(startAttack);
             isEnemyThrowAttack.ValueChanged.AddListener(setThrowValue);
+            PlayerInAttackRange.ValueChanged.AddListener(meeleAttack);
         }
         
         private void OnDestroy()
         {
             PlayerInEnemyRange.ValueChanged.RemoveListener(startAttack);
             isEnemyThrowAttack.ValueChanged.RemoveListener(setThrowValue);
+            PlayerInAttackRange.ValueChanged.RemoveListener(meeleAttack);
 
+        }
+
+        private void meeleAttack(bool inRange)
+        {
+            animator.SetBool("isInAttackRange",inRange);
         }
             
         private void Start()

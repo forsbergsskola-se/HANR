@@ -12,7 +12,6 @@ public class EnemyMovement : MonoBehaviour
     private Quaternion orginalEnemyrotation;
     [SerializeField] private NavMeshAgent agent;
     public BoolVariable playerInEnemyRange;
-    public BoolVariable playerInAttackRange;
     [SerializeField] private float walkSpeed;
     [SerializeField] private float turnRate;
     public Animator animator;
@@ -29,17 +28,11 @@ public class EnemyMovement : MonoBehaviour
     private void Awake()
     {
         playerInEnemyRange.ValueChanged.AddListener(startMovement);
-        playerInAttackRange.ValueChanged.AddListener(attack);
     }
 
     private void OnDestroy()
     {
         playerInEnemyRange.ValueChanged.RemoveListener(startMovement);
-        playerInAttackRange.ValueChanged.RemoveListener(attack);
-    }
-    
-    private void attack(bool value){
-       animator.SetBool("isInAttackRange", value);
     }
 
     private void FixedUpdate()
@@ -55,7 +48,7 @@ public class EnemyMovement : MonoBehaviour
 
         if (agent.hasPath)
         {
-            if (agent.remainingDistance <= 8)
+            if (agent.remainingDistance <= 6)
             {
                 agent.isStopped = true;
             }
