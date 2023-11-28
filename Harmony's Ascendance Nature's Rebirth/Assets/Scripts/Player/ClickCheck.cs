@@ -12,7 +12,7 @@ public class ClickCheck : MonoBehaviour
     public BoolVariable playerAttacking;
     public TargetPoint targetPoint;
     
-    public GameObject itemPickUp;
+    //public GameObject itemPickUp;
 
     private void Update()
     {
