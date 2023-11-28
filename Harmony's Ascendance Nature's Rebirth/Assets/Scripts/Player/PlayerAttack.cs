@@ -27,8 +27,6 @@ public class PlayerAttack : MonoBehaviour
     {
         if (playerAttacking)
         {
-            enemyPosition = targetPoint.GetValue();
-            
             Debug.Log("Attack");
         }
     }

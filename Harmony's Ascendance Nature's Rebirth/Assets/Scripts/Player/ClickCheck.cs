@@ -34,13 +34,13 @@ public class ClickCheck : MonoBehaviour
                     {
                         playerMoving.setValue(true);
                         playerAttacking.setValue(false);
-                        Debug.Log("ground");
+                        Debug.Log("Ground");
                     }
                     if (raycastHit.transform.CompareTag("Enemy"))
                     {
                         playerMoving.setValue(false);
                         playerAttacking.setValue(true);
-                        Debug.Log("enemy");
+                        Debug.Log("Enemy");
                     }
 
                     if (raycastHit.transform.CompareTag("Item"))
