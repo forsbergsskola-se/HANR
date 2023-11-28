@@ -33,15 +33,19 @@ public class ClickCheck : MonoBehaviour
                     if (raycastHit.transform.CompareTag("Ground"))
                     {
                         playerMoving.setValue(true);
+                        playerAttacking.setValue(false);
+                        Debug.Log("ground");
                     }
                     if (raycastHit.transform.CompareTag("Enemy"))
                     {
+                        playerMoving.setValue(false);
                         playerAttacking.setValue(true);
+                        Debug.Log("enemy");
                     }
 
                     if (raycastHit.transform.CompareTag("Item"))
                     {
-                        // Filip, säg till nästa gång du vill ändra i script som någon jobbar i =)
+                        
                     }
                 }
             }
