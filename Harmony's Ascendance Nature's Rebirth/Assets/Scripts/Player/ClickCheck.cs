@@ -39,7 +39,7 @@ public class ClickCheck : MonoBehaviour
 
                     if (raycastHit.transform.CompareTag("Item"))
                     {
-                        
+                        // Filip, säg till nästa gång du vill ändra i script som någon jobbar i =)
                     }
                 }
             }
