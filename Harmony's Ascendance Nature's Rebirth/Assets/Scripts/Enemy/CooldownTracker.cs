@@ -7,10 +7,15 @@ namespace Enemy
 {
     public class CooldownTracker : MonoBehaviour
     {
-        public IntVariable enemyThrowAttackCooldown;
         public BoolVariable isEnemyThrowAttack;
         private float enemyThrowAttackCooldownValue = 10f;
         private bool timerStarted = false;
+        private Animator animator;
+
+        private void Start()
+        {
+            animator = this.gameObject.GetComponentInChildren<Animator>();
+        }
 
         private void Awake()
         {
@@ -45,6 +50,7 @@ namespace Enemy
             Debug.Log("Timer finished");
             timerStarted = false;
             isEnemyThrowAttack.setValue(false);
+            animator.SetBool("isRangedAttack",true);
         }
     }
 }

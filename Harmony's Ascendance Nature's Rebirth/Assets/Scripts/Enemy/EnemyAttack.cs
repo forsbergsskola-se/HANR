@@ -11,17 +11,19 @@ namespace Enemy
         public BoolVariable PlayerInEnemyRange;
         private GameObject enemyHand;
         private Animator animator;
+        private bool attackStarted;
+        private bool throwStarted;
         
         private void Awake()
         {
             PlayerInEnemyRange.ValueChanged.AddListener(startAttack);
-            isEnemyThrowAttack.ValueChanged.AddListener(ongoingAttack);
+            isEnemyThrowAttack.ValueChanged.AddListener(setThrowValue);
         }
         
         private void OnDestroy()
         {
             PlayerInEnemyRange.ValueChanged.RemoveListener(startAttack);
-            isEnemyThrowAttack.ValueChanged.RemoveListener(ongoingAttack);
+            isEnemyThrowAttack.ValueChanged.RemoveListener(setThrowValue);
 
         }
             
@@ -33,36 +35,34 @@ namespace Enemy
         
         private void startAttack(bool inRange)
         {
-            if (inRange)
+            if (inRange && ! attackStarted)
             {
+                Debug.Log("LED");
+                attackStarted = true;
                 animator.SetBool("isRangedAttack",true);
             }
-            else
+            else if(!inRange)
             {
                 animator.SetBool("isRangedAttack",false);
+                attackStarted = false;
             }
         }
-        
-        private void ongoingAttack(bool isAttack)
+
+        private void setThrowValue(bool throwVal)
         {
-            if (!isAttack)
-            {
-                animator.SetBool("isRangedAttack",true);
-            }
-            else
-            {
-                animator.SetBool("isRangedAttack",false);
-            }
+            throwStarted = throwVal;
         }
         
         public void throwAttack()
         {
-            Debug.Log(isEnemyThrowAttack.getValue());
-            if (isEnemyThrowAttack.getValue()  == false)
+            if (!throwStarted)
             {
                 Instantiate(rock, enemyHand.transform);
-                // isEnemyThrowAttack.setValue(true);
+                isEnemyThrowAttack.setValue(true);
+                animator.SetBool("isRangedAttack",false);
+                throwStarted = true;
             }
+            
         }
     }
 }

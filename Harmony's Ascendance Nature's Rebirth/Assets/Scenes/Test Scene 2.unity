@@ -882,6 +882,14 @@ PrefabInstance:
       propertyPath: attackRange
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6342173935298566472, guid: 746502fd00bd07448b4afcfa0b24cbc3, type: 3}
+      propertyPath: detectionRange
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6342173935298566472, guid: 746502fd00bd07448b4afcfa0b24cbc3, type: 3}
+      propertyPath: unDetectionRange
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7462943007307053544, guid: 746502fd00bd07448b4afcfa0b24cbc3, type: 3}
       propertyPath: PlayerInEnemyRange
       value: 
@@ -897,6 +905,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1067925524328404, guid: 746502fd00bd07448b4afcfa0b24cbc3, type: 3}
       insertIndex: 4
       addedObject: {fileID: 1709405541}
+    - targetCorrespondingSourceObject: {fileID: 1067925524328404, guid: 746502fd00bd07448b4afcfa0b24cbc3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1709405547}
   m_SourcePrefab: {fileID: 100100000, guid: 746502fd00bd07448b4afcfa0b24cbc3, type: 3}
 --- !u!1001 &864568199
 PrefabInstance:
@@ -2116,6 +2127,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1709405547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709405538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7761eaafda45dd889cc9cb43175740, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isEnemyThrowAttack: {fileID: 11400000, guid: 457bb4d8f369efa4aa3e1fd93b21c5c5, type: 2}
 --- !u!1 &1947690863
 GameObject:
   m_ObjectHideFlags: 0

@@ -48,10 +48,17 @@ public class EnemyMovement : MonoBehaviour
         {
             animator.SetBool("isMoving",true);
         }
-        else
+        else if(agent.velocity.magnitude <= walkSpeed/2)
         {
             animator.SetBool("isMoving", false);
         }
+        
+        if(agent.remainingDistance <= 3)
+        { 
+            Debug.Log(agent.remainingDistance);
+            agent.isStopped = true;
+        }
+        
         RotateToClick();
     }
 
