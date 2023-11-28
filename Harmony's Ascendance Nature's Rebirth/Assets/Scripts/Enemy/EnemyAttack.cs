@@ -1,6 +1,8 @@
 using System;
+using System.Collections;
 using CustomObjects;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace Enemy
 {
@@ -13,6 +15,7 @@ namespace Enemy
         private Animator animator;
         private bool attackStarted;
         private bool throwStarted;
+        private GameObject player;
         
         private void Awake()
         {
@@ -31,6 +34,7 @@ namespace Enemy
         {
             enemyHand = this.gameObject.GetComponentInChildren<EnemyHand>().gameObject;
             animator = this.gameObject.GetComponentInChildren<Animator>();
+            player = GameObject.FindWithTag("Player");
         }
         
         private void startAttack(bool inRange)
@@ -56,11 +60,20 @@ namespace Enemy
         {
             if (!throwStarted)
             {
-                Instantiate(rock, enemyHand.transform);
+                GameObject  rockInstance = Instantiate(rock,enemyHand.transform.position,  enemyHand.transform.rotation);
+                rockInstance.transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
+                // setRockMotion(rockInstance,  player.transform.position);
                 isEnemyThrowAttack.setValue(true);
                 animator.SetBool("isRangedAttack",false);
                 throwStarted = true;
+                Debug.Log("bla");
             }
+            
+        }
+
+        private void setRockMotion(GameObject rock,  Vector3 playerPos)
+        {
+            Vector3 rockDir = (-rock.transform.position + playerPos).normalized;
             
         }
     }
