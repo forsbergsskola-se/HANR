@@ -10,8 +10,8 @@ public class ClickCheck : MonoBehaviour
 {
     public BoolVariable playerMoving;
     public BoolVariable playerAttacking;
-    public PlayerMovement playerMovement;
-    public PlayerAttack playerAttack;
+    
+    
     public GameObject itemPickUp;
 
     private void Update()
