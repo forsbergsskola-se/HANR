@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Colliders
 {
-    public class RockCollider : MonoBehaviour
+    public class PlayerCollider : MonoBehaviour
     {
         private Animator animator;
         private static readonly int IsHitbyRock = Animator.StringToHash("isHitbyRock");
