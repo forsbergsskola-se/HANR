@@ -52,11 +52,17 @@ public class EnemyMovement : MonoBehaviour
         {
             animator.SetBool("isMoving", false);
         }
-        
-        if(agent.remainingDistance <= 3)
-        { 
-            Debug.Log(agent.remainingDistance);
-            agent.isStopped = true;
+
+        if (agent.hasPath)
+        {
+            if (agent.remainingDistance <= 8)
+            {
+                agent.isStopped = true;
+            }
+            else
+            {
+                agent.isStopped = false;
+            }
         }
         
         RotateToClick();

@@ -37,7 +37,6 @@ namespace Enemy
         {
             if (inRange && ! attackStarted)
             {
-                Debug.Log("LED");
                 attackStarted = true;
                 animator.SetBool("isRangedAttack",true);
             }

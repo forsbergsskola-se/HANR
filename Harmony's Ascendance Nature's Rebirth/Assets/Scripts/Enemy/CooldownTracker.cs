@@ -44,10 +44,7 @@ namespace Enemy
             {
                 yield return new WaitForSeconds(1f);
                 timer -= 1f;
-                Debug.Log("Time remaining: " + timer.ToString("0"));
             }
-            
-            Debug.Log("Timer finished");
             timerStarted = false;
             isEnemyThrowAttack.setValue(false);
             animator.SetBool("isRangedAttack",true);
