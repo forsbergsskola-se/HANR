@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using CustomObjects;
 using UnityEngine;
 
@@ -7,21 +8,43 @@ namespace Enemy
     public class CooldownTracker : MonoBehaviour
     {
         public IntVariable enemyThrowAttackCooldown;
-        private float enemyThrowAttackCooldownValue = 0f;
+        public BoolVariable isEnemyThrowAttack;
+        private float enemyThrowAttackCooldownValue = 10f;
+        private bool timerStarted = false;
 
         private void Awake()
         {
-            enemyThrowAttackCooldown.ValueChanged.AddListener(countdown);
+            isEnemyThrowAttack.ValueChanged.AddListener(countdown);
         }
         
         private void OnDestroy()
         {
-            enemyThrowAttackCooldown.ValueChanged.RemoveListener(countdown);
+            isEnemyThrowAttack.ValueChanged.RemoveListener(countdown);
         }
 
-        private void countdown(int cd)
+        private void countdown(bool isAttack)
         {
+            if (isAttack && !timerStarted)
+            {
+                StartCoroutine(Timer(enemyThrowAttackCooldownValue));
+            }
+        }
+
+        private IEnumerator Timer(float cooldownValue)
+        {
+            timerStarted = true;
+            float timer = cooldownValue;
             
+            while (timer > 0f)
+            {
+                yield return new WaitForSeconds(1f);
+                timer -= 1f;
+                Debug.Log("Time remaining: " + timer.ToString("0"));
+            }
+            
+            Debug.Log("Timer finished");
+            timerStarted = false;
+            isEnemyThrowAttack.setValue(false);
         }
     }
 }

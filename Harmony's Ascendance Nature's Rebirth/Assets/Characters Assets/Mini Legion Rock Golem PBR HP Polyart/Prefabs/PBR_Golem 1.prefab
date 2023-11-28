@@ -176,7 +176,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rock: {fileID: 1375754531036840, guid: 71497ec4178769a4c8cdb38563f01fc0, type: 3}
-  enemyThrowAttackCooldown: {fileID: 11400000, guid: 73141c12bd069744f8c6dcd67bf7060d, type: 2}
+  isEnemyThrowAttack: {fileID: 0}
+  PlayerInEnemyRange: {fileID: 0}
 --- !u!114 &6342173935298566472
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ namespace CustomObjects
     public class BoolVariable : ScriptableObject
     {
         public UnityEvent<bool> ValueChanged;
-        private bool value;
+        private bool value = false;
 
         public void setValue(bool newValue)
         {
