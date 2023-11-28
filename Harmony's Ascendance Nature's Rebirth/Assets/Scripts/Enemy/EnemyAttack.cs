@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using CustomObjects;
+using Player;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -15,7 +16,8 @@ namespace Enemy
         private Animator animator;
         private bool attackStarted;
         private bool throwStarted;
-        private GameObject player;
+        private GameObject playerHead;
+        private RockObjectPool rockObjectPool;
         
         private void Awake()
         {
@@ -34,7 +36,8 @@ namespace Enemy
         {
             enemyHand = this.gameObject.GetComponentInChildren<EnemyHand>().gameObject;
             animator = this.gameObject.GetComponentInChildren<Animator>();
-            player = GameObject.FindWithTag("Player");
+            playerHead = GameObject.FindWithTag("Player").GetComponentInChildren<PlayerHead>().gameObject;
+            rockObjectPool = this.gameObject.GetComponent<RockObjectPool>();
         }
         
         private void startAttack(bool inRange)
@@ -60,12 +63,17 @@ namespace Enemy
         {
             if (!throwStarted)
             {
-                Instantiate(rock,enemyHand.transform.position,  enemyHand.transform.rotation);
-                // setRockMotion(rockInstance,  player.transform.position);
-                isEnemyThrowAttack.setValue(true);
-                animator.SetBool("isRangedAttack",false);
-                throwStarted = true;
-                Debug.Log("bla");
+                GameObject rockInstance = rockObjectPool.GetPooledGameObject();
+                if (rockInstance != null)
+                {
+                    rockInstance.transform.position = enemyHand.transform.position;
+                    rockInstance.transform.rotation = enemyHand.transform.rotation;
+
+                    setRockMotion(rockInstance, playerHead.transform.position);
+                    isEnemyThrowAttack.setValue(true);
+                    animator.SetBool("isRangedAttack", false);
+                    throwStarted = true;
+                }
             }
             
         }
@@ -73,7 +81,9 @@ namespace Enemy
         private void setRockMotion(GameObject rock,  Vector3 playerPos)
         {
             Vector3 rockDir = (-rock.transform.position + playerPos).normalized;
+            Rigidbody rb = rock.GetComponent<Rigidbody>();
             
+            rb.AddForce(new Vector3(rockDir.x * 25f, rockDir.y*25f, rockDir.z*25f),ForceMode.Impulse);
         }
     }
 }
