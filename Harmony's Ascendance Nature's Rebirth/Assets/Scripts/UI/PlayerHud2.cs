@@ -71,5 +71,5 @@ public class PlayerHud2 : MonoBehaviour
     {
         levelText.text = value.ToString();
     }
-
+    
 }
