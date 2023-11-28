@@ -10,6 +10,7 @@ public class InventoryUI : MonoBehaviour
     
     public void Update()
     { 
-        this.imageComponent.sprite = FindObjectOfType<InventoryHolder>().inventory[0].itemIcon;
+        //I made the inventoryholder a list instead of an array 
+        this.imageComponent.sprite = FindObjectOfType<InventoryHolder>().Items[0].itemIcon;
     }
 }
