@@ -11,8 +11,8 @@ public class ItemPickUp : MonoBehaviour
         
     }
 
-    public PickUp(Item item)
+    /*public PickUp(Item item)
     {
         
-    }
+    }*/
 }
