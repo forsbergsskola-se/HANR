@@ -6,13 +6,14 @@ public class ItemPickUp : MonoBehaviour
 {
     public InventoryHolder inventoryHolder;
     public Item item;
-    void Start()
-    {
-        
-    }
 
-    /*public PickUp(Item item)
+    private void VicinityCheck()
     {
-        
-    }*/
+        //check if player is close enough for pickup
+    }
+    
+    public void PickUp(Item item)
+    {
+        //TODO add item to inventoryHolder List this item:)
+    }
 }
