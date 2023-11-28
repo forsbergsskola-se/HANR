@@ -12,6 +12,7 @@ public class ClickCheck : MonoBehaviour
     public RaycastHit rayHit;
     public PlayerMovement playerMovement;
     public PlayerAttack playerAttack;
+    public GameObject itemPickUp;
 
     private void Update()
     {
@@ -39,6 +40,11 @@ public class ClickCheck : MonoBehaviour
                         rayHit = raycastHit;
                         playerAttack = GetComponent<PlayerAttack>();
                         playerAttack.AttackEnemy(rayHit);
+                    }
+
+                    if (raycastHit.transform.CompareTag("Item"))
+                    {
+                        
                     }
                 }
             }
