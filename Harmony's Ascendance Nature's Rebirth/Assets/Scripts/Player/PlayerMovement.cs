@@ -57,7 +57,7 @@ namespace Player
 
         private void MoveToClick(bool playerMoving)
         {
-            if (playerMoving)
+            if (playerMoving && !animator.GetBool("isHitbyRock"))
             {
                 moveToPoint = targetPoint.GetValue(); 
                 
