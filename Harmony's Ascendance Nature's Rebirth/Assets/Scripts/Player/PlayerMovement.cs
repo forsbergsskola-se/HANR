@@ -1,4 +1,5 @@
 using System;
+using CustomObjects;
 using UnityEngine;
 using UnityEngine.AI;
 using Vector3 = UnityEngine.Vector3;
@@ -7,15 +8,25 @@ namespace Player
 {
     public class PlayerMovement : MonoBehaviour
     {
-        private Transform player;
+        public BoolVariable playerMoving;
+        public TargetPoint targetPoint;
+        
         private Quaternion toRotation;
-        private Vector3 mousePosition;
+        private Vector3 moveToPoint;
+        
         public NavMeshAgent agent;
+        public Animator animator;
+        
         [SerializeField] private float walkSpeed;
         [SerializeField] private float turnRate;
         [SerializeField] private ParticleSystem clickEffect;
         [SerializeField] private float clickEffectDuration = 1.0f;
-        public Animator animator;
+
+
+        private void Awake()
+        {
+            playerMoving.ValueChanged.AddListener(MoveToClick);
+        }
 
         private void Start()
         {
@@ -32,26 +43,28 @@ namespace Player
             {
                 animator.SetBool("isMoving", false);
             }
-            //MouseInput();
-            //RotateToClick();
         }
 
-        public void MoveToClick(RaycastHit raycastHit)
+        public void MoveToClick(bool playerMoving)
         {
-            agent.speed = walkSpeed;
-            agent.destination = raycastHit.point;
-            RotateToClick();
-            Debug.Log("Player Moving");
-            if (clickEffect != null)
+            if (playerMoving)
             {
-                ParticleSystem instantiatedEffect =  Instantiate(clickEffect, raycastHit.point += new Vector3(0, 0.3f, 0),
-                    clickEffect.transform.rotation);
-                Destroy(instantiatedEffect.gameObject, clickEffectDuration);
+                moveToPoint = targetPoint.GetValue(); 
+                
+                agent.speed = walkSpeed;
+                agent.destination = moveToPoint;
+                
+                if (clickEffect != null)
+                {
+                    ParticleSystem instantiatedEffect =  Instantiate(clickEffect, moveToPoint += new Vector3(0, 0.3f, 0),
+                        clickEffect.transform.rotation);
+                    Destroy(instantiatedEffect.gameObject, clickEffectDuration);
+                }
             }
         }
+        
         public void RotateToClick() //Can be put in MoveToClick method? TODO does not rotate properly
         {
-            Debug.Log("Rotating");
             if (agent.velocity.magnitude > 0.01f && agent.hasPath)
             {
                 Vector3 direction = agent.velocity.normalized;
@@ -64,33 +77,5 @@ namespace Player
                 transform.rotation = toRotation;
             }
         }
-        
-        
-        //Moved the raycast part to a new script, and movement to another method
-        /*private void MouseInput()
-        {
-            if (Input.GetKeyDown(KeyCode.Mouse1))
-            {
-                Debug.Log("M1");
-                if (Camera.main != null)
-                {
-                    Debug.Log("Yes Cam");
-                    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                    if (Physics.Raycast(ray, out RaycastHit raycastHit))
-                    {
-                        if (raycastHit.transform.CompareTag("Ground"))
-                        {
-                            agent.speed = walkSpeed;
-                            agent.destination = raycastHit.point;
-                            if (clickEffect != null)
-                            {
-                                ParticleSystem instantiatedEffect =  Instantiate(clickEffect, raycastHit.point += new Vector3(0, 0.3f, 0),
-                                    clickEffect.transform.rotation);
-                                Destroy(instantiatedEffect.gameObject, clickEffectDuration);
-                            }
-                        }
-                    }
-                }
-            }*/
     }
 }
