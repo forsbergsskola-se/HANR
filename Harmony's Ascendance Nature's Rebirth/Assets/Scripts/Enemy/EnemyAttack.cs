@@ -60,8 +60,7 @@ namespace Enemy
         {
             if (!throwStarted)
             {
-                GameObject  rockInstance = Instantiate(rock,enemyHand.transform.position,  enemyHand.transform.rotation);
-                rockInstance.transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
+                Instantiate(rock,enemyHand.transform.position,  enemyHand.transform.rotation);
                 // setRockMotion(rockInstance,  player.transform.position);
                 isEnemyThrowAttack.setValue(true);
                 animator.SetBool("isRangedAttack",false);
