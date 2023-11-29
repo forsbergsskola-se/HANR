@@ -136,7 +136,7 @@
 *.7z lfs-file
 *.gz lfs-file
 *.rar lfs-file
-*.tar lfs-file#
+*.tar lfs-file
 # Git attributes for Unity projects
 #
 # Compiled by the GameCI community under the MIT license - https://game.ci
