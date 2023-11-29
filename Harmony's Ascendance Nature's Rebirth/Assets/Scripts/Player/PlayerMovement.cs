@@ -21,7 +21,8 @@ namespace Player
         [SerializeField] private float turnRate;
         [SerializeField] private ParticleSystem clickEffect;
         [SerializeField] private float clickEffectDuration = 1.0f;
-
+        private ClickEffectPool clickEffectPool;
+        
 
         private void Awake()
         {
