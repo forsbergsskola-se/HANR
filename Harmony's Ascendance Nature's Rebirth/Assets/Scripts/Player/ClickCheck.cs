@@ -12,8 +12,6 @@ public class ClickCheck : MonoBehaviour
     public BoolVariable playerAttacking;
     public TargetPoint targetPoint;
     
-    //public GameObject itemPickUp;
-
     private void Update()
     {
         MouseInput();
@@ -37,14 +35,8 @@ public class ClickCheck : MonoBehaviour
                     }
                     if (raycastHit.transform.CompareTag("Enemy"))
                     {
-                        Debug.Log("Enemy");
                         playerMoving.setValue(false);
                         playerAttacking.setValue(true);
-                    }
-
-                    //if (raycastHit.transform.CompareTag("Item"))
-                    {
-                        
                     }
                 }
             }
