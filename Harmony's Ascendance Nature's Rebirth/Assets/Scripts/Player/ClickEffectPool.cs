@@ -7,12 +7,13 @@ namespace Player
     public class ClickEffectPool : MonoBehaviour
     {
         public GameObject clickEffect;
-        public int size;
+        public int size = 5;
 
         private List<GameObject> effectPool;
 
         private void Start()
         {
+            effectPool = new List<GameObject>();
             SetUpPool();
         }
 

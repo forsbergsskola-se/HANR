@@ -19,11 +19,10 @@ namespace Player
         
         [SerializeField] private float walkSpeed;
         [SerializeField] private float turnRate;
-        //[SerializeField] private ParticleSystem clickEffect;
-        //[SerializeField] private float clickEffectDuration = 1.0f;
-        private ClickEffectPool clickEffectPool;
         [SerializeField] private GameObject pooledEffect;
-
+        private ClickEffectPool clickEffectPool;
+        
+        
         private void Awake()
         {
             playerMoving.ValueChanged.AddListener(MoveToClick);
@@ -37,6 +36,7 @@ namespace Player
         private void Start()
         {
             agent.speed = walkSpeed;
+            clickEffectPool = this.gameObject.GetComponent<ClickEffectPool>();
         }
 
         private void Update()
@@ -65,18 +65,12 @@ namespace Player
                 agent.speed = walkSpeed;
                 agent.destination = moveToPoint;
                 
+                
                 GameObject effectInstance = clickEffectPool.GetPooledEffects();
                 if (effectInstance != null)
                 {
                     effectInstance.transform.position = moveToPoint += new Vector3(0,0.3f,0);
                 }
-
-                /*if (clickEffect != null)
-                {
-                    ParticleSystem instantiatedEffect =  Instantiate(clickEffect, moveToPoint += new Vector3(0, 0.3f, 0),
-                        clickEffect.transform.rotation);
-                    Destroy(instantiatedEffect.gameObject, clickEffectDuration);
-                }*/
             }
         }
         

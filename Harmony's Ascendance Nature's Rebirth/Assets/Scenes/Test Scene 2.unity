@@ -1126,7 +1126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clickEffect: {fileID: 7941266285869916736, guid: e7643c446931441d28f1e7591bec741a, type: 3}
-  size: 5
+  size: 10
 --- !u!1001 &1031716460
 PrefabInstance:
   m_ObjectHideFlags: 0
