@@ -1113,6 +1113,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c9dd511907447b0852823e0f1b9a89b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &957999541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957999527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8650d12b4abc49da9017ebd4b4a8e582, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickEffect: {fileID: 7941266285869916736, guid: e7643c446931441d28f1e7591bec741a, type: 3}
+  size: 5
 --- !u!1001 &1031716460
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2041,6 +2055,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Druid
       objectReference: {fileID: 0}
+    - target: {fileID: 5265996358206854213, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
+      propertyPath: pooledEffect
+      value: 
+      objectReference: {fileID: 7941266285869916736, guid: e7643c446931441d28f1e7591bec741a, type: 3}
     - target: {fileID: 8190942676431520944, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
       propertyPath: cameraObject
       value: 
@@ -2052,6 +2070,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1777774259798216206, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 957999539}
+    - targetCorrespondingSourceObject: {fileID: 1777774259798216206, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 957999541}
     - targetCorrespondingSourceObject: {fileID: 5386309733313023562, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1256849377}

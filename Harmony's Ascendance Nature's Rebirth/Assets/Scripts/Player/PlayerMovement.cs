@@ -19,8 +19,8 @@ namespace Player
         
         [SerializeField] private float walkSpeed;
         [SerializeField] private float turnRate;
-        [SerializeField] private ParticleSystem clickEffect;
-        [SerializeField] private float clickEffectDuration = 1.0f;
+        //[SerializeField] private ParticleSystem clickEffect;
+        //[SerializeField] private float clickEffectDuration = 1.0f;
         private ClickEffectPool clickEffectPool;
         [SerializeField] private GameObject pooledEffect;
 
@@ -68,7 +68,7 @@ namespace Player
                 GameObject effectInstance = clickEffectPool.GetPooledEffects();
                 if (effectInstance != null)
                 {
-                    effectInstance.transform.position = moveToPoint;
+                    effectInstance.transform.position = moveToPoint += new Vector3(0,0.3f,0);
                 }
 
                 /*if (clickEffect != null)
