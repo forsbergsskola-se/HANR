@@ -9,6 +9,7 @@ namespace Player
     public class PlayerMovement : MonoBehaviour
     {
         public BoolVariable playerMoving;
+        public BoolVariable playerAttacking;
         public TargetPoint targetPoint;
         
         private Quaternion toRotation;
@@ -44,9 +45,9 @@ namespace Player
             RotateToClick();
         }
 
-        void LateUpdate()
+        void LateUpdate() 
         {
-            if (agent.velocity.magnitude > walkSpeed/2)
+            if (agent.velocity.magnitude > walkSpeed/2 && !playerAttacking)
             {
                 animator.SetBool("isMoving",true);
             }
@@ -58,7 +59,7 @@ namespace Player
 
         private void MoveToClick(bool playerMoving)
         {
-            if (playerMoving && !animator.GetBool("isHitbyRock"))
+            if (playerMoving && !animator.GetBool("isHitbyRock")) 
             {
                 moveToPoint = targetPoint.GetValue(); 
                 

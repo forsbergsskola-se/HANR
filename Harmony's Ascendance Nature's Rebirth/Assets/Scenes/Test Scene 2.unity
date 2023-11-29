@@ -812,7 +812,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4408297863206454, guid: 746502fd00bd07448b4afcfa0b24cbc3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 647.3852
+      value: 623.4
       objectReference: {fileID: 0}
     - target: {fileID: 4408297863206454, guid: 746502fd00bd07448b4afcfa0b24cbc3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -820,7 +820,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4408297863206454, guid: 746502fd00bd07448b4afcfa0b24cbc3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 652.61
+      value: 676.27
       objectReference: {fileID: 0}
     - target: {fileID: 4408297863206454, guid: 746502fd00bd07448b4afcfa0b24cbc3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1127,6 +1127,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clickEffect: {fileID: 7941266285869916736, guid: e7643c446931441d28f1e7591bec741a, type: 3}
   size: 30
+--- !u!95 &957999547 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2771500659704570704, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
+  m_PrefabInstance: {fileID: 4700136660243371431}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1031716460
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2013,7 +2018,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1432211655959991476, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 644.47546
+      value: 655.03
       objectReference: {fileID: 0}
     - target: {fileID: 1432211655959991476, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2021,7 +2026,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1432211655959991476, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 681.3056
+      value: 674.88
       objectReference: {fileID: 0}
     - target: {fileID: 1432211655959991476, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2059,6 +2064,18 @@ PrefabInstance:
       propertyPath: pooledEffect
       value: 
       objectReference: {fileID: 7941266285869916736, guid: e7643c446931441d28f1e7591bec741a, type: 3}
+    - target: {fileID: 5265996358206854213, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
+      propertyPath: playerAttacking
+      value: 
+      objectReference: {fileID: 11400000, guid: a8dd6e26d47fc42a0a68afca719bb62d, type: 2}
+    - target: {fileID: 5904134507221357143, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 957999547}
+    - target: {fileID: 5904134507221357143, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
+      propertyPath: isDefaultAttack
+      value: 
+      objectReference: {fileID: 11400000, guid: c3a3018c9fda74660b26fd9525a85cc9, type: 2}
     - target: {fileID: 8190942676431520944, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
       propertyPath: cameraObject
       value: 

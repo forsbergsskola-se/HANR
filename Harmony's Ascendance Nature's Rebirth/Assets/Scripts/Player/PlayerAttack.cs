@@ -10,8 +10,8 @@ public class PlayerAttack : MonoBehaviour
     public BoolVariable playerAttacking;
     public BoolVariable isDefaultAttack;
     public TargetPoint targetPoint;
-    public Animator animator;
-
+    
+    private Animator animator;
     private bool isAttacking;
     private Vector3 enemyPosition;
     
@@ -37,11 +37,13 @@ public class PlayerAttack : MonoBehaviour
         }
     }
     
-    private void DefaultAttack(bool isPlayerDefaultAttack)
+    private void DefaultAttack(bool isDefaultAttack)
     {
-        if (isPlayerDefaultAttack && !isAttacking)
+        if (isDefaultAttack && !isAttacking)
         {
+            Debug.Log("Spell cast");
             
+            playerAttacking.setValue(false);
         }
     }
 
