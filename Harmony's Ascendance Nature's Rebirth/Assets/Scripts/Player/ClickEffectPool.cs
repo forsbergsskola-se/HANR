@@ -25,19 +25,20 @@ namespace Player
                 effectPool.Add(effect);
             }
         }
-    }
-    /*
-    public GameObject GetPooledGameObject()
-    {
-        foreach(GameObject obj in effectPool)
-        {
-            if (!obj.activeInHierarchy)
-            {
-                obj.SetActive(true);
-                return obj;
-            }
-        }
 
-        return null;
-    } */
+        public GameObject GetPooledEffects()
+        {
+            foreach (GameObject effect in effectPool)
+            {
+                if (!effect.activeInHierarchy)
+                {
+                    effect.SetActive(true);
+                    return effect;
+                }
+            }
+            return null;
+        }
+        
+        
+    }
 }

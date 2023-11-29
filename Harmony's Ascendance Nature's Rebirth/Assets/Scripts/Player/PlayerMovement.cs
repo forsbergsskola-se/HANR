@@ -22,7 +22,7 @@ namespace Player
         [SerializeField] private ParticleSystem clickEffect;
         [SerializeField] private float clickEffectDuration = 1.0f;
         private ClickEffectPool clickEffectPool;
-        
+        [SerializeField] private GameObject pooledEffect;
 
         private void Awake()
         {
@@ -65,12 +65,18 @@ namespace Player
                 agent.speed = walkSpeed;
                 agent.destination = moveToPoint;
                 
-                if (clickEffect != null)
+                GameObject effectInstance = clickEffectPool.GetPooledEffects();
+                if (effectInstance != null)
+                {
+                    effectInstance.transform.position = moveToPoint;
+                }
+
+                /*if (clickEffect != null)
                 {
                     ParticleSystem instantiatedEffect =  Instantiate(clickEffect, moveToPoint += new Vector3(0, 0.3f, 0),
                         clickEffect.transform.rotation);
                     Destroy(instantiatedEffect.gameObject, clickEffectDuration);
-                }
+                }*/
             }
         }
         
