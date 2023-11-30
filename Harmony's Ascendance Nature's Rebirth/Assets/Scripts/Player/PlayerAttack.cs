@@ -74,9 +74,9 @@ public class PlayerAttack : MonoBehaviour
             }
 
             StartCoroutine(DefaultCooldown());
-            playerAttacking.setValue(false);
-            //animator.ResetTrigger("isDefaultAttack");
         }
+        playerAttacking.setValue(false);
+        //animator.ResetTrigger("isDefaultAttack");
     }
 
     private void FaceEnemy()
