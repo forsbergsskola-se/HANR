@@ -12,7 +12,7 @@ namespace Objects
 
         private IEnumerator ReturnEffect(GameObject effect)
         {
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(2.5f);
             effect.SetActive(false);
         }
     }
