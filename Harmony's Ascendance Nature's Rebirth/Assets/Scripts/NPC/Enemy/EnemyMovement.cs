@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using CustomObjects;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -80,6 +81,8 @@ public class EnemyMovement : MonoBehaviour
             agent.destination = orginalEnemyPosition;
         }
     }
+
+
     
     void RotateToClick()
     {
@@ -93,7 +96,14 @@ public class EnemyMovement : MonoBehaviour
 
         if (agent.velocity == Vector3.zero && !playerInEnemyRange.getValue())
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, orginalEnemyrotation, Time.fixedDeltaTime*turnRate);
+            transform.rotation = Quaternion.Slerp(transform.rotation, player.transform.rotation, Time.fixedDeltaTime*turnRate);
+        }
+        if (agent.velocity == Vector3.zero && playerInEnemyRange.getValue())
+        {
+            Vector3 direction = (player.transform.position - agent.transform.position).normalized;
+            direction.y = 0;
+            Quaternion toRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, Time.fixedDeltaTime*turnRate);
         }
     }
     
