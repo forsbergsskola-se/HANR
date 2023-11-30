@@ -49,12 +49,25 @@ namespace Colliders
             else if (other.gameObject.CompareTag("GolemHand"))
             {
                 Health.setValue(Mathf.Max(Health.getValue() - combatStatEnemyBoss.normalAttackDamage,0f));
+                animator.SetBool("isHit", true);
             } 
             else if (other.gameObject.CompareTag("Sting"))
             {
                 Health.setValue(Mathf.Max(Health.getValue() - combatStatEnemyCritter.normalAttackDamage,0f));
+                animator.SetBool("isHit", true);
             }
         }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.gameObject.CompareTag("GolemHand"))
+            {
+                animator.SetBool("isHit", false);
+            } 
+            else if (other.gameObject.CompareTag("Sting"))
+            {
+                animator.SetBool("isHit", false);
+            }        }
 
         private IEnumerator playerStandUp(Collider other)
         {

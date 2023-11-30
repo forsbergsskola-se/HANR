@@ -922,8 +922,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInRange: {fileID: 11400000, guid: dd6ecffd096df8d43b1d0b5927fccb56, type: 2}
   playerInAttackRange: {fileID: 11400000, guid: c786d175ead9ec44286fbe6576b453c0, type: 2}
-  detectionRange: 2
-  unDetectionRange: 2
+  detectionRange: 10
+  unDetectionRange: 15
   attackRange: 1
 --- !u!195 &8730859116703967382
 NavMeshAgent:
