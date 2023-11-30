@@ -12,6 +12,7 @@ namespace Colliders
         private static readonly int IsHitbyRock = Animator.StringToHash("isHitbyRock");
         public FloatVariable Health;
         public CombatStatEnemyBoss combatStatEnemyBoss;
+        public CombatStatEnemyCritter combatStatEnemyCritter;
 
         private void Start()
         {
@@ -30,7 +31,13 @@ namespace Colliders
             else if (other.gameObject.CompareTag("GolemHand"))
             {
                 Health.setValue(Mathf.Max(Health.getValue() - combatStatEnemyBoss.normalAttackDamage,0f));
+            } 
+            else if (other.gameObject.CompareTag("Sting"))
+            {
+                Health.setValue(Mathf.Max(Health.getValue() - combatStatEnemyCritter.normalAttackDamage,0f));
             }
+            
+            Debug.Log("Health: "+Health.getValue());
         }
 
         private IEnumerator playerStandUp(Collider other)

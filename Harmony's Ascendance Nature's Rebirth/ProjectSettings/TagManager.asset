@@ -12,6 +12,7 @@ TagManager:
   - Item
   - Rock
   - GolemHand
+  - Sting
   layers:
   - Default
   - TransparentFX
