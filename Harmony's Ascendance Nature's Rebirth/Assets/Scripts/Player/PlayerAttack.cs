@@ -33,6 +33,17 @@ public class PlayerAttack : MonoBehaviour
         if (playerAttacking)
         {
             // run checks on what weapon currently equipped
+            // are any spells active?
+            // Start corresponding attack;
+            
+            // face target (method) 
+            // animate attack
+            // get effect from pool
+            // on hit, attack decreases mana and deals damage to enemy
+            // Start a cooldown
+            // playerAttacking = false
+            
+            
             isDefaultAttack.setValue(true);
         }
     }
