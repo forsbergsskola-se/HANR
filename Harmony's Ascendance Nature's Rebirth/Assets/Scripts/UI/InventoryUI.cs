@@ -15,23 +15,29 @@ public class InventoryUI : MonoBehaviour
     public Image slotThree;
     public Image slotFour;
     public Image slotFive;
-
+    public GameObject player;
+    
     public void Awake()
     {
-        GetComponent<InventoryHolder>().pickUp.AddListener(UpdateInventoryHUD);
+        player.GetComponent<InventoryHolder>().pickUp.AddListener(UpdateInventoryHUD);
     }
 
     public void OnDestroy()
     {
-        GetComponent<InventoryHolder>().pickUp.RemoveListener(UpdateInventoryHUD);
+        player.GetComponent<InventoryHolder>().pickUp.RemoveListener(UpdateInventoryHUD);
     }
 
     void UpdateInventoryHUD()
-    {
+    {   
         this.slotOne.sprite = FindObjectOfType<InventoryHolder>().Items[0].itemIcon;
+        this.gameObject.GetComponentInChildren<ItemSlotSprite>().gameObject.GetComponent<Image>().sprite = slotOne.sprite;
+        
         this.slotTwo.sprite = FindObjectOfType<InventoryHolder>().Items[1].itemIcon;
+        
         this.slotThree.sprite = FindObjectOfType<InventoryHolder>().Items[2].itemIcon;
+        
         this.slotFour.sprite = FindObjectOfType<InventoryHolder>().Items[3].itemIcon;
+        
         this.slotFive.sprite = FindObjectOfType<InventoryHolder>().Items[4].itemIcon;
     }
 }
