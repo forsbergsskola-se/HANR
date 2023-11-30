@@ -5,18 +5,12 @@ namespace Colliders
 {
     public class RockCollider : MonoBehaviour
     {
-        private void OnCollisionEnter(Collision other)
+        private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag("Ground"))
             {
-                StartCoroutine(disableRockObject(this.gameObject));
+                this.gameObject.SetActive(false);
             } 
-        }
-
-        private IEnumerator disableRockObject(GameObject go)
-        {
-            yield return new WaitForSeconds(0.5f);
-            go.SetActive(false);
         }
     }
 }

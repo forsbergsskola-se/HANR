@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465788, g: 0.49641287, b: 0.5748173, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1472,6 +1472,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 1088256926929212, guid: 746502fd00bd07448b4afcfa0b24cbc3, type: 3}
+      propertyPath: m_TagString
+      value: GolemHand
+      objectReference: {fileID: 0}
     - target: {fileID: 1620575693851942, guid: 746502fd00bd07448b4afcfa0b24cbc3, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1616,6 +1620,10 @@ PrefabInstance:
       propertyPath: unDetectionRange
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 6913790307776320614, guid: 746502fd00bd07448b4afcfa0b24cbc3, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7462943007307053544, guid: 746502fd00bd07448b4afcfa0b24cbc3, type: 3}
       propertyPath: PlayerInEnemyRange
       value: 
@@ -1630,6 +1638,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: a1327ebfafbb0ae4cb285095666b73cf, type: 2}
     m_RemovedComponents:
     - {fileID: 4210073667286652898, guid: 746502fd00bd07448b4afcfa0b24cbc3, type: 3}
+    - {fileID: 6135375759980382597, guid: 746502fd00bd07448b4afcfa0b24cbc3, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1822,6 +1831,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c9dd511907447b0852823e0f1b9a89b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Health: {fileID: 11400000, guid: 65f80b9a019bad14fbdeec9b15d45e25, type: 2}
+  combatStatEnemyBoss: {fileID: 11400000, guid: d05046bcdcf768240a50de5ceba89958, type: 2}
 --- !u!114 &957999541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1855,6 +1866,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   daEffect: {fileID: 7327833567272167989, guid: 96787b1aff3174eccba241162b21953f, type: 3}
   size: 3
+--- !u!114 &957999566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957999527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71184e9254ca4b869ffe379d63336cb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: {fileID: 11400000, guid: 65f80b9a019bad14fbdeec9b15d45e25, type: 2}
 --- !u!1001 &1057300949
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3367,7 +3391,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1148492969681756226, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1432211655959991476, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3470,6 +3494,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1777774259798216206, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 957999556}
+    - targetCorrespondingSourceObject: {fileID: 1777774259798216206, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 957999566}
   m_SourcePrefab: {fileID: 100100000, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

@@ -71,6 +71,9 @@ namespace Player
                 {
                     effectInstance.transform.position = moveToPoint += new Vector3(0,0.3f,0);
                 }
+            } else if (animator.GetBool("isHitbyRock"))
+            {
+                agent.velocity = new Vector3(0f,0f,0f);
             }
         }
         

@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a05ad46ded4c2f940bdb0785f11372, type: 3}
   m_Name: CombatStatEnemyBoss
   m_EditorClassIdentifier: 
-  rockAttackDamage: 0
-  normalAttackDamage: 0
+  rockAttackDamage: 20
+  normalAttackDamage: 5
+  normalAttackSpeed: 0
+  rockAttackCooldown: 10

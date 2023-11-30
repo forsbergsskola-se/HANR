@@ -11,28 +11,31 @@ namespace Colliders
         private Animator animator;
         private static readonly int IsHitbyRock = Animator.StringToHash("isHitbyRock");
         public FloatVariable Health;
-        private RockStat rockStat;
+        public CombatStatEnemyBoss combatStatEnemyBoss;
 
         private void Start()
         {
             animator = this.gameObject.GetComponent<Animator>();
-            rockStat = this.gameObject.GetComponent<RockStat>();
         }
 
-        private void OnCollisionEnter(Collision other)
+        private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag("Rock"))
             {
                 animator.SetBool(IsHitbyRock, true);
-                Health.setValue(Mathf.Max(Health.getValue() - rockStat.attackDamage,0f));
+                Health.setValue(Mathf.Max(Health.getValue() - combatStatEnemyBoss.rockAttackDamage,0f));
+                other.gameObject.SetActive(false);
                 StartCoroutine(playerStandUp(other));
             } 
+            else if (other.gameObject.CompareTag("GolemHand"))
+            {
+                Health.setValue(Mathf.Max(Health.getValue() - combatStatEnemyBoss.normalAttackDamage,0f));
+            }
         }
 
-        private IEnumerator playerStandUp(Collision other)
+        private IEnumerator playerStandUp(Collider other)
         {
             yield return new WaitForSeconds(1);
-            other.gameObject.SetActive(false);
             animator.SetBool(IsHitbyRock,false);
         }
     }
