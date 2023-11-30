@@ -20,7 +20,6 @@ namespace Player
         
         [SerializeField] private float walkSpeed;
         [SerializeField] private float turnRate;
-        [SerializeField] private GameObject pooledEffect;
         private ClickEffectPool clickEffectPool;
         
         

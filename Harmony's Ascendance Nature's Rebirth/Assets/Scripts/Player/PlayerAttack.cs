@@ -70,7 +70,7 @@ public class PlayerAttack : MonoBehaviour
             if (effectInstance != null)
             {
                 enemyToAttack = targetPoint.GetValue();
-                effectInstance.transform.position = enemyToAttack += new Vector3(0,0.3f,0);
+                effectInstance.transform.position = enemyToAttack; //+= new Vector3(0,3f,0);
             }
             
             playerAttacking.setValue(false);
