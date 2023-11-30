@@ -1,5 +1,7 @@
 using System;
 using System.Collections;
+using CustomObjects;
+using Enemy.BossEnemy;
 using UnityEngine;
 
 namespace Colliders
@@ -8,10 +10,13 @@ namespace Colliders
     {
         private Animator animator;
         private static readonly int IsHitbyRock = Animator.StringToHash("isHitbyRock");
+        public FloatVariable Health;
+        private RockStat rockStat;
 
         private void Start()
         {
             animator = this.gameObject.GetComponent<Animator>();
+            rockStat = this.gameObject.GetComponent<RockStat>();
         }
 
         private void OnCollisionEnter(Collision other)
@@ -19,6 +24,7 @@ namespace Colliders
             if (other.gameObject.CompareTag("Rock"))
             {
                 animator.SetBool(IsHitbyRock, true);
+                Health.setValue(Mathf.Max(Health.getValue() - rockStat.attackDamage,0f));
                 StartCoroutine(playerStandUp(other));
             } 
         }

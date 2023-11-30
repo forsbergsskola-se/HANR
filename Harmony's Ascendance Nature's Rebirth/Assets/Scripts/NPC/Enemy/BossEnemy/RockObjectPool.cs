@@ -8,7 +8,6 @@ namespace Enemy.BossEnemy
     {
         public GameObject pooledObject;
         public int size = 3;
-
         private List<GameObject> objectpool = new List<GameObject>();
 
         private void Start()

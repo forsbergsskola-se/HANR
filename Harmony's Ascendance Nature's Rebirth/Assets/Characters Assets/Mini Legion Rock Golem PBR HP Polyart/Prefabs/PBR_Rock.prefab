@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -3223884873266537253}
   - component: {fileID: 6761148421030032213}
   - component: {fileID: 3485327745336086898}
+  - component: {fileID: 2317236361009076228}
   m_Layer: 0
   m_Name: PBR_Rock
   m_TagString: Rock
@@ -168,3 +169,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d9b773edc544e0ebcca627d54cce1c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2317236361009076228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375754531036840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47d116d059df48dda7af798b9ce0f534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 0

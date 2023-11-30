@@ -18,6 +18,7 @@ namespace Enemy.BossEnemy
         private bool throwStarted;
         private GameObject playerHead;
         private RockObjectPool rockObjectPool;
+        public CombatStatEnemyBoss combatStatEnemyBoss;
         
         private void Awake()
         {
@@ -87,15 +88,15 @@ namespace Enemy.BossEnemy
 
         private void setRockMotion(GameObject rock,  Vector3 playerPos)
         {
+            RockStat stat = rock.GetComponent<RockStat>();
+            stat.attackDamage = combatStatEnemyBoss.rockAttackDamage;
             Vector3 rockDir = (-rock.transform.position + playerPos);
             Rigidbody rb = rock.GetComponent<Rigidbody>();
             float height = Mathf.Abs(rockDir.y);
             float Vx = rockDir.x * Mathf.Sqrt(-Physics.gravity.y / (2 * height));
             float Vz = rockDir.z * Mathf.Sqrt(-Physics.gravity.y / (2 * height));
-            
-
             rb.velocity = new Vector3(Vx*2f, 0, Vz*2f);
-
+            
             // rb.AddForce(new Vector3(rockDir.x * 25f, rockDir.y*25f, rockDir.z*25f),ForceMode.Impulse);
         }
     }
