@@ -779,6 +779,7 @@ GameObject:
   - component: {fileID: 7884196411097942242}
   - component: {fileID: 8730859116703967382}
   - component: {fileID: 708855549961432572}
+  - component: {fileID: 5165886364362356947}
   m_Layer: 8
   m_Name: Polygonal Metalon Purple
   m_TagString: Enemy
@@ -960,6 +961,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerInAttackRange: {fileID: 11400000, guid: dd6ecffd096df8d43b1d0b5927fccb56, type: 2}
   animator: {fileID: 95980759410839360}
+--- !u!114 &5165886364362356947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462720695320296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da80b7d48cb0447f9edc79c9f16be3bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1486048802852170
 GameObject:
   m_ObjectHideFlags: 0
@@ -1759,7 +1772,7 @@ Transform:
   m_GameObject: {fileID: 7415832483367483122}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.408, y: 0.066, z: 0}
+  m_LocalPosition: {x: -1.5046, y: -0.0079, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
