@@ -28,16 +28,20 @@ public class InventoryUI : MonoBehaviour
     }
 
     void UpdateInventoryHUD()
-    {   
+    {
         this.slotOne.sprite = FindObjectOfType<InventoryHolder>().Items[0].itemIcon;
         this.gameObject.GetComponentInChildren<ItemSlotSprite>().gameObject.GetComponent<Image>().sprite = slotOne.sprite;
-        
+            
         this.slotTwo.sprite = FindObjectOfType<InventoryHolder>().Items[1].itemIcon;
-        
+        this.gameObject.GetComponentInChildren<ItemSlotSprite>().gameObject.GetComponent<Image>().sprite = slotTwo.sprite;
+            
         this.slotThree.sprite = FindObjectOfType<InventoryHolder>().Items[2].itemIcon;
-        
-        this.slotFour.sprite = FindObjectOfType<InventoryHolder>().Items[3].itemIcon;
-        
+        this.gameObject.GetComponentInChildren<ItemSlotSprite>().gameObject.GetComponent<Image>().sprite = slotThree.sprite;
+            
+        this.slotFour.sprite = FindObjectOfType<InventoryHolder>().Items[3].itemIcon; 
+        this.gameObject.GetComponentInChildren<ItemSlotSprite>().gameObject.GetComponent<Image>().sprite = slotFour.sprite; 
+            
         this.slotFive.sprite = FindObjectOfType<InventoryHolder>().Items[4].itemIcon;
+        this.gameObject.GetComponentInChildren<ItemSlotSprite>().gameObject.GetComponent<Image>().sprite = slotFive.sprite;
     }
 }

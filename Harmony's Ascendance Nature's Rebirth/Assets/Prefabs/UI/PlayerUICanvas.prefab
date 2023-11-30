@@ -1647,10 +1647,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotOne: {fileID: 5502655165412255350}
-  slotTwo: {fileID: 0}
-  slotThree: {fileID: 0}
-  slotFour: {fileID: 0}
-  slotFive: {fileID: 0}
+  slotTwo: {fileID: 1438269354020243484}
+  slotThree: {fileID: 3839944946127465601}
+  slotFour: {fileID: 4932871272276696455}
+  slotFive: {fileID: 1261171342251223922}
+  player: {fileID: 0}
 --- !u!1 &4549485811959078552
 GameObject:
   m_ObjectHideFlags: 0
@@ -2931,6 +2932,10 @@ PrefabInstance:
       propertyPath: rolloverSound
       value: 
       objectReference: {fileID: 8300000, guid: 300e2a6fb66204ac1871593e17e2cb9f, type: 3}
+    - target: {fileID: 3693942875806532000, guid: cbf7d255620604218bcfe237db3bdf97, type: 3}
+      propertyPath: m_Name
+      value: IconSlotThree
+      objectReference: {fileID: 0}
     - target: {fileID: 3693942875806532002, guid: cbf7d255620604218bcfe237db3bdf97, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -2993,6 +2998,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3693942874955430988, guid: cbf7d255620604218bcfe237db3bdf97, type: 3}
   m_PrefabInstance: {fileID: 435086560882552099}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3839944946127465601 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3693942875806532002, guid: cbf7d255620604218bcfe237db3bdf97, type: 3}
+  m_PrefabInstance: {fileID: 435086560882552099}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1292169328281923282
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3571,6 +3587,10 @@ PrefabInstance:
       propertyPath: rolloverSound
       value: 
       objectReference: {fileID: 8300000, guid: 300e2a6fb66204ac1871593e17e2cb9f, type: 3}
+    - target: {fileID: 3693942875806532000, guid: cbf7d255620604218bcfe237db3bdf97, type: 3}
+      propertyPath: m_Name
+      value: IconSlotTwo
+      objectReference: {fileID: 0}
     - target: {fileID: 3693942875806532002, guid: cbf7d255620604218bcfe237db3bdf97, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -3633,6 +3653,17 @@ MonoBehaviour:
   popupPrefab: {fileID: 5150627185264409809, guid: cde31ceba8f644543b5864302296dd63, type: 3}
   iconSprite: {fileID: 21300000, guid: aea068523a8b94c49ab6202381b7a105, type: 3}
   iconText: Arcane Defender
+--- !u!114 &1438269354020243484 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3693942875806532002, guid: cbf7d255620604218bcfe237db3bdf97, type: 3}
+  m_PrefabInstance: {fileID: 2357149666677459390}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2504865463914326736
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3757,6 +3788,10 @@ PrefabInstance:
       propertyPath: rolloverSound
       value: 
       objectReference: {fileID: 8300000, guid: 300e2a6fb66204ac1871593e17e2cb9f, type: 3}
+    - target: {fileID: 3693942875806532000, guid: cbf7d255620604218bcfe237db3bdf97, type: 3}
+      propertyPath: m_Name
+      value: IconSlotFive
+      objectReference: {fileID: 0}
     - target: {fileID: 3693942875806532002, guid: cbf7d255620604218bcfe237db3bdf97, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -3819,6 +3854,17 @@ MonoBehaviour:
   popupPrefab: {fileID: 5150627185264409809, guid: cde31ceba8f644543b5864302296dd63, type: 3}
   iconSprite: {fileID: 21300000, guid: aea068523a8b94c49ab6202381b7a105, type: 3}
   iconText: Arcane Defender
+--- !u!114 &1261171342251223922 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3693942875806532002, guid: cbf7d255620604218bcfe237db3bdf97, type: 3}
+  m_PrefabInstance: {fileID: 2504865463914326736}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4349868243909815342
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4869,6 +4915,10 @@ PrefabInstance:
       propertyPath: rolloverSound
       value: 
       objectReference: {fileID: 8300000, guid: 300e2a6fb66204ac1871593e17e2cb9f, type: 3}
+    - target: {fileID: 3693942875806532000, guid: cbf7d255620604218bcfe237db3bdf97, type: 3}
+      propertyPath: m_Name
+      value: IconSlotFour
+      objectReference: {fileID: 0}
     - target: {fileID: 3693942875806532002, guid: cbf7d255620604218bcfe237db3bdf97, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -4931,3 +4981,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3693942874955430988, guid: cbf7d255620604218bcfe237db3bdf97, type: 3}
   m_PrefabInstance: {fileID: 8590212974730320933}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4932871272276696455 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3693942875806532002, guid: cbf7d255620604218bcfe237db3bdf97, type: 3}
+  m_PrefabInstance: {fileID: 8590212974730320933}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
