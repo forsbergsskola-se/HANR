@@ -425,14 +425,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMoving: {fileID: 11400000, guid: ac6cfe3da22a341db9d2eceaf518767d, type: 2}
-  playerAttacking: {fileID: 0}
+  playerAttacking: {fileID: 11400000, guid: a8dd6e26d47fc42a0a68afca719bb62d, type: 2}
   targetPoint: {fileID: 11400000, guid: a0ccd26fe714d47fab8f178ae244bf97, type: 2}
-  effectUsed: {fileID: 0}
   agent: {fileID: 6198532406364277013}
   animator: {fileID: 2771500659704570704}
   walkSpeed: 8
   turnRate: 20
-  pooledEffect: {fileID: 0}
 --- !u!195 &6198532406364277013
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -563,14 +561,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1777774259798216206}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3eb7504fca7fbeb4db951fa8955f81c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerAttacking: {fileID: 11400000, guid: a8dd6e26d47fc42a0a68afca719bb62d, type: 2}
-  isDefaultAttack: {fileID: 0}
+  isDefaultAttack: {fileID: 11400000, guid: c3a3018c9fda74660b26fd9525a85cc9, type: 2}
   targetPoint: {fileID: 11400000, guid: a0ccd26fe714d47fab8f178ae244bf97, type: 2}
+  animator: {fileID: 2771500659704570704}
 --- !u!114 &1442139110311222097
 MonoBehaviour:
   m_ObjectHideFlags: 0
