@@ -27,7 +27,7 @@ namespace Colliders
 
         private IEnumerator playerStandUp(Collision other)
         {
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(1);
             other.gameObject.SetActive(false);
             animator.SetBool(IsHitbyRock,false);
         }

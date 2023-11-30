@@ -15,7 +15,7 @@ namespace Colliders
 
         private IEnumerator disableRockObject(GameObject go)
         {
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(0.5f);
             go.SetActive(false);
         }
     }
