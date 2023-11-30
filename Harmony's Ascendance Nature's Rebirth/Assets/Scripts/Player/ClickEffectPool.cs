@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using CustomObjects;
 using UnityEngine;
 
 namespace Player
@@ -8,8 +10,20 @@ namespace Player
     {
         public GameObject clickEffect;
         public int size = 5;
+        public BoolVariable EffectUsed;
 
         private List<GameObject> effectPool;
+        private bool timerActive;
+
+        private void Awake()
+        {
+            //EffectUsed.ValueChanged.AddListener();
+        }
+
+        private void OnDestroy()
+        {
+            //EffectUsed.ValueChanged.RemoveListener();
+        }
 
         private void Start()
         {
@@ -40,6 +54,24 @@ namespace Player
             return null;
         }
         
+        public void ReturnToPool(GameObject effect)
+        {
+            effect.SetActive(false);
+        }
         
+        
+        private IEnumerator Timer(float Value)
+        {
+            timerActive = true;
+            float timer = Value;
+            
+            while (timer > 0f)
+            {
+                yield return new WaitForSeconds(1f);
+                timer -= 1f;
+            }
+            timerActive = false;
+            EffectUsed.setValue(false);
+        }
     }
 }
