@@ -4,6 +4,7 @@ using CustomObjects;
 using Player;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.VFX;
 
 namespace Enemy
 {
@@ -88,10 +89,16 @@ namespace Enemy
 
         private void setRockMotion(GameObject rock,  Vector3 playerPos)
         {
-            Vector3 rockDir = (-rock.transform.position + playerPos).normalized;
+            Vector3 rockDir = (-rock.transform.position + playerPos);
             Rigidbody rb = rock.GetComponent<Rigidbody>();
+            float height = Mathf.Abs(rockDir.y);
+            float Vx = rockDir.x * Mathf.Sqrt(-Physics.gravity.y / (2 * height));
+            float Vz = rockDir.z * Mathf.Sqrt(-Physics.gravity.y / (2 * height));
             
-            rb.AddForce(new Vector3(rockDir.x * 25f, rockDir.y*25f, rockDir.z*25f),ForceMode.Impulse);
+
+            rb.velocity = new Vector3(Vx*2f, 0, Vz*2f);
+
+            // rb.AddForce(new Vector3(rockDir.x * 25f, rockDir.y*25f, rockDir.z*25f),ForceMode.Impulse);
         }
     }
 }
