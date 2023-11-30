@@ -14,6 +14,7 @@ public class EnemyMovement : MonoBehaviour
     public BoolVariable playerInEnemyRange;
     [SerializeField] private float walkSpeed;
     [SerializeField] private float turnRate;
+    [SerializeField] private float distanceFromPlayer;
     public Animator animator;
 
     
@@ -54,7 +55,7 @@ public class EnemyMovement : MonoBehaviour
 
         if (agent.hasPath)
         {
-            if (agent.remainingDistance <= 6)
+            if (agent.remainingDistance <= distanceFromPlayer)
             {
                 agent.isStopped = true;
             }
