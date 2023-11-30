@@ -1810,17 +1810,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1777774259798216206, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
   m_PrefabInstance: {fileID: 4700136660243371431}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &957999538 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1442139110311222097, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
-  m_PrefabInstance: {fileID: 4700136660243371431}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 957999527}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e55803dae5c5ba47a7e2f298090b676, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &957999539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1847,7 +1836,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clickEffect: {fileID: 7941266285869916736, guid: e7643c446931441d28f1e7591bec741a, type: 3}
   size: 30
-  effectUsed: {fileID: 11400000, guid: 1ad07bbd171b44438a551e075930cb06, type: 2}
 --- !u!95 &957999547 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 2771500659704570704, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
@@ -2370,7 +2358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 378580bde16354a4e9799b4f71656f34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryHolder: {fileID: 957999538}
+  item: {fileID: 0}
 --- !u!1001 &1314920227
 PrefabInstance:
   m_ObjectHideFlags: 0
