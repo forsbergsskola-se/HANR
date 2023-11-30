@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Enemy
+namespace BossEnemy
 {
     public class EnemyMeeleAttackHand : MonoBehaviour
     {

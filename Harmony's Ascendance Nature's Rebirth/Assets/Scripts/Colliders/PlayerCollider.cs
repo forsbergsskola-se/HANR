@@ -1,7 +1,5 @@
 using System;
 using System.Collections;
-using Enemy;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Colliders

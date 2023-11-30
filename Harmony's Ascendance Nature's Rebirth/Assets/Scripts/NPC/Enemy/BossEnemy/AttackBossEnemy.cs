@@ -3,12 +3,10 @@ using System.Collections;
 using CustomObjects;
 using Player;
 using UnityEngine;
-using UnityEngine.AI;
-using UnityEngine.VFX;
 
-namespace Enemy
+namespace BossEnemy
 {
-    public class EnemyAttack : MonoBehaviour
+    public class EnemyAttackBossEnemy : MonoBehaviour
     {
         [SerializeField] private GameObject rock;
         public BoolVariable isEnemyThrowAttack;
@@ -43,7 +41,7 @@ namespace Enemy
             
         private void Start()
         {
-            enemyHand = this.gameObject.GetComponentInChildren<EnemyHand>().gameObject;
+            enemyHand = this.gameObject.GetComponentInChildren<HandBossEnemy>().gameObject;
             animator = this.gameObject.GetComponentInChildren<Animator>();
             playerHead = GameObject.FindWithTag("Player").GetComponentInChildren<PlayerHead>().gameObject;
             rockObjectPool = this.gameObject.GetComponent<RockObjectPool>();

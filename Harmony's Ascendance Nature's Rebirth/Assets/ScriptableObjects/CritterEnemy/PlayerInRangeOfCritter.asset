@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fc6a6c102724aad8b4d109c5ce412df, type: 3}
-  m_Name: EnemyThrowAttackCooldown
+  m_Script: {fileID: 11500000, guid: 54399742913342a48287330e8946074a, type: 3}
+  m_Name: PlayerInRangeOfCritter
   m_EditorClassIdentifier: 
   ValueChanged:
     m_PersistentCalls:

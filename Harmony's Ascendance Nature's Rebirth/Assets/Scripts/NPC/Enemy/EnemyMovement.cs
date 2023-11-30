@@ -10,7 +10,7 @@ public class EnemyMovement : MonoBehaviour
     private GameObject player;
     private Vector3 orginalEnemyPosition;
     private Quaternion orginalEnemyrotation;
-    [SerializeField] private NavMeshAgent agent;
+    private NavMeshAgent agent;
     public BoolVariable playerInEnemyRange;
     [SerializeField] private float walkSpeed;
     [SerializeField] private float turnRate;
@@ -23,6 +23,12 @@ public class EnemyMovement : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         orginalEnemyPosition = this.gameObject.transform.position;
         orginalEnemyrotation = this.transform.rotation;
+        agent = this.gameObject.GetComponent<NavMeshAgent>();
+        if (!agent)
+        {
+            agent = this.gameObject.GetComponentInChildren<NavMeshAgent>();
+        }
+        
     }
 
     private void Awake()

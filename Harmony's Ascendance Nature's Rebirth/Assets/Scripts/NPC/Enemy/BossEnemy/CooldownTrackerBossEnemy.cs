@@ -3,9 +3,9 @@ using System.Collections;
 using CustomObjects;
 using UnityEngine;
 
-namespace Enemy
+namespace BossEnemy
 {
-    public class CooldownTracker : MonoBehaviour
+    public class CooldownTrackerBossEnemy : MonoBehaviour
     {
         public BoolVariable isEnemyThrowAttack;
         private float enemyThrowAttackCooldownValue = 10f;

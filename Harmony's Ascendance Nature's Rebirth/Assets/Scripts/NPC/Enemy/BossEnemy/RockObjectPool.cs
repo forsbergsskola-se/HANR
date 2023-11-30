@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Enemy
+namespace BossEnemy
 {
     public class RockObjectPool : MonoBehaviour
     {
