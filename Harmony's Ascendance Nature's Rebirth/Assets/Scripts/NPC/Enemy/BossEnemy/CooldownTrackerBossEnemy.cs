@@ -3,7 +3,7 @@ using System.Collections;
 using CustomObjects;
 using UnityEngine;
 
-namespace BossEnemy
+namespace Enemy.BossEnemy
 {
     public class CooldownTrackerBossEnemy : MonoBehaviour
     {

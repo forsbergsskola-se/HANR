@@ -4,7 +4,7 @@ using CustomObjects;
 using Player;
 using UnityEngine;
 
-namespace BossEnemy
+namespace Enemy.BossEnemy
 {
     public class EnemyAttackBossEnemy : MonoBehaviour
     {
