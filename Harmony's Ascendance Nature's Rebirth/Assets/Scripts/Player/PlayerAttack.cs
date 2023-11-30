@@ -5,6 +5,7 @@ using CustomObjects;
 using Player;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Animations;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -16,7 +17,6 @@ public class PlayerAttack : MonoBehaviour
     
     private NavMeshAgent agent;
     private Quaternion toRotation;
-    private bool isAttacking;
     private Vector3 enemyToAttack;
     private DefaultAttackPool daAttackPool;
     
@@ -46,13 +46,13 @@ public class PlayerAttack : MonoBehaviour
             // are any spells active?
             // Start corresponding attack;
             
-            // face target (method) 
-            // animate attack
-            // get effect from pool
-            // on hit, attack decreases mana and deals damage to enemy
-            // Start a cooldown
+            // Default Attack uses the ClickCheck and identifies the enemy clicked on.
+            // face target (method) TODO. I'm not sure how to achieve this.
+            // animate attack (Activates with trigger)
+            // get effect from pool (This pool, like click effect, is in the player)
+            // on hit, attack decreases mana and deals damage to enemy. TODO: Awaiting UI updates.
+            // Start a cooldown (has a rudimentary cooldown)
             // playerAttacking = false
-            
             
             isDefaultAttack.setValue(true);
         }
@@ -60,26 +60,33 @@ public class PlayerAttack : MonoBehaviour
     
     private void DefaultAttack(bool isDefaultAttack)
     {
-        //animator.ResetTrigger("isDefaultAttack");
-        if (isDefaultAttack && !isAttacking)
+        if (isDefaultAttack)
         {
             FaceEnemy();
             animator.SetTrigger("isDefaultAttack");
+            this.isDefaultAttack.setValue(false);
             
             GameObject effectInstance = daAttackPool.GetPooledEffects();
             if (effectInstance != null)
             {
                 enemyToAttack = targetPoint.GetValue();
-                effectInstance.transform.position = enemyToAttack; //+= new Vector3(0,3f,0);
+                effectInstance.transform.position = enemyToAttack;
             }
-            
+
+            StartCoroutine(DefaultCooldown());
             playerAttacking.setValue(false);
+            //animator.ResetTrigger("isDefaultAttack");
         }
     }
 
     private void FaceEnemy()
     {
         Debug.Log("Should rotate towards enemy");
+    }
+
+    private IEnumerator DefaultCooldown()
+    {
+        yield return new WaitForSeconds(4f);
     }
 
 }
