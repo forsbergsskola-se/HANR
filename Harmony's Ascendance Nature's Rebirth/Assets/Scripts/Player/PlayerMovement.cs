@@ -11,6 +11,7 @@ namespace Player
         public BoolVariable playerMoving;
         public BoolVariable playerAttacking;
         public TargetPoint targetPoint;
+        public BoolVariable EffectUsed;
         
         private Quaternion toRotation;
         private Vector3 moveToPoint;
@@ -71,6 +72,7 @@ namespace Player
                 if (effectInstance != null)
                 {
                     effectInstance.transform.position = moveToPoint += new Vector3(0,0.3f,0);
+                    EffectUsed.setValue(true);
                 }
             }
         }
