@@ -14,6 +14,24 @@ namespace Colliders
         public CombatStatEnemyBoss combatStatEnemyBoss;
         public CombatStatEnemyCritter combatStatEnemyCritter;
 
+        private void Awake()
+        {
+            Health.ValueChanged.AddListener(IsDead);
+        }
+
+        private void OnDestroy()
+        {
+            Health.ValueChanged.RemoveListener(IsDead);
+        }
+
+        private void IsDead(float health)
+        {
+            if (health == 0f)
+            {
+                animator.SetBool("isDead", true);
+            }
+        }
+
         private void Start()
         {
             animator = this.gameObject.GetComponent<Animator>();
@@ -36,8 +54,6 @@ namespace Colliders
             {
                 Health.setValue(Mathf.Max(Health.getValue() - combatStatEnemyCritter.normalAttackDamage,0f));
             }
-            
-            Debug.Log("Health: "+Health.getValue());
         }
 
         private IEnumerator playerStandUp(Collider other)

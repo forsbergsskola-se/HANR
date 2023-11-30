@@ -780,7 +780,6 @@ GameObject:
   - component: {fileID: 8730859116703967382}
   - component: {fileID: 5869592412783799954}
   - component: {fileID: 708855549961432572}
-  - component: {fileID: 3054892566836868740}
   m_Layer: 8
   m_Name: Polygonal Metalon Purple
   m_TagString: Enemy
@@ -923,8 +922,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInRange: {fileID: 11400000, guid: dd6ecffd096df8d43b1d0b5927fccb56, type: 2}
   playerInAttackRange: {fileID: 11400000, guid: c786d175ead9ec44286fbe6576b453c0, type: 2}
-  detectionRange: 100
-  unDetectionRange: 100
+  detectionRange: 2
+  unDetectionRange: 2
   attackRange: 1
 --- !u!195 &8730859116703967382
 NavMeshAgent:
@@ -979,23 +978,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerInAttackRange: {fileID: 11400000, guid: dd6ecffd096df8d43b1d0b5927fccb56, type: 2}
   animator: {fileID: 95980759410839360}
---- !u!114 &3054892566836868740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1462720695320296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39a562caf34b4ebba2493a72871479f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerInRange: {fileID: 11400000, guid: dd6ecffd096df8d43b1d0b5927fccb56, type: 2}
-  playerInAttackRange: {fileID: 11400000, guid: c786d175ead9ec44286fbe6576b453c0, type: 2}
-  detectionRange: 100
-  unDetectionRange: 100
-  attackRange: 1
 --- !u!1 &1486048802852170
 GameObject:
   m_ObjectHideFlags: 0

@@ -46,14 +46,23 @@ namespace Player
 
         void LateUpdate() 
         {
-            if (agent.velocity.magnitude > walkSpeed/2)
+            if (agent.hasPath)
             {
-                animator.SetBool("isMoving",true);
+                if (agent.velocity.magnitude > 0)
+                {
+                    animator.SetBool("isMoving",true);
+                    animator.SetBool("isInAttackRange",false);
+                }
+                else
+                {
+                    animator.SetBool("isMoving", false);
+                }
             }
             else
             {
                 animator.SetBool("isMoving", false);
             }
+            
         }
 
         private void MoveToClick(bool playerMoving)
