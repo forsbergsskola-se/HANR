@@ -10,19 +10,21 @@ namespace Player
     {
         public GameObject clickEffect;
         public int size = 5;
-        public BoolVariable EffectUsed;
+        public BoolVariable effectUsed;
 
         private List<GameObject> effectPool;
         private bool timerActive;
+        private bool isReturning;
+        private float timerValue = 5f;
 
         private void Awake()
         {
-            //EffectUsed.ValueChanged.AddListener();
+            effectUsed.ValueChanged.AddListener(StartReturnToPool);
         }
 
         private void OnDestroy()
         {
-            //EffectUsed.ValueChanged.RemoveListener();
+            effectUsed.ValueChanged.RemoveListener(StartReturnToPool);
         }
 
         private void Start()
@@ -53,25 +55,31 @@ namespace Player
             }
             return null;
         }
+
+        private void StartReturnToPool(bool effectUsed)
+        {
+            StartCoroutine(Timer(timerValue));
+            ReturnToPool(clickEffect);
+            isReturning = false;
+        }
         
-        public void ReturnToPool(GameObject effect)
+        private void ReturnToPool(GameObject effect)
         {
             effect.SetActive(false);
         }
         
         
-        private IEnumerator Timer(float Value)
+        private IEnumerator Timer(float value)
         {
-            timerActive = true;
-            float timer = Value;
+            isReturning = true;
+            float timer = value;
             
             while (timer > 0f)
             {
                 yield return new WaitForSeconds(1f);
                 timer -= 1f;
             }
-            timerActive = false;
-            EffectUsed.setValue(false);
+            effectUsed.setValue(false);
         }
     }
 }

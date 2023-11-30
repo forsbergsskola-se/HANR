@@ -1847,6 +1847,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clickEffect: {fileID: 7941266285869916736, guid: e7643c446931441d28f1e7591bec741a, type: 3}
   size: 30
+  effectUsed: {fileID: 11400000, guid: 1ad07bbd171b44438a551e075930cb06, type: 2}
 --- !u!95 &957999547 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 2771500659704570704, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
@@ -3422,6 +3423,14 @@ PrefabInstance:
       propertyPath: walkSpeed
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 5265996358206854213, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
+      propertyPath: EffectUsed
+      value: 
+      objectReference: {fileID: 11400000, guid: 1ad07bbd171b44438a551e075930cb06, type: 2}
+    - target: {fileID: 5265996358206854213, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
+      propertyPath: effectUsed
+      value: 
+      objectReference: {fileID: 11400000, guid: 1ad07bbd171b44438a551e075930cb06, type: 2}
     - target: {fileID: 5265996358206854213, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
       propertyPath: pooledEffect
       value: 
