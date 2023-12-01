@@ -19,7 +19,7 @@ public class PlayerAttack : MonoBehaviour
     private Quaternion toRotation;
 
     private GameObject weaponEquipped;
-    private GameObject enemyHead;
+    private GameObject enemyHead; // Don't know know to find this?
     private bool attackStarted;
     private bool projectileAway;
 
@@ -45,8 +45,8 @@ public class PlayerAttack : MonoBehaviour
     private void Start()
     {
         daAttackPool = this.gameObject.GetComponent<DefaultAttackPool>();
-        weaponEquipped = gameObject.GetComponent<WeaponEquipped>().gameObject;
-        enemyHead = gameObject.GetComponent<EnemyHead>().gameObject;
+        weaponEquipped = gameObject.GetComponentInChildren<WeaponEquipped>().gameObject;
+        //enemyHead = gameObject.GetComponent<EnemyHead>().gameObject;
         animator = gameObject.GetComponentInChildren<Animator>();
     }
 
@@ -55,9 +55,6 @@ public class PlayerAttack : MonoBehaviour
         if (playerAttacking)
         {
             attackStarted = true;
-            
-            
-
             isDefaultAttack.setValue(true);
         }
     }
@@ -83,15 +80,17 @@ public class PlayerAttack : MonoBehaviour
         }
     }
     
-    [ContextMenu("Test Shoot")] 
     private void ShootProjectile(GameObject projectile, Vector3 enemyPos)
     {
-        Vector3 direction = (projectile.transform.position - enemyPos);
-        Rigidbody rb = projectile.GetComponent<Rigidbody>();
-        float height = Mathf.Abs(direction.y);
-        float Vx = direction.x * Mathf.Sqrt(-Physics.gravity.y / (2 * height));
-        float Vz = direction.z * Mathf.Sqrt(-Physics.gravity.y / (2 * height));
-        rb.velocity = new Vector3(Vx*2f, 0, Vz*2f);
+        if (!projectileAway)
+        {
+            Vector3 direction = (projectile.transform.position - enemyPos);
+            Rigidbody rb = projectile.GetComponent<Rigidbody>();
+            float height = Mathf.Abs(direction.y);
+            float Vx = direction.x * Mathf.Sqrt(-Physics.gravity.y / (2 * height));
+            float Vz = direction.z * Mathf.Sqrt(-Physics.gravity.y / (2 * height));
+            rb.velocity = new Vector3(Vx*2f, 0, Vz*2f); 
+        }
     }
     
     /*

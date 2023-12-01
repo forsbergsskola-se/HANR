@@ -48,21 +48,21 @@ namespace Player
         {
             
            if (agent.hasPath)
-            {
-                if (agent.velocity.magnitude > 0)
-                {
-                    animator.SetBool("isMoving",true);
-                    animator.SetBool("isInAttackRange",false);
-                }
-                else
-                {
-                    animator.SetBool("isMoving", false);
-                }
-            }
-            else
-            {
-                animator.SetBool("isMoving", false);
-            }
+           {
+               if (agent.velocity.magnitude > 0)
+               {
+                   animator.SetBool("isMoving",true);
+                   //animator.SetBool("isInAttackRange",false);
+               }
+               else
+               {
+                   animator.SetBool("isMoving", false);
+               }
+           }
+           else
+           {
+               animator.SetBool("isMoving", false);
+           }
             
         }
 
