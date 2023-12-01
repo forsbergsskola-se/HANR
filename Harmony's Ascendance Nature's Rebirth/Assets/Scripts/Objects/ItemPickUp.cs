@@ -19,13 +19,13 @@ public class ItemPickUp : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.G) && Inside)
         {
-            Debug.Log("Pickup");
             
             //Adds item Pickup
             PickUp();
             
             Destroy(gameObject);
-          
+            Debug.Log("Pickup");
+
         }
     }
     
