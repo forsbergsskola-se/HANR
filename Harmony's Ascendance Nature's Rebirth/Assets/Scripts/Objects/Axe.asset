@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba1d90fcaf19006488a05c6c68f1a30e, type: 3}
-  m_Name: PotionGreen
+  m_Name: Axe
   m_EditorClassIdentifier: 
-  itemID: 4
-  itemIcon: {fileID: 21300000, guid: 010b74f81261142838263dc875eaa0ac, type: 3}
+  itemID: Axe
+  itemIcon: {fileID: 21300000, guid: 95b430be2a398430bbe3a1ff2c7d2d7a, type: 3}
