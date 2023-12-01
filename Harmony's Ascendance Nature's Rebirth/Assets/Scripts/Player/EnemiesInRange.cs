@@ -7,7 +7,7 @@ namespace Player
     public class EnemiesInRange : MonoBehaviour
     {
 
-        public BoolVariable EnemyInRange;
+        public BoolVariable enemyInRange;
         private Vector3 enemyPos;
         private GameObject enemy;
         [SerializeField] private float detectionRange;
@@ -31,11 +31,12 @@ namespace Player
             
             if (distance <= detectionRange)
             {
-                EnemyInRange.setValue(true);
+                enemyInRange.setValue(true);
+                Debug.Log("Enemy in range!");
             }
             else
             {
-                EnemyInRange.setValue(false);
+                enemyInRange.setValue(false);
             }
         }
     }

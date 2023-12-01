@@ -9,7 +9,7 @@ using UnityEngine.Animations;
 
 public class PlayerAttack : MonoBehaviour
 {
-    //public BoolVariable playerMoving;
+    public BoolVariable enemyInRange;
     public BoolVariable playerAttacking;
     public BoolVariable isDefaultAttack;
     public TargetPoint targetPoint;
@@ -17,6 +17,10 @@ public class PlayerAttack : MonoBehaviour
     
     private NavMeshAgent agent;
     private Quaternion toRotation;
+    
+    private GameObject weaponEquipped;
+    private GameObject enemyHead;
+    
     private Vector3 enemyToAttack;
     private DefaultAttackPool daAttackPool;
     
@@ -25,17 +29,22 @@ public class PlayerAttack : MonoBehaviour
     {
         playerAttacking.ValueChanged.AddListener(InitiateAttack);
         isDefaultAttack.ValueChanged.AddListener(DefaultAttack);
+        //enemyInRange.ValueChanged.AddListener();
+        
     }
 
     private void OnDestroy()
     {
         playerAttacking.ValueChanged.RemoveListener(InitiateAttack);
         isDefaultAttack.ValueChanged.RemoveListener(DefaultAttack);
+        //enemyInRange.ValueChanged.RemoveListener();
     }
 
     private void Start()
     {
         daAttackPool = this.gameObject.GetComponent<DefaultAttackPool>();
+        weaponEquipped = gameObject.GetComponent<WeaponEquipped>().gameObject;
+        enemyHead = gameObject.GetComponent<EnemyHead>().gameObject;
     }
 
     private void InitiateAttack(bool playerAttacking)
