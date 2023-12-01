@@ -32,6 +32,7 @@ namespace Player
             if (distance <= detectionRange)
             {
                 enemyInRange.setValue(true);
+                Debug.Log("Enemy in range!");
             }
             else
             {

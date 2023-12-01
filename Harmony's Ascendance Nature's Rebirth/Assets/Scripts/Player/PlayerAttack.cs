@@ -17,6 +17,10 @@ public class PlayerAttack : MonoBehaviour
     
     private NavMeshAgent agent;
     private Quaternion toRotation;
+    
+    private GameObject weaponEquipped;
+    private GameObject enemyHead;
+    
     private Vector3 enemyToAttack;
     private DefaultAttackPool daAttackPool;
     
@@ -39,6 +43,8 @@ public class PlayerAttack : MonoBehaviour
     private void Start()
     {
         daAttackPool = this.gameObject.GetComponent<DefaultAttackPool>();
+        weaponEquipped = gameObject.GetComponent<WeaponEquipped>().gameObject;
+        enemyHead = gameObject.GetComponent<EnemyHead>().gameObject;
     }
 
     private void InitiateAttack(bool playerAttacking)
