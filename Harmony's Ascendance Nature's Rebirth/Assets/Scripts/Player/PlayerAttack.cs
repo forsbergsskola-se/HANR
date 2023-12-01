@@ -9,7 +9,7 @@ using UnityEngine.Animations;
 
 public class PlayerAttack : MonoBehaviour
 {
-    //public BoolVariable playerMoving;
+    public BoolVariable enemyInRange;
     public BoolVariable playerAttacking;
     public BoolVariable isDefaultAttack;
     public TargetPoint targetPoint;
@@ -25,12 +25,15 @@ public class PlayerAttack : MonoBehaviour
     {
         playerAttacking.ValueChanged.AddListener(InitiateAttack);
         isDefaultAttack.ValueChanged.AddListener(DefaultAttack);
+        //enemyInRange.ValueChanged.AddListener();
+        
     }
 
     private void OnDestroy()
     {
         playerAttacking.ValueChanged.RemoveListener(InitiateAttack);
         isDefaultAttack.ValueChanged.RemoveListener(DefaultAttack);
+        //enemyInRange.ValueChanged.RemoveListener();
     }
 
     private void Start()
