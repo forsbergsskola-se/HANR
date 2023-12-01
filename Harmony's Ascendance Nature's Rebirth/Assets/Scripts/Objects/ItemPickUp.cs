@@ -23,7 +23,6 @@ public class ItemPickUp : MonoBehaviour
             //Adds item Pickup
             PickUp();
             
-            Destroy(gameObject);
             Debug.Log("Pickup");
 
         }
@@ -52,6 +51,8 @@ public class ItemPickUp : MonoBehaviour
     {
         inventoryHolder.Items.Add(item);
         inventoryHolder.pickUp.Invoke();
+        Destroy(gameObject);
+        Debug.Log("event invoked");
     }
 
 }
