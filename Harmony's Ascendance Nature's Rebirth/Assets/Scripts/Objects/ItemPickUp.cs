@@ -8,7 +8,9 @@ public class ItemPickUp : MonoBehaviour
 {
     private InventoryHolder inventoryHolder;
     public Item item;
+    public Item defaultItem;
     private bool Inside;
+    
     
     private void Start()
     {
@@ -49,10 +51,19 @@ public class ItemPickUp : MonoBehaviour
     
     public void PickUp()
     {
-        inventoryHolder.Items.Add(item);
+        for(int i = 0; i < 5; i++)
+        {
+            if(inventoryHolder.Items[i] == defaultItem)
+            {
+                inventoryHolder.Items[i] = item;
+                break;
+            }
+        }
+        
         inventoryHolder.pickUp.Invoke();
         Destroy(gameObject);
         Debug.Log("event invoked");
+        
     }
 
 }

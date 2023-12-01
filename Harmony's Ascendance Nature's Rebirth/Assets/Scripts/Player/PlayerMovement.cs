@@ -47,7 +47,7 @@ namespace Player
         void LateUpdate() 
         {
             
-            if (agent.hasPath)
+           if (agent.hasPath)
             {
                 if (agent.velocity.magnitude > 0)
                 {
