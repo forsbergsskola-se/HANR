@@ -14,19 +14,25 @@ public class PlayerAttack : MonoBehaviour
     public BoolVariable isDefaultAttack;
     public TargetPoint targetPoint;
     public Animator animator;
-    
+
     private NavMeshAgent agent;
     private Quaternion toRotation;
+
+    private GameObject weaponEquipped;
+    private GameObject enemyHead; // Don't know know to find this?
+    private bool attackStarted;
+    private bool projectileAway;
+
     private Vector3 enemyToAttack;
     private DefaultAttackPool daAttackPool;
-    
-    
+
+
     private void Awake()
     {
         playerAttacking.ValueChanged.AddListener(InitiateAttack);
         isDefaultAttack.ValueChanged.AddListener(DefaultAttack);
         //enemyInRange.ValueChanged.AddListener();
-        
+
     }
 
     private void OnDestroy()
@@ -39,28 +45,55 @@ public class PlayerAttack : MonoBehaviour
     private void Start()
     {
         daAttackPool = this.gameObject.GetComponent<DefaultAttackPool>();
+        weaponEquipped = gameObject.GetComponentInChildren<WeaponEquipped>().gameObject;
+        //enemyHead = gameObject.GetComponent<EnemyHead>().gameObject;
+        animator = gameObject.GetComponentInChildren<Animator>();
     }
 
     private void InitiateAttack(bool playerAttacking)
     {
         if (playerAttacking)
         {
-            // run checks on what weapon currently equipped
-            // are any spells active?
-            // Start corresponding attack;
-            
-            // Default Attack uses the ClickCheck and identifies the enemy clicked on.
-            // face target (method) TODO. I'm not sure how to achieve this.
-            // animate attack (Activates with trigger)
-            // get effect from pool (This pool, like click effect, is in the player)
-            // on hit, attack decreases mana and deals damage to enemy. TODO: Awaiting UI updates.
-            // Start a cooldown (has a rudimentary cooldown)
-            // playerAttacking = false
-            
+            attackStarted = true;
             isDefaultAttack.setValue(true);
         }
     }
+
+    private void DefaultAttack(bool isDefaultAttack)
+    {
+        if (isDefaultAttack && attackStarted)
+        {
+            FaceEnemy();
+            enemyToAttack = targetPoint.GetValue();
+            GameObject projectileInstance = daAttackPool.GetPooledEffects();
+            if (projectileInstance != null)
+            {
+                projectileInstance.transform.position = weaponEquipped.transform.position;
+                projectileInstance.transform.rotation = weaponEquipped.transform.rotation;
+                
+                projectileAway = true;
+                ShootProjectile(projectileInstance, enemyToAttack);
+            }
+            StartCoroutine(DefaultCooldown());
+            attackStarted = false;
+            projectileAway = false;
+        }
+    }
     
+    private void ShootProjectile(GameObject projectile, Vector3 enemyPos)
+    {
+        if (!projectileAway)
+        {
+            Vector3 direction = (projectile.transform.position - enemyPos);
+            Rigidbody rb = projectile.GetComponent<Rigidbody>();
+            float height = Mathf.Abs(direction.y);
+            float Vx = direction.x * Mathf.Sqrt(-Physics.gravity.y / (2 * height));
+            float Vz = direction.z * Mathf.Sqrt(-Physics.gravity.y / (2 * height));
+            rb.velocity = new Vector3(Vx*2f, 0, Vz*2f); 
+        }
+    }
+    
+    /*
     private void DefaultAttack(bool isDefaultAttack)
     {
         if (isDefaultAttack)
@@ -79,7 +112,7 @@ public class PlayerAttack : MonoBehaviour
             StartCoroutine(DefaultCooldown());
         }
         playerAttacking.setValue(false);
-    }
+    }*/
 
     private void FaceEnemy()
     {
@@ -88,7 +121,7 @@ public class PlayerAttack : MonoBehaviour
 
     private IEnumerator DefaultCooldown()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(2f);
     }
 
 }
