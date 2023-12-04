@@ -41,7 +41,6 @@ public class InventoryUI : MonoBehaviour
 
     void UpdateInventoryHUD()
     {
-        Debug.Log("we called");
         for (int i = 0; i < 5; i++)
         {
             if (inventoryHolder.Items[i] != defaultImage && slots[i].sprite == defaultImage.itemIcon)
