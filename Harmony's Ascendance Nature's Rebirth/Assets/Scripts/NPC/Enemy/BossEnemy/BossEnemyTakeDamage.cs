@@ -5,7 +5,7 @@ namespace Enemy.BossEnemy
 {
     public class BossEnemyTakeDamage : MonoBehaviour
     {
-        public FloatVariable bossEnemyHealth;
+        public FloatVariable enemyHealth;
         
     }
 }

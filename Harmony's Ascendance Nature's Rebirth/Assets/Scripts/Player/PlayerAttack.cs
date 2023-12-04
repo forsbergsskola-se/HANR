@@ -74,6 +74,7 @@ public class PlayerAttack : MonoBehaviour
     private void Start()
     {
         daAttackPool = this.gameObject.GetComponent<DefaultAttackPool>();
+        weaponEquipped = gameObject.GetComponentInChildren<WeaponEquipped>().gameObject;
         animator = gameObject.GetComponentInChildren<Animator>();
     }
 
