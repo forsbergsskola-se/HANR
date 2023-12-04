@@ -10,13 +10,11 @@ using UnityEngine.Animations;
 public class PlayerAttack : MonoBehaviour
 {
     public BoolVariable playerMoving;
-    public BoolVariable playerAttacking;
     public Animator animator;
     public GameObjectVariable currentClickedEmeny;
     private NavMeshAgent agent;
     private Quaternion toRotation;
     private GameObject weaponEquipped;
-    private GameObject enemyHead; // Don't know know to find this?
     private bool attackStarted;
     private bool projectileAway;
     private GameObject enemyToAttack;
@@ -29,17 +27,13 @@ public class PlayerAttack : MonoBehaviour
     
     private void Awake()
     {
-        // playerAttacking.ValueChanged.AddListener(InitiateAttack);
         currentClickedEmeny.ValueChanged.AddListener(trackEnemy);
-        //enemyInRange.ValueChanged.AddListener();
 
     }
 
     private void OnDestroy()
     {
-        // playerAttacking.ValueChanged.RemoveListener(InitiateAttack);
         currentClickedEmeny.ValueChanged.RemoveListener(trackEnemy);
-        //enemyInRange.ValueChanged.RemoveListener();
     }
 
     private void trackEnemy(GameObject enemy)
@@ -81,7 +75,6 @@ public class PlayerAttack : MonoBehaviour
     {
         daAttackPool = this.gameObject.GetComponent<DefaultAttackPool>();
         weaponEquipped = gameObject.GetComponentInChildren<WeaponEquipped>().gameObject;
-        //enemyHead = gameObject.GetComponent<EnemyHead>().gameObject;
         animator = gameObject.GetComponentInChildren<Animator>();
     }
 
@@ -107,27 +100,6 @@ public class PlayerAttack : MonoBehaviour
         ps.attackDamage = attackDamage;
     }
     
-    /*
-    private void DefaultAttack(bool isDefaultAttack)
-    {
-        if (isDefaultAttack)
-        {
-            FaceEnemy();
-            animator.SetTrigger("isDefaultAttack");
-            this.isDefaultAttack.setValue(false);
-            
-            GameObject effectInstance = daAttackPool.GetPooledEffects();
-            if (effectInstance != null)
-            {
-                enemyToAttack = targetPoint.GetValue();
-                effectInstance.transform.position = enemyToAttack;
-            }
-
-            StartCoroutine(DefaultCooldown());
-        }
-        playerAttacking.setValue(false);
-    }*/
-
     private void FaceEnemy()
     {
         Vector3 direction = (enemyToAttack.transform.position - this.gameObject.transform.position).normalized;

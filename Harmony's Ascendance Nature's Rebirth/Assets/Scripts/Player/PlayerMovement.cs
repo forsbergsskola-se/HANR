@@ -9,7 +9,6 @@ namespace Player
     public class PlayerMovement : MonoBehaviour
     {
         public BoolVariable playerMoving;
-        public BoolVariable playerAttacking;
         public TargetPoint targetPoint;
         private Quaternion toRotation;
         private Vector3 moveToPoint;
