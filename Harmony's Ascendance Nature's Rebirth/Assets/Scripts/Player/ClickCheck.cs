@@ -11,6 +11,7 @@ public class ClickCheck : MonoBehaviour
     public BoolVariable playerMoving;
     public BoolVariable playerAttacking;
     public TargetPoint targetPoint;
+    public GameObjectVariable currentClickedEmeny;
     
     private void Update()
     {
@@ -31,12 +32,13 @@ public class ClickCheck : MonoBehaviour
                     if (raycastHit.transform.CompareTag("Ground"))
                     {
                         playerMoving.setValue(true);
-                        playerAttacking.setValue(false);
+                        currentClickedEmeny.setValue(null);
+                        // playerAttacking.setValue(false);
                     }
                     if (raycastHit.transform.CompareTag("Enemy"))
                     {
-                        playerMoving.setValue(false);
-                        playerAttacking.setValue(true);
+                            // playerAttacking.setValue(true);
+                            currentClickedEmeny.setValue(raycastHit.transform.gameObject);
                     }
                 }
             }

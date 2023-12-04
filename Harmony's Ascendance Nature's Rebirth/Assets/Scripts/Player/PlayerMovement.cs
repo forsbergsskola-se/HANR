@@ -68,22 +68,29 @@ namespace Player
 
         private void MoveToClick(bool playerMoving)
         {
-            if (playerMoving && !animator.GetBool("isHitbyRock")) 
+            if (!animator.GetBool("isHitbyRock")) 
             {
-                moveToPoint = targetPoint.GetValue(); 
-                
-                agent.speed = walkSpeed;
-                agent.destination = moveToPoint;
-                
-                
-                GameObject effectInstance = clickEffectPool.GetPooledEffects();
-                if (effectInstance != null)
+                if (playerMoving)
                 {
-                    effectInstance.transform.position = moveToPoint += new Vector3(0,0.3f,0);
+                    moveToPoint = targetPoint.GetValue(); 
+                
+                    agent.speed = walkSpeed;
+                    agent.destination = moveToPoint;
+                
+                
+                    GameObject effectInstance = clickEffectPool.GetPooledEffects();
+                    if (effectInstance != null)
+                    {
+                        effectInstance.transform.position = moveToPoint += new Vector3(0,0.3f,0);
+                    }
+                }
+                else
+                {
+                    agent.isStopped = true;
                 }
             } else if (animator.GetBool("isHitbyRock"))
             {
-                agent.velocity = new Vector3(0f,0f,0f);
+                agent.isStopped = true;
             }
         }
         
