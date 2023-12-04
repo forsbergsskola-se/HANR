@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class UsableItems : MonoBehaviour
 {
     private InventoryHolder inventoryHolder;
+    private PlayerHud2 playerHud2;
     
     public UnityEvent startStaffEquipped;
     public UnityEvent fireStaffEquipped;
@@ -19,7 +20,7 @@ public class UsableItems : MonoBehaviour
     {
         
         inventoryHolder = GetComponent<InventoryHolder>();
-        
+        playerHud2 = GetComponent<PlayerHud2>();
     }
     
     
@@ -99,6 +100,8 @@ public class UsableItems : MonoBehaviour
 
             if (itemInSlot.itemClass == "Consumable")
             {
+                // playerHud2.health += itemInSlot.itemStat; in progress TODO add test function for using a potion
+                    
                 itemInSlot.consumable.Invoke();
             }
         }

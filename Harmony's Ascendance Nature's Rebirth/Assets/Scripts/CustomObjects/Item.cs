@@ -10,6 +10,7 @@ public class Item : ScriptableObject
     public string itemClass;
     public string itemID;
     public Sprite itemIcon;
-    public float itemStat;
+    public FloatVariable itemStat;
     public UnityEngine.Events.UnityEvent consumable;
+    
 }

@@ -2309,11 +2309,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6342173935298566472, guid: 746502fd00bd07448b4afcfa0b24cbc3, type: 3}
       propertyPath: detectionRange
-      value: 25
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6342173935298566472, guid: 746502fd00bd07448b4afcfa0b24cbc3, type: 3}
       propertyPath: unDetectionRange
-      value: 30
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6913790307776320614, guid: 746502fd00bd07448b4afcfa0b24cbc3, type: 3}
       propertyPath: m_IsTrigger
