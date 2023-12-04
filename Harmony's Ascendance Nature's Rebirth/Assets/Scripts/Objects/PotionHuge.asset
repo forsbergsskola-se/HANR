@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba1d90fcaf19006488a05c6c68f1a30e, type: 3}
   m_Name: PotionHuge
   m_EditorClassIdentifier: 
+  itemClass: Consumable
   itemID: Potion Huge
   itemIcon: {fileID: 21300000, guid: 4a172ecafa13540cc8672bfdbe69230b, type: 3}
+  consumable:
+    m_PersistentCalls:
+      m_Calls: []
