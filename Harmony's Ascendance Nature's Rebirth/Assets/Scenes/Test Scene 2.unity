@@ -4388,6 +4388,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5904134507221357143, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
+      propertyPath: playerMoving
+      value: 
+      objectReference: {fileID: 11400000, guid: ac6cfe3da22a341db9d2eceaf518767d, type: 2}
+    - target: {fileID: 5904134507221357143, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
       propertyPath: isDefaultAttack
       value: 
       objectReference: {fileID: 11400000, guid: c3a3018c9fda74660b26fd9525a85cc9, type: 2}
