@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba1d90fcaf19006488a05c6c68f1a30e, type: 3}
   m_Name: Spellbook
   m_EditorClassIdentifier: 
+  itemClass: Consumable
   itemID: Spellbook
   itemIcon: {fileID: 21300000, guid: c2b7a2cef34054457954a032dacbd477, type: 3}
+  consumable:
+    m_PersistentCalls:
+      m_Calls: []
