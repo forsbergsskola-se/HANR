@@ -11,13 +11,10 @@ namespace Player
         public BoolVariable playerMoving;
         public BoolVariable playerAttacking;
         public TargetPoint targetPoint;
-        
         private Quaternion toRotation;
         private Vector3 moveToPoint;
-        
         public NavMeshAgent agent;
         public Animator animator;
-        
         [SerializeField] private float walkSpeed;
         [SerializeField] private float turnRate;
         private ClickEffectPool clickEffectPool;
@@ -72,12 +69,11 @@ namespace Player
             {
                 if (playerMoving)
                 {
+                    agent.isStopped = false;
                     moveToPoint = targetPoint.GetValue(); 
-                
                     agent.speed = walkSpeed;
                     agent.destination = moveToPoint;
-                
-                
+                    
                     GameObject effectInstance = clickEffectPool.GetPooledEffects();
                     if (effectInstance != null)
                     {
