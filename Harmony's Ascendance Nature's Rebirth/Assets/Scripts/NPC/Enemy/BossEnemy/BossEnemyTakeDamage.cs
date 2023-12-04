@@ -8,15 +8,14 @@ namespace Enemy.BossEnemy
     public class BossEnemyTakeDamage : MonoBehaviour
     {
         public FloatVariable enemyHealth;
-        public ProjectileStats projectile;
-        
 
         private void OnTriggerEnter(Collider other)
         {
-            float damage = projectile.attackDamage;
+            ProjectileStats ps = other.gameObject.GetComponent<ProjectileStats>();
+            float damage = ps.attackDamage;
             float currentHealth = enemyHealth.getValue();
             enemyHealth.setValue(currentHealth - damage);
-            
+            other.gameObject.SetActive(false);
         }
     }
 }

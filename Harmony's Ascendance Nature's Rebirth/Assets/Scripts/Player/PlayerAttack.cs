@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using CustomObjects;
+using Enemy.BossEnemy;
 using Player;
 using UnityEngine;
 using UnityEngine.AI;
@@ -19,7 +20,7 @@ public class PlayerAttack : MonoBehaviour
     private bool projectileAway;
     private GameObject enemyToAttack;
     private DefaultAttackPool daAttackPool;
-    private float projectileSpeed = 3f;// Should come from weapon stats later
+    private float projectileSpeed = 2f;// Should come from weapon stats later
     private float attackDamage = 3f;// Should come from weapon stats later
     private float playerAttackRange = 15f; //Should come from player stats later on
     
@@ -105,7 +106,7 @@ public class PlayerAttack : MonoBehaviour
         Vector3 direction = (enemyToAttack.transform.position - this.gameObject.transform.position).normalized;
         direction.y = 0;
         Quaternion toRotation = Quaternion.LookRotation(direction);
-        transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, Time.fixedDeltaTime*20);
+        transform.rotation = toRotation;
     }
 
 }
