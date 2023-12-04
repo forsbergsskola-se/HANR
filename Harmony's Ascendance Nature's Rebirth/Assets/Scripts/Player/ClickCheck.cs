@@ -5,13 +5,14 @@ using CustomObjects;
 using Player;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 public class ClickCheck : MonoBehaviour
 {
     public BoolVariable playerMoving;
     public BoolVariable playerAttacking;
     public TargetPoint targetPoint;
-    public GameObjectVariable currentClickedEmeny;
+    [FormerlySerializedAs("currentClickedEmeny")] public GameObjectVariable currentClickedEnemy;
     
     private void Update()
     {
@@ -32,13 +33,13 @@ public class ClickCheck : MonoBehaviour
                     if (raycastHit.transform.CompareTag("Ground"))
                     {
                         playerMoving.setValue(true);
-                        currentClickedEmeny.setValue(null);
+                        currentClickedEnemy.setValue(null);
                         // playerAttacking.setValue(false);
                     }
                     if (raycastHit.transform.CompareTag("Enemy"))
                     {
                             // playerAttacking.setValue(true);
-                            currentClickedEmeny.setValue(raycastHit.transform.gameObject);
+                            currentClickedEnemy.setValue(raycastHit.transform.gameObject);
                     }
                 }
             }
