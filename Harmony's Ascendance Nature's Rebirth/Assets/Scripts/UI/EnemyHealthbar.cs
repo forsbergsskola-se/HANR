@@ -9,9 +9,7 @@ public class EnemyHealthbar : MonoBehaviour
 {
     public FloatVariable enemyHealth;
     public Camera screen;
-
-    private Slider enemyHealthSlider;
-    private float maxHealth;
+    public Slider enemyHealthSlider;
 
     private void Awake()
     {
@@ -21,7 +19,7 @@ public class EnemyHealthbar : MonoBehaviour
 
     private void Start()
     {
-
+        
     }
 
     private void OnDestroy()
@@ -39,12 +37,14 @@ public class EnemyHealthbar : MonoBehaviour
     {
         enemyHealthSlider.minValue = 0;
         enemyHealthSlider.maxValue = 100;
+        UpdateHealthBar(100f);
+        enemyHealth.setValue(100f);
     }
 
-private void UpdateHealthBar(float arg0)
+    private void UpdateHealthBar(float value)
     {
-        
+        enemyHealthSlider.value = value;
     }
-
+    
     
 }

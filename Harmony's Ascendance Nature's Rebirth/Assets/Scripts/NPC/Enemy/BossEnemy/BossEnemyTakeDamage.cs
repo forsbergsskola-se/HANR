@@ -13,7 +13,10 @@ namespace Enemy.BossEnemy
 
         private void OnTriggerEnter(Collider other)
         {
-            enemyHealth.setValue(projectile.attackDamage);
+            float damage = projectile.attackDamage;
+            float currentHealth = enemyHealth.getValue();
+            enemyHealth.setValue(currentHealth - damage);
+            
         }
     }
 }
