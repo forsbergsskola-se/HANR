@@ -24,8 +24,6 @@ public class ItemPickUp : MonoBehaviour
             
             //Adds item Pickup
             PickUp();
-            
-            Debug.Log("Pickup");
 
         }
     }
@@ -34,8 +32,7 @@ public class ItemPickUp : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-          
-            Debug.Log("true");
+            
             Inside = true;
           
         }
@@ -62,7 +59,6 @@ public class ItemPickUp : MonoBehaviour
         
         inventoryHolder.pickUp.Invoke();
         Destroy(gameObject);
-        Debug.Log("event invoked");
         
     }
 
