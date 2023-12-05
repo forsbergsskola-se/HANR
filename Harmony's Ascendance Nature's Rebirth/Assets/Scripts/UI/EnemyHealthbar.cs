@@ -15,7 +15,6 @@ public class EnemyHealthbar : MonoBehaviour
 
     private void Awake()
     {
-        //healthText = this.gameObject.GetComponentInChildren<TextMeshProUGUI>();
         SetUpSlider();
         enemyHealth.ValueChanged.AddListener(UpdateHealthBar);
     }

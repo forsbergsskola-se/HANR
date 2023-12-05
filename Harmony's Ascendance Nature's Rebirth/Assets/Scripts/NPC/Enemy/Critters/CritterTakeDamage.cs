@@ -27,7 +27,7 @@ namespace NPC.Enemy.Critters
             float currentHealth = critterHealth.getValue();
             critterHealth.setValue(Mathf.Max(currentHealth - damage,0));
             other.gameObject.SetActive(false);
-            //StartCoroutine(showEffect());
+            StartCoroutine(ShowEffect());
             if (critterHealth.getValue() <= 0)
             {
                 animator.SetBool("isDead",true);
@@ -35,7 +35,7 @@ namespace NPC.Enemy.Critters
             }
         }
 
-        private IEnumerator showEffect()
+        private IEnumerator ShowEffect()
         {
             GameObject hitEffect = hitEffectPool.GetPooledEffects();
             if (hitEffect != null)
