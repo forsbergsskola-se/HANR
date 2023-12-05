@@ -29,7 +29,8 @@ public class EnemyHealthbar : MonoBehaviour
 
     void Update()
     {
-        transform.LookAt(screen.transform);
+        transform.rotation = Quaternion.LookRotation(transform.position - screen.transform.position);
+        //transform.LookAt(screen.transform);
     }
 
 
