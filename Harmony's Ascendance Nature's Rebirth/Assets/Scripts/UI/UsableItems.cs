@@ -18,7 +18,7 @@ public class UsableItems : MonoBehaviour
     
     public FloatVariable playerHealth;
     public FloatVariable playerExperiance;
-    public FloatVariable playerMana;
+    public FloatVariable playerMagic;
     public IntVariable playerLevel;
     private Item itemInSlot;
     
@@ -127,6 +127,17 @@ public class UsableItems : MonoBehaviour
                     }
                     inventoryHolder.Items[slotIndex] = defaultItem;
                     UpdateUsedItem.Invoke();
+                }
+                
+                else if (itemInSlot.itemID == "Potion Magic") //TODO: why not working?
+                {
+
+                    //Add Magic to player
+                    float newMagic = itemInSlot.itemStat + playerMagic.getValue();
+                    playerMagic.setValue(Mathf.Min(100, newMagic)); //Limiter to not exceed 100
+                    inventoryHolder.Items[slotIndex] = defaultItem;
+                    UpdateUsedItem.Invoke();
+
                 }
             }
         }
