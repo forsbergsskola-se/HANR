@@ -99,7 +99,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4299543740629609270}
@@ -164,9 +164,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInEnemyRange: {fileID: 11400000, guid: 63dde8e959fbfea42a14743bfd011da1, type: 2}
-  walkSpeed: 5
+  walkSpeed: 2
   turnRate: 20
-  distanceFromPlayer: 0
+  distanceFromPlayer: 6
   animator: {fileID: 95380085654935804}
 --- !u!114 &7462943007307053544
 MonoBehaviour:
@@ -181,9 +181,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rock: {fileID: 1375754531036840, guid: 71497ec4178769a4c8cdb38563f01fc0, type: 3}
-  isEnemyThrowAttack: {fileID: 0}
-  PlayerInEnemyRange: {fileID: 0}
-  PlayerInAttackRange: {fileID: 0}
+  isEnemyThrowAttack: {fileID: 11400000, guid: 457bb4d8f369efa4aa3e1fd93b21c5c5, type: 2}
+  PlayerInEnemyRange: {fileID: 11400000, guid: 63dde8e959fbfea42a14743bfd011da1, type: 2}
+  PlayerInAttackRange: {fileID: 11400000, guid: a1327ebfafbb0ae4cb285095666b73cf, type: 2}
 --- !u!114 &6342173935298566472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,9 +198,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInRange: {fileID: 11400000, guid: 63dde8e959fbfea42a14743bfd011da1, type: 2}
   playerInAttackRange: {fileID: 11400000, guid: a1327ebfafbb0ae4cb285095666b73cf, type: 2}
-  detectionRange: 15
-  unDetectionRange: 20
-  attackRange: 15
+  detectionRange: 25
+  unDetectionRange: 30
+  attackRange: 7
 --- !u!114 &3995561446779832309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,6 +264,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: {fileID: 11400000, guid: fae8d58fbc089264c83b291f3ee8ed65, type: 2}
+  animator: {fileID: 95380085654935804}
+  agent: {fileID: 0}
 --- !u!1 &1088256926929212
 GameObject:
   m_ObjectHideFlags: 0
@@ -1132,6 +1134,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7523235703217206577, guid: 156df7900112f3341b7b44ae300e8e42, type: 3}
+      propertyPath: enemyHealthSlider
+      value: 
+      objectReference: {fileID: 2862635298385181747}
     - target: {fileID: 8000583016270651795, guid: 156df7900112f3341b7b44ae300e8e42, type: 3}
       propertyPath: m_Name
       value: EnemyHealthCanvas Variant
@@ -1141,6 +1147,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 156df7900112f3341b7b44ae300e8e42, type: 3}
+--- !u!114 &2862635298385181747 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2870624966664994984, guid: 156df7900112f3341b7b44ae300e8e42, type: 3}
+  m_PrefabInstance: {fileID: 30572546748415131}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &4527967721548250491 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4519941903600320992, guid: 156df7900112f3341b7b44ae300e8e42, type: 3}
