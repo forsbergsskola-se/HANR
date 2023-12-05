@@ -32,6 +32,12 @@ public class SkillUI : MonoBehaviour
         usableItems.startStaffEquipped.AddListener(ShowStarterSkills);
         usableItems.fireStaffEquipped.AddListener(ShowFireSkills);
         usableItems.waterStaffEquipped.AddListener(ShowWaterSkills);
+        
+        Color color = megaSkill.color;
+        color.a = 0f;
+        megaSkill.color = color;
+        small2Skill.color = color;
+        smallSkill.color = color;
     }
 
 
@@ -49,6 +55,12 @@ public class SkillUI : MonoBehaviour
         megaSkill.sprite = starterMega;
         smallSkill.sprite = starterSmall;
         smallSkill.sprite = starterSmall2;
+        Color color = megaSkill.color;
+        color.a = 1f;
+        megaSkill.color = color;
+        small2Skill.color = color;
+        smallSkill.color = color;
+        
     }
     
     private void ShowFireSkills()
@@ -57,6 +69,11 @@ public class SkillUI : MonoBehaviour
         megaSkill.sprite = fireMega;
         smallSkill.sprite = fireSmall1;
         small2Skill.sprite = fireSmall2;
+        Color color = megaSkill.color;
+        color.a = 1f;
+        megaSkill.color = color;
+        small2Skill.color = color;
+        smallSkill.color = color;
     }
 
     private void ShowWaterSkills()
@@ -65,6 +82,11 @@ public class SkillUI : MonoBehaviour
         megaSkill.sprite = waterMega;
         smallSkill.sprite = waterSmall1;
         small2Skill.sprite = waterSmall2;
+        Color color = megaSkill.color;
+        color.a = 1f;
+        megaSkill.color = color;
+        small2Skill.color = color;
+        smallSkill.color = color;
     }
 
 
