@@ -19,6 +19,7 @@ public class UsableItems : MonoBehaviour
     public FloatVariable playerHealth;
     public FloatVariable playerExperiance;
     public FloatVariable playerMana;
+    public IntVariable playerLevel;
     private Item itemInSlot;
     
     void Start()
@@ -107,7 +108,7 @@ public class UsableItems : MonoBehaviour
 
                     //Add health to player
                     float newHealth = itemInSlot.itemStat + playerHealth.getValue();
-                    playerHealth.setValue(newHealth);
+                    playerHealth.setValue(Mathf.Min(100, newHealth)); //Limiter to not exceed 100
                     inventoryHolder.Items[slotIndex] = defaultItem;
                     UpdateUsedItem.Invoke();
 
@@ -119,9 +120,13 @@ public class UsableItems : MonoBehaviour
                     //Add exp to player
                     float newExp = itemInSlot.itemStat + playerExperiance.getValue();
                     playerExperiance.setValue(newExp);
+                    if (playerExperiance.getValue() > 100) // When Exp. goes 100 => level up
+                    {
+                        playerExperiance.setValue(playerExperiance.getValue()-100);
+                        playerLevel.setValue(playerLevel.getValue()+1);
+                    }
                     inventoryHolder.Items[slotIndex] = defaultItem;
                     UpdateUsedItem.Invoke();
-
                 }
             }
         }

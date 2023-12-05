@@ -12,7 +12,6 @@ namespace CustomObjects
         public void setValue(float newValue)
         {
             value = newValue;
-            if (value > 100) value = 100;
             ValueChanged.Invoke(value);
         }
 

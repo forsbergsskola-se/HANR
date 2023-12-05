@@ -13,6 +13,7 @@ public class PlayerHud2 : MonoBehaviour
     public TMP_Text magicText;
     public TMP_Text expText;
     public TMP_Text levelText;
+    
     public Slider healthSlider;
     public Slider magicSlider;
     public Slider expSlider;
