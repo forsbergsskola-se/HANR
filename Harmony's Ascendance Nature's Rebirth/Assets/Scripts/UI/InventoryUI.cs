@@ -21,14 +21,15 @@ public class InventoryUI : MonoBehaviour
         inventoryHolder = player.GetComponent<InventoryHolder>();
         SetUpHUD();
         inventoryHolder.pickUp.AddListener(UpdateInventoryHUD);
-        usableItems.UpdateUsedItem.AddListener(UpdateInventoryHUD);
+        usableItems.UpdateUsedItem.AddListener(RemoveItem);
     }
 
     public void OnDestroy()
     {
         inventoryHolder.pickUp.RemoveListener(UpdateInventoryHUD);
-        usableItems.UpdateUsedItem.RemoveListener(UpdateInventoryHUD);
+        usableItems.UpdateUsedItem.RemoveListener(RemoveItem);
     }
+    
 
     void SetUpHUD()
     {
@@ -43,13 +44,12 @@ public class InventoryUI : MonoBehaviour
     }
 
     void UpdateInventoryHUD()
-    {
-        Debug.Log("Using item"); // TODO either change if-statement or add another method for removed items
+    { 
+         // TODO either change if-statement or add another method for removed items
         for (int i = 0; i < 5; i++)
         {
             if (inventoryHolder.Items[i] != defaultImage && slots[i].sprite == defaultImage.itemIcon)
             {
-               
                 switch (i)
                 {
                     case 0:
@@ -80,6 +80,53 @@ public class InventoryUI : MonoBehaviour
                         slots[i].sprite = inventoryHolder.Items[i].itemIcon;
                         color = slots[i].color;
                         color.a = 1f;
+                        slots[i].color = color;
+                        break;
+                }
+
+                // Update additional UI elements here if needed
+            }
+        }
+
+    }
+    
+    void RemoveItem()
+    { 
+        // TODO either change if-statement or add another method for removed items
+        for (int i = 0; i < 5; i++)
+        {
+            if (inventoryHolder.Items[i] == defaultImage && slots[i].sprite != defaultImage.itemIcon)
+            {
+                switch (i)
+                {
+                    case 0:
+                        slots[i].sprite = inventoryHolder.Items[i].itemIcon;
+                        Color color = slots[i].color;
+                        color.a = 0f;
+                        slots[i].color = color;
+                        break;
+                    case 1:
+                        slots[i].sprite = inventoryHolder.Items[i].itemIcon;
+                        color = slots[i].color;
+                        color.a = 0f;
+                        slots[i].color = color;
+                        break;
+                    case 2:
+                        slots[i].sprite = inventoryHolder.Items[i].itemIcon;
+                        color = slots[i].color;
+                        color.a = 0f;
+                        slots[i].color = color;
+                        break;
+                    case 3:
+                        slots[i].sprite = inventoryHolder.Items[i].itemIcon;
+                        color = slots[i].color;
+                        color.a = 0f;
+                        slots[i].color = color;
+                        break;
+                    case 4:
+                        slots[i].sprite = inventoryHolder.Items[i].itemIcon;
+                        color = slots[i].color;
+                        color.a = 0f;
                         slots[i].color = color;
                         break;
                 }

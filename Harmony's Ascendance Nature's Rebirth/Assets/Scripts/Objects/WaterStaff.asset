@@ -15,7 +15,4 @@ MonoBehaviour:
   itemClass: Weapon
   itemID: Water Staff
   itemIcon: {fileID: 21300000, guid: 6a6475741359b4dcd93bcd0c37bf0b36, type: 3}
-  itemStat: {fileID: 0}
-  consumable:
-    m_PersistentCalls:
-      m_Calls: []
+  itemStat: 0
