@@ -27,7 +27,7 @@ namespace Enemy.BossEnemy
             float currentHealth = enemyHealth.getValue();
             enemyHealth.setValue(Mathf.Max(currentHealth - damage,0));
             other.gameObject.SetActive(false);
-            StartCoroutine(showEffect());
+            StartCoroutine(ShowEffect());
             if (enemyHealth.getValue() <= 0)
             {
                 animator.SetBool("isDead",true);
@@ -35,7 +35,7 @@ namespace Enemy.BossEnemy
             }
         }
 
-        private IEnumerator showEffect()
+        private IEnumerator ShowEffect()
         {
             GameObject hitEffect = hitEffectPool.GetPooledEffects();
             if (hitEffect != null)

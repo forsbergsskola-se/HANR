@@ -1,12 +1,12 @@
-using System;
 using System.Collections;
 using CustomObjects;
+using Enemy;
+using Enemy.BossEnemy;
 using Player;
-using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace Enemy.Critters
+namespace NPC.Enemy.Critters
 {
     public class CritterTakeDamage : MonoBehaviour
     {
@@ -40,8 +40,8 @@ namespace Enemy.Critters
             GameObject hitEffect = hitEffectPool.GetPooledEffects();
             if (hitEffect != null)
             {
-                //hitEffect.transform.position = this.gameObject.GetComponentInChildren<HitPoint>().transform.position;;
-                //hitEffect.transform.rotation = this.gameObject.GetComponentInChildren<HitPoint>().transform.rotation;
+                hitEffect.transform.position = this.gameObject.GetComponentInChildren<HitPoint>().transform.position;;
+                hitEffect.transform.rotation = this.gameObject.GetComponentInChildren<HitPoint>().transform.rotation;
                 hitEffect.transform.localScale = new Vector3(3f, 3f, 3f);
             }
 
