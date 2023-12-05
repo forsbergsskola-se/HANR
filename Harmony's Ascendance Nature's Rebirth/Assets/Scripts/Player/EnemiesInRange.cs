@@ -6,7 +6,8 @@ namespace Player
 {
     public class EnemiesInRange : MonoBehaviour
     {
-
+        // Can this script be removed?
+        
         public BoolVariable enemyInRange;
         private Vector3 enemyPos;
         private GameObject enemy;

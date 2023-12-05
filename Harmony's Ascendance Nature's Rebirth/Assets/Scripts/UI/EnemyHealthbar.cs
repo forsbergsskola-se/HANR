@@ -17,11 +17,6 @@ public class EnemyHealthbar : MonoBehaviour
         enemyHealth.ValueChanged.AddListener(UpdateHealthBar);
     }
 
-    private void Start()
-    {
-        
-    }
-
     private void OnDestroy()
     {
         enemyHealth.ValueChanged.RemoveListener(UpdateHealthBar);
@@ -29,7 +24,8 @@ public class EnemyHealthbar : MonoBehaviour
 
     void Update()
     {
-        transform.LookAt(screen.transform);
+        transform.rotation = Quaternion.LookRotation(transform.position - screen.transform.position);
+        //transform.LookAt(screen.transform);
     }
 
 
@@ -45,6 +41,4 @@ public class EnemyHealthbar : MonoBehaviour
     {
         enemyHealthSlider.value = value;
     }
-    
-    
 }

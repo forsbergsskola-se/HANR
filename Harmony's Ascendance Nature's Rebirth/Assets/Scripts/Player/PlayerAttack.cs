@@ -8,12 +8,13 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Animations;
+using UnityEngine.Serialization;
 
 public class PlayerAttack : MonoBehaviour
 {
     public BoolVariable playerMoving;
     public Animator animator;
-    public GameObjectVariable currentClickedEmeny;
+    [FormerlySerializedAs("currentClickedEmeny")] public GameObjectVariable currentClickedEnemy;
     private NavMeshAgent agent;
     private Quaternion toRotation;
     private GameObject weaponEquipped;
@@ -29,13 +30,13 @@ public class PlayerAttack : MonoBehaviour
     
     private void Awake()
     {
-        currentClickedEmeny.ValueChanged.AddListener(trackEnemy);
+        currentClickedEnemy.ValueChanged.AddListener(trackEnemy);
 
     }
 
     private void OnDestroy()
     {
-        currentClickedEmeny.ValueChanged.RemoveListener(trackEnemy);
+        currentClickedEnemy.ValueChanged.RemoveListener(trackEnemy);
     }
 
     private void trackEnemy(GameObject enemy)
