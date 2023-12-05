@@ -63,7 +63,7 @@ public class PlayerHud2 : MonoBehaviour
     
     private void updateExp(float value)
     {
-        expText.text = value.ToString();value.ToString();value.ToString();
+        expText.text = value.ToString();
         expSlider.value = value;
     }
     

@@ -18,10 +18,5 @@ namespace Player
             exp.setValue(12.5f);
             level.setValue(15);
         }
-
-        private void OnCollisionEnter(Collision other)
-        {
-            health.setValue(Math.Max(health.getValue()-5,0));
-        }
     }
 }

@@ -768,6 +768,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1106445950350206279, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -5913018098454834342, guid: 5e9ac90a63458a849a611ce3fb927b72, type: 3}
     - target: {fileID: 1432211655959991476, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.83
@@ -955,7 +959,13 @@ MonoBehaviour:
   waterStaffEquipped:
     m_PersistentCalls:
       m_Calls: []
+  UpdateUsedItem:
+    m_PersistentCalls:
+      m_Calls: []
   defaultItem: {fileID: 11400000, guid: 2c8ba1ee984a6fa4f85fea1fb4db8da5, type: 2}
+  playerHealth: {fileID: 0}
+  playerExperiance: {fileID: 0}
+  playerMana: {fileID: 0}
 --- !u!1 &1563073832
 GameObject:
   m_ObjectHideFlags: 0
