@@ -6,7 +6,8 @@ using UnityEngine.Serialization;
 namespace Player
 {
     public class DefaultAttackPool : MonoBehaviour
-    {
+    {   
+        // Create the pool when attack starts instead?
         public GameObject projectile;
         public int size;
 
