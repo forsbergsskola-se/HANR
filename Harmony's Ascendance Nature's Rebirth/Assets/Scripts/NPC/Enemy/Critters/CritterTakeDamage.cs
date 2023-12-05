@@ -6,11 +6,11 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace Enemy.BossEnemy
+namespace Enemy.Critters
 {
-    public class BossEnemyTakeDamage : MonoBehaviour
+    public class CritterTakeDamage : MonoBehaviour
     {
-        public FloatVariable enemyHealth;
+        public FloatVariable critterHealth;
         [SerializeField] private Animator animator;
         [SerializeField] private NavMeshAgent agent;
         private HitEffectPool hitEffectPool;
@@ -24,11 +24,11 @@ namespace Enemy.BossEnemy
         {
             ProjectileStats ps = other.gameObject.GetComponent<ProjectileStats>();
             float damage = ps.attackDamage;
-            float currentHealth = enemyHealth.getValue();
-            enemyHealth.setValue(Mathf.Max(currentHealth - damage,0));
+            float currentHealth = critterHealth.getValue();
+            critterHealth.setValue(Mathf.Max(currentHealth - damage,0));
             other.gameObject.SetActive(false);
-            StartCoroutine(showEffect());
-            if (enemyHealth.getValue() <= 0)
+            //StartCoroutine(showEffect());
+            if (critterHealth.getValue() <= 0)
             {
                 animator.SetBool("isDead",true);
                 agent.isStopped = true;
@@ -40,8 +40,8 @@ namespace Enemy.BossEnemy
             GameObject hitEffect = hitEffectPool.GetPooledEffects();
             if (hitEffect != null)
             {
-                hitEffect.transform.position = this.gameObject.GetComponentInChildren<HitPoint>().transform.position;;
-                hitEffect.transform.rotation = this.gameObject.GetComponentInChildren<HitPoint>().transform.rotation;
+                //hitEffect.transform.position = this.gameObject.GetComponentInChildren<HitPoint>().transform.position;;
+                //hitEffect.transform.rotation = this.gameObject.GetComponentInChildren<HitPoint>().transform.rotation;
                 hitEffect.transform.localScale = new Vector3(3f, 3f, 3f);
             }
 
