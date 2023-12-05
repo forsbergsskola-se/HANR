@@ -28,7 +28,7 @@ namespace NPC.Enemy.Critters
             critterHealth.setValue(Mathf.Max(currentHealth - damage,0));
             other.gameObject.SetActive(false);
             StartCoroutine(ShowEffect());
-            if (critterHealth.getValue() <= 0)
+            //if (critterHealth.getValue() <= 0)
             {
                 animator.SetBool("isDead",true);
                 agent.isStopped = true;

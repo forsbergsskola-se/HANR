@@ -36,7 +36,7 @@ public class ClickCheck : MonoBehaviour
                     }
                     if (raycastHit.transform.CompareTag("Enemy"))
                     {
-                            currentClickedEnemy.setValue(raycastHit.transform.gameObject);
+                        currentClickedEnemy.setValue(raycastHit.transform.gameObject);
                     }
                 }
             }
