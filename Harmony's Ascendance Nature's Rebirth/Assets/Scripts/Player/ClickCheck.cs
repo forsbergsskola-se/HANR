@@ -10,9 +10,8 @@ using UnityEngine.Serialization;
 public class ClickCheck : MonoBehaviour
 {
     public BoolVariable playerMoving;
-    public BoolVariable playerAttacking;
     public TargetPoint targetPoint;
-    [FormerlySerializedAs("currentClickedEmeny")] public GameObjectVariable currentClickedEnemy;
+    public GameObjectVariable currentClickedEnemy;
     
     private void Update()
     {
@@ -34,11 +33,9 @@ public class ClickCheck : MonoBehaviour
                     {
                         playerMoving.setValue(true);
                         currentClickedEnemy.setValue(null);
-                        // playerAttacking.setValue(false);
                     }
                     if (raycastHit.transform.CompareTag("Enemy"))
                     {
-                            // playerAttacking.setValue(true);
                             currentClickedEnemy.setValue(raycastHit.transform.gameObject);
                     }
                 }
