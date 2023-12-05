@@ -201,7 +201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3693942874955430988, guid: cbf7d255620604218bcfe237db3bdf97, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3693942874955430988, guid: cbf7d255620604218bcfe237db3bdf97, type: 3}
       propertyPath: m_LocalRotation.w
@@ -913,9 +913,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d790846429e7940a865da922b274cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  megaSkill: {fileID: 0}
-  smallSkill: {fileID: 0}
-  small2Skill: {fileID: 0}
+  megaSkill: {fileID: 1282168362}
+  smallSkill: {fileID: 1841164304}
+  small2Skill: {fileID: 445255924}
+  starterMega: {fileID: 21300000, guid: 126beb5df6dfa4dddaabe5107d7cd985, type: 3}
+  starterSmall: {fileID: 21300000, guid: e30d63bc56ef545d2a5622cf09add012, type: 3}
+  starterSmall2: {fileID: 21300000, guid: c6faf72549a25485cb7253718b11f15e, type: 3}
+  fireMega: {fileID: 21300000, guid: bea524c022b68442b9a660aefdd8c3a1, type: 3}
+  fireSmall1: {fileID: 21300000, guid: bea524c022b68442b9a660aefdd8c3a1, type: 3}
+  fireSmall2: {fileID: 21300000, guid: bea524c022b68442b9a660aefdd8c3a1, type: 3}
+  waterMega: {fileID: 21300000, guid: f1e24e2d3b52a48f9a317fb7ba5a9388, type: 3}
+  waterSmall1: {fileID: 21300000, guid: a8a54fa40924d413db6732d73e189a1a, type: 3}
+  waterSmall2: {fileID: 21300000, guid: a8a54fa40924d413db6732d73e189a1a, type: 3}
 --- !u!1001 &934867922
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2943,7 +2952,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3768936066895446551, guid: 5b351d7f519f4704a868ba43f8759fac, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -365
+      value: 83
       objectReference: {fileID: 0}
     - target: {fileID: 3839944946127465601, guid: 5b351d7f519f4704a868ba43f8759fac, type: 3}
       propertyPath: m_Sprite
