@@ -13,18 +13,21 @@ public class InventoryUI : MonoBehaviour
     public List<Image> slots = new List<Image>(){};
     public Item defaultImage;
     public GameObject player;
-    private InventoryHolder inventoryHolder;
-
+    private InventoryHolder inventoryHolder; 
+    [SerializeField]UsableItems usableItems;
+    
     public void Awake()
     {
         inventoryHolder = player.GetComponent<InventoryHolder>();
         SetUpHUD();
         inventoryHolder.pickUp.AddListener(UpdateInventoryHUD);
+        usableItems.UpdateUsedItem.AddListener(UpdateInventoryHUD);
     }
 
     public void OnDestroy()
     {
         inventoryHolder.pickUp.RemoveListener(UpdateInventoryHUD);
+        usableItems.UpdateUsedItem.RemoveListener(UpdateInventoryHUD);
     }
 
     void SetUpHUD()
@@ -41,6 +44,7 @@ public class InventoryUI : MonoBehaviour
 
     void UpdateInventoryHUD()
     {
+        Debug.Log("Using item"); // TODO either change if-statement or add another method for removed items
         for (int i = 0; i < 5; i++)
         {
             if (inventoryHolder.Items[i] != defaultImage && slots[i].sprite == defaultImage.itemIcon)
@@ -48,9 +52,7 @@ public class InventoryUI : MonoBehaviour
                
                 switch (i)
                 {
-                    
                     case 0:
-                        Debug.Log("0");
                         slots[i].sprite = inventoryHolder.Items[i].itemIcon;
                         Color color = slots[i].color;
                         color.a = 1f;

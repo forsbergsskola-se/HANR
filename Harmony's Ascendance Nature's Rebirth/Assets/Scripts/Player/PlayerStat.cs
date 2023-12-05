@@ -6,11 +6,17 @@ namespace Player
 {
     public class PlayerStat : MonoBehaviour
     {
-        public FloatVariable Health;
-
+        public FloatVariable health;
+        public FloatVariable magic;
+        public FloatVariable exp;
+        public IntVariable level;
+        
         private void Start()
         {
-            Health.setValue(100f);
+            health.setValue(50f);
+            magic.setValue(90.5f);
+            exp.setValue(12.5f);
+            level.setValue(15);
         }
     }
 }

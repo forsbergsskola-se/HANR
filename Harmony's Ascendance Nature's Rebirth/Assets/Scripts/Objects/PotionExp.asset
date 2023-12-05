@@ -15,7 +15,4 @@ MonoBehaviour:
   itemClass: Consumable
   itemID: Potion Exp
   itemIcon: {fileID: 21300000, guid: 0b2be05139a8e4adc9a0d4d1137a8d2f, type: 3}
-  itemStat: {fileID: 0}
-  consumable:
-    m_PersistentCalls:
-      m_Calls: []
+  itemStat: 20
