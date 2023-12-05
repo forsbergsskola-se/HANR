@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using CustomObjects;
 using Enemy.BossEnemy;
 using Player;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Animations;
@@ -20,7 +21,7 @@ public class PlayerAttack : MonoBehaviour
     private bool projectileAway;
     private GameObject enemyToAttack;
     private DefaultAttackPool daAttackPool;
-    private float projectileSpeed = 2f;// Should come from weapon stats later
+    private float projectileSpeed = 10f;// Should come from weapon stats later
     private float attackDamage = 3f;// Should come from weapon stats later
     private float playerAttackRange = 15f; //Should come from player stats later on
     
@@ -91,10 +92,10 @@ public class PlayerAttack : MonoBehaviour
             ShootProjectile(projectileInstance);
         }
     }
-    
+        
     private void ShootProjectile(GameObject projectile)
     {
-        Vector3 direction = (-projectile.transform.position + enemyToAttack.transform.position);
+        Vector3 direction = (-projectile.transform.position + enemyToAttack.GetComponentInChildren<HitPoint>().transform.position).normalized;
         Rigidbody rb = projectile.GetComponent<Rigidbody>();
         ProjectileStats ps = projectile.GetComponent<ProjectileStats>();
         rb.velocity = new Vector3(direction.x * projectileSpeed, direction.y * projectileSpeed, direction.z * projectileSpeed);
