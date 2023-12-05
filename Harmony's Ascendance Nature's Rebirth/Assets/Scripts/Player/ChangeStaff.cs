@@ -30,6 +30,7 @@ public class ChangeStaff : MonoBehaviour
         staff = GameObject.Find("Druid_Staff");
         staffMesh = staff.GetComponent<MeshFilter>();
         staffRenderer = staff.GetComponent<MeshRenderer>();
+        staffMesh.mesh = null;
         usableItems.waterStaffEquipped.AddListener(EquipWater);
         usableItems.startStaffEquipped.AddListener(EquipStarter);
         usableItems.fireStaffEquipped.AddListener(EquipFire);
