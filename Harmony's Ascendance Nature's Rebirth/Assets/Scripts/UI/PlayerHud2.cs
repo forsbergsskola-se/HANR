@@ -23,6 +23,7 @@ public class PlayerHud2 : MonoBehaviour
     public FloatVariable exp;
     public IntVariable level;
 
+    public PlayerStat playerStat;
     private void Awake()
     {
         SetUpPlayerHUD();
@@ -70,6 +71,8 @@ public class PlayerHud2 : MonoBehaviour
     private void updateLevel(int value)
     {
         levelText.text = value.ToString();
+        healthSlider.maxValue = playerStat.maxHealth; //TODO work in progress, goal: have sliders adapted to the changed stats when leveling up
+        magicSlider.maxValue = playerStat.maxMagic;
+        expSlider.maxValue = playerStat.maxExp;
     }
-    
 }
