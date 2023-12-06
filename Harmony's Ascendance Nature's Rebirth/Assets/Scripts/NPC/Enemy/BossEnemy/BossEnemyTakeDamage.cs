@@ -35,6 +35,7 @@ namespace Enemy.BossEnemy
                 
                 Destroy(gameObject);
                 currentClickedEnemy.setValue(null);
+                DeathEffect();
             }
         }
 

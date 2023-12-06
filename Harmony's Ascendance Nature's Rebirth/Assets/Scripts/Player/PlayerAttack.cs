@@ -55,6 +55,7 @@ public class PlayerAttack : MonoBehaviour
         }
         else
         {
+            enemyToAttack = null;
             animator.SetBool("isDefaultAttack", false);
             StopCoroutine(checkDistance());
         }
@@ -63,25 +64,23 @@ public class PlayerAttack : MonoBehaviour
 
     private IEnumerator checkDistance()
     {
-        if (currentClickedEnemy.getValue() != null)
+        float distance = Vector3.Distance(this.gameObject.transform.position, enemyToAttack.transform.position);
+        
+        if (distance > playerAttackRange)
         {
-            float distance = Vector3.Distance(this.gameObject.transform.position, enemyToAttack.transform.position);
-        
-            if (distance > playerAttackRange)
-            {
-                playerMoving.setValue(true);
-                animator.SetBool("isDefaultAttack", false);
-            }
-        
-            while (distance > playerAttackRange)
-            {
-                distance = Vector3.Distance(this.gameObject.transform.position, enemyToAttack.transform.position);
-                yield return null; 
-            }
-        
-            playerMoving.setValue(false);
-            animator.SetBool("isDefaultAttack", true);
+            playerMoving.setValue(true);
+            animator.SetBool("isDefaultAttack", false);
         }
+        
+        while (distance > playerAttackRange)
+        {
+            distance = Vector3.Distance(this.gameObject.transform.position, enemyToAttack.transform.position);
+            yield return null; 
+        }
+        
+        playerMoving.setValue(false);
+        animator.SetBool("isDefaultAttack", true);
+        
     }
     
     public void DefaultAttack()
