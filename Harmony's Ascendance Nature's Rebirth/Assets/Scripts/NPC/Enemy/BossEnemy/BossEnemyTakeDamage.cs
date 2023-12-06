@@ -42,7 +42,7 @@ namespace Enemy.BossEnemy
         private IEnumerator ShowEffect()
         {
             GameObject hitEffect = hitEffectPool.GetPooledEffects();
-            if (hitEffect != null)
+            if (hitEffect)
             {
                 hitEffect.transform.position = this.gameObject.GetComponentInChildren<HitPoint>().transform.position;;
                 hitEffect.transform.rotation = this.gameObject.GetComponentInChildren<HitPoint>().transform.rotation;

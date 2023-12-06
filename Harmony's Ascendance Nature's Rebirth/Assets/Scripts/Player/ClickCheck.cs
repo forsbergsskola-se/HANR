@@ -13,47 +13,16 @@ public class ClickCheck : MonoBehaviour
     public BoolVariable playerMoving;
     public TargetPoint targetPoint;
     public GameObjectVariable currentClickedEnemy;
-    private SkillsPressed skillPressed;
-    private UsableItems usableItems;
     private ClickEffectPool clickEffectPool;
     private ClickOnEnemyPool clickOnEnemyPool;
     private Camera _camera;
-    private Item item;
 
     private void Start()
     {
         _camera = Camera.main;
         clickEffectPool = this.gameObject.GetComponent<ClickEffectPool>();
         clickOnEnemyPool = this.gameObject.GetComponent<ClickOnEnemyPool>();
-        skillPressed = this.gameObject.GetComponent<SkillsPressed>();
-        usableItems = this.gameObject.GetComponent<UsableItems>();
-        usableItems.startStaffEquipped.AddListener(SetItemStarterStaff);
-        usableItems.fireStaffEquipped.AddListener(SetItemFireStaff);
-        usableItems.waterStaffEquipped.AddListener(SetItemWaterStaff);
     }
-
-    private void OnDestroy()
-    {
-        usableItems.startStaffEquipped.RemoveListener(SetItemStarterStaff);
-        usableItems.fireStaffEquipped.RemoveListener(SetItemFireStaff);
-        usableItems.waterStaffEquipped.RemoveListener(SetItemWaterStaff);
-    }
-
-    private void SetItemStarterStaff(Item arg0)
-    {
-        item = arg0;
-    }
-
-    private void SetItemFireStaff(Item arg0)
-    {
-        item = arg0;
-    }
-
-    private void SetItemWaterStaff(Item arg0)
-    {
-        item = arg0;
-    }
-
 
     private void Update()
     {
@@ -95,17 +64,5 @@ public class ClickCheck : MonoBehaviour
                 }
             }
         } 
-        else if (Input.GetKeyDown(KeyCode.Q))
-        {
-            skillPressed.skill1.Invoke(item.skill1);
-        }  
-        else if (Input.GetKeyDown(KeyCode.W))
-        {
-            skillPressed.skill2.Invoke(item.skill2);
-        }
-        else if (Input.GetKeyDown(KeyCode.E))
-        {
-            skillPressed.ultiSkill.Invoke(item.ultiSkill);
-        }
     }
 }

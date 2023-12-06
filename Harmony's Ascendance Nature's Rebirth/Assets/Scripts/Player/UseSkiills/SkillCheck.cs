@@ -1,7 +1,10 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using CustomObjects;
+using UnityEngine.UIElements;
+
 namespace Player.UseSkills
 {
     public class SkillCheck : MonoBehaviour
@@ -52,12 +55,15 @@ namespace Player.UseSkills
         {
             if (skill.pointClick)
             {
-                Debug.Log("ultiSkill");
+                PointClick pc = this.gameObject.AddComponent<PointClick>();
+                pc.skill = skill;
+
             }
             else
             {
                 
             }
         }
+        
     }
 }
