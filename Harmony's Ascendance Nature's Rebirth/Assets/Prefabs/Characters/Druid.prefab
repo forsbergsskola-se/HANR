@@ -972,6 +972,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c116fdd80fe483b4d9b353b03c4204e4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6868447145032766609}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c116fdd80fe483b4d9b353b03c4204e4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8755595750374796902}
     - targetCorrespondingSourceObject: {fileID: 1728280593283003582, guid: c116fdd80fe483b4d9b353b03c4204e4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 725847045379747160}
@@ -1366,6 +1369,20 @@ MonoBehaviour:
   magic: {fileID: 11400000, guid: e1409a8b6970b024da13fb5fba92b53f, type: 2}
   exp: {fileID: 11400000, guid: d29d7232f70248e4986979e70d83da80, type: 2}
   level: {fileID: 11400000, guid: 768ba6cdc985dd84aaa639c874e78ed0, type: 2}
+--- !u!114 &8755595750374796902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777774259798216206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 220e56be39a14766be2393ecce740bd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickEffect: {fileID: 0}
+  size: 5
 --- !u!4 &1907429574684393820 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1013882226241532419, guid: c116fdd80fe483b4d9b353b03c4204e4, type: 3}

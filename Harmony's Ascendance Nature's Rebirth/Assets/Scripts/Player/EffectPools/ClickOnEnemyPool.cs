@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Player
 {
-    public class CllickOnEnemyEffect : MonoBehaviour
+    public class ClickOnEnemyPool : MonoBehaviour
     {
         public GameObject clickEffect;
         public int size = 5;
