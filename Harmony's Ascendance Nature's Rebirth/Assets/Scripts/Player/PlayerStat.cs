@@ -13,7 +13,6 @@ namespace Player
         public FloatVariable exp;
         public float maxExp;
         public IntVariable level;
-        
         private void Start()
         {
             //Starting stats when starting play-mode
@@ -25,33 +24,39 @@ namespace Player
             maxExp = 100f;
             level.setValue(15);
             
-            health.ValueChanged.AddListener(LimiterStat);
-            magic.ValueChanged.AddListener(LimiterStat);
+            health.ValueChanged.AddListener(LimiterHealth);
+            magic.ValueChanged.AddListener(LimiterMagic);
             exp.ValueChanged.AddListener(LevelUp);
         }
         private void OnDestroy()
         {
-            health.ValueChanged.RemoveListener(LimiterStat);
-            magic.ValueChanged.RemoveListener(LimiterStat);
+            health.ValueChanged.RemoveListener(LimiterHealth);
+            magic.ValueChanged.RemoveListener(LimiterMagic);
             exp.ValueChanged.RemoveListener(LevelUp);
         }
         private void LevelUp(float currentLevel)
         {
             if (exp.getValue() > maxExp)
             {
-                float newExp = exp.getValue() - maxExp;
-                int newLevel = level.getValue() + 1;
-                level.setValue(newLevel);
-                exp.setValue(newExp);
-                /*maxExp =+ 30f; //Increasing requirement for next level
-                maxHealth =+ 20f;
-                maxMagic =+ 60f;*/
+                exp.setValue(exp.getValue() - maxExp);
+                level.setValue(level.getValue() + 1);
+
+                //maxHealth = maxHealth * 1.25f;
+                //maxMagic = maxMagic * 1.25f;
+                //maxExp = maxExp * 
+                
+                maxExp += 30f; //Increasing requirement for next level
+                maxHealth += 20f;
+                maxMagic += 60f;
             }
         }
-        private void LimiterStat(float currentValues)
+        private void LimiterHealth(float currentValues) //Limiter for health
         {
-            if(health.getValue() > maxHealth) health.setValue(maxHealth);
-            if(magic.getValue() > maxMagic) magic.setValue(maxMagic);
+            if(currentValues > maxHealth) health.setValue(maxHealth);
+        }
+        private void LimiterMagic(float currentValues) //Limiter for magic
+        {
+            if(currentValues > maxMagic) magic.setValue(maxMagic);
         }
     }
 }
