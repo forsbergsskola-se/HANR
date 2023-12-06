@@ -35,9 +35,8 @@ namespace NPC.Enemy.Critters
                 animator.SetBool("IsDead",true);
                 agent.isStopped = true;
                 
-                Destroy(gameObject);
-                currentClickedEnemy.setValue(null);
                 DeathEffect();
+                Destroy(gameObject);
             }
         }
 

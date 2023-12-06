@@ -950,9 +950,6 @@ PrefabInstance:
       addedObject: {fileID: 1442139110311222097}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c116fdd80fe483b4d9b353b03c4204e4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2630807273551661149}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c116fdd80fe483b4d9b353b03c4204e4, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 4858815704497540717}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c116fdd80fe483b4d9b353b03c4204e4, type: 3}
       insertIndex: -1
@@ -1197,21 +1194,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   Items: []
---- !u!114 &2630807273551661149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1777774259798216206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a09c1b64c2f444f2b6ff7229bcd7328d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyInRange: {fileID: 11400000, guid: 5fd94533043704dd2a8d4f3911c75ffa, type: 2}
-  detectionRange: -0.15
-  attackRange: 0
 --- !u!114 &4858815704497540717
 MonoBehaviour:
   m_ObjectHideFlags: 0

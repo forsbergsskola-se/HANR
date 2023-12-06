@@ -23,7 +23,7 @@ public class PlayerAttack : MonoBehaviour
     private GameObject enemyToAttack;
     private DefaultAttackPool daAttackPool;
     private float projectileSpeed = 10f;// Should come from weapon stats later
-    private float attackDamage = 3f;// Should come from weapon stats later
+    private float attackDamage = 10f;// Should come from weapon stats later
     private float playerAttackRange = 15f; //Should come from player stats later on
     
 
@@ -55,6 +55,7 @@ public class PlayerAttack : MonoBehaviour
         }
         else
         {
+            enemyToAttack = null;
             animator.SetBool("isDefaultAttack", false);
             StopCoroutine(checkDistance());
         }
@@ -63,37 +64,42 @@ public class PlayerAttack : MonoBehaviour
 
     private IEnumerator checkDistance()
     {
-        if (currentClickedEnemy.getValue() != null)
+        float distance = Vector3.Distance(this.gameObject.transform.position, enemyToAttack.transform.position);
+        
+        if (distance > playerAttackRange)
         {
-            float distance = Vector3.Distance(this.gameObject.transform.position, enemyToAttack.transform.position);
-        
-            if (distance > playerAttackRange)
-            {
-                playerMoving.setValue(true);
-                animator.SetBool("isDefaultAttack", false);
-            }
-        
-            while (distance > playerAttackRange)
-            {
-                distance = Vector3.Distance(this.gameObject.transform.position, enemyToAttack.transform.position);
-                yield return null; 
-            }
-        
-            playerMoving.setValue(false);
-            animator.SetBool("isDefaultAttack", true);
+            playerMoving.setValue(true);
+            animator.SetBool("isDefaultAttack", false);
         }
+        
+        while (distance > playerAttackRange)
+        {
+            distance = Vector3.Distance(this.gameObject.transform.position, enemyToAttack.transform.position);
+            yield return null; 
+        }
+        
+        playerMoving.setValue(false);
+        animator.SetBool("isDefaultAttack", true);
+        
     }
     
     public void DefaultAttack()
     {
-        FaceEnemy();
-        GameObject projectileInstance = daAttackPool.GetPooledEffects();
-        if (projectileInstance != null)
+        if (enemyToAttack != null)
         {
-            projectileInstance.transform.position = weaponEquipped.transform.position;
-            projectileInstance.transform.rotation = weaponEquipped.transform.rotation;
+            FaceEnemy();
+            GameObject projectileInstance = daAttackPool.GetPooledEffects();
+            if (projectileInstance != null)
+            {
+                projectileInstance.transform.position = weaponEquipped.transform.position;
+                projectileInstance.transform.rotation = weaponEquipped.transform.rotation;
             
-            ShootProjectile(projectileInstance);
+                ShootProjectile(projectileInstance);
+            }
+        }
+        else
+        {
+            currentClickedEnemy.setValue(null);
         }
     }
         
