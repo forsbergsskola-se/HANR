@@ -22,11 +22,12 @@ public class PlayerHud2 : MonoBehaviour
     public FloatVariable magic;
     public FloatVariable exp;
     public IntVariable level;
-
-    public PlayerStat playerStat;
+    private PlayerStat playerStat;
+    
     private void Awake()
     {
         SetUpPlayerHUD();
+        playerStat = GameObject.FindWithTag("Player").GetComponent<PlayerStat>();
     }
 
     private void SetUpPlayerHUD()

@@ -12,12 +12,14 @@ public class InventoryUI : MonoBehaviour
 {
     public List<Image> slots = new List<Image>(){};
     public Item defaultImage;
-    public GameObject player;
+    private GameObject player;
     private InventoryHolder inventoryHolder; 
-    [SerializeField]UsableItems usableItems;
+    private UsableItems usableItems;
     
     public void Awake()
     {
+        player = GameObject.FindWithTag("Player").gameObject;
+        usableItems = player.GetComponent<UsableItems>();
         inventoryHolder = player.GetComponent<InventoryHolder>();
         SetUpHUD();
         inventoryHolder.pickUp.AddListener(UpdateInventoryHUD);
