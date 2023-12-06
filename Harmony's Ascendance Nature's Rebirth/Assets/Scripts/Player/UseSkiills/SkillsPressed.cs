@@ -6,9 +6,7 @@ namespace Player.UseSkills
 {
     public class SkillsPressed : MonoBehaviour
     {
-        public UnityEvent<Skills> skill1;
-        public UnityEvent<Skills> skill2;
-        public UnityEvent<Skills> ultiSkill;
+        public UnityEvent<Skills> skillPressed;
         private UsableItems usableItems;
         private Item item;
 
@@ -47,15 +45,16 @@ namespace Player.UseSkills
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                skill1.Invoke(item.skill1);
+                skillPressed.Invoke(item.skill1);
             }  
             else if (Input.GetKeyDown(KeyCode.W))
             {
-                skill2.Invoke(item.skill2);
+                skillPressed.Invoke(item.skill2);
             }
             else if (Input.GetKeyDown(KeyCode.E))
             {
-                ultiSkill.Invoke(item.ultiSkill);
+                skillPressed.Invoke(item.ultiSkill);
+                Debug.Log("ButtonPress: " + item.ultiSkill.name);
             }
         }
     }

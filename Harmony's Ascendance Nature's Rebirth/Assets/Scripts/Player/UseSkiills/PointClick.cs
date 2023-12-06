@@ -50,6 +50,7 @@ namespace Player.UseSkills
             
             Rigidbody rb = skGameObject.GetComponent<Rigidbody>();
             rb.velocity = new Vector3(dir.x * 5f, dir.y * 5f, dir.z * 5f);
+            skill = null;
         }
     }
 }

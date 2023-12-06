@@ -78,17 +78,17 @@ public class SkillUI : MonoBehaviour
 
     public void skill1Pressed()
     {
-        skillPressed.skill1.Invoke(item.skill1);
+        skillPressed.skillPressed.Invoke(item.skill1);
     }
     
     public void skill2Pressed()
     {
-        skillPressed.skill2.Invoke(item.skill2);
+        skillPressed.skillPressed.Invoke(item.skill2);
     }
     
     public void ultiSkiilPressed()
     {
-        skillPressed.ultiSkill.Invoke(item.ultiSkill);
+        skillPressed.skillPressed.Invoke(item.ultiSkill);
     }
 
 
