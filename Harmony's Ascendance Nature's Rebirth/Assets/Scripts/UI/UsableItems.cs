@@ -9,9 +9,9 @@ public class UsableItems : MonoBehaviour
 {
     private InventoryHolder inventoryHolder;
 
-    public UnityEvent startStaffEquipped;
-    public UnityEvent fireStaffEquipped;
-    public UnityEvent waterStaffEquipped; 
+    public UnityEvent<Item> startStaffEquipped;
+    public UnityEvent<Item> fireStaffEquipped;
+    public UnityEvent<Item> waterStaffEquipped; 
     public UnityEvent UpdateUsedItem;
     
     [SerializeField] private Item defaultItem;
@@ -84,19 +84,19 @@ public class UsableItems : MonoBehaviour
             {
                 if (itemInSlot.itemID == "Starter Staff")
                 {
-                    startStaffEquipped.Invoke();
+                    startStaffEquipped.Invoke(itemInSlot);
                 }
 
                 if (itemInSlot.itemID == "Fire Staff")
                 {
                     Debug.Log("Fire Weapon");
-                    fireStaffEquipped.Invoke();
+                    fireStaffEquipped.Invoke(itemInSlot);
                 }
 
                 if (itemInSlot.itemID == "Water Staff")
                 {
                     Debug.Log("Water Weapon");
-                    waterStaffEquipped.Invoke();
+                    waterStaffEquipped.Invoke(itemInSlot);
                 }
 
             }

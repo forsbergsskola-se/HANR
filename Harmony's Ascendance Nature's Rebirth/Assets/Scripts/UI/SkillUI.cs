@@ -49,7 +49,7 @@ public class SkillUI : MonoBehaviour
         usableItems.waterStaffEquipped.RemoveListener(ShowWaterSkills);
     }
 
-    private void ShowStarterSkills()
+    private void ShowStarterSkills(Item item)
     {
         //TODO SHOW STARTERSKILLS SPRITES 
         megaSkill.sprite = starterMega;
@@ -63,7 +63,7 @@ public class SkillUI : MonoBehaviour
         
     }
     
-    private void ShowFireSkills()
+    private void ShowFireSkills(Item item)
     {
         //TODO SHOW FIRESKILLS SPRITES
         megaSkill.sprite = fireMega;
@@ -76,7 +76,7 @@ public class SkillUI : MonoBehaviour
         smallSkill.color = color;
     }
 
-    private void ShowWaterSkills()
+    private void ShowWaterSkills(Item item)
     {
         //TODO SHOW WATERSKILLS SPRITES
         megaSkill.sprite = waterMega;

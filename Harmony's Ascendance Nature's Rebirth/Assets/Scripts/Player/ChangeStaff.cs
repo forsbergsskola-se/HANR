@@ -44,19 +44,19 @@ public class ChangeStaff : MonoBehaviour
         usableItems.startStaffEquipped.RemoveListener(EquipStarter);
     }
 
-    private void EquipStarter()
+    private void EquipStarter(Item item)
     {
         staffMesh.mesh = starterStaff;
         staffRenderer.material = startMaterial;
     }
 
-    private void EquipFire()
+    private void EquipFire(Item item)
     {
         staffMesh.mesh = fireStaff;
         staffRenderer.material = fireMaterial;
     }
 
-    private void EquipWater()
+    private void EquipWater(Item item)
     {
         staffMesh.mesh = waterStaff;
         staffRenderer.material = waterMaterial;
