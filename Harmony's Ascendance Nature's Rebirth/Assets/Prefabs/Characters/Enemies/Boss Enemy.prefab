@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 7569083031853421344}
   - component: {fileID: 454811766674727700}
   m_Layer: 0
-  m_Name: PBR_Golem 1
+  m_Name: Boss Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
