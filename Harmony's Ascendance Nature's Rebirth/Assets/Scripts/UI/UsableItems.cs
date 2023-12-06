@@ -129,7 +129,7 @@ public class UsableItems : MonoBehaviour
                     UpdateUsedItem.Invoke();
                 }
                 
-                else if (itemInSlot.itemID == "Potion Magic") //TODO: why not working?
+                else if (itemInSlot.itemID == "Potion Magic")
                 {
 
                     //Add Magic to player

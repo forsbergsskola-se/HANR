@@ -14,7 +14,9 @@ namespace NPC.Enemy.Critters
         [SerializeField] private Animator animator;
         [SerializeField] private NavMeshAgent agent;
         private HitEffectPool hitEffectPool;
-
+        
+        public FloatVariable playerExp;
+        public FloatVariable playerLevel;
         private void Start()
         {
             hitEffectPool = this.gameObject.GetComponent<HitEffectPool>();
@@ -32,6 +34,12 @@ namespace NPC.Enemy.Critters
             {
                 animator.SetBool("isDead",true);
                 agent.isStopped = true;
+                playerExp.setValue(playerExp.getValue()+40); //On death, give player exp.
+                if (playerExp.getValue() > 100)
+                {
+                    playerExp.setValue(playerExp.getValue()-100);
+                    playerLevel.setValue(playerLevel.getValue()+1);
+                }
             }
         }
 
