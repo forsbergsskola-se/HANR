@@ -13,6 +13,14 @@ public class ClickCheck : MonoBehaviour
     public TargetPoint targetPoint;
     public GameObjectVariable currentClickedEnemy;
     
+    private ClickEffectPool clickEffectPool;
+   // private  clickOnEnemyEffect;
+
+    private void Start()
+    {
+        clickEffectPool = this.gameObject.GetComponent<ClickEffectPool>();
+    }
+
     private void Update()
     {
         MouseInput();
@@ -33,6 +41,12 @@ public class ClickCheck : MonoBehaviour
                     {
                         playerMoving.setValue(true);
                         currentClickedEnemy.setValue(null);
+                        
+                        GameObject effectInstance = clickEffectPool.GetPooledEffects();
+                        if (effectInstance != null)
+                        {
+                            effectInstance.transform.position = raycastHit.point += new Vector3(0,0.3f,0);
+                        }
                     }
                     if (raycastHit.transform.CompareTag("Enemy"))
                     {
