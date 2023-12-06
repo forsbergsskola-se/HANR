@@ -46,17 +46,12 @@ public class DecamedWater : MonoBehaviour
                 // Get the shader of the material
                 Shader shader = material.shader;
                     
+                // Set the color property of the shader
+                //TODO Change magic color and magic name
                 material.SetColor("_ColorDeep", Color.green);
                 material.SetColor("_ColorDepthFade", Color.black);
-                    
-                //TODO Change magic color and magic name
-                
-                    
-                // Set the color property of the shader
                 material.SetColor("_Color0", Color.green); // Modify as needed
                 material.SetColor("_Color1", Color.black); // Modify as needed
-                
-                //TODO Change magic color and magic name
 
                 // Print information to the console (replace this with your logic)
                 Debug.Log($"Shader color changed on {child.name}: {shader.name}");

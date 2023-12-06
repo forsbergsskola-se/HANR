@@ -101,43 +101,36 @@ public class UsableItems : MonoBehaviour
 
             }
 
-            if (itemInSlot.itemClass == "Consumable") //When 
+            if (itemInSlot.itemClass == "Consumable") //When using potions
             {
                 if (itemInSlot.itemID == "Potion Health")
                 {
 
                     //Add health to player
                     float newHealth = itemInSlot.itemStat + playerHealth.getValue();
-                    playerHealth.setValue(Mathf.Min(100, newHealth)); //Limiter to not exceed 100
+                    playerHealth.setValue(newHealth);
                     inventoryHolder.Items[slotIndex] = defaultItem;
                     UpdateUsedItem.Invoke();
 
                 }
-                
-                else if (itemInSlot.itemID == "Potion Exp")
-                {
-
-                    //Add exp to player
-                    float newExp = itemInSlot.itemStat + playerExperiance.getValue();
-                    playerExperiance.setValue(newExp);
-                    if (playerExperiance.getValue() > 100) // When Exp. goes 100 => level up
-                    {
-                        playerExperiance.setValue(playerExperiance.getValue()-100);
-                        playerLevel.setValue(playerLevel.getValue()+1);
-                    }
-                    inventoryHolder.Items[slotIndex] = defaultItem;
-                    UpdateUsedItem.Invoke();
-                }
-                
                 else if (itemInSlot.itemID == "Potion Magic")
                 {
 
                     //Add Magic to player
                     float newMagic = itemInSlot.itemStat + playerMagic.getValue();
-                    playerMagic.setValue(Mathf.Min(100, newMagic)); //Limiter to not exceed 100
+                    playerMagic.setValue(newMagic);
                     inventoryHolder.Items[slotIndex] = defaultItem;
                     UpdateUsedItem.Invoke();
 
+                }
+                else if (itemInSlot.itemID == "Potion Exp")
+                {
+
+                    //Add exp to player
+                    float newExp = itemInSlot.itemStat + playerExperiance.getValue();
+                    playerExperiance.setValue(playerExperiance.getValue() + newExp);
+                    if (playerExperiance.getValue() > 100) inventoryHolder.Items[slotIndex] = defaultItem;
+                    UpdateUsedItem.Invoke();
                 }
             }
         }
