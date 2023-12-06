@@ -1,12 +1,9 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using CustomObjects;
 using UnityEngine;
 
 namespace Player
 {
-    public class ClickEffectPool : MonoBehaviour
+    public class CllickOnEnemyEffect : MonoBehaviour
     {
         public GameObject clickEffect;
         public int size = 5;
@@ -41,5 +38,5 @@ namespace Player
             }
             return null;
         }
-    }
+    } 
 }
