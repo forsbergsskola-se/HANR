@@ -15,7 +15,7 @@ namespace Enemy.BossEnemy
         [SerializeField] private NavMeshAgent agent;
         private HitEffectPool hitEffectPool;
         public FloatVariable playerExp;
-        public FloatVariable playerLevel;
+        public IntVariable playerLevel;
         private void Start()
         {
             hitEffectPool = this.gameObject.GetComponent<HitEffectPool>();
