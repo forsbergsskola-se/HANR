@@ -1381,7 +1381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 220e56be39a14766be2393ecce740bd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickEffect: {fileID: 0}
+  clickEffect: {fileID: 7941266285869916736, guid: a0eafff1ebb4e411ca4d2793acb94a23, type: 3}
   size: 5
 --- !u!4 &1907429574684393820 stripped
 Transform:

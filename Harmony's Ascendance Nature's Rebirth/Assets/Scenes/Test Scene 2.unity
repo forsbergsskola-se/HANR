@@ -2463,7 +2463,7 @@ PrefabInstance:
     - target: {fileID: 8755595750374796902, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
       propertyPath: clickEffect
       value: 
-      objectReference: {fileID: 7941266285869916736, guid: 74774d265cab842e88253b6615c13069, type: 3}
+      objectReference: {fileID: 7941266285869916736, guid: a0eafff1ebb4e411ca4d2793acb94a23, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
