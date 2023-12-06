@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using CustomObjects;
+using Player;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,7 +23,7 @@ public class PlayerHud2 : MonoBehaviour
     public FloatVariable magic;
     public FloatVariable exp;
     public IntVariable level;
-    
+
     private void Awake()
     {
         SetUpPlayerHUD();
