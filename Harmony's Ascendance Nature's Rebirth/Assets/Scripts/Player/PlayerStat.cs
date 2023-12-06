@@ -13,10 +13,22 @@ namespace Player
         
         private void Start()
         {
+            //Starting stats when starting play-mode
             health.setValue(40f);
             magic.setValue(50.5f);
             exp.setValue(65.5f);
             level.setValue(15);
+            level.ValueChanged.AddListener(levelUp);
+        }
+
+        private void OnDestroy()
+        {
+            level.ValueChanged.AddListener(levelUp);
+        }
+
+        private void levelUp(int currentLevel)
+        {
+            
         }
     }
 }
