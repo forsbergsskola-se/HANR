@@ -1291,7 +1291,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b68e3182573984ba59386d826d62c950, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d1984103df2b438459b90febef6be0bc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1490,15 +1490,6 @@ MonoBehaviour:
   starterMega: {fileID: 21300000, guid: 126beb5df6dfa4dddaabe5107d7cd985, type: 3}
   starterSmall: {fileID: 21300000, guid: e30d63bc56ef545d2a5622cf09add012, type: 3}
   starterSmall2: {fileID: 21300000, guid: c6faf72549a25485cb7253718b11f15e, type: 3}
-  skill1:
-    m_PersistentCalls:
-      m_Calls: []
-  skill2:
-    m_PersistentCalls:
-      m_Calls: []
-  ultiSkill:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &3913303159408933069
 GameObject:
   m_ObjectHideFlags: 0
@@ -3456,14 +3447,14 @@ PrefabInstance:
     - target: {fileID: 3693942874955430976, guid: cbf7d255620604218bcfe237db3bdf97, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4483906199697729003}
+      objectReference: {fileID: 8132618243456216932}
     - target: {fileID: 3693942874955430976, guid: cbf7d255620604218bcfe237db3bdf97, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3693942874955430976, guid: cbf7d255620604218bcfe237db3bdf97, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ultiSkiilPressed
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3693942874955430976, guid: cbf7d255620604218bcfe237db3bdf97, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -3593,6 +3584,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 4586942049372889734}
   m_SourcePrefab: {fileID: 100100000, guid: cbf7d255620604218bcfe237db3bdf97, type: 3}
+--- !u!1 &8132618243456216932 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3693942874955430989, guid: cbf7d255620604218bcfe237db3bdf97, type: 3}
+  m_PrefabInstance: {fileID: 4872710409663812393}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &8132618243456216933 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3693942874955430988, guid: cbf7d255620604218bcfe237db3bdf97, type: 3}
@@ -4065,14 +4061,14 @@ PrefabInstance:
     - target: {fileID: 3693942874955430976, guid: cbf7d255620604218bcfe237db3bdf97, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4483906199697729003}
+      objectReference: {fileID: 8945685842325396298}
     - target: {fileID: 3693942874955430976, guid: cbf7d255620604218bcfe237db3bdf97, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3693942874955430976, guid: cbf7d255620604218bcfe237db3bdf97, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: skill2Pressed
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3693942874955430976, guid: cbf7d255620604218bcfe237db3bdf97, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -4202,6 +4198,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 5386867789057586896}
   m_SourcePrefab: {fileID: 100100000, guid: cbf7d255620604218bcfe237db3bdf97, type: 3}
+--- !u!1 &8945685842325396298 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3693942874955430989, guid: cbf7d255620604218bcfe237db3bdf97, type: 3}
+  m_PrefabInstance: {fileID: 5721524919398196999}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &8945685842325396299 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3693942874955430988, guid: cbf7d255620604218bcfe237db3bdf97, type: 3}
@@ -4273,14 +4274,14 @@ PrefabInstance:
     - target: {fileID: 3693942874955430976, guid: cbf7d255620604218bcfe237db3bdf97, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4483906199697729003}
+      objectReference: {fileID: 5904493687748902777}
     - target: {fileID: 3693942874955430976, guid: cbf7d255620604218bcfe237db3bdf97, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3693942874955430976, guid: cbf7d255620604218bcfe237db3bdf97, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: skill1Pressed
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3693942874955430976, guid: cbf7d255620604218bcfe237db3bdf97, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -4460,6 +4461,11 @@ MonoBehaviour:
 --- !u!224 &5904493687748902776 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3693942874955430988, guid: cbf7d255620604218bcfe237db3bdf97, type: 3}
+  m_PrefabInstance: {fileID: 7112165404759458612}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5904493687748902777 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3693942874955430989, guid: cbf7d255620604218bcfe237db3bdf97, type: 3}
   m_PrefabInstance: {fileID: 7112165404759458612}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8208329333459267356
