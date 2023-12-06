@@ -19,7 +19,7 @@ namespace UltimateClean
 
         protected void Start()
         {
-            m_canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+           m_canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
         }
 
         public virtual void OpenPopup()
