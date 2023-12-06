@@ -14,6 +14,5 @@ public class Item : ScriptableObject
     public float itemStat;
     public Skills skill1;
     public Skills skill2;
-    public Skills skill3;
-    public Skills skill4;
+    public Skills ultiSkill;
 }
