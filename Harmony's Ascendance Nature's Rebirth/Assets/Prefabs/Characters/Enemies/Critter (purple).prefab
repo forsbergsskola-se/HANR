@@ -861,6 +861,8 @@ MonoBehaviour:
   critterHealth: {fileID: 11400000, guid: 1e024cfec2cd94a769db922439b46896, type: 2}
   animator: {fileID: 7575389782524006198}
   agent: {fileID: 8338094402280085788}
+  playerExp: {fileID: 11400000, guid: d29d7232f70248e4986979e70d83da80, type: 2}
+  playerLevel: {fileID: 11400000, guid: 768ba6cdc985dd84aaa639c874e78ed0, type: 2}
 --- !u!114 &5900507210396769317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -907,6 +909,8 @@ MonoBehaviour:
   critterHealth: {fileID: 11400000, guid: 1e024cfec2cd94a769db922439b46896, type: 2}
   animator: {fileID: 7575389782524006198}
   agent: {fileID: 8338094402280085788}
+  playerExp: {fileID: 11400000, guid: d29d7232f70248e4986979e70d83da80, type: 2}
+  playerLevel: {fileID: 11400000, guid: 768ba6cdc985dd84aaa639c874e78ed0, type: 2}
 --- !u!114 &4201553723988307520
 MonoBehaviour:
   m_ObjectHideFlags: 0
