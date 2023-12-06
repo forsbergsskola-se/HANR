@@ -88,7 +88,6 @@ public class SkillUI : MonoBehaviour
     
     public void ultiSkiilPressed()
     {
-        Debug.Log("ulti skill pressed UI");
         skillPressed.ultiSkill.Invoke(item.ultiSkill);
     }
 

@@ -52,10 +52,7 @@ namespace Player.UseSkills
         {
             if (skill.pointClick)
             {
-                Debug.Log("ulti skill pressed player");
-                Debug.Log(weaponEquipped.transform.position);
-                GameObject temp = Instantiate(skill.skillObject, weaponEquipped.transform);
-                temp.transform.position = weaponEquipped.transform.position;
+                Debug.Log("ultiSkill");
             }
             else
             {
