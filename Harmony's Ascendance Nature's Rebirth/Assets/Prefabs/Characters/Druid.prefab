@@ -702,13 +702,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startStaffEquipped:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2211034415360020581}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   fireStaffEquipped:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6145102003586746870, guid: 1e8bb7bebef307145babef0b361bb35c, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   waterStaffEquipped:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5473966764079457125, guid: 984b11ea8aebab24d8009302d4a2a146, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   UpdateUsedItem:
     m_PersistentCalls:
       m_Calls: []
@@ -764,6 +800,11 @@ MonoBehaviour:
 --- !u!4 &1907429574684393820 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1013882226241532419, guid: c116fdd80fe483b4d9b353b03c4204e4, type: 3}
+  m_PrefabInstance: {fileID: 1471135102381994847}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2211034415360020581 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 776212890287121210, guid: c116fdd80fe483b4d9b353b03c4204e4, type: 3}
   m_PrefabInstance: {fileID: 1471135102381994847}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &4251252891509353525 stripped

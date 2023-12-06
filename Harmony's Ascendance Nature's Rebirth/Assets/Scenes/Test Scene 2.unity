@@ -795,6 +795,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 356527315}
     m_Modifications:
+    - target: {fileID: 2402256193100386541, guid: 462d50ca8748545129a488a58af0ad43, type: 3}
+      propertyPath: screen
+      value: 
+      objectReference: {fileID: 17279120}
     - target: {fileID: 3147098492075960813, guid: 462d50ca8748545129a488a58af0ad43, type: 3}
       propertyPath: m_Name
       value: Boss Enemy
@@ -1799,6 +1803,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4370408044802925624, guid: 05ca4e5887f7d48c09700eecc38ec490, type: 3}
+      propertyPath: screen
+      value: 
+      objectReference: {fileID: 17279120}
     - target: {fileID: 4718287801753836335, guid: 05ca4e5887f7d48c09700eecc38ec490, type: 3}
       propertyPath: m_Name
       value: Critter (purple)
