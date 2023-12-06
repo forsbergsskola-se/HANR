@@ -33,12 +33,15 @@ namespace Enemy.BossEnemy
             {
                 animator.SetBool("isDead",true);
                 agent.isStopped = true;
+                
+                /*
+                // This should be triggered by an event instead?
                 playerExp.setValue(playerExp.getValue()+100); //On death, give player exp.
                 if (playerExp.getValue() > 100)
                 {
                     playerExp.setValue(playerExp.getValue()-100);
                     playerLevel.setValue(playerLevel.getValue()+1);
-                }
+                } */
             }
         }
 
