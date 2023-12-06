@@ -14,9 +14,8 @@ namespace NPC.Enemy.Critters
         [SerializeField] private Animator animator;
         [SerializeField] private NavMeshAgent agent;
         private HitEffectPool hitEffectPool;
+        public GameObjectVariable currentClickedEnemy;
         
-        public FloatVariable playerExp;
-        public IntVariable playerLevel;
         private void Start()
         {
             hitEffectPool = this.gameObject.GetComponent<HitEffectPool>();
@@ -36,7 +35,8 @@ namespace NPC.Enemy.Critters
                 animator.SetBool("IsDead",true);
                 agent.isStopped = true;
                 
-                Destroy(this.gameObject);
+                Destroy(gameObject);
+                currentClickedEnemy.setValue(null);
                 DeathEffect();
             }
         }

@@ -14,7 +14,7 @@ public class PlayerAttack : MonoBehaviour
 {
     public BoolVariable playerMoving;
     public Animator animator;
-    [FormerlySerializedAs("currentClickedEmeny")] public GameObjectVariable currentClickedEnemy;
+    public GameObjectVariable currentClickedEnemy;
     private NavMeshAgent agent;
     private Quaternion toRotation;
     private GameObject weaponEquipped;
@@ -39,6 +39,13 @@ public class PlayerAttack : MonoBehaviour
         currentClickedEnemy.ValueChanged.RemoveListener(trackEnemy);
     }
 
+    private void Start()
+    {
+        daAttackPool = this.gameObject.GetComponent<DefaultAttackPool>();
+        weaponEquipped = gameObject.GetComponentInChildren<WeaponEquipped>().gameObject;
+        animator = gameObject.GetComponentInChildren<Animator>();
+    }
+    
     private void trackEnemy(GameObject enemy)
     {
         if (enemy)
@@ -56,31 +63,27 @@ public class PlayerAttack : MonoBehaviour
 
     private IEnumerator checkDistance()
     {
-        float distance = Vector3.Distance(this.gameObject.transform.position, enemyToAttack.transform.position);
-        
-        if (distance > playerAttackRange)
+        if (currentClickedEnemy.getValue() != null)
         {
-            playerMoving.setValue(true);
-            animator.SetBool("isDefaultAttack", false);
-        }
+            float distance = Vector3.Distance(this.gameObject.transform.position, enemyToAttack.transform.position);
         
-        while (distance > playerAttackRange)
-        {
-            distance = Vector3.Distance(this.gameObject.transform.position, enemyToAttack.transform.position);
-            yield return null; 
-        }
+            if (distance > playerAttackRange)
+            {
+                playerMoving.setValue(true);
+                animator.SetBool("isDefaultAttack", false);
+            }
         
-        playerMoving.setValue(false);
-        animator.SetBool("isDefaultAttack", true);
+            while (distance > playerAttackRange)
+            {
+                distance = Vector3.Distance(this.gameObject.transform.position, enemyToAttack.transform.position);
+                yield return null; 
+            }
+        
+            playerMoving.setValue(false);
+            animator.SetBool("isDefaultAttack", true);
+        }
     }
-
-    private void Start()
-    {
-        daAttackPool = this.gameObject.GetComponent<DefaultAttackPool>();
-        weaponEquipped = gameObject.GetComponentInChildren<WeaponEquipped>().gameObject;
-        animator = gameObject.GetComponentInChildren<Animator>();
-    }
-
+    
     public void DefaultAttack()
     {
         FaceEnemy();
