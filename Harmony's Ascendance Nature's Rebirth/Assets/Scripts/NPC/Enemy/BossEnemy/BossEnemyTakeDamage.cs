@@ -14,8 +14,7 @@ namespace Enemy.BossEnemy
         [SerializeField] private Animator animator;
         [SerializeField] private NavMeshAgent agent;
         private HitEffectPool hitEffectPool;
-        public FloatVariable playerExp;
-        public IntVariable playerLevel;
+        public GameObjectVariable currentClickedEnemy;
         private void Start()
         {
             hitEffectPool = this.gameObject.GetComponent<HitEffectPool>();
@@ -34,14 +33,8 @@ namespace Enemy.BossEnemy
                 animator.SetBool("isDead",true);
                 agent.isStopped = true;
                 
-                /*
-                // This should be triggered by an event instead?
-                playerExp.setValue(playerExp.getValue()+100); //On death, give player exp.
-                if (playerExp.getValue() > 100)
-                {
-                    playerExp.setValue(playerExp.getValue()-100);
-                    playerLevel.setValue(playerLevel.getValue()+1);
-                } */
+                Destroy(gameObject);
+                currentClickedEnemy.setValue(null);
             }
         }
 
@@ -57,6 +50,11 @@ namespace Enemy.BossEnemy
 
             yield return new WaitForSeconds(2);
             hitEffect.SetActive(false);
+        }
+        
+        private void DeathEffect()
+        {
+            Debug.Log("Bang");
         }
     }
 }

@@ -23,7 +23,7 @@ public class PlayerAttack : MonoBehaviour
     private GameObject enemyToAttack;
     private DefaultAttackPool daAttackPool;
     private float projectileSpeed = 10f;// Should come from weapon stats later
-    private float attackDamage = 3f;// Should come from weapon stats later
+    private float attackDamage = 10f;// Should come from weapon stats later
     private float playerAttackRange = 15f; //Should come from player stats later on
     
 
@@ -48,7 +48,7 @@ public class PlayerAttack : MonoBehaviour
     
     private void trackEnemy(GameObject enemy)
     {
-        if (enemy)
+        if (enemy && currentClickedEnemy.getValue() != null)
         {
             enemyToAttack = enemy;
             StartCoroutine(checkDistance());
