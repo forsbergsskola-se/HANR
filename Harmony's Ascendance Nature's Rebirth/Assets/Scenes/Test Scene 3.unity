@@ -901,8 +901,8 @@ MonoBehaviour:
   defaultItem: {fileID: 11400000, guid: 2c8ba1ee984a6fa4f85fea1fb4db8da5, type: 2}
   playerHealth: {fileID: 11400000, guid: 65f80b9a019bad14fbdeec9b15d45e25, type: 2}
   playerExperiance: {fileID: 11400000, guid: d29d7232f70248e4986979e70d83da80, type: 2}
-  playerMagic: {fileID: 0}
-  playerLevel: {fileID: 0}
+  playerMagic: {fileID: 11400000, guid: e1409a8b6970b024da13fb5fba92b53f, type: 2}
+  playerLevel: {fileID: 11400000, guid: 768ba6cdc985dd84aaa639c874e78ed0, type: 2}
 --- !u!1 &419444457
 GameObject:
   m_ObjectHideFlags: 0
