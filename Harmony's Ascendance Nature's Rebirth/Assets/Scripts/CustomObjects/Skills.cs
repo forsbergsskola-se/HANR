@@ -13,7 +13,8 @@ public class Skills : ScriptableObject
     public float range;
     public float damage;
     public float cooldown;
-    public int skillId;
+    public bool pointClick;
     public bool isUlitimate;
     public Sprite icon;
+    public GameObject skillObject;
 }

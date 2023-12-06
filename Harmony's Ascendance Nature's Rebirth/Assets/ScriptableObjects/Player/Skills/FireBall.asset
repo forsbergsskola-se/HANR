@@ -17,6 +17,7 @@ MonoBehaviour:
   range: 15
   damage: 30
   cooldown: 20
-  skillId: 0
+  pointClick: 1
   isUlitimate: 1
   icon: {fileID: 21300000, guid: 742115b09648641ab9f106639948cc2f, type: 3}
+  skillObject: {fileID: 8571159334589146555, guid: 51d1294399eb0944b8c0419e249c1653, type: 3}

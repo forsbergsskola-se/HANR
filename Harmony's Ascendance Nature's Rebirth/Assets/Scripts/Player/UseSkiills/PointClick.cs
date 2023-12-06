@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Player.Skills
+namespace Player.UseSkills
 {
     public class PointClick : MonoBehaviour
     {
