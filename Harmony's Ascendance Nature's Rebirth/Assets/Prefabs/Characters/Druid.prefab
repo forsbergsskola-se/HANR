@@ -451,6 +451,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c116fdd80fe483b4d9b353b03c4204e4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2630807273551661149}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c116fdd80fe483b4d9b353b03c4204e4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4858815704497540717}
   m_SourcePrefab: {fileID: 100100000, guid: c116fdd80fe483b4d9b353b03c4204e4, type: 3}
 --- !u!4 &1432211655959991476 stripped
 Transform:
@@ -602,7 +605,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMoving: {fileID: 11400000, guid: ac6cfe3da22a341db9d2eceaf518767d, type: 2}
   targetPoint: {fileID: 11400000, guid: a0ccd26fe714d47fab8f178ae244bf97, type: 2}
-  currentClickedEnemy: {fileID: 0}
+  currentClickedEnemy: {fileID: 11400000, guid: e5d229f37daf285498bf90de79b0ee08, type: 2}
 --- !u!114 &5904134507221357143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -615,9 +618,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eb7504fca7fbeb4db951fa8955f81c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMoving: {fileID: 0}
+  playerMoving: {fileID: 11400000, guid: ac6cfe3da22a341db9d2eceaf518767d, type: 2}
   animator: {fileID: 2771500659704570704}
-  currentClickedEnemy: {fileID: 0}
+  currentClickedEnemy: {fileID: 11400000, guid: e5d229f37daf285498bf90de79b0ee08, type: 2}
 --- !u!114 &1442139110311222097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -649,6 +652,35 @@ MonoBehaviour:
   enemyInRange: {fileID: 11400000, guid: 5fd94533043704dd2a8d4f3911c75ffa, type: 2}
   detectionRange: 0
   attackRange: 0
+--- !u!114 &4858815704497540717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777774259798216206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0185769542eb2ab419dccd9a3ef50e52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startStaffEquipped:
+    m_PersistentCalls:
+      m_Calls: []
+  fireStaffEquipped:
+    m_PersistentCalls:
+      m_Calls: []
+  waterStaffEquipped:
+    m_PersistentCalls:
+      m_Calls: []
+  UpdateUsedItem:
+    m_PersistentCalls:
+      m_Calls: []
+  defaultItem: {fileID: 11400000, guid: 2c8ba1ee984a6fa4f85fea1fb4db8da5, type: 2}
+  playerHealth: {fileID: 11400000, guid: 65f80b9a019bad14fbdeec9b15d45e25, type: 2}
+  playerExperiance: {fileID: 11400000, guid: d29d7232f70248e4986979e70d83da80, type: 2}
+  playerMagic: {fileID: 11400000, guid: e1409a8b6970b024da13fb5fba92b53f, type: 2}
+  playerLevel: {fileID: 11400000, guid: 768ba6cdc985dd84aaa639c874e78ed0, type: 2}
 --- !u!4 &1907429574684393820 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1013882226241532419, guid: c116fdd80fe483b4d9b353b03c4204e4, type: 3}
