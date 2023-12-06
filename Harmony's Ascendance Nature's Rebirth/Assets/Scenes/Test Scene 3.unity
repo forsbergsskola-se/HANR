@@ -247,6 +247,10 @@ PrefabInstance:
       propertyPath: usableItems
       value: 
       objectReference: {fileID: 794804022}
+    - target: {fileID: 7030379282668557247, guid: 2298ad06359e3444fb807b0da31399f7, type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7180589267658749024, guid: 2298ad06359e3444fb807b0da31399f7, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1846,27 +1850,31 @@ PrefabInstance:
       objectReference: {fileID: 1644119214}
     - target: {fileID: 2539687467102229587, guid: 462d50ca8748545129a488a58af0ad43, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2562961078264197344, guid: 462d50ca8748545129a488a58af0ad43, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3147098492075960813, guid: 462d50ca8748545129a488a58af0ad43, type: 3}
       propertyPath: m_Name
       value: Boss Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 3147098492075960813, guid: 462d50ca8748545129a488a58af0ad43, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3639802438425019043, guid: 462d50ca8748545129a488a58af0ad43, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4010756981700570827, guid: 462d50ca8748545129a488a58af0ad43, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4010756981700570827, guid: 462d50ca8748545129a488a58af0ad43, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5515013275500297395, guid: 462d50ca8748545129a488a58af0ad43, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1922,7 +1930,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 768ba6cdc985dd84aaa639c874e78ed0, type: 2}
     - target: {fileID: 7830134065395198456, guid: 462d50ca8748545129a488a58af0ad43, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
