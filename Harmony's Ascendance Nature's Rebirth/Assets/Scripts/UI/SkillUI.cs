@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using Player.UseSkills;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -9,6 +10,7 @@ using UnityEngine.UI;
 public class SkillUI : MonoBehaviour
 {
     private UsableItems usableItems;
+    private SkillsPressed skillPressed;
     
     [SerializeField] private Image megaSkill;
     [SerializeField] private Image smallSkill;
@@ -19,14 +21,11 @@ public class SkillUI : MonoBehaviour
     [SerializeField] private Sprite starterSmall2;
 
     private Item item;
-
-    public UnityEvent<Skills> skill1;
-    public UnityEvent<Skills> skill2;
-    public UnityEvent<Skills> ultiSkill;
+    
     void Start()
     {
         usableItems = GameObject.FindWithTag("Player").GetComponent<UsableItems>();
-
+        skillPressed = GameObject.FindWithTag("Player").GetComponent<SkillsPressed>();
         //Add them listeners!
         usableItems.startStaffEquipped.AddListener(ShowStarterSkills);
         usableItems.fireStaffEquipped.AddListener(ShowFireSkills);
@@ -79,17 +78,17 @@ public class SkillUI : MonoBehaviour
 
     public void skill1Pressed()
     {
-        skill1.Invoke(item.skill1);
+        skillPressed.skill1.Invoke(item.skill1);
     }
     
     public void skill2Pressed()
     {
-        skill1.Invoke(item.skill2);
+        skillPressed.skill2.Invoke(item.skill2);
     }
     
     public void ultiSkiilPressed()
     {
-        skill1.Invoke(item.ultiSkill);
+        skillPressed.ultiSkill.Invoke(item.ultiSkill);
     }
 
 
