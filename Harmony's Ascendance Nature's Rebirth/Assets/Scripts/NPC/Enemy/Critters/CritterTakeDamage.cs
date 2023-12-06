@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using CustomObjects;
 using Enemy;
@@ -34,8 +35,6 @@ namespace NPC.Enemy.Critters
             {
                 animator.SetBool("IsDead",true);
                 agent.isStopped = true;
-                
-                DeathEffect();
                 Destroy(gameObject);
             }
         }
@@ -52,11 +51,6 @@ namespace NPC.Enemy.Critters
 
             yield return new WaitForSeconds(2);
             hitEffect.SetActive(false);
-        }
-
-        private void DeathEffect()
-        {
-            Debug.Log("Bang");
         }
     }
 }

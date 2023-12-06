@@ -13,11 +13,13 @@ namespace Enemy.BossEnemy
         public FloatVariable enemyHealth;
         [SerializeField] private Animator animator;
         [SerializeField] private NavMeshAgent agent;
+        [SerializeField] private GameObject deathEffect;
         private HitEffectPool hitEffectPool;
         public GameObjectVariable currentClickedEnemy;
         private void Start()
         {
             hitEffectPool = this.gameObject.GetComponent<HitEffectPool>();
+            deathEffect.SetActive(false);
         }
 
         private void OnTriggerEnter(Collider other)
@@ -32,8 +34,7 @@ namespace Enemy.BossEnemy
             {
                 animator.SetBool("isDead",true);
                 agent.isStopped = true;
-                
-                DeathEffect();
+                DeathEffect(); // Not working atm
                 Destroy(gameObject);
             }
         }
@@ -51,10 +52,10 @@ namespace Enemy.BossEnemy
             yield return new WaitForSeconds(2);
             hitEffect.SetActive(false);
         }
-        
+
         private void DeathEffect()
         {
-            Debug.Log("Bang");
+            deathEffect.SetActive(true); // I thought an effect could play on awake before the enemy is destroyed, but it'll probably need a timer
         }
     }
 }

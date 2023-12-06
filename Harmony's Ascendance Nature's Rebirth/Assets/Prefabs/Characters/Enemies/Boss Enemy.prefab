@@ -469,6 +469,8 @@ MonoBehaviour:
   enemyHealth: {fileID: 11400000, guid: fae8d58fbc089264c83b291f3ee8ed65, type: 2}
   animator: {fileID: 9208709403535238140}
   agent: {fileID: 983669475926856329}
+  deathEffect: {fileID: 1247311384876784, guid: 4adffb0018aeda44e9263f901167af1f, type: 3}
+  currentClickedEnemy: {fileID: 11400000, guid: e5d229f37daf285498bf90de79b0ee08, type: 2}
 --- !u!114 &454811766674727700
 MonoBehaviour:
   m_ObjectHideFlags: 0
