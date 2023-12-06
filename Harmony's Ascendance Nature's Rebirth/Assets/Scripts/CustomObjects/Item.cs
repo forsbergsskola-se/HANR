@@ -12,4 +12,8 @@ public class Item : ScriptableObject
     public string itemID;
     public Sprite itemIcon;
     public float itemStat;
+    public Skills skill1;
+    public Skills skill2;
+    public Skills skill3;
+    public Skills skill4;
 }

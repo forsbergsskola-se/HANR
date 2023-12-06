@@ -16,3 +16,7 @@ MonoBehaviour:
   itemID: Water Staff
   itemIcon: {fileID: 21300000, guid: 6a6475741359b4dcd93bcd0c37bf0b36, type: 3}
   itemStat: 0
+  skill1: {fileID: 11400000, guid: bd67524dd7b9abe438ccd6bfa821c018, type: 2}
+  skill2: {fileID: 0}
+  skill3: {fileID: 0}
+  skill4: {fileID: 0}
