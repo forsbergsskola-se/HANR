@@ -36,15 +36,8 @@ namespace NPC.Enemy.Critters
                 animator.SetBool("IsDead",true);
                 agent.isStopped = true;
                 
-                // This should trigger an Update experience event instead
-                /*
-                playerExp.setValue(playerExp.getValue()+40f); //On death, give player exp.
-                
-                if (playerExp.getValue() > 100f)
-                {
-                    playerExp.setValue(playerExp.getValue()-100);
-                    playerLevel.setValue(playerLevel.getValue()+1);
-                } */
+                Destroy(this.gameObject);
+                DeathEffect();
             }
         }
 
@@ -60,6 +53,11 @@ namespace NPC.Enemy.Critters
 
             yield return new WaitForSeconds(2);
             hitEffect.SetActive(false);
+        }
+
+        private void DeathEffect()
+        {
+            Debug.Log("Bang");
         }
     }
 }
