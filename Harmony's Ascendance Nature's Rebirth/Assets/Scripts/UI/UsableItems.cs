@@ -101,7 +101,7 @@ public class UsableItems : MonoBehaviour
 
             }
 
-            if (itemInSlot.itemClass == "Consumable")
+            if (itemInSlot.itemClass == "Consumable") //When 
             {
                 if (itemInSlot.itemID == "Potion Health")
                 {

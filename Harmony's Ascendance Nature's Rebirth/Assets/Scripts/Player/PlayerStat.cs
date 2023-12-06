@@ -13,9 +13,9 @@ namespace Player
         
         private void Start()
         {
-            health.setValue(80f);
-            magic.setValue(90.5f);
-            exp.setValue(85.5f);
+            health.setValue(40f);
+            magic.setValue(50.5f);
+            exp.setValue(65.5f);
             level.setValue(15);
         }
     }

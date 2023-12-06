@@ -51,7 +51,7 @@ PrefabInstance:
     - target: {fileID: -5754084199372789682, guid: 6ebc2c3503899d647817b45515d5ab9d, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 5716526163498569674, guid: 7f12f0ef11e2ba440a90bfb9ac058bef, type: 3}
+      objectReference: {fileID: -81591335460253008, guid: 3c3d842901c9cf9438868d3315eeaba6, type: 3}
     - target: {fileID: 919132149155446097, guid: 6ebc2c3503899d647817b45515d5ab9d, type: 3}
       propertyPath: m_Name
       value: potion_small_magic
