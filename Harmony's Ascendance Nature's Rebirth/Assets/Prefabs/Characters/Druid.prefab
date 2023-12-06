@@ -53,7 +53,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8550689247949365398}
-  - component: {fileID: 3826846371358883789}
+  - component: {fileID: 6059389228256331321}
   m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
@@ -76,7 +76,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1907429574684393820}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3826846371358883789
+--- !u!114 &6059389228256331321
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -85,7 +85,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5521388595153901032}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44446b9ca1234343ae56987f6cac6e5f, type: 3}
+  m_Script: {fileID: 11500000, guid: 45f4313ca7ac470a9c4933020ef0aa50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7356628746296808673
@@ -475,7 +475,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMoving: {fileID: 11400000, guid: ac6cfe3da22a341db9d2eceaf518767d, type: 2}
-  playerAttacking: {fileID: 11400000, guid: a8dd6e26d47fc42a0a68afca719bb62d, type: 2}
   targetPoint: {fileID: 11400000, guid: a0ccd26fe714d47fab8f178ae244bf97, type: 2}
   agent: {fileID: 6198532406364277013}
   animator: {fileID: 2771500659704570704}
@@ -602,8 +601,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMoving: {fileID: 11400000, guid: ac6cfe3da22a341db9d2eceaf518767d, type: 2}
-  playerAttacking: {fileID: 11400000, guid: a8dd6e26d47fc42a0a68afca719bb62d, type: 2}
   targetPoint: {fileID: 11400000, guid: a0ccd26fe714d47fab8f178ae244bf97, type: 2}
+  currentClickedEnemy: {fileID: 0}
 --- !u!114 &5904134507221357143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -616,11 +615,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eb7504fca7fbeb4db951fa8955f81c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyInRange: {fileID: 11400000, guid: 5fd94533043704dd2a8d4f3911c75ffa, type: 2}
-  playerAttacking: {fileID: 11400000, guid: a8dd6e26d47fc42a0a68afca719bb62d, type: 2}
-  isDefaultAttack: {fileID: 11400000, guid: c3a3018c9fda74660b26fd9525a85cc9, type: 2}
-  targetPoint: {fileID: 11400000, guid: a0ccd26fe714d47fab8f178ae244bf97, type: 2}
+  playerMoving: {fileID: 0}
   animator: {fileID: 2771500659704570704}
+  currentClickedEnemy: {fileID: 0}
 --- !u!114 &1442139110311222097
 MonoBehaviour:
   m_ObjectHideFlags: 0
