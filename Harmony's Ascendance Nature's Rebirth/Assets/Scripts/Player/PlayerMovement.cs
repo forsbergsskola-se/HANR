@@ -16,7 +16,6 @@ namespace Player
         public Animator animator;
         [SerializeField] private float walkSpeed;
         [SerializeField] private float turnRate;
-        private ClickEffectPool clickEffectPool;
         
         
         private void Awake()
@@ -32,7 +31,6 @@ namespace Player
         private void Start()
         {
             agent.speed = walkSpeed;
-            clickEffectPool = this.gameObject.GetComponent<ClickEffectPool>();
         }
 
         private void Update()
@@ -72,12 +70,6 @@ namespace Player
                     moveToPoint = targetPoint.GetValue(); 
                     agent.speed = walkSpeed;
                     agent.destination = moveToPoint;
-                    
-                    GameObject effectInstance = clickEffectPool.GetPooledEffects();
-                    if (effectInstance != null)
-                    {
-                        effectInstance.transform.position = moveToPoint += new Vector3(0,0.3f,0);
-                    }
                 }
                 else
                 {
