@@ -8,11 +8,11 @@ namespace Player
         public GameObject clickEffect;
         public int size = 5;
 
-        private List<GameObject> effectPool;
+        private List<GameObject> enemyEffectPool;
         
         private void Start()
         {
-            effectPool = new List<GameObject>();
+            enemyEffectPool = new List<GameObject>();
             SetUpPool();
         }
 
@@ -22,13 +22,13 @@ namespace Player
             {
                 GameObject effect = Instantiate(clickEffect);
                 effect.SetActive(false);
-                effectPool.Add(effect);
+                enemyEffectPool.Add(effect);
             }
         }
 
         public GameObject GetPooledEffects()
         {
-            foreach (GameObject effect in effectPool)
+            foreach (GameObject effect in enemyEffectPool)
             {
                 if (!effect.activeInHierarchy)
                 {
