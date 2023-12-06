@@ -16,7 +16,6 @@ MonoBehaviour:
   itemID: Fire Staff
   itemIcon: {fileID: 21300000, guid: d84bcdb3e433c4acca4863fed0b05463, type: 3}
   itemStat: 0
-  skill1: {fileID: 11400000, guid: c8bbde305f2eae64e89fdb9758004b36, type: 2}
-  skill2: {fileID: 0}
-  skill3: {fileID: 0}
-  skill4: {fileID: 0}
+  skill1: {fileID: 11400000, guid: 64082c8d46734b245a6158805d351f23, type: 2}
+  skill2: {fileID: 11400000, guid: 64082c8d46734b245a6158805d351f23, type: 2}
+  ultiSkill: {fileID: 11400000, guid: c8bbde305f2eae64e89fdb9758004b36, type: 2}

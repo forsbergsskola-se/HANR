@@ -17,3 +17,6 @@ MonoBehaviour:
   range: 50
   damage: 25
   cooldown: 10
+  skillId: 0
+  isUlitimate: 1
+  icon: {fileID: 21300000, guid: 85d24f0f5eae44b1589331f3af2808a3, type: 3}
