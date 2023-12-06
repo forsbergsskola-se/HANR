@@ -6,28 +6,29 @@ namespace Player.UseSkills
 {
     public class SkillCheck : MonoBehaviour
     {
-        private SkillUI skillUI;
+        private SkillsPressed skillsPressed;
         private GameObject weaponEquipped;
         private void Start()
         {
-            skillUI.skill1.AddListener(skill1Used);
-            skillUI.skill2.AddListener(skill2Used);
-            skillUI.ultiSkill.AddListener(ultiSkillUsed);
+            skillsPressed = this.gameObject.GetComponent<SkillsPressed>();
+            skillsPressed.skill1.AddListener(skill1Used);
+            skillsPressed.skill2.AddListener(skill2Used);
+            skillsPressed.ultiSkill.AddListener(ultiSkillUsed);
             weaponEquipped = this.gameObject.GetComponentInChildren<WeaponEquipped>().gameObject;
         }
 
         private void OnDestroy()
         {
-            skillUI.skill1.RemoveListener(skill1Used);
-            skillUI.skill2.RemoveListener(skill2Used);
-            skillUI.ultiSkill.RemoveListener(ultiSkillUsed);
+            skillsPressed.skill1.RemoveListener(skill1Used);
+            skillsPressed.skill2.RemoveListener(skill2Used);
+            skillsPressed.ultiSkill.RemoveListener(ultiSkillUsed);
         }
         
         private void skill1Used(Skills skill)
         {
             if (skill.pointClick)
             {
-                
+                Debug.Log("skill1");
             }
             else
             {
@@ -39,7 +40,7 @@ namespace Player.UseSkills
         {
             if (skill.pointClick)
             {
-                
+                Debug.Log("skill2");
             }
             else
             {
@@ -51,7 +52,10 @@ namespace Player.UseSkills
         {
             if (skill.pointClick)
             {
-                
+                Debug.Log(skill.skillObject.name);
+                Debug.Log(weaponEquipped.transform.position);
+                GameObject temp = Instantiate(skill.skillObject, weaponEquipped.transform);
+                temp.transform.position = weaponEquipped.transform.position;
             }
             else
             {
