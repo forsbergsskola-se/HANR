@@ -128,8 +128,8 @@ public class UsableItems : MonoBehaviour
 
                     //Add exp to player
                     float newExp = itemInSlot.itemStat + playerExperiance.getValue();
-                    playerExperiance.setValue(playerExperiance.getValue() + newExp);
-                    if (playerExperiance.getValue() > 100) inventoryHolder.Items[slotIndex] = defaultItem;
+                    playerExperiance.setValue(newExp);
+                    inventoryHolder.Items[slotIndex] = defaultItem;
                     UpdateUsedItem.Invoke();
                 }
             }

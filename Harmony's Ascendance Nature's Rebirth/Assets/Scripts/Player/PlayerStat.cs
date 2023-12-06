@@ -40,11 +40,12 @@ namespace Player
             if (exp.getValue() > maxExp)
             {
                 float newExp = exp.getValue() - maxExp;
-                level.setValue(level.getValue()+1);
-                maxHealth =+ 20f; //Increasing requirement for next level
-                maxMagic =+ 60f;
-                maxExp =+ 30f;
+                int newLevel = level.getValue() + 1;
+                level.setValue(newLevel);
                 exp.setValue(newExp);
+                /*maxExp =+ 30f; //Increasing requirement for next level
+                maxHealth =+ 20f;
+                maxMagic =+ 60f;*/
             }
         }
         private void LimiterStat(float currentValues)
