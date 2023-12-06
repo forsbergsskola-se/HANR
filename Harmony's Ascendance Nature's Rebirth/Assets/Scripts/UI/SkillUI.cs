@@ -16,13 +16,6 @@ public class SkillUI : MonoBehaviour
     [SerializeField] private Sprite starterSmall;
     [SerializeField] private Sprite starterSmall2;
     
-    [SerializeField] private Sprite fireMega;
-    [SerializeField] private Sprite fireSmall1;
-    [SerializeField] private Sprite fireSmall2;
-    
-    [SerializeField] private Sprite waterMega;
-    [SerializeField] private Sprite waterSmall1;
-    [SerializeField] private Sprite waterSmall2;
     
     void Start()
     {
@@ -55,38 +48,24 @@ public class SkillUI : MonoBehaviour
         megaSkill.sprite = starterMega;
         smallSkill.sprite = starterSmall;
         smallSkill.sprite = starterSmall2;
-        Color color = megaSkill.color;
-        color.a = 1f;
-        megaSkill.color = color;
-        small2Skill.color = color;
-        smallSkill.color = color;
-        
     }
     
     private void ShowFireSkills(Item item)
     {
         //TODO SHOW FIRESKILLS SPRITES
-        megaSkill.sprite = fireMega;
-        smallSkill.sprite = fireSmall1;
-        small2Skill.sprite = fireSmall2;
-        Color color = megaSkill.color;
-        color.a = 1f;
-        megaSkill.color = color;
-        small2Skill.color = color;
-        smallSkill.color = color;
+        megaSkill.sprite = item.ultiSkill.icon;
+        smallSkill.sprite = item.skill1.icon;
+        small2Skill.sprite = item.skill2.icon;
+        megaSkill.color = Color.red;
     }
 
     private void ShowWaterSkills(Item item)
     {
         //TODO SHOW WATERSKILLS SPRITES
-        megaSkill.sprite = waterMega;
-        smallSkill.sprite = waterSmall1;
-        small2Skill.sprite = waterSmall2;
-        Color color = megaSkill.color;
-        color.a = 1f;
-        megaSkill.color = color;
-        small2Skill.color = color;
-        smallSkill.color = color;
+        megaSkill.sprite = item.ultiSkill.icon;
+        smallSkill.sprite = item.skill1.icon;
+        small2Skill.sprite = item.skill2.icon;
+        megaSkill.color = Color.blue;
     }
 
 
