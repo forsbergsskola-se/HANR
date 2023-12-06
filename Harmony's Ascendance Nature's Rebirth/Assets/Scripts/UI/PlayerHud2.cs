@@ -12,7 +12,6 @@ public class PlayerHud2 : MonoBehaviour
 {
     public TMP_Text healthText; // Text for bars
     public TMP_Text magicText;
-    public TMP_Text expText;
     public TMP_Text levelText;
     
     public Slider healthSlider;
@@ -65,7 +64,6 @@ public class PlayerHud2 : MonoBehaviour
     
     private void updateExp(float value)
     {
-        expText.text = value.ToString();
         expSlider.value = value;
     }
     
