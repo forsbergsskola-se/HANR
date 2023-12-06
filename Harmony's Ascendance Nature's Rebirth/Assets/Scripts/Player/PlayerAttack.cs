@@ -48,7 +48,7 @@ public class PlayerAttack : MonoBehaviour
     
     private void trackEnemy(GameObject enemy)
     {
-        if (enemy && currentClickedEnemy.getValue() != null)
+        if (enemy)
         {
             enemyToAttack = enemy;
             StartCoroutine(checkDistance());
@@ -85,14 +85,21 @@ public class PlayerAttack : MonoBehaviour
     
     public void DefaultAttack()
     {
-        FaceEnemy();
-        GameObject projectileInstance = daAttackPool.GetPooledEffects();
-        if (projectileInstance != null)
+        if (enemyToAttack != null)
         {
-            projectileInstance.transform.position = weaponEquipped.transform.position;
-            projectileInstance.transform.rotation = weaponEquipped.transform.rotation;
+            FaceEnemy();
+            GameObject projectileInstance = daAttackPool.GetPooledEffects();
+            if (projectileInstance != null)
+            {
+                projectileInstance.transform.position = weaponEquipped.transform.position;
+                projectileInstance.transform.rotation = weaponEquipped.transform.rotation;
             
-            ShootProjectile(projectileInstance);
+                ShootProjectile(projectileInstance);
+            }
+        }
+        else
+        {
+            currentClickedEnemy.setValue(null);
         }
     }
         

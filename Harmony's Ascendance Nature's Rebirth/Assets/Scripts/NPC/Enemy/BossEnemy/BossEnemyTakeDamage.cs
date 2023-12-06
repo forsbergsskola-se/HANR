@@ -33,9 +33,8 @@ namespace Enemy.BossEnemy
                 animator.SetBool("isDead",true);
                 agent.isStopped = true;
                 
-                Destroy(gameObject);
-                currentClickedEnemy.setValue(null);
                 DeathEffect();
+                Destroy(gameObject);
             }
         }
 
