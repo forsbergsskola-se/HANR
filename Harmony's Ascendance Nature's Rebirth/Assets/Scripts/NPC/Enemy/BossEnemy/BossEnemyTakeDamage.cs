@@ -41,20 +41,6 @@ namespace Enemy.BossEnemy
             }
         }
 
-        private IEnumerator ShowEffect()
-        {
-            GameObject hitEffect = hitEffectPool.GetPooledEffects();
-            if (hitEffect)
-            {
-                hitEffect.transform.position = this.gameObject.GetComponentInChildren<HitPoint>().transform.position;;
-                hitEffect.transform.rotation = this.gameObject.GetComponentInChildren<HitPoint>().transform.rotation;
-                hitEffect.transform.localScale = new Vector3(3f, 3f, 3f);
-            }
-
-            yield return new WaitForSeconds(2);
-            hitEffect.SetActive(false);
-        }
-
         private void DeathEffect()
         {
             deathEffect.SetActive(true); // I thought an effect could play on awake before the enemy is destroyed, but it'll probably need a timer
