@@ -7,11 +7,11 @@ using UnityEngine;
 public class InteractableNPC : MonoBehaviour
 {
     public Dialogue dialogue;
-    public TMP_Text dialogueBubble;
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if(other.CompareTag("Player") && Input.GetKeyDown(KeyCode.Mouse0) == this.gameObject) //If player is close enough, press right mouse to trigger dialogue
-        {
+        if(other.CompareTag("Player") && Input.GetKeyDown(KeyCode.Space)) //If player is close enough, press right mouse to trigger dialogue
+        { 
+            Debug.Log("Hello");
             dialogue.druidToRanger.Invoke();
         }
     }
