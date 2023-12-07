@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6141849877868650624}
   - component: {fileID: -4015230160526547561}
   - component: {fileID: -6283932766138375563}
+  - component: {fileID: -8494040996361298885}
   m_Layer: 0
   m_Name: BubbleBeam
   m_TagString: SkillProjectile
@@ -3797,7 +3798,7 @@ ParticleSystem:
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
@@ -4843,3 +4844,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ddb9145b6434449872679723b9fe5b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-8494040996361298885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4274452963077358234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93e57e07a2ee49f295b87fd1e98674af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skill: {fileID: 11400000, guid: bd67524dd7b9abe438ccd6bfa821c018, type: 2}

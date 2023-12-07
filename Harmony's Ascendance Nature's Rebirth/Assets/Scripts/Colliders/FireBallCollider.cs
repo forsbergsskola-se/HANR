@@ -1,5 +1,6 @@
 using System;
 using CustomObjects;
+using Enemy;
 using Enemy.BossEnemy;
 using UnityEngine;
 
@@ -16,7 +17,7 @@ namespace Colliders
             } 
             else if(other.CompareTag("Enemy"))
             {
-                FloatVariable health = other.GetComponent<BossEnemyStats>().GolemHealth;
+                FloatVariable health = other.GetComponent<EnemyStats>().enemyHealth;
                 health.setValue(Mathf.Max(health.getValue() - skills.damage,0));
                 Destroy(this.gameObject);
             }

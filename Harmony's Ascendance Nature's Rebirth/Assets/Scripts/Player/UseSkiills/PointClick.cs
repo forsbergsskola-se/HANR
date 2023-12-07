@@ -87,7 +87,6 @@ namespace Player.UseSkills
             ParticleSystem ps = skillGO.GetComponent<ParticleSystem>();
             var emissionModule = ps.emission;
             emissionModule.enabled = false;
-            ;
         }
     }
 }
