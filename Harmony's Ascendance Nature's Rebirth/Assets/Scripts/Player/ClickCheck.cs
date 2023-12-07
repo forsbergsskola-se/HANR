@@ -54,11 +54,11 @@ public class ClickCheck : MonoBehaviour
                     if (raycastHit.transform.CompareTag("Enemy"))
                     {
                         currentClickedEnemy.setValue(raycastHit.transform.gameObject);
-                        
                         GameObject effectInstance = clickOnEnemyPool.GetPooledEffects();
                         if (effectInstance != null)
                         {
-                            effectInstance.transform.position = raycastHit.point += new Vector3(0,0.3f,0);
+                            effectInstance.transform.position = raycastHit.transform.gameObject.transform.position;
+                            effectInstance.transform.localScale = Vector3.one * 4f;
                         }
                     }
                 }
