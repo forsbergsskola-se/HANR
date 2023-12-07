@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -16039,7 +16039,7 @@ MonoBehaviour:
   m_LayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_UseGeometry: 0
+  m_UseGeometry: 1
   m_DefaultArea: 0
   m_GenerateLinks: 0
   m_IgnoreNavMeshAgent: 1
@@ -16049,7 +16049,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.33333334
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 1c7a1e07ea8594820aaf0c4b3fb63e9e, type: 2}
+  m_NavMeshData: {fileID: 0}
   m_BuildHeightMesh: 0
 --- !u!4 &1950446383
 Transform:
@@ -17166,15 +17166,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b1e72cbca989d4f4ba7d512a92e6903c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 24.55658
+      value: 24.57
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b1e72cbca989d4f4ba7d512a92e6903c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.63504
+      value: 17.72
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b1e72cbca989d4f4ba7d512a92e6903c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 437.08743
+      value: 437.08
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b1e72cbca989d4f4ba7d512a92e6903c, type: 3}
       propertyPath: m_LocalRotation.w
