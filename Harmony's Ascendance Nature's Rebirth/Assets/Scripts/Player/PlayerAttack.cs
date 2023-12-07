@@ -47,6 +47,7 @@ public class PlayerAttack : MonoBehaviour
     private void setCombatStats(Item item)
     {
         combatStat = item.normalAttack;
+        
     }
 
     private void Start()
@@ -121,7 +122,7 @@ public class PlayerAttack : MonoBehaviour
         Rigidbody rb = projectile.GetComponent<Rigidbody>();
         ProjectileStats ps = projectile.GetComponent<ProjectileStats>();
         rb.velocity = new Vector3(direction.x * combatStat.projectileSpeed, direction.y * combatStat.projectileSpeed, direction.z * combatStat.projectileSpeed);
-        ps.damage = combatStat.damage;
+        ps.cs = combatStat;
     }
     
     private void FaceEnemy()

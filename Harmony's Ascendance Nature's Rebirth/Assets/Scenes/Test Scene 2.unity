@@ -966,6 +966,10 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 1.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8499365358841112492, guid: 462d50ca8748545129a488a58af0ad43, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8918617800841271138, guid: 462d50ca8748545129a488a58af0ad43, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -974,8 +978,7 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8384920763826588960, guid: 462d50ca8748545129a488a58af0ad43, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1866,7 +1869,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4718287801753836335, guid: 05ca4e5887f7d48c09700eecc38ec490, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1390168349}
   m_SourcePrefab: {fileID: 100100000, guid: 05ca4e5887f7d48c09700eecc38ec490, type: 3}
 --- !u!4 &1228712557 stripped
 Transform:
@@ -1959,6 +1965,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: a3f6b9e3c4bfdde4bba0ba7407fe65f6, type: 3}
   m_PrefabInstance: {fileID: 1314920227}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1390168337 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4718287801753836335, guid: 05ca4e5887f7d48c09700eecc38ec490, type: 3}
+  m_PrefabInstance: {fileID: 1228712556}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1390168349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390168337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fed110176a94d82898a9137a25093d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyHealth: {fileID: 11400000, guid: 1e024cfec2cd94a769db922439b46896, type: 2}
 --- !u!1 &1431333892
 GameObject:
   m_ObjectHideFlags: 0

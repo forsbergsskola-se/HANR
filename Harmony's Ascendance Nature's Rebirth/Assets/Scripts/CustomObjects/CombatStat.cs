@@ -10,5 +10,6 @@ namespace CustomObjects
         public float attackRate;
         public float range;
         public Material material;
+        public Color hitEffectColor;
     }
 }

@@ -6,6 +6,6 @@ namespace Player.SkillStats
 {
     public class ProjectileStats : MonoBehaviour
     {
-        public float damage;
+        public CombatStat cs;
     }
 }
