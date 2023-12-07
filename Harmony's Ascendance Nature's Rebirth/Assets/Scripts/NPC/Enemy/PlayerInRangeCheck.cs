@@ -17,7 +17,9 @@ namespace Enemy
 
         private void Start()
         {
-            player = GameObject.FindGameObjectWithTag("Player");        }
+            player = GameObject.FindGameObjectWithTag("Player");
+            
+        }
 
         private void Update()
         {
