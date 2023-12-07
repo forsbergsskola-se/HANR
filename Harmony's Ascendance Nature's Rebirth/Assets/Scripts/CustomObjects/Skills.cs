@@ -14,7 +14,6 @@ public class Skills : ScriptableObject
     public float damage;
     public float cooldown;
     public bool pointClick;
-    public bool isUlitimate;
     public Sprite icon;
     public GameObject skillObject;
 }
