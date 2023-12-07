@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using CustomObjects;
 using TMPro;
 using UnityEngine;
 
@@ -8,19 +9,31 @@ public class InteractableNPC : MonoBehaviour
 {
     public Dialogue dialogue;
     private bool playerClose;
+
+    private void Update()
+    {
+        if (playerClose)
+        {
+            dialogue.druidToRanger.Invoke();
+            playerClose = false;
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             playerClose = true;
+            Debug.Log("Player close");
         }
-        
     }
-    private void OnTriggerStay(Collider other) //TODO code runs twice?
+
+    private void OnTriggerExit(Collider other)
     {
-        if(playerClose && Input.GetKeyDown(KeyCode.Space)) //If player is close enough, press right mouse to trigger dialogue
+        if (other.CompareTag("Player"))
         {
-            dialogue.druidToRanger.Invoke();
+            playerClose = false;
+            Debug.Log("Walk away");
         }
     }
 }
