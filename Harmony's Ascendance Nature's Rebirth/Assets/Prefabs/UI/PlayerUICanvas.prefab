@@ -194,8 +194,6 @@ MonoBehaviour:
   - {fileID: 4803754702880288446}
   - {fileID: 8544215531542794099}
   defaultImage: {fileID: 11400000, guid: 2c8ba1ee984a6fa4f85fea1fb4db8da5, type: 2}
-  player: {fileID: 0}
-  usableItems: {fileID: 0}
 --- !u!1 &696978516504974895
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,7 +469,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: -14.978, y: 1.99963}
-  m_SizeDelta: {x: 30, y: 30}
+  m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1040656384554107206
 CanvasRenderer:
@@ -600,7 +598,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Color1: {r: 0.9622642, g: 0.9525003, b: 0.049928807, a: 1}
-  Color2: {r: 0.9528302, g: 0.68129766, b: 0.05842829, a: 1}
+  Color2: {r: 0.6415094, g: 0.45011568, b: 0.009077947, a: 1}
   Angle: 40
 --- !u!1 &1592328266477998417
 GameObject:
@@ -816,7 +814,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: -14.978, y: 0}
-  m_SizeDelta: {x: 30, y: 30}
+  m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2990600942654510977
 CanvasRenderer:
@@ -1261,7 +1259,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: -14.978, y: 0}
-  m_SizeDelta: {x: 30, y: 30}
+  m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8752867337022144131
 CanvasRenderer:
@@ -1788,8 +1786,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f45762bc9a84906b62fb6b794a6feb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Color1: {r: 0.22027414, g: 0.37553915, b: 0.8490566, a: 1}
-  Color2: {r: 0.366981, g: 0.33397114, b: 0.745283, a: 1}
+  Color1: {r: 0.25342646, g: 0.3896899, b: 0.8018868, a: 1}
+  Color2: {r: 0.1792699, g: 0.16491634, b: 0.3207547, a: 1}
   Angle: 40
 --- !u!1 &5239842940116780076
 GameObject:
@@ -2360,8 +2358,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f45762bc9a84906b62fb6b794a6feb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Color1: {r: 0.89411765, g: 0.2627451, b: 0.36862746, a: 1}
-  Color2: {r: 1, g: 0.57254905, b: 0.16862746, a: 1}
+  Color1: {r: 0.1720563, g: 0.8018868, b: 0, a: 1}
+  Color2: {r: 0.14351194, g: 0.4056604, b: 0.18039094, a: 1}
   Angle: 40
 --- !u!1 &6275241914832328239
 GameObject:
