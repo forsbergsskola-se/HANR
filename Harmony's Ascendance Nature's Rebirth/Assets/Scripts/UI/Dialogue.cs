@@ -8,6 +8,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
+using UnityEngine.UIElements;
 
 public class Dialogue : MonoBehaviour
 {
@@ -19,6 +20,10 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private NavMeshAgent agent;
     private string[] conversation = new string[5];
     private bool inConversation;
+
+    //public Sprite talkingFace = GameObject.Find("IconFace").GetComponent<Image>().sprite; //Face of character currently speaking
+    //public Sprite druidFace; //Assigned in editor, a face image of druid
+    //public Sprite NPCFace; //Assigned in editor, a face image of ranger
     
     private void Start()
     {
@@ -26,6 +31,7 @@ public class Dialogue : MonoBehaviour
         druidToRanger.AddListener(InitiateDialogue);
         FillArray();
         PlayerUI = GameObject.FindWithTag("Canvas");
+        //talkingFace = druidFace; //Face in first dialogue, in this case, ranger
     }
 
     private void Update()
@@ -34,6 +40,8 @@ public class Dialogue : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                //if (talkingFace == NPCFace) talkingFace = druidFace; //To switch faces in dialogue
+                //else if (talkingFace == druidFace) talkingFace = NPCFace;
                 if (dialougeCounter > conversation.Length-1)
                 {
                     inConversation = false;
@@ -59,6 +67,7 @@ public class Dialogue : MonoBehaviour
     {
         if (!inConversation && dialougeCounter == 0)
         {
+            
             PlayerUI.SetActive(false);
             this.gameObject.SetActive(true);
             agent.isStopped = true;
