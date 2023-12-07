@@ -22,22 +22,22 @@ namespace NPC.Enemy.Critters
             hitEffectPool = this.gameObject.GetComponent<HitEffectPool>();
         }
 
-        private void OnTriggerEnter(Collider other)
-        {
-            ProjectileStats ps = other.gameObject.GetComponent<ProjectileStats>();
-            float damage = ps.attackDamage;
-            float currentHealth = critterHealth.getValue();
-            critterHealth.setValue(Mathf.Max(currentHealth - damage,0));
-            other.gameObject.SetActive(false);
-            StartCoroutine(ShowEffect());
-            
-            if (critterHealth.getValue() <= 0f)
-            {
-                animator.SetBool("IsDead",true);
-                agent.isStopped = true;
-                Destroy(gameObject);
-            }
-        }
+        // private void OnTriggerEnter(Collider other)
+        // {
+        //     ProjectileStats ps = other.gameObject.GetComponent<ProjectileStats>();
+        //     float damage = ps.attackDamage;
+        //     float currentHealth = critterHealth.getValue();
+        //     critterHealth.setValue(Mathf.Max(currentHealth - damage,0));
+        //     other.gameObject.SetActive(false);
+        //     StartCoroutine(ShowEffect());
+        //     
+        //     if (critterHealth.getValue() <= 0f)
+        //     {
+        //         animator.SetBool("IsDead",true);
+        //         agent.isStopped = true;
+        //         Destroy(gameObject);
+        //     }
+        // }
 
         private IEnumerator ShowEffect()
         {

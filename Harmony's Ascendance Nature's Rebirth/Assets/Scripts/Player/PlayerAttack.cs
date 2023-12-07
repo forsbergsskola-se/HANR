@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using CustomObjects;
 using Enemy.BossEnemy;
 using Player;
+using Player.SkillStats;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
@@ -22,21 +23,30 @@ public class PlayerAttack : MonoBehaviour
     private bool projectileAway;
     private GameObject enemyToAttack;
     private DefaultAttackPool daAttackPool;
-    private float projectileSpeed = 10f;// Should come from weapon stats later
-    private float attackDamage = 10f;// Should come from weapon stats later
-    private float playerAttackRange = 15f; //Should come from player stats later on
-    
-
+    private UsableItems usableItems;
+    private CombatStat combatStat;
     
     private void Awake()
     {
+        usableItems = this.gameObject.GetComponent<UsableItems>();
         currentClickedEnemy.ValueChanged.AddListener(trackEnemy);
+        usableItems.fireStaffEquipped.AddListener(setCombatStats);
+        usableItems.waterStaffEquipped.AddListener(setCombatStats);
+        usableItems.startStaffEquipped.AddListener(setCombatStats);
 
     }
 
     private void OnDestroy()
     {
         currentClickedEnemy.ValueChanged.RemoveListener(trackEnemy);
+        usableItems.fireStaffEquipped.RemoveListener(setCombatStats);
+        usableItems.waterStaffEquipped.RemoveListener(setCombatStats);
+        usableItems.startStaffEquipped.RemoveListener(setCombatStats);
+    }
+
+    private void setCombatStats(Item item)
+    {
+        combatStat = item.normalAttack;
     }
 
     private void Start()
@@ -66,13 +76,13 @@ public class PlayerAttack : MonoBehaviour
     {
         float distance = Vector3.Distance(this.gameObject.transform.position, enemyToAttack.transform.position);
         
-        if (distance > playerAttackRange)
+        if (distance > combatStat.range)
         {
             playerMoving.setValue(true);
             animator.SetBool("isDefaultAttack", false);
         }
         
-        while (distance > playerAttackRange)
+        while (distance > combatStat.range)
         {
             distance = Vector3.Distance(this.gameObject.transform.position, enemyToAttack.transform.position);
             yield return null; 
@@ -108,8 +118,8 @@ public class PlayerAttack : MonoBehaviour
         Vector3 direction = (-projectile.transform.position + enemyToAttack.GetComponentInChildren<HitPoint>().transform.position).normalized;
         Rigidbody rb = projectile.GetComponent<Rigidbody>();
         ProjectileStats ps = projectile.GetComponent<ProjectileStats>();
-        rb.velocity = new Vector3(direction.x * projectileSpeed, direction.y * projectileSpeed, direction.z * projectileSpeed);
-        ps.attackDamage = attackDamage;
+        rb.velocity = new Vector3(direction.x * combatStat.projectileSpeed, direction.y * combatStat.projectileSpeed, direction.z * combatStat.projectileSpeed);
+        ps.damage = combatStat.damage;
     }
     
     private void FaceEnemy()
