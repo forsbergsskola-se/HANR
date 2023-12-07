@@ -285,6 +285,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   chating: {fileID: 186684500}
+  PlayerUI: {fileID: 1400896304}
 --- !u!1 &29839215
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,7 +583,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueUI
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3361559478888898449, guid: 8bd5cc188a7ea48db85c4afefc0a32b8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -731,6 +733,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7270086208966801242, guid: 75709fa90772b4b0d90cdf341686b2d1, type: 3}
+      propertyPath: m_Size.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270086208966801242, guid: 75709fa90772b4b0d90cdf341686b2d1, type: 3}
+      propertyPath: m_Size.z
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7270086208966801242, guid: 75709fa90772b4b0d90cdf341686b2d1, type: 3}
       propertyPath: m_Center.y
       value: -0.32
@@ -1359,6 +1369,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dabb0ec02a38a445a09495eb7fb0f5a, type: 3}
+--- !u!1 &1400896304 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1601656646782729028, guid: 2298ad06359e3444fb807b0da31399f7, type: 3}
+  m_PrefabInstance: {fileID: 8122117}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1442582369
 PrefabInstance:
   m_ObjectHideFlags: 0
