@@ -13,9 +13,9 @@ public class Dialogue : MonoBehaviour
 {
     public UnityEvent druidToRanger;
     public TMP_Text chating;
-    private int dialougeCounter;
+    private int dialougeCounter = 0;
 
-    [SerializeField] private GameObject PlayerUI;
+    private GameObject PlayerUI;
     [SerializeField] private NavMeshAgent agent;
     private string[] conversation = new string[4];
     private bool inConversation;
@@ -25,6 +25,32 @@ public class Dialogue : MonoBehaviour
         this.gameObject.SetActive(false);
         druidToRanger.AddListener(InitiateDialogue);
         FillArray();
+        PlayerUI = GameObject.FindWithTag("Canvas");
+    }
+
+    private void Update()
+    {
+        if (inConversation)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                
+                if (dialougeCounter > conversation.Length-1)
+                {
+                    inConversation = false;
+                    dialougeCounter = 0;
+                    this.gameObject.SetActive(false);
+                    PlayerUI.SetActive(true);
+                }
+                else
+                {
+                    chating.text = conversation[dialougeCounter];
+                    dialougeCounter += 1;
+                }
+                
+            }
+        }
+        
     }
 
     private void OnDestroy()
@@ -34,43 +60,17 @@ public class Dialogue : MonoBehaviour
 
     private void InitiateDialogue()
     {
-        Debug.Log("Event kicked"); // this shows up but nothing underneath is done.
-        
-        
-        PlayerUI.SetActive(false);
-        this.gameObject.SetActive(true);
-        agent.isStopped = true;
-        
-        chating.text = conversation[0];
-        dialougeCounter++;
-        
-        inConversation = true;
-        
-        keepConversing:
-        if (inConversation && dialougeCounter < 4)
+        if (!inConversation && dialougeCounter == 0)
         {
-            if (Input.GetKeyDown(KeyCode.Space) && dialougeCounter == 1)
-            {
-                chating.text = conversation[1];
-                dialougeCounter++;
-                goto keepConversing;
-            }
-            if (Input.GetKeyDown(KeyCode.Space) && dialougeCounter == 2)
-            {
-                chating.text = conversation[2];
-                dialougeCounter++;
-                goto keepConversing;
-            }
-            if (Input.GetKeyDown(KeyCode.Space) && dialougeCounter == 3)
-            {
-                chating.text = conversation[3];
-                dialougeCounter++;
-                inConversation = false;
-            }   
-        } 
-        this.gameObject.SetActive(false);
-        PlayerUI.SetActive(true);
-        agent.isStopped = false;
+            Debug.Log("Event kicked"); // this shows up but nothing underneath is done.
+            PlayerUI.SetActive(false);
+            this.gameObject.SetActive(true);
+            agent.isStopped = true;
+            chating.text = conversation[0];
+            dialougeCounter += 1;
+            inConversation = true;
+        }
+        
     }
     
 

@@ -15,6 +15,7 @@ TagManager:
   - Sting
   - NormalProjectile
   - SkillProjectile
+  - Canvas
   layers:
   - Default
   - TransparentFX

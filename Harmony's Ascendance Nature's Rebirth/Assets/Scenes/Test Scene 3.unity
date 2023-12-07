@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641228, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -222,6 +222,10 @@ PrefabInstance:
     - target: {fileID: 1601656646782729028, guid: 2298ad06359e3444fb807b0da31399f7, type: 3}
       propertyPath: m_Name
       value: PlayerUICanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601656646782729028, guid: 2298ad06359e3444fb807b0da31399f7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2384083090810006538, guid: 2298ad06359e3444fb807b0da31399f7, type: 3}
       propertyPath: m_AnchorMax.x
@@ -429,6 +433,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1148492969681756226, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
+      propertyPath: m_Radius
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1148492969681756226, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
@@ -542,7 +550,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4094193356607589861, guid: 8bd5cc188a7ea48db85c4afefc0a32b8, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 120
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5203005930031211823, guid: 8bd5cc188a7ea48db85c4afefc0a32b8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1421,7 +1429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8720608684093436038, guid: 75709fa90772b4b0d90cdf341686b2d1, type: 3}
       propertyPath: m_Radius
-      value: 0.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8720608684093436038, guid: 75709fa90772b4b0d90cdf341686b2d1, type: 3}
       propertyPath: m_Center.y
