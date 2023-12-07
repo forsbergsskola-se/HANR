@@ -10,7 +10,8 @@ public class Dialogue : MonoBehaviour
     public UnityEvent druidToRanger;
     public TMP_Text chating;
     private void Start()
-    {
+    {   
+        this.gameObject.SetActive(false);
         druidToRanger.AddListener(DruidTalkingRanger);
     }
 
@@ -21,6 +22,8 @@ public class Dialogue : MonoBehaviour
 
     void DruidTalkingRanger()
     {
-        chating.text = "Ranger: I'm distraught, the water in these woods are vital for all life but has been curated by darkness and is slowly killing everything that is dependent on it.";
+        GameObject.Find("PlayerUICanvas").SetActive(false);
+        this.gameObject.SetActive(true);
+        chating.text = "I'm distraught, the water in these woods are vital for all life but has been curated by darkness and is slowly killing everything that is dependent on it.";
     }
 }
