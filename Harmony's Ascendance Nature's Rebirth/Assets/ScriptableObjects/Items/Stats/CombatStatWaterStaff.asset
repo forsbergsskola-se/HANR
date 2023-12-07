@@ -16,4 +16,5 @@ MonoBehaviour:
   projectileSpeed: 6
   attackRate: 4
   range: 12
-  material: {fileID: 2100000, guid: db3bf6537201aff4ab6c1f79064757f7, type: 2}
+  material: {fileID: 2100000, guid: c6d38711520119c4e89ddf1ea6adc007, type: 2}
+  hitEffectColor: {r: 0, g: 0.7830189, b: 0.7753517, a: 0.8509804}

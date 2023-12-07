@@ -14,12 +14,9 @@ namespace Enemy.BossEnemy
     {
         public FloatVariable enemyHealth;
         [SerializeField] private Animator animator;
-        [SerializeField] private NavMeshAgent agent;
         [SerializeField] private GameObject deathEffect;
-        public GameObjectVariable currentClickedEnemy;
         private void Start()
         {
-            deathEffect.SetActive(false);
             enemyHealth.ValueChanged.AddListener(enemyDead);
         }
 
@@ -33,15 +30,22 @@ namespace Enemy.BossEnemy
             if (health <= 0)
             {
                 animator.SetBool("isDead",true);
-                agent.isStopped = true;
-                DeathEffect(); // Not working atm
-                Destroy(gameObject);
             }
         }
 
         private void DeathEffect()
         {
-            deathEffect.SetActive(true); // I thought an effect could play on awake before the enemy is destroyed, but it'll probably need a timer
+            GameObject effect  = Instantiate(deathEffect, this.transform);
+            effect.transform.position = this.transform.position;
+            
+            StartCoroutine(removeObjects(effect));
+        }
+
+        private IEnumerator removeObjects(GameObject effect)
+        {
+            yield return new WaitForSeconds(2);
+            Destroy(effect);
+            Destroy(this.gameObject);
         }
     }
 }
