@@ -17,7 +17,7 @@ public class Dialogue : MonoBehaviour
 
     private GameObject PlayerUI;
     [SerializeField] private NavMeshAgent agent;
-    private string[] conversation = new string[4];
+    private string[] conversation = new string[5];
     private bool inConversation;
     
     private void Start()
@@ -34,7 +34,6 @@ public class Dialogue : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                
                 if (dialougeCounter > conversation.Length-1)
                 {
                     inConversation = false;
@@ -47,10 +46,8 @@ public class Dialogue : MonoBehaviour
                     chating.text = conversation[dialougeCounter];
                     dialougeCounter += 1;
                 }
-                
             }
         }
-        
     }
 
     private void OnDestroy()
@@ -62,7 +59,6 @@ public class Dialogue : MonoBehaviour
     {
         if (!inConversation && dialougeCounter == 0)
         {
-            Debug.Log("Event kicked"); // this shows up but nothing underneath is done.
             PlayerUI.SetActive(false);
             this.gameObject.SetActive(true);
             agent.isStopped = true;
@@ -76,10 +72,11 @@ public class Dialogue : MonoBehaviour
 
     private void FillArray()
     {
-        conversation[0] = "I'm distraught, the water in these woods are vital for all life but has been curated by darkness and is slowly killing everything that is dependent on it.";
-        conversation[1] = "text2";
-        conversation[2] = "text3";
-        conversation[3] = "text4";
+        conversation[0] = "I'm distraught, the water in these woods are vital for all life but has been corrupted by darkness and is slowly killing everything that is dependent on it.";
+        conversation[1] = "Oh hello! What do you mean? Who corrupted the water?";
+        conversation[2] = "Dark forces has spread over these lands lately, it came from deep in the mountains... Those fire rocks are so evil, this forest used to be so beautiful!";
+        conversation[3] = "I know some magic, maybe I can help?";
+        conversation[4] = "There is a tale of a purifying spell crafted by the Bear Man. He keeps to himself and can be hard to find, but I've heard that he likes carving runes in to stone...";
     }
     
     
