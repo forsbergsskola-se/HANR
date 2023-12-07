@@ -285,6 +285,7 @@ GameObject:
   - component: {fileID: 7569083031853421344}
   - component: {fileID: 454811766674727700}
   - component: {fileID: 8384920763826588960}
+  - component: {fileID: 6065082939264683289}
   m_Layer: 0
   m_Name: Boss Enemy
   m_TagString: Enemy
@@ -507,6 +508,19 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 1.5
   m_Center: {x: 0, y: 2.05, z: 0}
+--- !u!114 &6065082939264683289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3147098492075960813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8de8ae60efc4a8ab6eebf264b543032, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GolemHealth: {fileID: 11400000, guid: fae8d58fbc089264c83b291f3ee8ed65, type: 2}
 --- !u!1 &3351435239884965157
 GameObject:
   m_ObjectHideFlags: 0

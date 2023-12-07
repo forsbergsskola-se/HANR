@@ -61,7 +61,6 @@ namespace Player.UseSkills
             GameObject weaponPoint = this.GetComponentInChildren<WeaponEquipped>().gameObject;
             skGameObject.transform.position = weaponPoint.transform.position;
             skGameObject.transform.rotation = this.transform.rotation;
-            skGameObject.transform.localScale = Vector3.one * 1.1f;
             Vector3 dir = (targetPoint - skGameObject.transform.position).normalized;
             
             Rigidbody rb = skGameObject.GetComponent<Rigidbody>();

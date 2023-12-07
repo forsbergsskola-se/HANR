@@ -2,9 +2,11 @@ using System;
 using System.Collections;
 using CustomObjects;
 using Player;
+using Player.SkillStats;
 using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 namespace Enemy.BossEnemy
 {
@@ -20,17 +22,17 @@ namespace Enemy.BossEnemy
         {
             hitEffectPool = this.gameObject.GetComponent<HitEffectPool>();
             deathEffect.SetActive(false);
+            enemyHealth.ValueChanged.AddListener(enemyDead);
         }
 
-        private void OnTriggerEnter(Collider other)
+        private void OnDestroy()
         {
-            ProjectileStats ps = other.gameObject.GetComponent<ProjectileStats>();
-            float damage = ps.attackDamage;
-            float currentHealth = enemyHealth.getValue();
-            enemyHealth.setValue(Mathf.Max(currentHealth - damage,0));
-            other.gameObject.SetActive(false);
-            StartCoroutine(ShowEffect());
-            if (enemyHealth.getValue() <= 0)
+            enemyHealth.ValueChanged.RemoveListener(enemyDead);
+        }
+
+        private void enemyDead(float health)
+        {
+            if (health <= 0)
             {
                 animator.SetBool("isDead",true);
                 agent.isStopped = true;

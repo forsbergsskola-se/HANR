@@ -13,6 +13,8 @@ TagManager:
   - Rock
   - GolemHand
   - Sting
+  - NormalProjectile
+  - SkillProjectile
   layers:
   - Default
   - TransparentFX
