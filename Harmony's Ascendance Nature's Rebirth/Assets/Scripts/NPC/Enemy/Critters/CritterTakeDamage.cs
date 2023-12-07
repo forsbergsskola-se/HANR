@@ -11,46 +11,37 @@ namespace NPC.Enemy.Critters
 {
     public class CritterTakeDamage : MonoBehaviour
     {
-        public FloatVariable critterHealth;
+        public FloatVariable enemyHealth;
         [SerializeField] private Animator animator;
         [SerializeField] private NavMeshAgent agent;
-        private HitEffectPool hitEffectPool;
-        public GameObjectVariable currentClickedEnemy;
-        
+        // [SerializeField] private GameObject deathEffect;
+
         private void Start()
         {
-            hitEffectPool = this.gameObject.GetComponent<HitEffectPool>();
+            // deathEffect.SetActive(false);
+            enemyHealth.ValueChanged.AddListener(enemyDead);
         }
 
-        // private void OnTriggerEnter(Collider other)
-        // {
-        //     ProjectileStats ps = other.gameObject.GetComponent<ProjectileStats>();
-        //     float damage = ps.attackDamage;
-        //     float currentHealth = critterHealth.getValue();
-        //     critterHealth.setValue(Mathf.Max(currentHealth - damage,0));
-        //     other.gameObject.SetActive(false);
-        //     StartCoroutine(ShowEffect());
-        //     
-        //     if (critterHealth.getValue() <= 0f)
-        //     {
-        //         animator.SetBool("IsDead",true);
-        //         agent.isStopped = true;
-        //         Destroy(gameObject);
-        //     }
-        // }
-
-        private IEnumerator ShowEffect()
+        private void OnDestroy()
         {
-            GameObject hitEffect = hitEffectPool.GetPooledEffects();
-            if (hitEffect != null)
-            {
-                hitEffect.transform.position = this.gameObject.GetComponentInChildren<HitPoint>().transform.position;;
-                hitEffect.transform.rotation = this.gameObject.GetComponentInChildren<HitPoint>().transform.rotation;
-                hitEffect.transform.localScale = new Vector3(3f, 3f, 3f);
-            }
+            enemyHealth.ValueChanged.RemoveListener(enemyDead);
+        }
 
-            yield return new WaitForSeconds(2);
-            hitEffect.SetActive(false);
+        private void enemyDead(float health)
+        {
+            if (health <= 0)
+            {
+                animator.SetBool("isDead", true);
+                agent.isStopped = true;
+                DeathEffect(); // Not working atm
+                Destroy(gameObject);
+            }
+        }
+
+        private void DeathEffect()
+        {
+            // deathEffect.SetActive(true); // I thought an effect could play on awake before the enemy is destroyed, but it'll probably need a timer
         }
     }
+
 }

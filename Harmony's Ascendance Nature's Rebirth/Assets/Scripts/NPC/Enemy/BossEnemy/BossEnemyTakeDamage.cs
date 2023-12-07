@@ -16,11 +16,9 @@ namespace Enemy.BossEnemy
         [SerializeField] private Animator animator;
         [SerializeField] private NavMeshAgent agent;
         [SerializeField] private GameObject deathEffect;
-        private HitEffectPool hitEffectPool;
         public GameObjectVariable currentClickedEnemy;
         private void Start()
         {
-            hitEffectPool = this.gameObject.GetComponent<HitEffectPool>();
             deathEffect.SetActive(false);
             enemyHealth.ValueChanged.AddListener(enemyDead);
         }

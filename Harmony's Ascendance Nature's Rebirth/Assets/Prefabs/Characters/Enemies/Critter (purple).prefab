@@ -678,7 +678,6 @@ GameObject:
   - component: {fileID: 516910576503267183}
   - component: {fileID: 5900507210396769317}
   - component: {fileID: 5397495564986993226}
-  - component: {fileID: 4930932175811983788}
   - component: {fileID: 4201553723988307520}
   m_Layer: 8
   m_Name: Critter (purple)
@@ -858,10 +857,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63bf24564b0b405abd49063c6baf559c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  critterHealth: {fileID: 11400000, guid: 1e024cfec2cd94a769db922439b46896, type: 2}
+  enemyHealth: {fileID: 11400000, guid: 1e024cfec2cd94a769db922439b46896, type: 2}
   animator: {fileID: 7575389782524006198}
   agent: {fileID: 8338094402280085788}
-  currentClickedEnemy: {fileID: 0}
+  deathEffect: {fileID: 0}
 --- !u!114 &5900507210396769317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -893,22 +892,6 @@ MonoBehaviour:
   turnRate: 20
   distanceFromPlayer: 4
   animator: {fileID: 7575389782524006198}
---- !u!114 &4930932175811983788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4718287801753836335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63bf24564b0b405abd49063c6baf559c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  critterHealth: {fileID: 11400000, guid: 1e024cfec2cd94a769db922439b46896, type: 2}
-  animator: {fileID: 7575389782524006198}
-  agent: {fileID: 8338094402280085788}
-  currentClickedEnemy: {fileID: 11400000, guid: e5d229f37daf285498bf90de79b0ee08, type: 2}
 --- !u!114 &4201553723988307520
 MonoBehaviour:
   m_ObjectHideFlags: 0
