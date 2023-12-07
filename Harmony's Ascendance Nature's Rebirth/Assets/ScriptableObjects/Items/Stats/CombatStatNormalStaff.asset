@@ -16,3 +16,4 @@ MonoBehaviour:
   projectileSpeed: 3
   attackRate: 2
   range: 16
+  material: {fileID: 2100000, guid: 8dd3d5d4200d56c4db3dc79b53d459cd, type: 2}

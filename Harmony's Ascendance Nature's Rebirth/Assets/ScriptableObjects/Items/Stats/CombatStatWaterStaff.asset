@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eaff9554e2f49c0933446542b1b1f37, type: 3}
   m_Name: CombatStatWaterStaff
   m_EditorClassIdentifier: 
-  damage: 1
-  projectileSpeed: 3
-  attackRate: 2
-  range: 16
+  damage: 3
+  projectileSpeed: 6
+  attackRate: 4
+  range: 12
+  material: {fileID: 2100000, guid: db3bf6537201aff4ab6c1f79064757f7, type: 2}

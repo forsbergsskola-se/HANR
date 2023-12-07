@@ -103,6 +103,8 @@ public class PlayerAttack : MonoBehaviour
             {
                 projectileInstance.transform.position = weaponEquipped.transform.position;
                 projectileInstance.transform.rotation = weaponEquipped.transform.rotation;
+                MeshRenderer mr = projectileInstance.GetComponent<MeshRenderer>();
+                mr.material = combatStat.material;
             
                 ShootProjectile(projectileInstance);
             }

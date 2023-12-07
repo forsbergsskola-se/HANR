@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eaff9554e2f49c0933446542b1b1f37, type: 3}
   m_Name: CombatStatFireStaff
   m_EditorClassIdentifier: 
-  damage: 1
-  projectileSpeed: 3
+  damage: 5
+  projectileSpeed: 6
   attackRate: 2
-  range: 16
+  range: 10
+  material: {fileID: 2100000, guid: 131a70dfece960a4db25f459a95d0114, type: 2}

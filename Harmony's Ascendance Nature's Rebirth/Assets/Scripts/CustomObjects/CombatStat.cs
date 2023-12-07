@@ -9,5 +9,6 @@ namespace CustomObjects
         public float projectileSpeed;
         public float attackRate;
         public float range;
+        public Material material;
     }
 }
