@@ -11,6 +11,9 @@ namespace Player.UseSkills
         public Skills skill;
         private Vector3 targetPoint;
         public BoolVariable playerMoving;
+        private bool skill1;
+        private bool skill2;
+        private bool ultiSkill;
         
         private void Start()
         {
@@ -65,6 +68,9 @@ namespace Player.UseSkills
             
             Rigidbody rb = skGameObject.GetComponent<Rigidbody>();
             rb.velocity = new Vector3(dir.x * 10f, dir.y * 10f, dir.z * 10f);
+
+            StartCoroutine(StartCooldown(skill));
+            
             skill = null;
         }
 
@@ -77,8 +83,22 @@ namespace Player.UseSkills
             skGameObject.transform.position = weaponPoint.transform.position;
             Vector3 dir = (targetPoint - skGameObject.transform.position).normalized;
             skGameObject.transform.rotation = Quaternion.LookRotation(dir);
+            StartCoroutine(StartCooldown(skill));
             StartCoroutine(channelBB(skGameObject));
             skill = null;
+        }
+
+        private IEnumerator StartCooldown(Skills sk)
+        {
+            int tempCooldown = sk.cooldown;
+            sk.setCurrentCooldown(tempCooldown);
+            while (tempCooldown != 0)
+            {
+                yield return new WaitForSeconds(1);
+                tempCooldown -= 1;
+                sk.setCurrentCooldown(tempCooldown);
+            }
+            
         }
 
         private IEnumerator channelBB(GameObject skillGO)
