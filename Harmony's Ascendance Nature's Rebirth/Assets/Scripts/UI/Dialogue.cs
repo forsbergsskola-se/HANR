@@ -70,7 +70,6 @@ public class Dialogue : MonoBehaviour
     {
         if (!inConversation && dialougeCounter == 0)
         {
-            
             PlayerUI.SetActive(false);
             this.gameObject.SetActive(true);
             agent.isStopped = true;
@@ -86,13 +85,13 @@ public class Dialogue : MonoBehaviour
     {
         if (!inConversation && dialougeCounter  == 0)
         {
-            FillArrayBearMan();
             PlayerUI.SetActive(false);
             this.gameObject.SetActive(true);
             agent.isStopped = true;
             chating.text = conversation[0];
             dialougeCounter += 1;
             inConversation = true;
+            FillArrayBearMan();
             
         }
         
