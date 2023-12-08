@@ -109,14 +109,14 @@ public class Dialogue : MonoBehaviour
     
     private void FillArrayBearMan()
     {
-        conversation[0] = "I'm distraught, the water in these woods are vital for all life but has been corrupted by darkness and is slowly killing everything that is dependent on it.";
-        conversation[1] = "Oh hello! What do you mean? Who corrupted the water?";
-        conversation[2] = "Dark forces has spread over these lands lately, it came from deep in the mountains... Those fire rocks are so evil, this forest used to be so beautiful!";
-        conversation[3] = "I know some magic, maybe I can help?";
-        conversation[4] = "There is a tale of a purifying spell crafted by the Bear Man. He keeps to himself and can be hard to find, but I've heard that he likes carving runes in to stone...";
+        conversation[0] = "Rawr! Who goes there?";
+        conversation[1] = "Don't be alarmed, I'm a friend! I'm searching for a spell to purify the river by the Rangers grounds";
+        conversation[2] = "Oh, you're a friend of little Ranger? In that case I may be able to help you. It's been a long time since I used magic, other than to carve my masterpieces.";
+        conversation[3] = "There should be some crates with spell books and potions by the pine trees, feel free to have a look!";
+        conversation[4] = "Thank you ";
     }
     
-    /*
+    /*x
     private void InitiateDialogue()
     {
         PlayerUI.SetActive(false);
