@@ -13877,6 +13877,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2402256193100386541, guid: 462d50ca8748545129a488a58af0ad43, type: 3}
+      propertyPath: screen
+      value: 
+      objectReference: {fileID: 1764157715}
+    - target: {fileID: 2402256193100386541, guid: 462d50ca8748545129a488a58af0ad43, type: 3}
+      propertyPath: enemyHealth
+      value: 
+      objectReference: {fileID: 11400000, guid: fae8d58fbc089264c83b291f3ee8ed65, type: 2}
     - target: {fileID: 3147098492075960813, guid: 462d50ca8748545129a488a58af0ad43, type: 3}
       propertyPath: m_Name
       value: Boss Enemy
