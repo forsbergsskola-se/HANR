@@ -5,7 +5,7 @@ using CustomObjects;
 using TMPro;
 using UnityEngine;
 
-public class InteractableNPC : MonoBehaviour
+public class InteractableNPCRanger : MonoBehaviour
 {
     public Dialogue dialogue;
     private bool playerClose;
