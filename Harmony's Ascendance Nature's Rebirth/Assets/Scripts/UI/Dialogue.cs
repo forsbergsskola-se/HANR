@@ -84,7 +84,7 @@ public class Dialogue : MonoBehaviour
     
     private void InitiateDialogueBearMan()
     {
-        if (!inConversation && dialougeCounter == 0)
+        if (!inConversation && dialougeCounter  == 0)
         {
             FillArrayBearMan();
             PlayerUI.SetActive(false);
