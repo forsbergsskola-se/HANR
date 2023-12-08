@@ -13,6 +13,7 @@ using UnityEngine.UIElements;
 public class Dialogue : MonoBehaviour
 {
     public UnityEvent druidToRanger;
+    public UnityEvent druidToBearMan;
     public TMP_Text chating;
     private int dialougeCounter = 0;
 
@@ -28,10 +29,11 @@ public class Dialogue : MonoBehaviour
     private void Start()
     {
         this.gameObject.SetActive(false);
-        druidToRanger.AddListener(InitiateDialogue);
-        FillArray();
+        druidToRanger.AddListener(InitiateDialogueRanger);
+        druidToBearMan.AddListener(InitiateDialogueBearMan);
         PlayerUI = GameObject.FindWithTag("Canvas");
         //talkingFace = druidFace; //Face in first dialogue, in this case, ranger
+        
     }
 
     private void Update()
@@ -60,10 +62,11 @@ public class Dialogue : MonoBehaviour
 
     private void OnDestroy()
     {
-        druidToRanger.RemoveListener(InitiateDialogue);
+        druidToRanger.RemoveListener(InitiateDialogueRanger);
+        druidToBearMan.RemoveListener(InitiateDialogueBearMan);
     }
 
-    private void InitiateDialogue()
+    private void InitiateDialogueRanger()
     {
         if (!inConversation && dialougeCounter == 0)
         {
@@ -74,12 +77,28 @@ public class Dialogue : MonoBehaviour
             chating.text = conversation[0];
             dialougeCounter += 1;
             inConversation = true;
+            FillArrayRanger();
         }
         
     }
     
+    private void InitiateDialogueBearMan()
+    {
+        if (!inConversation && dialougeCounter == 0)
+        {
+            FillArrayBearMan();
+            PlayerUI.SetActive(false);
+            this.gameObject.SetActive(true);
+            agent.isStopped = true;
+            chating.text = conversation[0];
+            dialougeCounter += 1;
+            inConversation = true;
+            
+        }
+        
+    }
 
-    private void FillArray()
+    private void FillArrayRanger()
     {
         conversation[0] = "I'm distraught, the water in these woods are vital for all life but has been corrupted by darkness and is slowly killing everything that is dependent on it.";
         conversation[1] = "Oh hello! What do you mean? Who corrupted the water?";
@@ -88,6 +107,14 @@ public class Dialogue : MonoBehaviour
         conversation[4] = "There is a tale of a purifying spell crafted by the Bear Man. He keeps to himself and can be hard to find, but I've heard that he likes carving runes in to stone...";
     }
     
+    private void FillArrayBearMan()
+    {
+        conversation[0] = "I'm distraught, the water in these woods are vital for all life but has been corrupted by darkness and is slowly killing everything that is dependent on it.";
+        conversation[1] = "Oh hello! What do you mean? Who corrupted the water?";
+        conversation[2] = "Dark forces has spread over these lands lately, it came from deep in the mountains... Those fire rocks are so evil, this forest used to be so beautiful!";
+        conversation[3] = "I know some magic, maybe I can help?";
+        conversation[4] = "There is a tale of a purifying spell crafted by the Bear Man. He keeps to himself and can be hard to find, but I've heard that he likes carving runes in to stone...";
+    }
     
     /*
     private void InitiateDialogue()

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4535,6 +4535,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 7a4db7b2b211ccf43a295a6eabffce07, type: 3}
   m_PrefabInstance: {fileID: 1740531440}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &483755087 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 59475173430280842, guid: 79cae923cec744a6ab7e4597027345b6, type: 3}
+  m_PrefabInstance: {fileID: 1489339006899393026}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &483755092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483755087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 313cd96ef6821954f8b0068ad37be3c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 1265348025}
+  thisNPC: {fileID: 483755087}
 --- !u!1001 &486740426
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10057,6 +10076,11 @@ BoxCollider:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: b1e72cbca989d4f4ba7d512a92e6903c, type: 3}
   m_PrefabInstance: {fileID: 222746613}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1233195819 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8998388565361911510, guid: 75709fa90772b4b0d90cdf341686b2d1, type: 3}
+  m_PrefabInstance: {fileID: 6625834417809407550}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1240751702
 PrefabInstance:
@@ -19714,7 +19738,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 59475173430280842, guid: 79cae923cec744a6ab7e4597027345b6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 483755092}
   m_SourcePrefab: {fileID: 100100000, guid: 79cae923cec744a6ab7e4597027345b6, type: 3}
 --- !u!1001 &1912984636701644552
 PrefabInstance:
@@ -21196,6 +21223,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7101563876037392669, guid: 75709fa90772b4b0d90cdf341686b2d1, type: 3}
+      propertyPath: thisNPC
+      value: 
+      objectReference: {fileID: 1233195819}
     - target: {fileID: 7101563876037392669, guid: 75709fa90772b4b0d90cdf341686b2d1, type: 3}
       propertyPath: dialogue
       value: 
