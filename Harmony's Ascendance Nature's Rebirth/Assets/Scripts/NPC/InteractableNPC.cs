@@ -1,18 +1,39 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using CustomObjects;
 using TMPro;
 using UnityEngine;
 
 public class InteractableNPC : MonoBehaviour
 {
     public Dialogue dialogue;
-    private void OnTriggerStay(Collider other)
+    private bool playerClose;
+
+    private void Update()
     {
-        if(other.CompareTag("Player") && Input.GetKeyDown(KeyCode.Space)) //If player is close enough, press right mouse to trigger dialogue
-        { 
-            Debug.Log("Hello");
+        if (playerClose)
+        {
             dialogue.druidToRanger.Invoke();
+            playerClose = false;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerClose = true;
+            Debug.Log("Player close");
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerClose = false;
+            Debug.Log("Walk away");
         }
     }
 }

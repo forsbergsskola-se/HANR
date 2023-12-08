@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eaff9554e2f49c0933446542b1b1f37, type: 3}
+  m_Name: CombatStatWaterStaff
+  m_EditorClassIdentifier: 
+  damage: 3
+  projectileSpeed: 6
+  attackRate: 4
+  range: 12
+  material: {fileID: 2100000, guid: c6d38711520119c4e89ddf1ea6adc007, type: 2}
+  hitEffectColor: {r: 0, g: 0.7830189, b: 0.7753517, a: 0.8509804}

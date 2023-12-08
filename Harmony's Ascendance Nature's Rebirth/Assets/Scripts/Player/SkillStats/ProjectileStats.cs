@@ -1,10 +1,11 @@
 using System;
+using CustomObjects;
 using UnityEngine;
 
-namespace Player
+namespace Player.SkillStats
 {
     public class ProjectileStats : MonoBehaviour
     {
-        public float attackDamage;
+        public CombatStat cs;
     }
 }

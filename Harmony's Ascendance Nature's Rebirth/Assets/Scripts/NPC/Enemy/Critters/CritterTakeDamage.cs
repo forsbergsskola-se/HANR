@@ -11,46 +11,43 @@ namespace NPC.Enemy.Critters
 {
     public class CritterTakeDamage : MonoBehaviour
     {
-        public FloatVariable critterHealth;
+        public FloatVariable enemyHealth;
         [SerializeField] private Animator animator;
         [SerializeField] private NavMeshAgent agent;
-        private HitEffectPool hitEffectPool;
-        public GameObjectVariable currentClickedEnemy;
-        
+        [SerializeField] private GameObject deathEffect;
+
         private void Start()
         {
-            hitEffectPool = this.gameObject.GetComponent<HitEffectPool>();
+            enemyHealth.ValueChanged.AddListener(enemyDead);
         }
 
-        private void OnTriggerEnter(Collider other)
+        private void OnDestroy()
         {
-            ProjectileStats ps = other.gameObject.GetComponent<ProjectileStats>();
-            float damage = ps.attackDamage;
-            float currentHealth = critterHealth.getValue();
-            critterHealth.setValue(Mathf.Max(currentHealth - damage,0));
-            other.gameObject.SetActive(false);
-            StartCoroutine(ShowEffect());
-            
-            if (critterHealth.getValue() <= 0f)
+            enemyHealth.ValueChanged.RemoveListener(enemyDead);
+        }
+
+        private void enemyDead(float health)
+        {
+            if (health <= 0)
             {
                 animator.SetBool("IsDead",true);
-                agent.isStopped = true;
-                Destroy(gameObject);
             }
         }
 
-        private IEnumerator ShowEffect()
+        private void DeathEffect()
         {
-            GameObject hitEffect = hitEffectPool.GetPooledEffects();
-            if (hitEffect != null)
-            {
-                hitEffect.transform.position = this.gameObject.GetComponentInChildren<HitPoint>().transform.position;;
-                hitEffect.transform.rotation = this.gameObject.GetComponentInChildren<HitPoint>().transform.rotation;
-                hitEffect.transform.localScale = new Vector3(3f, 3f, 3f);
-            }
+            GameObject effect  = Instantiate(deathEffect, this.transform);
+            effect.transform.position = this.transform.position;
+            
+            StartCoroutine(removeObjects(effect));
+        }
 
+        private IEnumerator removeObjects(GameObject effect)
+        {
             yield return new WaitForSeconds(2);
-            hitEffect.SetActive(false);
+            Destroy(effect);
+            Destroy(this.gameObject);
         }
     }
+
 }

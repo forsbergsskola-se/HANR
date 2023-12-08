@@ -1352,6 +1352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0a0e5e8c38648c3a475afbaa5312939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMoving: {fileID: 11400000, guid: ac6cfe3da22a341db9d2eceaf518767d, type: 2}
 --- !u!114 &3941418470837079999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1364,13 +1365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8fed04162d947bcb2c38dfba42921bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skill1:
-    m_PersistentCalls:
-      m_Calls: []
-  skill2:
-    m_PersistentCalls:
-      m_Calls: []
-  ultiSkill:
+  skillPressed:
     m_PersistentCalls:
       m_Calls: []
 --- !u!4 &1907429574684393820 stripped

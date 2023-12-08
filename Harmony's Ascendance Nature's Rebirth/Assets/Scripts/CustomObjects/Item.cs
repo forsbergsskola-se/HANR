@@ -15,4 +15,5 @@ public class Item : ScriptableObject
     public Skills skill1;
     public Skills skill2;
     public Skills ultiSkill;
+    public CombatStat normalAttack;
 }

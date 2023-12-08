@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using CustomObjects;
+using Enemy;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
@@ -17,11 +18,13 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float turnRate;
     [SerializeField] private float distanceFromPlayer;
     public Animator animator;
+    private FloatVariable health;
 
     
     // Start is called before the first frame update
     void Start()
     {
+        health = this.gameObject.GetComponent<EnemyStats>().enemyHealth;
         player = GameObject.FindWithTag("Player");
         orginalEnemyPosition = this.gameObject.transform.position;
         orginalEnemyrotation = this.transform.rotation;
@@ -56,7 +59,7 @@ public class EnemyMovement : MonoBehaviour
 
         if (agent.hasPath)
         {
-            if (agent.remainingDistance <= distanceFromPlayer)
+            if (agent.remainingDistance <= distanceFromPlayer || health.getValue() <= 0)
             {
                 agent.isStopped = true;
             }
@@ -86,7 +89,7 @@ public class EnemyMovement : MonoBehaviour
     
     void RotateToClick()
     {
-        if (agent.velocity != Vector3.zero && agent.hasPath)
+        if (agent.velocity != Vector3.zero && agent.hasPath && health.getValue() > 0)
         {
             Vector3 direction = agent.velocity.normalized;
             direction.y = 0;
@@ -94,11 +97,11 @@ public class EnemyMovement : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, Time.fixedDeltaTime*turnRate);
         }
 
-        if (agent.velocity == Vector3.zero && !playerInEnemyRange.getValue())
+        if (agent.velocity == Vector3.zero && !playerInEnemyRange.getValue() && health.getValue() > 0)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, player.transform.rotation, Time.fixedDeltaTime*turnRate);
         }
-        if (agent.velocity == Vector3.zero && playerInEnemyRange.getValue())
+        if (agent.velocity == Vector3.zero && playerInEnemyRange.getValue() && health.getValue() > 0)
         {
             Vector3 direction = (player.transform.position - agent.transform.position).normalized;
             direction.y = 0;

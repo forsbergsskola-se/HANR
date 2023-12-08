@@ -10,7 +10,7 @@ namespace Player.UseSkills
     public class SkillCheck : MonoBehaviour
     {
         private SkillsPressed skillsPressed;
-        public BoolVariable skillActive;
+        public BoolVariable playerMoving;
         private void Start()
         {
             skillsPressed = this.gameObject.GetComponent<SkillsPressed>();
@@ -28,6 +28,7 @@ namespace Player.UseSkills
             {
                 PointClick pc = this.gameObject.AddComponent<PointClick>();
                 pc.skill = skill;
+                pc.playerMoving = playerMoving;
             }
             else
             {

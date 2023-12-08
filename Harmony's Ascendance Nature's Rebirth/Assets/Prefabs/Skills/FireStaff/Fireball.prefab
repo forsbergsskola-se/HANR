@@ -11,15 +11,14 @@ GameObject:
   - component: {fileID: 2447540834220925014}
   - component: {fileID: 3175999905438976850}
   - component: {fileID: 2340676926713563082}
-  - component: {fileID: 6434406715228970353}
   - component: {fileID: -3798304945249756912}
   - component: {fileID: -1142779324844235637}
   - component: {fileID: 5351042988610526684}
   - component: {fileID: 280697175091579164}
-  - component: {fileID: 3691945325605491618}
+  - component: {fileID: 6128806281700766992}
   m_Layer: 0
   m_Name: Fireball
-  m_TagString: Untagged
+  m_TagString: SkillProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,27 +92,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &6434406715228970353
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8571159334589146555}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!198 &-3798304945249756912
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -137,7 +115,7 @@ ParticleSystem:
   startDelay:
     serializedVersion: 2
     minMaxState: 0
-    scalar: 0
+    scalar: 0.2
     minScalar: 0
     maxCurve:
       serializedVersion: 2
@@ -746,7 +724,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 8
-    angle: 20
+    angle: 10
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 0.5
@@ -951,7 +929,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 70
+      scalar: 150
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -4883,7 +4861,7 @@ ParticleSystemRenderer:
   m_MeshDistribution: 0
   m_SortMode: 0
   m_MinParticleSize: 0
-  m_MaxParticleSize: 0.5
+  m_MaxParticleSize: 0.03
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2
@@ -4959,7 +4937,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.75
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3691945325605491618
+--- !u!114 &6128806281700766992
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4968,6 +4946,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8571159334589146555}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e213508b5de45dcae8462f9701c167d, type: 3}
+  m_Script: {fileID: 11500000, guid: 281cda6e65b44ff6bc73e236f6a2c17d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skills: {fileID: 11400000, guid: c8bbde305f2eae64e89fdb9758004b36, type: 2}
