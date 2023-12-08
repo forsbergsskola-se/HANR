@@ -679,6 +679,8 @@ GameObject:
   - component: {fileID: 5900507210396769317}
   - component: {fileID: 5397495564986993226}
   - component: {fileID: 4201553723988307520}
+  - component: {fileID: 3519382052693834891}
+  - component: {fileID: 773443028192024940}
   m_Layer: 8
   m_Name: Critter (purple)
   m_TagString: Enemy
@@ -906,6 +908,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitEffect: {fileID: 100002, guid: 9a6978577e587684db30b988306c6010, type: 3}
   size: 5
+--- !u!114 &3519382052693834891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4718287801753836335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fed110176a94d82898a9137a25093d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyHealth: {fileID: 11400000, guid: 1e024cfec2cd94a769db922439b46896, type: 2}
+--- !u!135 &773443028192024940
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4718287801753836335}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1.76
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4877808906011629551
 GameObject:
   m_ObjectHideFlags: 0
