@@ -22,9 +22,6 @@ public class Dialogue : MonoBehaviour
     private string[] conversation = new string[5];
     private bool inConversation;
 
-    //public Sprite talkingFace = GameObject.Find("IconFace").GetComponent<Image>().sprite; //Face of character currently speaking
-    //public Sprite druidFace; //Assigned in editor, a face image of druid
-    //public Sprite NPCFace; //Assigned in editor, a face image of ranger
     
     private void Start()
     {
@@ -42,8 +39,6 @@ public class Dialogue : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                //if (talkingFace == NPCFace) talkingFace = druidFace; //To switch faces in dialogue
-                //else if (talkingFace == druidFace) talkingFace = NPCFace;
                 if (dialougeCounter > conversation.Length-1)
                 {
                     inConversation = false;
@@ -70,13 +65,14 @@ public class Dialogue : MonoBehaviour
     {
         if (!inConversation && dialougeCounter == 0)
         {
+            FillArrayRanger();
             PlayerUI.SetActive(false);
             this.gameObject.SetActive(true);
             agent.isStopped = true;
             chating.text = conversation[0];
             dialougeCounter += 1;
             inConversation = true;
-            FillArrayRanger();
+            
         }
         
     }
@@ -85,13 +81,14 @@ public class Dialogue : MonoBehaviour
     {
         if (!inConversation && dialougeCounter  == 0)
         {
+            FillArrayBearMan();
             PlayerUI.SetActive(false);
             this.gameObject.SetActive(true);
             agent.isStopped = true;
             chating.text = conversation[0];
             dialougeCounter += 1;
             inConversation = true;
-            FillArrayBearMan();
+            
             
         }
         

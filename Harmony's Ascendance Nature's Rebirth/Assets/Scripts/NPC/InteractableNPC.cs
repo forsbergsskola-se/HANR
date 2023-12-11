@@ -12,16 +12,18 @@ namespace NPC
         {
             if (playerClose)
             {
-                if (thisNPC.name == "Ranger") ;
-                {
-                    dialogue.druidToRanger.Invoke();
-                    playerClose = false;
-                }
-                if (thisNPC.name == "BearMan") ;
-                
+                if (thisNPC.name == "BearMan")
                 {
                     dialogue.druidToBearMan.Invoke();
                     playerClose = false;
+                    Debug.Log("Talking to Bearman");
+                }
+                if (thisNPC.name == "Ranger")
+                
+                {
+                    dialogue.druidToRanger.Invoke();
+                    playerClose = false;
+                    Debug.Log("Talking to Ranger");
                 }
             }
         }
