@@ -7,7 +7,6 @@ namespace NPC
         public Dialogue dialogue;
         private bool playerClose;
         public GameObject thisNPC;
-
         private void Update()
         {
             if (playerClose)

@@ -34,7 +34,7 @@ public class UsableItems : MonoBehaviour
         CheckInput();
     }
 
-    void CheckInput()
+    void CheckInput() //To use/equip item
     {
 
         if (Input.GetKeyDown(KeyCode.Alpha1) && inventoryHolder.Items[0] != defaultItem)
