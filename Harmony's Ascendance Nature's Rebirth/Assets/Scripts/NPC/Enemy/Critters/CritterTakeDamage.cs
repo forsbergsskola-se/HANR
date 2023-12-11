@@ -15,14 +15,20 @@ namespace NPC.Enemy.Critters
         [SerializeField] private Animator animator;
         [SerializeField] private NavMeshAgent agent;
         [SerializeField] private GameObject deathEffect;
+        private PlayerStat playerstat;
+        [SerializeField] private Experience exp;
 
         private void Start()
         {
+            
+            playerstat = GameObject.FindWithTag("Player").GetComponent<PlayerStat>();
             enemyHealth.ValueChanged.AddListener(enemyDead);
         }
 
         private void OnDestroy()
         {
+            float newexp = playerstat.exp.getValue() + exp.exp;
+            playerstat.exp.setValue(newexp);
             enemyHealth.ValueChanged.RemoveListener(enemyDead);
         }
 

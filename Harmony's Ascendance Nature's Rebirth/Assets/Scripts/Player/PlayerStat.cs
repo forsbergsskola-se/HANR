@@ -13,6 +13,7 @@ namespace Player
         public FloatVariable exp;
         public float maxExp;
         public IntVariable level;
+       
         private void Start()
         {
             //Starting stats when starting play-mode

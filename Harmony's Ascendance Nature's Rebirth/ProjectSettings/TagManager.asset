@@ -16,6 +16,7 @@ TagManager:
   - NormalProjectile
   - SkillProjectile
   - Canvas
+  - MainLight
   layers:
   - Default
   - TransparentFX

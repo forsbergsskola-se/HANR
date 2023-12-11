@@ -15,13 +15,19 @@ namespace Enemy.BossEnemy
         public FloatVariable enemyHealth;
         [SerializeField] private Animator animator;
         [SerializeField] private GameObject deathEffect;
+        private PlayerStat playerStat;
+        [SerializeField] private Experience exp;
         private void Start()
         {
+            playerStat = GameObject.FindWithTag("Player").GetComponent<PlayerStat>();
             enemyHealth.ValueChanged.AddListener(enemyDead);
+          
         }
 
         private void OnDestroy()
         {
+            float newexp = playerStat.exp.getValue() + exp.exp;
+            playerStat.exp.setValue(newexp);
             enemyHealth.ValueChanged.RemoveListener(enemyDead);
         }
 
