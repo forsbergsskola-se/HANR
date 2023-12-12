@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Net.NetworkInformation;
 using CustomObjects;
 using TMPro;
+using UI;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
@@ -21,6 +22,8 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private NavMeshAgent agent;
     private string[] conversation = new string[5];
     private bool inConversation;
+
+    public QuestUI questUI;
 
     
     private void Start()
@@ -45,6 +48,7 @@ public class Dialogue : MonoBehaviour
                     dialougeCounter = 0;
                     this.gameObject.SetActive(false);
                     PlayerUI.SetActive(true);
+                    questUI.questProgression.Invoke(1); //State goes to next (FindingBearMan)
                 }
                 else
                 {

@@ -219,6 +219,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerUICanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2008490025261646750, guid: 2298ad06359e3444fb807b0da31399f7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2008490025261646750, guid: 2298ad06359e3444fb807b0da31399f7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2008490025261646750, guid: 2298ad06359e3444fb807b0da31399f7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 680
+      objectReference: {fileID: 0}
+    - target: {fileID: 2008490025261646750, guid: 2298ad06359e3444fb807b0da31399f7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -155
+      objectReference: {fileID: 0}
     - target: {fileID: 2384083090810006538, guid: 2298ad06359e3444fb807b0da31399f7, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -279,11 +295,38 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9194376743934404002, guid: 2298ad06359e3444fb807b0da31399f7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9194376743934404002, guid: 2298ad06359e3444fb807b0da31399f7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9194376743934404002, guid: 2298ad06359e3444fb807b0da31399f7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 680
+      objectReference: {fileID: 0}
+    - target: {fileID: 9194376743934404002, guid: 2298ad06359e3444fb807b0da31399f7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -105
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2298ad06359e3444fb807b0da31399f7, type: 3}
+--- !u!114 &24089702 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1676768983202043610, guid: 8bd5cc188a7ea48db85c4afefc0a32b8, type: 3}
+  m_PrefabInstance: {fileID: 312997058}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38ea9f91e64777f4e91ee6ea95abecdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &29839215
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,6 +541,10 @@ PrefabInstance:
       propertyPath: agent
       value: 
       objectReference: {fileID: 794804044}
+    - target: {fileID: 1676768983202043610, guid: 8bd5cc188a7ea48db85c4afefc0a32b8, type: 3}
+      propertyPath: questUI
+      value: 
+      objectReference: {fileID: 698931579}
     - target: {fileID: 2069345180746586903, guid: 8bd5cc188a7ea48db85c4afefc0a32b8, type: 3}
       propertyPath: m_VerticalFit
       value: 2
@@ -896,6 +943,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9b83f0794604b949aae6c4da67b399a, type: 3}
+--- !u!114 &698931579 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5942103219458113677, guid: 2298ad06359e3444fb807b0da31399f7, type: 3}
+  m_PrefabInstance: {fileID: 8122117}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b58203647177884696af61adb041fb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1332,13 +1390,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7101563876037392669, guid: 75709fa90772b4b0d90cdf341686b2d1, type: 3}
+      propertyPath: questUI
+      value: 
+      objectReference: {fileID: 698931579}
+    - target: {fileID: 7101563876037392669, guid: 75709fa90772b4b0d90cdf341686b2d1, type: 3}
       propertyPath: thisNPC
       value: 
       objectReference: {fileID: 1423068406}
     - target: {fileID: 7101563876037392669, guid: 75709fa90772b4b0d90cdf341686b2d1, type: 3}
       propertyPath: dialogue
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 24089702}
     - target: {fileID: 7101563876037392669, guid: 75709fa90772b4b0d90cdf341686b2d1, type: 3}
       propertyPath: isConversing
       value: 
