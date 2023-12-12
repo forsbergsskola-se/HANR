@@ -26,7 +26,7 @@ namespace UI
 
         public TMP_Text questTitle;
         public TMP_Text questLog;
-        private QuestLine currentState;
+        public QuestLine currentState;
         void Start()
         {
             currentState = QuestLine.TalkingToRanger;
@@ -42,30 +42,30 @@ namespace UI
         {
             switch (currentState)
             {
-                case QuestLine.TalkingToRanger:
+                case QuestLine.TalkingToRanger: //First Objective
                     questTitle.text = "Talk to Ranger";
                     questLog.text = "¤ Ranger is most likely to reside at a camp."; //Start
                     break;
-                case QuestLine.FindingBearMan:
+                case QuestLine.FindingBearMan: //1
                     questTitle.text = "Find and talk to the BearMan";
                     questLog.text =
                         "¤ I need to find this BearMan. But it's a big forest, he can be anywhere. Wonder if he left a teleport nearby for quicker traversal?";
                     break;
-                case QuestLine.CollectingCrate:
+                case QuestLine.CollectingCrate: //2
                     questTitle.text = "Potion necessities";
-                    questLog.text = "Open the crate and collect the crates content."; //Destroy the crate + spawn items (potion)
+                    questLog.text = "¤ O_O a crate! Let's collect the crates content."; //Destroy the crate + spawn items (potion)
                     break;
-                case QuestLine.FindingRiverByRangerArea:
+                case QuestLine.FindingRiverByRangerArea: //3
                     questTitle.text = "Find the river";
-                    questLog.text = "Go to the river by the Rangers camp.";
+                    questLog.text = "¤ The river by the Rangers camp huh. I think I noticed a partly destroyed bridge as well.";
                     break;
-                case QuestLine.SaveTheRiver:
+                case QuestLine.SaveTheRiver: //4 TODO
                     questTitle.text = "Save the river!";
-                    questLog.text = "Heal the river.";
+                    questLog.text = "¤ Heal the river.";
                     break;
-                case QuestLine.GettingReward:
+                case QuestLine.GettingReward: //5
                     questTitle.text = "Congratulations!";
-                    questLog.text = "Collect your reward"; //Spawn staff
+                    questLog.text = "¤ Collect your reward"; //Spawn staff
                     break;
             }
         }
