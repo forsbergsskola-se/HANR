@@ -21,7 +21,6 @@ namespace NPC
                     questUI.questProgression.Invoke(2);
                 }
                 if (thisNPC.name == "Ranger")
-                
                 {
                     dialogue.druidToRanger.Invoke();
                     playerClose = false;

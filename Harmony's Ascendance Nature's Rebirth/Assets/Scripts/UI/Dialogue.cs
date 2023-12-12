@@ -42,13 +42,14 @@ public class Dialogue : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                questUI.gameObject.SetActive(false);
                 if (dialougeCounter > conversation.Length-1)
                 {
                     inConversation = false;
                     dialougeCounter = 0;
                     this.gameObject.SetActive(false);
                     PlayerUI.SetActive(true);
-                    questUI.questProgression.Invoke(1); //State goes to next (FindingBearMan)
+                    questUI.gameObject.SetActive(true);
                 }
                 else
                 {
@@ -76,7 +77,7 @@ public class Dialogue : MonoBehaviour
             chating.text = conversation[0];
             dialougeCounter += 1;
             inConversation = true;
-            
+            questUI.questProgression.Invoke(1); //State goes to next (FindingBearMan)
         }
         
     }
@@ -92,8 +93,7 @@ public class Dialogue : MonoBehaviour
             chating.text = conversation[0];
             dialougeCounter += 1;
             inConversation = true;
-            
-            
+            questUI.questProgression.Invoke(3); //State goes to next (TalkToBearMan)
         }
         
     }
