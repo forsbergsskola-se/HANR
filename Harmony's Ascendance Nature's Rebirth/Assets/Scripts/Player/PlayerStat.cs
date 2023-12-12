@@ -13,6 +13,7 @@ namespace Player
         public FloatVariable exp;
         public float maxExp;
         public IntVariable level;
+        public FloatVariable onDeath;
        
         private void Start()
         {
