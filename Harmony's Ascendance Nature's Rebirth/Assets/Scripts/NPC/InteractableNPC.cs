@@ -1,3 +1,4 @@
+using UI;
 using UnityEngine;
 
 namespace NPC
@@ -7,6 +8,7 @@ namespace NPC
         public Dialogue dialogue;
         private bool playerClose;
         public GameObject thisNPC;
+        public QuestUI questUI;
         private void Update()
         {
             if (playerClose)
@@ -16,6 +18,7 @@ namespace NPC
                     dialogue.druidToBearMan.Invoke();
                     playerClose = false;
                     Debug.Log("Talking to Bearman");
+                    questUI.questProgression.Invoke(2);
                 }
                 if (thisNPC.name == "Ranger")
                 
