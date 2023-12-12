@@ -22,6 +22,7 @@ public class QuestUI : MonoBehaviour
 
     public UnityEvent QuestProgression; //Invoke this Unity-event during play-through
 
+    public TMP_Text questTitle;
     public TMP_Text questLog;
     private QuestLine currentState;
     private int questCounter;
@@ -42,24 +43,31 @@ public class QuestUI : MonoBehaviour
         switch (currentState)
         {
             case QuestLine.TalkingToRanger:
-                questLog.text = "Talk to Ranger."; //Implement text here for UI
+                questTitle.text = "Talk to Ranger";
+                questLog.text = "¤ Ranger is most likely to reside at a camp."; //Start
                 break;
             case QuestLine.FindingBearMan:
-                questLog.text = "Find the BearMan."; //Implement text here for UI
+                questTitle.text = "Find and talk to the BearMan";
+                questLog.text = "¤ The ranger was in panic, and asked me to find this BearMan. But it's a big forest, he can be anywhere. Wonder if he left a teleport nearby for quicker traversal?";
                 break;
             case QuestLine.TalkToBearMan:
-                questLog.text = "Talk to BearMan."; //Implement text here for UI
+                questTitle.text = "Talk to BearMan";
+                questLog.text = "";
                 break;
             case QuestLine.CollectingCrate:
+                questTitle.text = "Potion necessities";
                 questLog.text = "Collect the crates content."; //Destroy the crate + spawn items (potion)
                 break;
             case QuestLine.FindingRiverByRangerArea:
-                questLog.text = "Go to the rived by the Ranger area."; //Implement text here for UI
+                questTitle.text = "Find the river";
+                questLog.text = "Go to the river by the Rangers camp.";
                 break;
             case QuestLine.SaveTheRiver:
-                questLog.text = "Heal the river."; //Implement text here for UI
+                questTitle.text = "Save the river!";
+                questLog.text = "Heal the river.";
                 break;
             case QuestLine.GettingReward:
+                questTitle.text = "Congratulations!";
                 questLog.text = "Collect your reward"; //Spawn staff
                 break;
         }
