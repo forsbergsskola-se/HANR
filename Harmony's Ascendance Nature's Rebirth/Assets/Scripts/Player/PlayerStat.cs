@@ -1,5 +1,6 @@
 using System;
 using CustomObjects;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Player
@@ -13,12 +14,12 @@ namespace Player
         public FloatVariable exp;
         public float maxExp;
         public IntVariable level;
-        public FloatVariable onDeath;
+        public GameManagerScript gameOverScreen;
        
         private void Start()
         {
             //Starting stats when starting play-mode
-            health.setValue(90f);
+            health.setValue(10f);
             maxHealth = 100f;
             magic.setValue(50.5f);
             maxMagic = 100f;
@@ -42,10 +43,7 @@ namespace Player
             {
                 exp.setValue(exp.getValue() - maxExp);
                 level.setValue(level.getValue() + 1);
-
-                //maxHealth = maxHealth * 1.25f;
-                //maxMagic = maxMagic * 1.25f;
-                //maxExp = maxExp * 
+                
                 
                 maxExp += 30f; //Increasing requirement for next level
                 maxHealth += 20f;
@@ -55,10 +53,17 @@ namespace Player
         private void LimiterHealth(float currentValues) //Limiter for health
         {
             if(currentValues > maxHealth) health.setValue(maxHealth);
+            if (health.getValue() <= 0f)
+            {
+                gameOverScreen.gameObject.SetActive(true);
+            }
+           
         }
         private void LimiterMagic(float currentValues) //Limiter for magic
         {
             if(currentValues > maxMagic) magic.setValue(maxMagic);
         }
+
+        
     }
 }
