@@ -27,7 +27,8 @@ public class OpeningCrate : MonoBehaviour
                 Instantiate(itemInside[slot], newPosition, setRotation);
             }
             Destroy(gameObject);
-            questUI.questProgression.Invoke(4);
+            if(questUI.currentState == QuestUI.QuestLine.CollectingCrate) //To not retrigger same quest-objective 
+                questUI.questProgression.Invoke(3); //State goes to next (FindingRiverByRangerArea)
         }
     }
 }

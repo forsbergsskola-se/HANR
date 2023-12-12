@@ -17,14 +17,13 @@ namespace NPC
                 {
                     dialogue.druidToBearMan.Invoke();
                     playerClose = false;
-                    Debug.Log("Talking to Bearman");
-                    questUI.questProgression.Invoke(2);
+                    if(questUI.currentState == QuestUI.QuestLine.FindingBearMan) //To not retrigger same quest-objective 
+                        questUI.questProgression.Invoke(2); //State goes to next (CollectingCrate)
                 }
                 if (thisNPC.name == "Ranger")
                 {
                     dialogue.druidToRanger.Invoke();
                     playerClose = false;
-                    Debug.Log("Talking to Ranger");
                 }
             }
         }

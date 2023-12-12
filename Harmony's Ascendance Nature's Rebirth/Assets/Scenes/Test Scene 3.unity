@@ -525,6 +525,10 @@ PrefabInstance:
       propertyPath: cameraObject
       value: 
       objectReference: {fileID: 1644119212}
+    - target: {fileID: 8190942676431520944, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
+      propertyPath: verticalOffset
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1492,7 +1496,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8623093754399898732, guid: 75709fa90772b4b0d90cdf341686b2d1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.8
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8623093754399898732, guid: 75709fa90772b4b0d90cdf341686b2d1, type: 3}
       propertyPath: m_LocalPosition.y
