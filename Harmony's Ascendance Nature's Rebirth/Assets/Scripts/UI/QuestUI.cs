@@ -16,7 +16,6 @@ namespace UI
         {
             TalkingToRanger,
             FindingBearMan,
-            TalkToBearMan,
             CollectingCrate, //Spawn crates inventory (potions)
             FindingRiverByRangerArea,
             SaveTheRiver,
@@ -52,13 +51,9 @@ namespace UI
                     questLog.text =
                         "¤ I need to find this BearMan. But it's a big forest, he can be anywhere. Wonder if he left a teleport nearby for quicker traversal?";
                     break;
-                case QuestLine.TalkToBearMan:
-                    questTitle.text = "Talk to BearMan";
-                    questLog.text = "";
-                    break;
                 case QuestLine.CollectingCrate:
                     questTitle.text = "Potion necessities";
-                    questLog.text = "Collect the crates content."; //Destroy the crate + spawn items (potion)
+                    questLog.text = "Open the crate and collect the crates content."; //Destroy the crate + spawn items (potion)
                     break;
                 case QuestLine.FindingRiverByRangerArea:
                     questTitle.text = "Find the river";
@@ -80,14 +75,12 @@ namespace UI
             if (part == 1)
                 currentState = QuestLine.FindingBearMan;
             else if (part == 2)
-                currentState = QuestLine.TalkToBearMan;
-            else if (part == 3)
                 currentState = QuestLine.CollectingCrate;
-            else if (part == 4)
+            else if (part == 3)
                 currentState = QuestLine.FindingRiverByRangerArea;
-            else if (part == 5)
+            else if (part == 4)
                 currentState = QuestLine.SaveTheRiver;
-            else if (part == 6)
+            else if (part == 5)
                 currentState = QuestLine.GettingReward;
         }
     }

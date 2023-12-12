@@ -12,8 +12,7 @@ namespace NPC
         private void Update()
         {
             if (playerClose)
-            {
-                
+            { 
                 if (thisNPC.name == "BearMan")
                 {
                     dialogue.druidToBearMan.Invoke();
