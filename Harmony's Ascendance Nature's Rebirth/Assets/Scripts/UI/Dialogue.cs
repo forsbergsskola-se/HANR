@@ -93,7 +93,6 @@ public class Dialogue : MonoBehaviour
             chating.text = conversation[0];
             dialougeCounter += 1;
             inConversation = true;
-            questUI.questProgression.Invoke(3); //State goes to next (TalkToBearMan)
         }
         
     }
@@ -112,7 +111,7 @@ public class Dialogue : MonoBehaviour
         conversation[0] = "Rawr! Who goes there?";
         conversation[1] = "Don't be alarmed, I'm a friend! I'm searching for a spell to purify the river by the Rangers grounds";
         conversation[2] = "Oh, you're a friend of little Ranger? In that case I may be able to help you. It's been a long time since I used magic, other than to carve my masterpieces.";
-        conversation[3] = "There should be some crates with spell books and potions by the pine trees, feel free to have a look!";
+        conversation[3] = "There should be some crates with potions by the pine trees, feel free to have a look!";
         conversation[4] = "Thank you ";
     }
     
