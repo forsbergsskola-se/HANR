@@ -1,5 +1,7 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
+using System.Collections;
 
 [System.Serializable]
 public class ColorProperty
@@ -13,9 +15,16 @@ public class PropertyColourChange : MonoBehaviour
     [SerializeField] private Material[] materials;
     [SerializeField] private ColorProperty[] colorProperties;
 
+    public UnityEvent SaveRiver;
+
     void Start()
     {
-        CollectMaterialsFromChildren();
+        SaveRiver.AddListener(CollectMaterialsFromChildren);
+    }
+
+    private void OnDestroy()
+    {
+        SaveRiver.RemoveListener(CollectMaterialsFromChildren);
     }
 
     void CollectMaterialsFromChildren()
@@ -27,23 +36,35 @@ public class PropertyColourChange : MonoBehaviour
             {
                 materials = renderer.materials;
             }
-            
+
             for (int i = 0; i < materials.Length; i++)
             {
                 Material material = materials[i];
-                Shader shader = material.shader;
 
                 foreach (ColorProperty colorProperty in colorProperties)
                 {
-                    material.SetColor(colorProperty.propertyName, colorProperty.color);
+                    Color targetColor = colorProperty.color;
+                    Color currentColor = material.GetColor(colorProperty.propertyName);
+                    StartCoroutine(LerpColor(material, colorProperty.propertyName, targetColor, currentColor));
                 }
-
-                Debug.Log($"Shader colors changed on {shader.name}");
             }
         }
+    }
 
+    IEnumerator LerpColor(Material material, string propertyName, Color targetColor, Color currentColor)
+    {
+        float transitionDuration = 5f;
+        Color initialColor = currentColor;
+        float elapsedTime = 0f;
 
+        while (elapsedTime < transitionDuration)
+        {
+            Color lerpedColor = Color.Lerp(initialColor, targetColor, elapsedTime / transitionDuration);
+            material.SetColor(propertyName, lerpedColor);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        material.SetColor(propertyName, targetColor);
     }
 }
-
-

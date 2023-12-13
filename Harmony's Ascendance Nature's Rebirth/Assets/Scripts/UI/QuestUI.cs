@@ -60,11 +60,12 @@ namespace UI
                     questTitle.text = "Find the river";
                     questLog.text = "¤ The river by the Rangers camp huh. I think I noticed a partly destroyed bridge as well.";
                     break;
-                case QuestLine.SaveTheRiver: //4 TODO
+                case QuestLine.SaveTheRiver: //4
                     questTitle.text = "Save the river!";
                     questLog.text = "¤ Heal the river.";
                     break;
                 case QuestLine.GettingReward: //5
+                    
                     questTitle.text = "Congratulations!";
                     questLog.text = "¤ Collect your reward"; //Spawn staff
                     break;
