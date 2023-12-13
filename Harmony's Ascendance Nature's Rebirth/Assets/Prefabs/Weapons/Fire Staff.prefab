@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fire Staff
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6ebc2c3503899d647817b45515d5ab9d, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -69,7 +73,7 @@ PrefabInstance:
       addedObject: {fileID: 2618724249658885533}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6ebc2c3503899d647817b45515d5ab9d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 616312073467937466}
+      addedObject: {fileID: 5469032550217743703}
   m_SourcePrefab: {fileID: 100100000, guid: 6ebc2c3503899d647817b45515d5ab9d, type: 3}
 --- !u!1 &6145102003586746870 stripped
 GameObject:
@@ -90,8 +94,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 067d0c77f61af91498f433d3b58eb40e, type: 2}
   defaultItem: {fileID: 11400000, guid: 2c8ba1ee984a6fa4f85fea1fb4db8da5, type: 2}
---- !u!65 &616312073467937466
-BoxCollider:
+--- !u!136 &5469032550217743703
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -105,9 +109,11 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.82, y: 0.11, z: 2.06}
-  m_Center: {x: -0.0000007599592, y: -1.33, z: 0.00000017881393}
+  serializedVersion: 2
+  m_Radius: 1
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0.13172942, y: 0.23586282, z: 0.0000070035458}

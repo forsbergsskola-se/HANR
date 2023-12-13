@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: potion_small_magic
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6ebc2c3503899d647817b45515d5ab9d, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -65,7 +69,7 @@ PrefabInstance:
       addedObject: {fileID: 6825213888767532420}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6ebc2c3503899d647817b45515d5ab9d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3077522574407129358}
+      addedObject: {fileID: 6571091938480147929}
   m_SourcePrefab: {fileID: 100100000, guid: 6ebc2c3503899d647817b45515d5ab9d, type: 3}
 --- !u!1 &5301117808851601948 stripped
 GameObject:
@@ -86,8 +90,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 2d8ee2b6edff1604fbb8085dd061fcf9, type: 2}
   defaultItem: {fileID: 11400000, guid: 2c8ba1ee984a6fa4f85fea1fb4db8da5, type: 2}
---- !u!65 &3077522574407129358
-BoxCollider:
+--- !u!136 &6571091938480147929
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -101,9 +105,11 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.82, y: 0.11, z: 2.06}
-  m_Center: {x: -0.0000007599592, y: -0.64, z: 0.00000017881393}
+  serializedVersion: 2
+  m_Radius: 1
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0.000023573637, y: -0.10151185, z: 0.00000085681677}

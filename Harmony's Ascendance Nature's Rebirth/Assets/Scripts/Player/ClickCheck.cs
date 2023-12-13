@@ -36,7 +36,9 @@ public class ClickCheck : MonoBehaviour
             if (_camera)
             {
                 Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
-                if (Physics.Raycast(ray, out RaycastHit raycastHit))
+
+                int layerMask = ~LayerMask.GetMask(layerNames: new[] { "NPC", "Item" });
+                if (Physics.Raycast(ray, out RaycastHit raycastHit, float.MaxValue, layerMask))
                 {
                     targetPoint.SetValue(raycastHit.point);
                     

@@ -10,10 +10,16 @@ public class TriggerHealTheRiver : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player")) //TODO input function to interact with river
+        if (other.CompareTag("Player") && questUI.currentState == QuestUI.QuestLine.FindingRiverByRangerArea)
+        { 
+            questUI.questProgression.Invoke(4); //State goes to next (SaveTheRiver)
+        }
+        
+        if (other.CompareTag("Player") && Input.GetKeyDown(KeyCode.G))
         {
-            if(questUI.currentState == QuestUI.QuestLine.FindingRiverByRangerArea) //To not retrigger same quest-objective 
-                questUI.questProgression.Invoke(4); //State goes to next (SaveTheRiver)
+            questUI.questProgression.Invoke(5); //State goes to next (Getting Reward)
+            
+            //TODO trigger changing environment (water changes color) + spawn Water Staff
         }
     }
 }

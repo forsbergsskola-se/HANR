@@ -19,7 +19,8 @@ namespace UI
             CollectingCrate, //Spawn crates inventory (potions)
             FindingRiverByRangerArea,
             SaveTheRiver,
-            GettingReward //Spawn staff
+            GettingReward, //Spawn staff
+            EndQuest
         }
 
         public UnityEvent <int> questProgression; //Invoke this Unity-event during play-through
@@ -82,6 +83,8 @@ namespace UI
                 currentState = QuestLine.SaveTheRiver;
             else if (part == 5)
                 currentState = QuestLine.GettingReward;
+            else if (part == 6) //TODO when/where to invoke this?
+                currentState = QuestLine.EndQuest;
         }
     }
 }
