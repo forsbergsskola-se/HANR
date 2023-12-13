@@ -2,6 +2,7 @@ using System;
 using CustomObjects;
 using Unity.VisualScripting;
 using UnityEngine;
+using System.Collections;
 
 namespace Player
 {
@@ -15,6 +16,7 @@ namespace Player
         public float maxExp;
         public IntVariable level;
         public GameManagerScript gameOverScreen;
+        public GameObject deathEffect;
        
         private void Start()
         {
@@ -55,6 +57,7 @@ namespace Player
             if(currentValues > maxHealth) health.setValue(maxHealth);
             if (health.getValue() <= 0f)
             {
+                DeathEffect();
                 gameOverScreen.gameObject.SetActive(true);
             }
            
@@ -62,6 +65,22 @@ namespace Player
         private void LimiterMagic(float currentValues) //Limiter for magic
         {
             if(currentValues > maxMagic) magic.setValue(maxMagic);
+        }
+        
+        private void DeathEffect()
+        {
+            GameObject effect  = Instantiate(deathEffect, this.transform);
+            effect.transform.position = this.transform.position;
+            
+            StartCoroutine(removeObjects(effect));
+        }
+
+        private IEnumerator removeObjects(GameObject effect)
+        {
+            yield return new WaitForSeconds(3);
+            Destroy(effect);
+            yield return new WaitForSeconds(1);
+            gameObject.SetActive(false);
         }
 
         

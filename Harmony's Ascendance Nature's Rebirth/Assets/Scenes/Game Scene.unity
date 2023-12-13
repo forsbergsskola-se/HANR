@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -891,6 +891,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 03c8fc449b11f4846bf8fb8af3c3aeab, type: 3}
   m_PrefabInstance: {fileID: 908088439}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &64380580 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5276277584489152903, guid: 2298ad06359e3444fb807b0da31399f7, type: 3}
+  m_PrefabInstance: {fileID: 222677302}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &67335611 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4060570890304002663, guid: c00d2367426174ab99e6d74b58c76536, type: 3}
@@ -3107,6 +3118,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6399217703361785178, guid: 2298ad06359e3444fb807b0da31399f7, type: 3}
+      propertyPath: questTitle
+      value: 
+      objectReference: {fileID: 64380580}
     - target: {fileID: 6469615846477352213, guid: 2298ad06359e3444fb807b0da31399f7, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
@@ -3411,6 +3426,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Critter (purple) (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7207482744270717814, guid: 05ca4e5887f7d48c09700eecc38ec490, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7207482744270717814, guid: 05ca4e5887f7d48c09700eecc38ec490, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8284804860752608592, guid: 05ca4e5887f7d48c09700eecc38ec490, type: 3}
+      propertyPath: screen
+      value: 
+      objectReference: {fileID: 1764157715}
     - target: {fileID: 8705089017420524062, guid: 05ca4e5887f7d48c09700eecc38ec490, type: 3}
       propertyPath: m_LocalPosition.x
       value: 36.98004
@@ -19342,6 +19369,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Druid
       objectReference: {fileID: 0}
+    - target: {fileID: 6868447145032766609, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
+      propertyPath: deathEffect
+      value: 
+      objectReference: {fileID: 4772634663576830964, guid: e1385af346f4e624eb313ec1ea4fcd7e, type: 3}
     - target: {fileID: 6868447145032766609, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
       propertyPath: gameManager
       value: 
