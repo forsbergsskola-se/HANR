@@ -696,7 +696,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4718287801753836335}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.4921265, y: 3.5747223, z: 21.217468}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -720,7 +720,7 @@ Transform:
   - {fileID: 7834887264026047551}
   - {fileID: 3292436182360390662}
   - {fileID: 1202820644168942300}
-  - {fileID: 5001982044494666061}
+  - {fileID: 807790287871459365}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &7575389782524006198
@@ -863,6 +863,7 @@ MonoBehaviour:
   animator: {fileID: 7575389782524006198}
   agent: {fileID: 8338094402280085788}
   deathEffect: {fileID: 100004, guid: 7867af58a6ec48846ae807eb4022fbaa, type: 3}
+  exp: {fileID: 11400000, guid: 1a11ff274532c6c48b116faa1b93eb4b, type: 2}
 --- !u!114 &5900507210396769317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1915,7 +1916,7 @@ Transform:
   - {fileID: 3105276248922540943}
   m_Father: {fileID: 1217240991307291459}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &6414920623040456414
+--- !u!1001 &1682416102229753782
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1969,7 +1970,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2048289537106116499, guid: 156df7900112f3341b7b44ae300e8e42, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2048289537106116499, guid: 156df7900112f3341b7b44ae300e8e42, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1977,7 +1978,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2048289537106116499, guid: 156df7900112f3341b7b44ae300e8e42, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2048289537106116499, guid: 156df7900112f3341b7b44ae300e8e42, type: 3}
       propertyPath: m_LocalRotation.z
@@ -1997,7 +1998,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2048289537106116499, guid: 156df7900112f3341b7b44ae300e8e42, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 2048289537106116499, guid: 156df7900112f3341b7b44ae300e8e42, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -2005,19 +2006,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3458130782148216911, guid: 156df7900112f3341b7b44ae300e8e42, type: 3}
       propertyPath: m_fontColor.b
-      value: 0.93948025
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3458130782148216911, guid: 156df7900112f3341b7b44ae300e8e42, type: 3}
       propertyPath: m_fontColor.g
-      value: 0.93948025
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3458130782148216911, guid: 156df7900112f3341b7b44ae300e8e42, type: 3}
       propertyPath: m_fontColor.r
-      value: 0.9811321
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3458130782148216911, guid: 156df7900112f3341b7b44ae300e8e42, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4293980410
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5607320806969188320, guid: 156df7900112f3341b7b44ae300e8e42, type: 3}
       propertyPath: m_Name
@@ -2040,8 +2041,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 156df7900112f3341b7b44ae300e8e42, type: 3}
---- !u!224 &5001982044494666061 stripped
+--- !u!224 &807790287871459365 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2048289537106116499, guid: 156df7900112f3341b7b44ae300e8e42, type: 3}
-  m_PrefabInstance: {fileID: 6414920623040456414}
+  m_PrefabInstance: {fileID: 1682416102229753782}
   m_PrefabAsset: {fileID: 0}
