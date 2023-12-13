@@ -79,7 +79,7 @@ public class SkillUI : MonoBehaviour
         item = i;
         megaSkill.sprite = starterMega;
         smallSkill.sprite = starterSmall;
-        smallSkill.sprite = starterSmall2;
+        small2Skill.sprite = starterSmall2;
         addSkillListeners();
         skilListenersAdded = true;
         canClickSkill1= true;
@@ -125,10 +125,25 @@ public class SkillUI : MonoBehaviour
 
     private void removeSkillListeners()
     {
-        item.skill1.valueChanged.RemoveListener(cooldownHandlingSkill1);
-        item.skill2.valueChanged.RemoveListener(cooldownHandlingSkill2);
-        item.ultiSkill.valueChanged.RemoveListener(cooldownHandlingUltiSkill);
+        if (item != null)
+        {
+            if (item.skill1 != null)
+            {
+                item.skill1.valueChanged.RemoveListener(cooldownHandlingSkill1);
+            }
+
+            if (item.skill2 != null)
+            {
+                item.skill2.valueChanged.RemoveListener(cooldownHandlingSkill2);
+            }
+
+            if (item.ultiSkill != null)
+            {
+                item.ultiSkill.valueChanged.RemoveListener(cooldownHandlingUltiSkill);
+            }
+        }
     }
+
     
     private void addSkillListeners()
     {
