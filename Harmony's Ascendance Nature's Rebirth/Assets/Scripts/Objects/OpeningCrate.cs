@@ -11,9 +11,8 @@ public class OpeningCrate : MonoBehaviour
     public QuestUI questUI;
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") && Input.GetKeyDown(KeyCode.G))
+        if (other.gameObject.CompareTag("Player") && Input.GetKeyDown(KeyCode.G) && questUI.currentState == QuestUI.QuestLine.CollectingCrate)
         {
-            
             for (int slot = 0; slot < 3; slot++)
             {
                 float randomPositionX = Random.Range(1f, 5f); //To spawn items in close random positions

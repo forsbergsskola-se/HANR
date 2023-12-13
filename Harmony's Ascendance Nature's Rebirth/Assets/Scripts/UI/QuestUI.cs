@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 
+
 namespace UI
 {
     public class QuestUI : MonoBehaviour
@@ -65,9 +66,11 @@ namespace UI
                     questLog.text = "¤ Heal the river.";
                     break;
                 case QuestLine.GettingReward: //5
-                    
                     questTitle.text = "Congratulations!";
                     questLog.text = "¤ Collect your reward"; //Spawn staff
+                    break;
+                case QuestLine.EndQuest:
+                    this.gameObject.SetActive(false);
                     break;
             }
         }
@@ -81,11 +84,12 @@ namespace UI
             else if (part == 3)
                 currentState = QuestLine.FindingRiverByRangerArea;
             else if (part == 4)
-                currentState = QuestLine.SaveTheRiver; // TODO trigger change environment
+                currentState = QuestLine.SaveTheRiver;
             else if (part == 5)
-                currentState = QuestLine.GettingReward; // TODO spawn water staff
-            else if (part == 6) //TODO when/where to invoke this?
-                currentState = QuestLine.EndQuest;
+                currentState = QuestLine.GettingReward;
+            else if (part == 6) //TODO invoke this somewhere
+                //currentState = QuestLine.EndQuest;
+                this.gameObject.SetActive(false);
         }
     }
 }

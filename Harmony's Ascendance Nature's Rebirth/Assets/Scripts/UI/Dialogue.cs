@@ -16,11 +16,11 @@ public class Dialogue : MonoBehaviour
     public UnityEvent druidToRanger;
     public UnityEvent druidToBearMan;
     public TMP_Text chating;
-    private int dialougeCounter = 0;
+    public int dialougeCounter = 0;
 
     private GameObject PlayerUI;
     [SerializeField] private NavMeshAgent agent;
-    private string[] conversation = new string[5];
+    public string[] conversation = new string[5];
     private bool inConversation;
 
     public QuestUI questUI;
@@ -32,8 +32,6 @@ public class Dialogue : MonoBehaviour
         druidToRanger.AddListener(InitiateDialogueRanger);
         druidToBearMan.AddListener(InitiateDialogueBearMan);
         PlayerUI = GameObject.FindWithTag("Canvas");
-        //talkingFace = druidFace; //Face in first dialogue, in this case, ranger
-        
     }
 
     private void Update()
@@ -143,47 +141,4 @@ public class Dialogue : MonoBehaviour
             dialougeCounter = 4; //To cut the dialogue short
         }
     }
-    
-    /*x
-    private void InitiateDialogue()
-    {
-        PlayerUI.SetActive(false);
-        this.gameObject.SetActive(true);
-        dialougeCounter = 0;
-        do
-        {
-            StartCoroutine(WaitForKeyPress());
-        } while (dialougeCounter < 5);
-    }
-    
-    private IEnumerator WaitForKeyPress()
-    {
-        while (!Input.GetKeyDown(KeyCode.Space))
-        { 
-            yield return null;
-        }
-        UpdateDialogue();
-    }
-
-    private void UpdateDialogue()
-    {
-        if (dialougeCounter == 0)
-        {
-            chating.text = conversation[0];
-            dialougeCounter++;
-        }
-        else if (dialougeCounter == 1)
-        {
-            chating.text = conversation[1];
-            dialougeCounter++;
-        }
-        else if (dialougeCounter == 2)
-        {
-            chating.text = conversation[2];
-            dialougeCounter++;
-        }
-        else if (dialougeCounter == 3)
-        {
-            chating.text = conversation[3];
-        }*/
 }

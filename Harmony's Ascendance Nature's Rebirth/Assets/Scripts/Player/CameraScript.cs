@@ -63,12 +63,13 @@ namespace Player
             else if (talkingBearMan)
             {
                 CameraBearMan();
+                if (dialogue.dialougeCounter > dialogue.conversation.Length-1) locked = false; //TODO Need fine tuning
             }
             else if (talkingRanger)
             {
                 CameraRanger();
+                if (dialogue.dialougeCounter > dialogue.conversation.Length-1) locked = false;
             }
-
         }
 
         private void HandleRotationInput()

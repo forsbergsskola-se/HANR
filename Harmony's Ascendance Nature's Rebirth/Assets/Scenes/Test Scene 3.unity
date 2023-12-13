@@ -514,6 +514,18 @@ PrefabInstance:
       value: Druid
       objectReference: {fileID: 0}
     - target: {fileID: 8190942676431520944, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
+      propertyPath: Ranger
+      value: 
+      objectReference: {fileID: 1423068412}
+    - target: {fileID: 8190942676431520944, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
+      propertyPath: BearMan
+      value: 
+      objectReference: {fileID: 350890063}
+    - target: {fileID: 8190942676431520944, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
+      propertyPath: dialogue
+      value: 
+      objectReference: {fileID: 24089702}
+    - target: {fileID: 8190942676431520944, guid: f8a6f5cb1c1dc95449d97482eb045b8c, type: 3}
       propertyPath: cameraObject
       value: 
       objectReference: {fileID: 1644119212}
@@ -632,6 +644,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bd5cc188a7ea48db85c4afefc0a32b8, type: 3}
+--- !u!4 &350890063 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 835590313198491696, guid: 79cae923cec744a6ab7e4597027345b6, type: 3}
+  m_PrefabInstance: {fileID: 1095299967}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &419444457
 GameObject:
   m_ObjectHideFlags: 0
@@ -1259,6 +1276,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79cae923cec744a6ab7e4597027345b6, type: 3}
+--- !u!1 &1132173067 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5473966764079457125, guid: 984b11ea8aebab24d8009302d4a2a146, type: 3}
+  m_PrefabInstance: {fileID: 1886984668}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1235377324
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1373,6 +1395,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dabb0ec02a38a445a09495eb7fb0f5a, type: 3}
+--- !u!4 &1423068412 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8623093754399898732, guid: 75709fa90772b4b0d90cdf341686b2d1, type: 3}
+  m_PrefabInstance: {fileID: 1443454935}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1442582369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1736,6 +1763,10 @@ PrefabInstance:
     - target: {fileID: 4651159602645118614, guid: 6f9ab3fd6f6bcfe4eaa41b1536e0ef1c, type: 3}
       propertyPath: m_Name
       value: Prefab_Docks
+      objectReference: {fileID: 0}
+    - target: {fileID: 4651159602645118614, guid: 6f9ab3fd6f6bcfe4eaa41b1536e0ef1c, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2152,15 +2183,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4664813774424799711, guid: 984b11ea8aebab24d8009302d4a2a146, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.7878304
+      value: 1.41
       objectReference: {fileID: 0}
     - target: {fileID: 4664813774424799711, guid: 984b11ea8aebab24d8009302d4a2a146, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 2.33
       objectReference: {fileID: 0}
     - target: {fileID: 4664813774424799711, guid: 984b11ea8aebab24d8009302d4a2a146, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.3197393
+      value: -19.67
       objectReference: {fileID: 0}
     - target: {fileID: 4664813774424799711, guid: 984b11ea8aebab24d8009302d4a2a146, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2193,6 +2224,10 @@ PrefabInstance:
     - target: {fileID: 5473966764079457125, guid: 984b11ea8aebab24d8009302d4a2a146, type: 3}
       propertyPath: m_Name
       value: Watar Staff
+      objectReference: {fileID: 0}
+    - target: {fileID: 5473966764079457125, guid: 984b11ea8aebab24d8009302d4a2a146, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2457,6 +2492,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questUI: {fileID: 698931579}
+  waterStaff: {fileID: 1132173067}
 --- !u!1001 &2049823191959494953
 PrefabInstance:
   m_ObjectHideFlags: 0
