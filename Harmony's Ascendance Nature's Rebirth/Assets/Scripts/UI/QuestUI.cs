@@ -80,9 +80,9 @@ namespace UI
             else if (part == 3)
                 currentState = QuestLine.FindingRiverByRangerArea;
             else if (part == 4)
-                currentState = QuestLine.SaveTheRiver;
+                currentState = QuestLine.SaveTheRiver; // TODO trigger change environment
             else if (part == 5)
-                currentState = QuestLine.GettingReward;
+                currentState = QuestLine.GettingReward; // TODO spawn water staff
             else if (part == 6) //TODO when/where to invoke this?
                 currentState = QuestLine.EndQuest;
         }
