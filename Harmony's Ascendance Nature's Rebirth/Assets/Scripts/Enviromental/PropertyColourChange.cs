@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 [System.Serializable]
 public class ColorProperty
@@ -13,9 +14,15 @@ public class PropertyColourChange : MonoBehaviour
     [SerializeField] private Material[] materials;
     [SerializeField] private ColorProperty[] colorProperties;
 
+    public UnityEvent SaveRiver;
     void Start()
     {
-        CollectMaterialsFromChildren();
+        SaveRiver.AddListener(CollectMaterialsFromChildren);
+    }
+
+    private void OnDestroy()
+    {
+        SaveRiver.RemoveListener(CollectMaterialsFromChildren);
     }
 
     void CollectMaterialsFromChildren()
