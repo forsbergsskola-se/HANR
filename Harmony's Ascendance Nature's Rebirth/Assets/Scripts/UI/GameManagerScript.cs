@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Events;
 
 public class GameManagerScript : MonoBehaviour
+
 {
     void Start()
     {
@@ -31,9 +32,6 @@ public class GameManagerScript : MonoBehaviour
     {
         SceneManager.LoadScene("Game Scene");
     }
-
-    public void Instructions()
-    {
-        this.gameObject.SetActive(true); // what should i write here?
-    }
+    
+    
 }
