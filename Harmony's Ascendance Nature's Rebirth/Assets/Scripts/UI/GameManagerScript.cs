@@ -8,11 +8,6 @@ using UnityEngine.Events;
 public class GameManagerScript : MonoBehaviour
 
 {
-    void Start()
-    {
-        this.gameObject.SetActive(false);
-    }
-
     public void restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
