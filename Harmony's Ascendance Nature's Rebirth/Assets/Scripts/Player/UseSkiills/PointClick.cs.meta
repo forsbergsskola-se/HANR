@@ -1,3 +1,16 @@
 fileFormatVersion: 2
 guid: eb2fbabde18b44cbbee7985bbc50283a
-timeCreated: 1701850087
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - skill: {instanceID: 0}
+  - playerMoving: {instanceID: 0}
+  - audioSource: {instanceID: 0}
+  - fireAttack: {fileID: 8300000, guid: 15abc1bdbe56f480baf05b728882ca96, type: 3}
+  - waterAttack: {fileID: 8300000, guid: 08b21a5c0723e41c293613e9d37f9902, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

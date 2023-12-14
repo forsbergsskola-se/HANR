@@ -25,9 +25,12 @@ public class PlayerAttack : MonoBehaviour
     private DefaultAttackPool daAttackPool;
     private UsableItems usableItems;
     private CombatStat combatStat;
+
+    [SerializeField] private AudioSource basicAttackSound;
     
     private void Awake()
     {
+        
         usableItems = this.gameObject.GetComponent<UsableItems>();
         currentClickedEnemy.ValueChanged.AddListener(trackEnemy);
         usableItems.fireStaffEquipped.AddListener(setCombatStats);
@@ -118,6 +121,7 @@ public class PlayerAttack : MonoBehaviour
         
     private void ShootProjectile(GameObject projectile)
     {
+        basicAttackSound.Play();
         Vector3 direction = (-projectile.transform.position + enemyToAttack.GetComponentInChildren<HitPoint>().transform.position).normalized;
         Rigidbody rb = projectile.GetComponent<Rigidbody>();
         ProjectileStats ps = projectile.GetComponent<ProjectileStats>();

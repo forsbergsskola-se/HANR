@@ -14,9 +14,11 @@ namespace Player.UseSkills
         private bool skill1;
         private bool skill2;
         private bool ultiSkill;
+        [SerializeField] private AudioSource audioSource;
         
         private void Start()
         {
+            addAudioSource();
             _camera = Camera.main;
         }
         private void Update()
@@ -38,9 +40,13 @@ namespace Player.UseSkills
                             targetPoint = raycastHit.point;
                             if (skill.name == "FireBall")
                             {
+                                audioSource.clip = Resources.Load<AudioClip>("fireAttack");
+                                audioSource.Play();
                                 ShootFireball();
                             } else if (skill.name == "BubbleBeam")
                             {
+                                audioSource.clip = Resources.Load<AudioClip>("waterAttack");
+                                audioSource.Play();
                                 ShootBubbleBeam();
                             }
                             
@@ -108,5 +114,17 @@ namespace Player.UseSkills
             var emissionModule = ps.emission;
             emissionModule.enabled = false;
         }
+
+        private void addAudioSource()
+        {
+            
+            GameObject yourObject = new GameObject("YourObject");
+            audioSource = yourObject.AddComponent<AudioSource>();
+
+            
+            audioSource.volume = 0.5f;
+            audioSource.Play();
+        }
+        
     }
 }
