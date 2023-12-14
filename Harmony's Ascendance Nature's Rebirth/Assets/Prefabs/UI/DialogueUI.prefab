@@ -150,8 +150,23 @@ MonoBehaviour:
   druidToRanger:
     m_PersistentCalls:
       m_Calls: []
+  druidToBearMan:
+    m_PersistentCalls:
+      m_Calls: []
   chating: {fileID: 765463412987692889}
+  dialougeCounter: 0
+  currentlySpeaking: {fileID: 688866989020059205}
+  faceDruid: {fileID: 21300000, guid: cb95072d583572c44ad2435153d94370, type: 3}
+  faceRanger: {fileID: 21300000, guid: 4223773eb278d3245896045d12b752b0, type: 3}
+  faceBearMan: {fileID: 21300000, guid: 7b8cbbad1ca11cd45815bc1aec84d8bf, type: 3}
   agent: {fileID: 0}
+  conversation:
+  - 
+  - 
+  - 
+  - 
+  - 
+  questUI: {fileID: 0}
 --- !u!1001 &8851415736485950526
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -160,6 +175,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6486803223664835803}
     m_Modifications:
+    - target: {fileID: 706132416405777336, guid: a0d72fca3c36b1244a53e5b84fa8f437, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 706132416405777336, guid: a0d72fca3c36b1244a53e5b84fa8f437, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 706132416405777336, guid: a0d72fca3c36b1244a53e5b84fa8f437, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2367051107923564116, guid: a0d72fca3c36b1244a53e5b84fa8f437, type: 3}
       propertyPath: m_Name
       value: IconFace
@@ -338,6 +365,10 @@ PrefabInstance:
       propertyPath: m_VerticalFit
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8311906959490327163, guid: a0d72fca3c36b1244a53e5b84fa8f437, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6084401845940857775, guid: a0d72fca3c36b1244a53e5b84fa8f437, type: 3}
     m_RemovedGameObjects:
@@ -345,6 +376,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0d72fca3c36b1244a53e5b84fa8f437, type: 3}
+--- !u!114 &688866989020059205 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8311906959490327163, guid: a0d72fca3c36b1244a53e5b84fa8f437, type: 3}
+  m_PrefabInstance: {fileID: 8851415736485950526}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &765463412987692889 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8091265782265983847, guid: a0d72fca3c36b1244a53e5b84fa8f437, type: 3}
