@@ -550,6 +550,22 @@ PrefabInstance:
       propertyPath: questUI
       value: 
       objectReference: {fileID: 698931579}
+    - target: {fileID: 1676768983202043610, guid: 8bd5cc188a7ea48db85c4afefc0a32b8, type: 3}
+      propertyPath: faceDruid
+      value: 
+      objectReference: {fileID: 21300000, guid: cb95072d583572c44ad2435153d94370, type: 3}
+    - target: {fileID: 1676768983202043610, guid: 8bd5cc188a7ea48db85c4afefc0a32b8, type: 3}
+      propertyPath: faceRanger
+      value: 
+      objectReference: {fileID: 21300000, guid: 4223773eb278d3245896045d12b752b0, type: 3}
+    - target: {fileID: 1676768983202043610, guid: 8bd5cc188a7ea48db85c4afefc0a32b8, type: 3}
+      propertyPath: faceBearMan
+      value: 
+      objectReference: {fileID: 21300000, guid: 7b8cbbad1ca11cd45815bc1aec84d8bf, type: 3}
+    - target: {fileID: 1676768983202043610, guid: 8bd5cc188a7ea48db85c4afefc0a32b8, type: 3}
+      propertyPath: currentlySpeaking
+      value: 
+      objectReference: {fileID: 1550668933}
     - target: {fileID: 2069345180746586903, guid: 8bd5cc188a7ea48db85c4afefc0a32b8, type: 3}
       propertyPath: m_VerticalFit
       value: 2
@@ -1579,6 +1595,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dbd6a50b48b7a141bf38a95cb717ffe, type: 3}
+--- !u!114 &1550668933 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 688866989020059205, guid: 8bd5cc188a7ea48db85c4afefc0a32b8, type: 3}
+  m_PrefabInstance: {fileID: 312997058}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1619266433
 GameObject:
   m_ObjectHideFlags: 0
