@@ -17,7 +17,7 @@ public class OpeningCrate : MonoBehaviour
             {
                 float randomPositionX = Random.Range(1f, 5f); //To spawn items in close random positions
                 float randomPositionZ = Random.Range(1f, 5f);
-                
+                  
                 Vector3 setPosition = transform.position;
                 Quaternion setRotation = transform.rotation;
                 Vector3 offset = setRotation * new Vector3(randomPositionX, 0f, randomPositionZ);

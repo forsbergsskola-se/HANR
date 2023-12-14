@@ -69,7 +69,7 @@ namespace UI
                     questTitle.text = "Congratulations!";
                     questLog.text = "¤ Collect your reward"; //Spawn staff
                     break;
-                case QuestLine.EndQuest:
+                case QuestLine.EndQuest: //6
                     this.gameObject.SetActive(false);
                     break;
             }

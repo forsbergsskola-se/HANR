@@ -26,4 +26,10 @@ public class TriggerHealTheRiver : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.CompareTag("Player") && questUI.currentState == QuestUI.QuestLine.GettingReward)
+            questUI.questProgression.Invoke(6);
+    }
 }
