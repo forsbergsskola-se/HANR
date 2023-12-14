@@ -3,7 +3,14 @@ guid: 38ea9f91e64777f4e91ee6ea95abecdc
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - chating: {instanceID: 0}
+  - currentlySpeaking: {instanceID: 0}
+  - faceDruid: {fileID: 21300000, guid: cb95072d583572c44ad2435153d94370, type: 3}
+  - faceRanger: {fileID: 21300000, guid: 4223773eb278d3245896045d12b752b0, type: 3}
+  - faceBearMan: {fileID: 21300000, guid: 7b8cbbad1ca11cd45815bc1aec84d8bf, type: 3}
+  - agent: {instanceID: 0}
+  - questUI: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

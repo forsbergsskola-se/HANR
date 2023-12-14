@@ -8,7 +8,6 @@ namespace NPC
         public Dialogue dialogue;
         private bool playerClose;
         public GameObject thisNPC;
-        public QuestUI questUI;
         private void Update()
         {
             if (playerClose)
@@ -17,8 +16,6 @@ namespace NPC
                 {
                     dialogue.druidToBearMan.Invoke();
                     playerClose = false;
-                    if(questUI.currentState == QuestUI.QuestLine.FindingBearMan) //To not retrigger same quest-objective 
-                        questUI.questProgression.Invoke(2); //State goes to next (CollectingCrate)
                 }
                 if (thisNPC.name == "Ranger")
                 {

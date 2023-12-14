@@ -9,7 +9,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class Dialogue : MonoBehaviour
 {
@@ -18,11 +18,15 @@ public class Dialogue : MonoBehaviour
     public TMP_Text chating;
     public int dialougeCounter = 0;
 
+    [SerializeField] private Image currentlySpeaking; //For dialogue images
+    public Sprite faceDruid;
+    public Sprite faceRanger;
+    public Sprite faceBearMan;
+    
     private GameObject PlayerUI;
     [SerializeField] private NavMeshAgent agent;
     public string[] conversation = new string[5];
     private bool inConversation;
-
     public QuestUI questUI;
 
     
@@ -41,17 +45,58 @@ public class Dialogue : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 questUI.gameObject.SetActive(false);
-                if (dialougeCounter > conversation.Length-1)
+                
+                if (dialougeCounter > conversation.Length-1) //End conversation
                 {
                     inConversation = false;
                     dialougeCounter = 0;
                     this.gameObject.SetActive(false);
                     PlayerUI.SetActive(true);
                     questUI.gameObject.SetActive(true);
+
+                    switch (questUI.currentState)
+                    {
+                        case QuestUI.QuestLine.TalkingToRanger:
+                            questUI.questProgression.Invoke(1); //State goes to next (FindingBearMan)
+                            break;
+                            
+                        case QuestUI.QuestLine.FindingBearMan:
+                            questUI.questProgression.Invoke(2); //State goes to next (CollectingCrate)
+                            break;
+                    }
+                    
+                    currentlySpeaking.sprite = null;
                 }
                 else
                 {
-                    chating.text = conversation[dialougeCounter];
+                    chating.text = conversation[dialougeCounter]; // Continue conversation
+
+                    if (questUI.currentState == QuestUI.QuestLine.TalkingToRanger) // When talking to ranger first time
+                    {
+                        if (chating.text == conversation[1] || chating.text == conversation[3])
+                        {
+                            currentlySpeaking.sprite = faceDruid;
+                        }
+                        else if (chating.text == conversation[2] ||
+                                 chating.text == conversation[4])
+                        {
+                            currentlySpeaking.sprite = faceRanger;
+                        }
+                    }
+
+                    if (questUI.currentState == QuestUI.QuestLine.FindingBearMan)
+                    {
+                        if (chating.text == conversation[1] || chating.text == conversation[3])
+                        {
+                            currentlySpeaking.sprite = faceDruid;
+                        }
+                        else if (chating.text == conversation[2] ||
+                                 chating.text == conversation[4])
+                        {
+                            currentlySpeaking.sprite = faceBearMan;
+                        }
+                    }
+                        
                     dialougeCounter += 1;
                 }
             }
@@ -73,10 +118,9 @@ public class Dialogue : MonoBehaviour
             this.gameObject.SetActive(true);
             agent.isStopped = true;
             chating.text = conversation[0];
+            currentlySpeaking.sprite = faceRanger;
             dialougeCounter += 1;
             inConversation = true;
-            if(questUI.currentState == QuestUI.QuestLine.TalkingToRanger) //To not retrigger same quest-objective
-                questUI.questProgression.Invoke(1); //State goes to next (FindingBearMan)
         }
         
     }
@@ -90,6 +134,7 @@ public class Dialogue : MonoBehaviour
             this.gameObject.SetActive(true);
             agent.isStopped = true;
             chating.text = conversation[0];
+            currentlySpeaking.sprite = faceBearMan;
             dialougeCounter += 1;
             inConversation = true;
         }
@@ -113,8 +158,7 @@ public class Dialogue : MonoBehaviour
         }
         else if (questUI.currentState == QuestUI.QuestLine.EndQuest)
         {
-            conversation[0] = "You have a staff now!";
-            conversation[1] = "Now you can fight the monsters!";
+            conversation[0] = "You have a staff now! Now you can fight the monsters!";
             dialougeCounter = 4; //To cut the dialogue short
         }
     }
@@ -134,7 +178,7 @@ public class Dialogue : MonoBehaviour
             conversation[0] = "Growl! GET AWAY FROM ME!";
             dialougeCounter = 4; //To cut the dialogue short
         }
-        else if (questUI.currentState == QuestUI.QuestLine.TalkingToRanger)
+        else if (questUI.currentState == QuestUI.QuestLine.EndQuest)
         {
             conversation[0] = "You have the Water Staff!";
             conversation[1] = "Now go save the forest!";
