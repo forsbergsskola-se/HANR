@@ -12,6 +12,7 @@ namespace Player
         private bool locked;
         private bool talkingBearMan;
         private bool talkingRanger;
+        private Quaternion defaultRotation;
 
 
         [SerializeField] float DialoguezoomSpeed = 5f;
@@ -38,7 +39,7 @@ namespace Player
 
             cameraPos = cameraObject.transform;
             playerTransform = transform;
-
+            
             dialogue.druidToRanger.AddListener(lockCameraRanger);
             dialogue.druidToBearMan.AddListener(lockCameraBearman);
 
@@ -63,12 +64,20 @@ namespace Player
             else if (talkingBearMan)
             {
                 CameraBearMan();
-                if (dialogue.dialougeCounter > dialogue.conversation.Length-1) locked = false; //TODO Need fine tuning
+                if (dialogue.dialougeCounter > dialogue.conversation.Length - 1)
+                {
+                    locked = false;
+                    cameraPos.rotation = defaultRotation;
+                }
             }
             else if (talkingRanger)
             {
                 CameraRanger();
-                if (dialogue.dialougeCounter > dialogue.conversation.Length-1) locked = false;
+                if (dialogue.dialougeCounter > dialogue.conversation.Length - 1)
+                {
+                    locked = false;
+                    cameraPos.rotation = defaultRotation;
+                }
             }
         }
 
@@ -111,13 +120,15 @@ namespace Player
         }
 
         private void lockCameraRanger()
-        {
+        {   
+            defaultRotation = cameraPos.rotation;
             locked = true;
             talkingRanger = true;
         }
 
         private void lockCameraBearman()
         {
+            defaultRotation = cameraPos.rotation;
             locked = true;
             talkingBearMan = true;
         }
