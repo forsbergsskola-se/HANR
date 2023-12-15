@@ -105,10 +105,11 @@ public class UsableItems : MonoBehaviour
             {
                 if (itemInSlot.itemID == "Potion Health")
                 {
-
+                    
                     //Add health to player
                     float newHealth = itemInSlot.itemStat + playerHealth.getValue();
                     playerHealth.setValue(newHealth);
+                    SFX.SoundManager.PlaySound("Heal");
                     inventoryHolder.Items[slotIndex] = defaultItem;
                     UpdateUsedItem.Invoke();
 
@@ -119,6 +120,7 @@ public class UsableItems : MonoBehaviour
                     //Add Magic to player
                     float newMagic = itemInSlot.itemStat + playerMagic.getValue();
                     playerMagic.setValue(newMagic);
+                    SFX.SoundManager.PlaySound("Mana & EXP");
                     inventoryHolder.Items[slotIndex] = defaultItem;
                     UpdateUsedItem.Invoke();
 
@@ -129,6 +131,7 @@ public class UsableItems : MonoBehaviour
                     //Add exp to player
                     float newExp = itemInSlot.itemStat + playerExperiance.getValue();
                     playerExperiance.setValue(newExp);
+                    SFX.SoundManager.PlaySound("Mana & EXP");
                     inventoryHolder.Items[slotIndex] = defaultItem;
                     UpdateUsedItem.Invoke();
                 }
