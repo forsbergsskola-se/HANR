@@ -48,17 +48,20 @@ public class ChangeStaff : MonoBehaviour
     {
         staffMesh.mesh = starterStaff;
         staffRenderer.material = startMaterial;
+        SFX.SoundManager.PlaySound("Equip Weapon");
     }
 
     private void EquipFire(Item item)
     {
         staffMesh.mesh = fireStaff;
         staffRenderer.material = fireMaterial;
+        SFX.SoundManager.PlaySound("Equip Weapon");
     }
 
     private void EquipWater(Item item)
     {
         staffMesh.mesh = waterStaff;
         staffRenderer.material = waterMaterial;
+        SFX.SoundManager.PlaySound("Equip Weapon");
     }
 }

@@ -45,7 +45,7 @@ namespace Player
             {
                 exp.setValue(exp.getValue() - maxExp);
                 level.setValue(level.getValue() + 1);
-                
+                SFX.SoundManager.PlaySound("Level Up");
                 
                 maxExp += 30f; //Increasing requirement for next level
                 maxHealth += 20f;
