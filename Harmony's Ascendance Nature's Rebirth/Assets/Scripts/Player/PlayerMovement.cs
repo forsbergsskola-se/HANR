@@ -40,37 +40,33 @@ namespace Player
 
         void LateUpdate() 
         {
-            
            if (agent.hasPath)
            {
                if (agent.velocity.magnitude > 0)
                {
                    animator.SetBool("isMoving",true);
-                   //SFX.SoundManager.PlaySound("Walking");
-                   //animator.SetBool("isInAttackRange",false);
                }
                else
                {
                    animator.SetBool("isMoving", false);
-                   //SFX.SoundManager.StopSound("Walking");
                }
            }
            else
            {
                animator.SetBool("isMoving", false);
-               //SFX.SoundManager.StopSound("Walking");
            }
-            
         }
 
         private void MoveToClick(bool playerMoving)
         {
-            if (!animator.GetBool("isHitbyRock")) 
+            if (!animator.GetBool("isHitbyRock"))
             {
                 if (playerMoving)
                 {
+                    // SFX.SoundManager.PlaySound("Walking"); TODO needs a check to know when the walking sound loop should stop.
+
                     agent.isStopped = false;
-                    moveToPoint = targetPoint.GetValue(); 
+                    moveToPoint = targetPoint.GetValue();
                     agent.speed = walkSpeed;
                     agent.destination = moveToPoint;
                 }
@@ -78,7 +74,8 @@ namespace Player
                 {
                     agent.isStopped = true;
                 }
-            } else if (animator.GetBool("isHitbyRock"))
+            }
+            else if (animator.GetBool("isHitbyRock"))
             {
                 agent.isStopped = true;
             }
