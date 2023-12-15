@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1092391186332463829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5363822705403362747}
+  - component: {fileID: 4161993978296224015}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5363822705403362747
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092391186332463829}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 712.4068, y: 96.63199, z: 695.57263}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4161993978296224015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092391186332463829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bebefb44c9f64f54915e75f6d3c8d3fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundVolume: 0.75
+  sounds:
+  - soundName: Walking
+    audioClip: {fileID: 8300000, guid: 7a1da8275935858428d3af22a10ab810, type: 3}
+    volume: 0.2
+    loop: 1
+    source: {fileID: 0}
+  - soundName: Game Music
+    audioClip: {fileID: 8300000, guid: 91f820c11898b6e4882bd836c8c4e753, type: 3}
+    volume: 0.2
+    loop: 1
+    source: {fileID: 0}
+  - soundName: Menu Music
+    audioClip: {fileID: 8300000, guid: f5014cb6bee765148896a2729ae8f91f, type: 3}
+    volume: 0.2
+    loop: 1
+    source: {fileID: 0}
+  - soundName: Default Attack
+    audioClip: {fileID: 8300000, guid: 56703418e3aed4c47a5f6622816b8e41, type: 3}
+    volume: 0.2
+    loop: 0
+    source: {fileID: 0}
+  - soundName: Fire Attack
+    audioClip: {fileID: 8300000, guid: a652877b012108e41871f867ada9f176, type: 3}
+    volume: 0.2
+    loop: 0
+    source: {fileID: 0}
+  - soundName: Water Attack
+    audioClip: {fileID: 8300000, guid: c91fcf414acc0344cb03b13996f1bf3b, type: 3}
+    volume: 0.2
+    loop: 0
+    source: {fileID: 0}
+  - soundName: Item Pick Up
+    audioClip: {fileID: 8300000, guid: 7cc057bed53baf34799f52aab3c84800, type: 3}
+    volume: 0.2
+    loop: 0
+    source: {fileID: 0}
+  - soundName: Heal
+    audioClip: {fileID: 8300000, guid: cfce0cea076109f478783201b2a9f57f, type: 3}
+    volume: 0.2
+    loop: 0
+    source: {fileID: 0}
+  - soundName: Mana & EXP
+    audioClip: {fileID: 8300000, guid: c5cb2ac29e89dbf43a9b644caaad45e6, type: 3}
+    volume: 0.2
+    loop: 0
+    source: {fileID: 0}
+  - soundName: Equip Weapon
+    audioClip: {fileID: 8300000, guid: 490bfbc72255342408984f60044487de, type: 3}
+    volume: 0.2
+    loop: 0
+    source: {fileID: 0}
+  - soundName: Level Up
+    audioClip: {fileID: 8300000, guid: b0e62ed71b1538648b719821f4f63b4c, type: 3}
+    volume: 0.2
+    loop: 0
+    source: {fileID: 0}
