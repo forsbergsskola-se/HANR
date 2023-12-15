@@ -3,15 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UI;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class OpeningCrate : MonoBehaviour
 {
     public GameObject [] itemInside = new GameObject [3];
-    public QuestUI questUI;
+    [FormerlySerializedAs("questUI")] public Quest quest;
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") && Input.GetKeyDown(KeyCode.G) && questUI.currentState == QuestUI.QuestLine.CollectingCrate)
+        if (other.gameObject.CompareTag("Player") && Input.GetKeyDown(KeyCode.G) && quest.currentWaterStaffState == Quest.WaterStaffQuestLine.CollectingCrate)
         {
             for (int slot = 0; slot < 3; slot++)
             {
@@ -26,8 +27,8 @@ public class OpeningCrate : MonoBehaviour
                 Instantiate(itemInside[slot], newPosition, setRotation);
             }
             Destroy(gameObject);
-            if(questUI.currentState == QuestUI.QuestLine.CollectingCrate) //To not retrigger same quest-objective 
-                questUI.questProgression.Invoke(3); //State goes to next (FindingRiverByRangerArea)
+            if(quest.currentWaterStaffState == Quest.WaterStaffQuestLine.CollectingCrate) //To not retrigger same quest-objective 
+                quest.questProgression.Invoke(3); //State goes to next (FindingRiverByRangerArea)
         }
     }
 }

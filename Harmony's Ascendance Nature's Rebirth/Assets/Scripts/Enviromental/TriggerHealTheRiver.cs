@@ -3,26 +3,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UI;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class TriggerHealTheRiver : MonoBehaviour
 {
-    public QuestUI questUI;
+    public Quest quest;
 
     public GameObject waterStaff;
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player") && questUI.currentState == QuestUI.QuestLine.FindingRiverByRangerArea)
+        if (other.CompareTag("Player") && quest.currentWaterStaffState == Quest.WaterStaffQuestLine.FindingRiverByRangerArea)
         {
-            questUI.questProgression.Invoke(4); //State goes to next (SaveTheRiver)
+            quest.questProgression.Invoke(4); //State goes to next (SaveTheRiver)
         }
         
         if (other.CompareTag("Player") && Input.GetKeyDown(KeyCode.G))
         {
-            if (questUI.currentState == QuestUI.QuestLine.SaveTheRiver)
+            if (quest.currentWaterStaffState == Quest.WaterStaffQuestLine.SaveTheRiver)
             {
                 waterStaff.SetActive(true);
-                questUI.questProgression.Invoke(5); //State goes to next (Getting Reward)
+                quest.questProgression.Invoke(5); //State goes to next (Getting Reward)
                 
             }
         }
@@ -30,7 +31,7 @@ public class TriggerHealTheRiver : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.CompareTag("Player") && questUI.currentState == QuestUI.QuestLine.GettingReward)
-            questUI.questProgression.Invoke(6);
+        if(other.CompareTag("Player") && quest.currentWaterStaffState == Quest.WaterStaffQuestLine.GettingReward)
+            quest.questProgression.Invoke(6);
     }
 }
