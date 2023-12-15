@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace SoundManager
+namespace SFX
 {
     [System.Serializable]
     public class Sound

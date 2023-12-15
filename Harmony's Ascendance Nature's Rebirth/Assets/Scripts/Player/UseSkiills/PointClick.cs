@@ -40,8 +40,8 @@ namespace Player.UseSkills
                             targetPoint = raycastHit.point;
                             if (skill.name == "FireBall")
                             {
-                                audioSource.clip = Resources.Load<AudioClip>("fireAttack");
-                                audioSource.Play();
+                                // audioSource.clip = Resources.Load<AudioClip>("fireAttack"); audioSource.Play();
+                                SFX.SoundManager.PlaySound("Fire Attack");
                                 ShootFireball();
                             } else if (skill.name == "BubbleBeam")
                             {

@@ -46,16 +46,19 @@ namespace Player
                if (agent.velocity.magnitude > 0)
                {
                    animator.SetBool("isMoving",true);
+                   //SFX.SoundManager.PlaySound("Walking");
                    //animator.SetBool("isInAttackRange",false);
                }
                else
                {
                    animator.SetBool("isMoving", false);
+                   //SFX.SoundManager.StopSound("Walking");
                }
            }
            else
            {
                animator.SetBool("isMoving", false);
+               //SFX.SoundManager.StopSound("Walking");
            }
             
         }

@@ -121,7 +121,7 @@ public class PlayerAttack : MonoBehaviour
         
     private void ShootProjectile(GameObject projectile)
     {
-        basicAttackSound.Play();
+        basicAttackSound.Play();  // move this to the SoundManager array instead
         Vector3 direction = (-projectile.transform.position + enemyToAttack.GetComponentInChildren<HitPoint>().transform.position).normalized;
         Rigidbody rb = projectile.GetComponent<Rigidbody>();
         ProjectileStats ps = projectile.GetComponent<ProjectileStats>();

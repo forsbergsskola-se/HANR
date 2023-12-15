@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace SoundManager
+namespace SFX
 {
     public class SoundManager : MonoBehaviour
     {
@@ -70,7 +70,6 @@ namespace SoundManager
             sound.source.Play();
         }
         
-        /*
         public static void StopSound(string soundName)
         {
             Sound sound = i.GetSound(soundName);
@@ -78,7 +77,8 @@ namespace SoundManager
                 return;
             sound.source.Stop();
         }
-
+        
+        /*
         public static void SetVolume(string soundName, float volume)
         {
             Sound sound = i.GetSound(soundName);
