@@ -42,7 +42,8 @@ namespace Player.UseSkills
                             {
                                 SFX.SoundManager.PlaySound("Fire Attack");
                                 ShootFireball();
-                            } else if (skill.name == "BubbleBeam")
+                            } 
+                            else if (skill.name == "BubbleBeam")
                             {
                                 SFX.SoundManager.PlaySound("Water Attack");
                                 ShootBubbleBeam();

@@ -25,6 +25,7 @@ public class ItemPickUp : MonoBehaviour
             
             //Adds item Pickup
             PickUp();
+            
 
         }
     }
@@ -57,7 +58,7 @@ public class ItemPickUp : MonoBehaviour
                 break;
             }
         }
-        
+        SFX.SoundManager.PlaySound("Item Pick Up");
         inventoryHolder.pickUp.Invoke();
         Destroy(gameObject);
         
