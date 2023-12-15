@@ -23,6 +23,7 @@ public class TriggerHealTheRiver : MonoBehaviour
             {
                 waterStaff.SetActive(true);
                 questUI.questProgression.Invoke(5); //State goes to next (Getting Reward)
+                
             }
         }
     }
