@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465788, g: 0.49641287, b: 0.5748173, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -14773,7 +14773,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71184e9254ca4b869ffe379d63336cb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: {fileID: 11400000, guid: 65f80b9a019bad14fbdeec9b15d45e25, type: 2}
+  health: {fileID: 0}
+  maxHealth: 0
+  magic: {fileID: 0}
+  maxMagic: 0
+  exp: {fileID: 0}
+  maxExp: 0
+  level: {fileID: 0}
+  gameOverScreen: {fileID: 0}
+  deathEffect: {fileID: 0}
 --- !u!114 &1290377566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15377,6 +15385,102 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: e396cb8d258c1ec499254be4c7cb9f91, type: 3}
   m_PrefabInstance: {fileID: 1342522358}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1343014523
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1343014525}
+  - component: {fileID: 1343014524}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1343014524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343014523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bebefb44c9f64f54915e75f6d3c8d3fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundVolume: 0.75
+  sounds:
+  - soundName: Game Music
+    audioClip: {fileID: 8300000, guid: 91f820c11898b6e4882bd836c8c4e753, type: 3}
+    volume: 0.2
+    loop: 1
+    source: {fileID: 0}
+  - soundName: Menu Music
+    audioClip: {fileID: 8300000, guid: f5014cb6bee765148896a2729ae8f91f, type: 3}
+    volume: 0.2
+    loop: 0
+    source: {fileID: 0}
+  - soundName: 
+    audioClip: {fileID: 0}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - soundName: 
+    audioClip: {fileID: 0}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - soundName: 
+    audioClip: {fileID: 0}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - soundName: 
+    audioClip: {fileID: 0}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - soundName: 
+    audioClip: {fileID: 0}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - soundName: 
+    audioClip: {fileID: 0}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - soundName: 
+    audioClip: {fileID: 0}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - soundName: 
+    audioClip: {fileID: 0}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+--- !u!4 &1343014525
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343014523}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 712.4068, y: 96.63199, z: 695.57263}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1350835468 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: b1e72cbca989d4f4ba7d512a92e6903c, type: 3}
@@ -24922,3 +25026,4 @@ SceneRoots:
   - {fileID: 885405853}
   - {fileID: 2138622213}
   - {fileID: 1002321422}
+  - {fileID: 1343014525}
