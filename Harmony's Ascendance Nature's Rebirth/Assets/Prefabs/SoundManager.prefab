@@ -47,7 +47,7 @@ MonoBehaviour:
   soundVolume: 0.75
   sounds:
   - soundName: Game Music
-    audioClip: {fileID: 8300000, guid: 91f820c11898b6e4882bd836c8c4e753, type: 3}
+    audioClip: {fileID: 8300000, guid: f7c94b00546f2484ea827051a05081a4, type: 3}
     volume: 0.2
     loop: 1
     source: {fileID: 0}

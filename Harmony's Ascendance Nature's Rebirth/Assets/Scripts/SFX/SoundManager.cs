@@ -58,11 +58,13 @@ namespace SFX
             {
                 StopSound("Game Music");
                 PlaySound("Combat Music");
+                Debug.Log("Change Music");
             }
             else
             {
                 StopSound("Combat Music");
                 PlaySound("Game Music");
+                Debug.Log("Change back");
             }
         }
         

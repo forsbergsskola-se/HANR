@@ -11404,25 +11404,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4264209978007226508, guid: 05ca4e5887f7d48c09700eecc38ec490, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4718287801753836335, guid: 05ca4e5887f7d48c09700eecc38ec490, type: 3}
       propertyPath: m_Name
       value: Critter (purple)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5397495564986993226, guid: 05ca4e5887f7d48c09700eecc38ec490, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207482744270717814, guid: 05ca4e5887f7d48c09700eecc38ec490, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207482744270717814, guid: 05ca4e5887f7d48c09700eecc38ec490, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8284804860752608592, guid: 05ca4e5887f7d48c09700eecc38ec490, type: 3}
       propertyPath: screen
