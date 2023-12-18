@@ -68,7 +68,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - soundName: Walking
     audioClip: {fileID: 8300000, guid: 7a1da8275935858428d3af22a10ab810, type: 3}
-    volume: 0.2
+    volume: 0.03
     loop: 1
     source: {fileID: 0}
   - soundName: Default Attack
@@ -117,3 +117,4 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   playCombatMusic: {fileID: 11400000, guid: aa257ba04d55545ecb6602a7c4170890, type: 2}
+  playerWalking: {fileID: 11400000, guid: d72b54557d10b4a9bb0fea503791e0d5, type: 2}

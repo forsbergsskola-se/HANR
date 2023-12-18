@@ -1026,6 +1026,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMoving: {fileID: 11400000, guid: ac6cfe3da22a341db9d2eceaf518767d, type: 2}
+  playerWalking: {fileID: 11400000, guid: d72b54557d10b4a9bb0fea503791e0d5, type: 2}
   targetPoint: {fileID: 11400000, guid: a0ccd26fe714d47fab8f178ae244bf97, type: 2}
   agent: {fileID: 6198532406364277013}
   animator: {fileID: 2771500659704570704}
@@ -1110,6 +1111,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraObject: {fileID: 0}
+  talkingBearMan: 0
+  talkingRanger: 0
+  DialoguezoomSpeed: 5
+  zoomDistance: 15
   rotationSpeed: 3
   zoomSpeed: 5
   minZoom: 20
@@ -1118,6 +1123,10 @@ MonoBehaviour:
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 0
+  dialogue: {fileID: 0}
+  Ranger: {fileID: 0}
+  BearMan: {fileID: 0}
+  Dialogueoffset: {x: 0, y: 5, z: 0}
 --- !u!54 &7521711878451112549
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1333,6 +1342,7 @@ MonoBehaviour:
   maxExp: 0
   level: {fileID: 11400000, guid: 768ba6cdc985dd84aaa639c874e78ed0, type: 2}
   gameOverScreen: {fileID: 0}
+  deathEffect: {fileID: 0}
 --- !u!114 &8755595750374796902
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ namespace Player
     public class PlayerMovement : MonoBehaviour
     {
         public BoolVariable playerMoving;
+        public BoolVariable playerWalking;
         public TargetPoint targetPoint;
         private Quaternion toRotation;
         private Vector3 moveToPoint;
@@ -36,6 +37,15 @@ namespace Player
         private void Update()
         {
             RotateToClick();
+
+            if (animator.GetBool("isMoving") && playerWalking.getValue() == false)
+            {
+                playerWalking.setValue(true);
+            }
+            else if (playerMoving.getValue() && animator.GetBool("isMoving") == false)
+            {
+                playerWalking.setValue(false);
+            }
         }
 
         void LateUpdate() 
@@ -63,8 +73,6 @@ namespace Player
             {
                 if (playerMoving)
                 {
-                    // SFX.SoundManager.PlaySound("Walking"); TODO needs a check to know when the walking sound loop should stop.
-
                     agent.isStopped = false;
                     moveToPoint = targetPoint.GetValue();
                     agent.speed = walkSpeed;
