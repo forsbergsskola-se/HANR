@@ -1,4 +1,5 @@
 using System;
+using CustomObjects;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,11 +10,14 @@ namespace SFX
         public float soundVolume = 0.75f;
         static SoundManager i;
         public Sound[] sounds;
+        public BoolVariable playCombatMusic;
 
 
         private void Awake()
         {
             i = this;
+            
+            playCombatMusic.ValueChanged.AddListener(ChangeMusic);
 
             foreach (Sound sound in sounds)
             {
@@ -24,9 +28,15 @@ namespace SFX
             }
         }
 
+        private void OnDestroy()
+        {
+            playCombatMusic.ValueChanged.RemoveListener(ChangeMusic);
+        }
+        
+
         private void Start()
         {
-            if (SceneManager.GetActiveScene().name == "Game Scene")
+            if (SceneManager.GetActiveScene().name == "Game Scene 1")
             {
                 PlaySound("Game Music");
             }
@@ -37,6 +47,20 @@ namespace SFX
             }    
         }
         
+        private void ChangeMusic(bool playCombatMusic)
+        {
+            if (playCombatMusic)
+            {
+                StopSound("Game Music");
+                PlaySound("Combat Music");
+            }
+            else
+            {
+                StopSound("Combat Music");
+                PlaySound("Game Music");
+            }
+        }
+        
         Sound GetSound(string soundName)
         {
             Sound sound = Array.Find(sounds, sound => sound.soundName == soundName);
@@ -44,14 +68,10 @@ namespace SFX
 
             if (sound != null)
             {
-                // sound.source.Stop();
-                // sound.source.Play();
                 return sound;
             }
             if(soundAlt != null)
             {
-                // soundAlt.source.Stop();
-                // soundAlt.source.Play();
                 return soundAlt;
             }
     

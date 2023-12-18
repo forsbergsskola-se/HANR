@@ -47,9 +47,11 @@ namespace Player
                 level.setValue(level.getValue() + 1);
                 SFX.SoundManager.PlaySound("Level Up");
                 
+                /*
                 maxExp += 30f; //Increasing requirement for next level
                 maxHealth += 20f;
                 maxMagic += 60f;
+                */
             }
         }
         private void LimiterHealth(float currentValues) //Limiter for health
