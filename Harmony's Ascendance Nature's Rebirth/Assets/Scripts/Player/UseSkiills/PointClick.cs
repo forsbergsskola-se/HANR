@@ -14,11 +14,9 @@ namespace Player.UseSkills
         private bool skill1;
         private bool skill2;
         private bool ultiSkill;
-        [SerializeField] private AudioSource audioSource;
         
         private void Start()
         {
-            addAudioSource();
             _camera = Camera.main;
         }
         private void Update()
@@ -113,17 +111,7 @@ namespace Player.UseSkills
             var emissionModule = ps.emission;
             emissionModule.enabled = false;
         }
-
-        private void addAudioSource()
-        {
-            
-            GameObject yourObject = new GameObject("YourObject");
-            audioSource = yourObject.AddComponent<AudioSource>();
-
-            
-            audioSource.volume = 0.5f;
-            audioSource.Play();
-        }
+        
         
     }
 }
