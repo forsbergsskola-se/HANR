@@ -26,7 +26,7 @@ namespace SFX
 
         private void Start()
         {
-            if (SceneManager.GetActiveScene().name == "Game Scene 1")
+            if (SceneManager.GetActiveScene().name == "Game Scene")
             {
                 PlaySound("Game Music");
             }

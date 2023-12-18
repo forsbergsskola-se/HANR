@@ -44,17 +44,20 @@ namespace Colliders
                 animator.SetBool(IsHitbyRock, true);
                 Health.setValue(Mathf.Max(Health.getValue() - combatStatEnemyBoss.rockAttackDamage,0f));
                 other.gameObject.SetActive(false);
+                SFX.SoundManager.PlaySound("Get hit");
                 StartCoroutine(playerStandUp(other));
             } 
             else if (other.gameObject.CompareTag("GolemHand"))
             {
                 Health.setValue(Mathf.Max(Health.getValue() - combatStatEnemyBoss.normalAttackDamage,0f));
                 animator.SetBool("isHit", true);
+                SFX.SoundManager.PlaySound("Get hit");
             } 
             else if (other.gameObject.CompareTag("Sting"))
             {
                 Health.setValue(Mathf.Max(Health.getValue() - combatStatEnemyCritter.normalAttackDamage,0f));
                 animator.SetBool("isHit", true);
+                SFX.SoundManager.PlaySound("Get hit");
             }
         }
 

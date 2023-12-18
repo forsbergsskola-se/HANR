@@ -101,3 +101,8 @@ MonoBehaviour:
     volume: 0.2
     loop: 0
     source: {fileID: 0}
+  - soundName: Get hit
+    audioClip: {fileID: 8300000, guid: 7c47b20bb9874304a809dc5580d403ba, type: 3}
+    volume: 0.2
+    loop: 0
+    source: {fileID: 0}
