@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net.NetworkInformation;
 using CustomObjects;
+using Player;
 using TMPro;
 using UI;
 using Unity.VisualScripting;
@@ -16,6 +17,7 @@ public class Dialogue : MonoBehaviour
 {
     public UnityEvent druidToRanger;
     public UnityEvent druidToBearMan;
+    public UnityEvent druidToSlime;
     public TMP_Text chating;
     public int dialougeCounter = 0;
 
@@ -28,7 +30,9 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private NavMeshAgent agent;
     public string[] conversation = new string[5];
     private bool inConversation;
+    
     public Quest quest;
+    public CameraScript cameraScript;
 
     
     private void Start()
@@ -36,7 +40,15 @@ public class Dialogue : MonoBehaviour
         this.gameObject.SetActive(false);
         druidToRanger.AddListener(InitiateDialogueRanger);
         druidToBearMan.AddListener(InitiateDialogueBearMan);
+        druidToSlime.AddListener(InitiateDialogueSlime);
         PlayerUI = GameObject.FindWithTag("Canvas");
+    }
+    
+    private void OnDestroy()
+    {
+        druidToRanger.RemoveListener(InitiateDialogueRanger);
+        druidToBearMan.RemoveListener(InitiateDialogueBearMan);
+        druidToSlime.RemoveListener(InitiateDialogueSlime);
     }
 
     private void Update()
@@ -54,18 +66,18 @@ public class Dialogue : MonoBehaviour
                     this.gameObject.SetActive(false);
                     PlayerUI.SetActive(true);
                     quest.gameObject.SetActive(true);
+                    cameraScript.UnLock();
 
                     switch (quest.currentWaterStaffState)
                     {
                         case Quest.WaterStaffQuestLine.TalkingToRanger:
                             quest.questProgression.Invoke(1); //State goes to next (FindingBearMan)
                             break;
-                            
                         case Quest.WaterStaffQuestLine.FindingBearMan:
                             quest.questProgression.Invoke(2); //State goes to next (CollectingCrate)
                             break;
                         case Quest.WaterStaffQuestLine.GoBackToRanger: 
-                            quest.questProgression.Invoke(7); //End questline
+                            quest.questProgression.Invoke(7); //End quest-line, thus start next one
                             break;
                     }
                     
@@ -123,13 +135,7 @@ public class Dialogue : MonoBehaviour
             }
         }
     }
-
-    private void OnDestroy()
-    {
-        druidToRanger.RemoveListener(InitiateDialogueRanger);
-        druidToBearMan.RemoveListener(InitiateDialogueBearMan);
-    }
-
+    
     private void InitiateDialogueRanger()
     {
         if (!inConversation && dialougeCounter == 0)
@@ -151,6 +157,21 @@ public class Dialogue : MonoBehaviour
         if (!inConversation && dialougeCounter  == 0)
         {
             FillArrayBearMan();
+            PlayerUI.SetActive(false);
+            this.gameObject.SetActive(true);
+            agent.isStopped = true;
+            chating.text = conversation[0];
+            currentlySpeaking.sprite = faceBearMan;
+            dialougeCounter += 1;
+            inConversation = true;
+        }
+        
+    }
+    private void InitiateDialogueSlime()
+    {
+        if (!inConversation && dialougeCounter  == 0)
+        {
+            FillArraySlime();
             PlayerUI.SetActive(false);
             this.gameObject.SetActive(true);
             agent.isStopped = true;
@@ -217,6 +238,20 @@ public class Dialogue : MonoBehaviour
                 conversation[0] = "You have the Water Staff Now go save the forest!";
                 dialougeCounter = 4; //To cut the dialogue short
             }
+        }
+    }
+
+    private void FillArraySlime()
+    {
+        if (!quest.activeBossQuest)
+        {
+            conversation[0] = "Hello friend!";
+            dialougeCounter = 4; //To cut the dialogue short
+        } 
+        else
+        {
+            conversation[0] = "Our savior! Let me guide you to the stone creature.";
+            dialougeCounter = 4; //To cut the dialogue short
         }
     }
 }

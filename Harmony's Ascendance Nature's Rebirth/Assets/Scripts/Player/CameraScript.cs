@@ -64,20 +64,10 @@ namespace Player
             else if (talkingBearMan)
             {
                 CameraBearMan();
-                if (dialogue.dialougeCounter > dialogue.conversation.Length - 1)
-                {
-                    locked = false;
-                    cameraPos.rotation = defaultRotation;
-                }
             }
             else if (talkingRanger)
             {
                 CameraRanger();
-                if (dialogue.dialougeCounter > dialogue.conversation.Length - 1)
-                {
-                    locked = false;
-                    cameraPos.rotation = defaultRotation;
-                }
             }
         }
 
@@ -133,9 +123,10 @@ namespace Player
             talkingBearMan = true;
         }
 
-        private void UnLock()
+        public void UnLock()
         {
             locked = false;
+            cameraPos.rotation = defaultRotation;
         }
 
         private void CameraRanger()
