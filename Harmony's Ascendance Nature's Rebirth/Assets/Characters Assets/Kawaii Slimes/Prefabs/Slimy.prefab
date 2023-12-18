@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 1365689847107907945}
   - component: {fileID: 8809702327932699661}
   m_Layer: 0
-  m_Name: Slime_02
+  m_Name: Slimy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -135,12 +135,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faces: {fileID: 11400000, guid: 8b8a7554fceb39841840f45a2d8da540, type: 2}
-  SmileBody: {fileID: 2795397902362475942}
-  currentState: 0
+  slimeBody: {fileID: 2795397902362475942}
+  slimeMoving: {fileID: 11400000, guid: 74cf94af746864b1ea844bee5a67b983, type: 2}
+  harmony: {fileID: 0}
   animator: {fileID: 8809702327932699661}
   agent: {fileID: 5152775426276572727}
-  waypoints:
-  - {fileID: 0}
+  firstDestination: {x: 0, y: 0, z: 0}
+  turnRate: 10
 --- !u!95 &8809702327932699661
 Animator:
   serializedVersion: 5

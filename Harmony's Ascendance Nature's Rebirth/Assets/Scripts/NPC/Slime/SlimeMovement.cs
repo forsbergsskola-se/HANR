@@ -1,3 +1,6 @@
+using System;
+using CustomObjects;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -6,36 +9,85 @@ namespace NPC.Slime
     public class SlimeMovement : MonoBehaviour
     {
         public Face faces;
-        public GameObject SmileBody;
-        public SlimeAnimationState currentState; 
+        public GameObject slimeBody;
+        public BoolVariable slimeMoving;
+        public GameObject harmony;
    
         public Animator animator;
         public NavMeshAgent agent;
-        public Transform[] waypoints;
+        public Vector3 firstDestination;
         
-        private int m_CurrentWaypointIndex;
-
-        private bool move;
+        
         private Material faceMaterial;
         private Vector3 originPos;
-        
+        [SerializeField] private float turnRate;
+
+        private void Awake()
+        {
+            slimeMoving.ValueChanged.AddListener(MoveSlime);
+        }
+
+        private void OnDestroy()
+        {
+            slimeMoving.ValueChanged.RemoveListener(MoveSlime);
+        }
+
         void Start()
         {
             originPos = transform.position;
-            faceMaterial = SmileBody.GetComponent<Renderer>().materials[0];
+            faceMaterial = slimeBody.GetComponent<Renderer>().materials[0];
+            
+            slimeMoving.setValue(true);
         }
-        
-        public void WalkToNextDestination()
+
+        private void LateUpdate()
         {
-            m_CurrentWaypointIndex = (m_CurrentWaypointIndex + 1) % waypoints.Length;
-            agent.SetDestination(waypoints[m_CurrentWaypointIndex].position);
-            SetFace(faces.WalkFace);
+            if (agent.hasPath)
+            {
+                if (agent.velocity.magnitude > 0)
+                {
+                    animator.SetBool("SlimeWalking",true);
+                    SetFace(faces.WalkFace);
+                }
+                else
+                {
+                    animator.SetBool("SlimeWalking", false);
+                }
+            }
+            else
+            {
+                animator.SetBool("SlimeWalking", false);
+                SetFace(faces.Idleface);
+                LookAtHarmony();
+            }
+        }
+
+        public void MoveSlime(bool slimeMoving)
+        {
+            if (this.slimeMoving)
+            {
+                agent.isStopped = false;
+                agent.SetDestination(firstDestination);
+            }
+            else
+            {
+                agent.isStopped = true;
+            }
+            
         }
         
         void SetFace(Texture tex)
         {
             faceMaterial.SetTexture("_MainTex", tex);
         }
+
         
+        void LookAtHarmony()
+        {
+            Vector3 direction = (harmony.transform.position - agent.transform.position).normalized;
+            direction.y = 0;
+            Quaternion toRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, Time.fixedDeltaTime*turnRate);  
+        }
     }
 }
