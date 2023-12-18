@@ -10,8 +10,8 @@ namespace Player
         private Transform cameraPos;
         private Transform playerTransform;
         private bool locked;
-        private bool talkingBearMan;
-        private bool talkingRanger;
+        public bool talkingBearMan;
+        public bool talkingRanger;
         private Quaternion defaultRotation;
 
 
@@ -103,7 +103,6 @@ namespace Player
 
         private void UpdateCameraPosition()
         {
-
             Vector3 offset = Quaternion.Euler(0, cameraPos.eulerAngles.y, 0) * new Vector3(0, verticalOffset, -10);
             Vector3 targetPosition = playerTransform.position + offset;
             cameraPos.position = Vector3.Lerp(cameraPos.position, targetPosition, Time.deltaTime * 5f);
