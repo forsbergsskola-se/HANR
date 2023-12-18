@@ -8,6 +8,7 @@ using UnityEngine.Events;
 public class GameManagerScript : MonoBehaviour
 
 {
+    
     public void restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
