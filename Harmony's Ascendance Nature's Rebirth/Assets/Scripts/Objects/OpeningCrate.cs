@@ -9,7 +9,29 @@ using Random = UnityEngine.Random;
 public class OpeningCrate : MonoBehaviour
 {
     public GameObject [] itemInside = new GameObject [3];
-    [FormerlySerializedAs("questUI")] public Quest quest;
+    public Quest quest;
+
+    [SerializeField] private Instructions instructions;
+
+    private void Start()
+    {
+        instructions = FindObjectOfType<Instructions>().GetComponent<Instructions>();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            instructions.gameObject.SetActive(true);
+            instructions.buttonInput.Invoke("Interact");
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        instructions.gameObject.SetActive(false);
+    }
+
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Player") && Input.GetKeyDown(KeyCode.G) && quest.currentWaterStaffState == Quest.WaterStaffQuestLine.CollectingCrate)

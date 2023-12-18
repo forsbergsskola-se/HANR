@@ -11,11 +11,13 @@ public class ItemPickUp : MonoBehaviour
     public Item item;
     public Item defaultItem;
     private bool Inside;
-    
+
+    [SerializeField] private Instructions instructions;
     
     private void Start()
     {
         inventoryHolder = GameObject.FindGameObjectWithTag("Player").GetComponent<InventoryHolder>();
+        instructions = FindObjectOfType<Instructions>().GetComponent<Instructions>();
     }
 
     private void Update()
@@ -25,8 +27,6 @@ public class ItemPickUp : MonoBehaviour
             
             //Adds item Pickup
             PickUp();
-            
-
         }
     }
     
@@ -34,7 +34,8 @@ public class ItemPickUp : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            
+            instructions.gameObject.SetActive(true);
+            instructions.buttonInput.Invoke("Item");
             Inside = true;
           
         }
@@ -43,7 +44,8 @@ public class ItemPickUp : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
-        {
+        {          
+            instructions.gameObject.SetActive(false);
             Inside = false;
         }
     }
@@ -59,6 +61,7 @@ public class ItemPickUp : MonoBehaviour
             }
         }
         SFX.SoundManager.PlaySound("Item Pick Up");
+        instructions.gameObject.SetActive(false);
         inventoryHolder.pickUp.Invoke();
         Destroy(gameObject);
         
