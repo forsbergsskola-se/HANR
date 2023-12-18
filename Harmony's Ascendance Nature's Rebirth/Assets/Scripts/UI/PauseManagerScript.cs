@@ -46,6 +46,7 @@ public class PauseManagerScript : MonoBehaviour
         if (isPaused)
         {
             Time.timeScale = 0f;
+            AudioListener.pause = true;
 
             if (GamePausePanel != null)
             {
@@ -55,6 +56,8 @@ public class PauseManagerScript : MonoBehaviour
         else
         {
             Time.timeScale = 1f;
+            AudioListener.pause = false;
+            
             if (GamePausePanel != null)
             {
                 GamePausePanel.SetActive(false);
