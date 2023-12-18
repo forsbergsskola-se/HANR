@@ -9,47 +9,61 @@ using Random = UnityEngine.Random;
 public class TriggerHealTheRiver : MonoBehaviour
 {
     public Quest quest;
+
+    public UsableItems usableItems;
+
+    public PropertyColourChange colourChangeWater;
     
     public GameObject waterStaff;
 
     [SerializeField] private Instructions instructions;
+
+    private bool clickable = false;
     
+
+
     private void Start()
     {
-        instructions = FindObjectOfType<Instructions>().GetComponent<Instructions>();
+        usableItems.usedBook.AddListener(CheckBookClick);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnDestroy()
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            instructions.gameObject.SetActive(true);
-            instructions.buttonInput.Invoke("Interact");
-        }
+        usableItems.usedBook.RemoveListener(CheckBookClick);
     }
+
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player") && quest.currentWaterStaffState == Quest.WaterStaffQuestLine.FindingRiverByRangerArea)
         {
             quest.questProgression.Invoke(4); //State goes to next (SaveTheRiver)
         }
-        
-        if (other.CompareTag("Player") && Input.GetKeyDown(KeyCode.G))
+
+        if (other.CompareTag("Player"))
         {
             if (quest.currentWaterStaffState == Quest.WaterStaffQuestLine.SaveTheRiver)
             {
-                instructions.gameObject.SetActive(false);
-                waterStaff.SetActive(true);
-                quest.questProgression.Invoke(5); //State goes to next (Getting Reward)
-                
+                clickable = true;
             }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
+        clickable = false;
         if(other.CompareTag("Player") && quest.currentWaterStaffState == Quest.WaterStaffQuestLine.GettingReward)
             quest.questProgression.Invoke(6);
         instructions.gameObject.SetActive(false);
+    }
+
+    private void CheckBookClick()
+    {
+        if (clickable)
+        {
+            Debug.Log("we click");
+            colourChangeWater.SaveRiver.Invoke();
+            waterStaff.SetActive(true);
+            quest.questProgression.Invoke(5); 
+        }
     }
 }

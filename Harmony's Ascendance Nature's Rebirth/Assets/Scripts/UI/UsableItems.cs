@@ -41,7 +41,6 @@ public class UsableItems : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha1) && inventoryHolder.Items[0] != defaultItem)
         {
-            
             CheckSlot(0);
 
         }
@@ -105,6 +104,7 @@ public class UsableItems : MonoBehaviour
 
             if (itemInSlot.itemClass == "Consumable") //When using potions
             {
+               
                 if (itemInSlot.itemID == "Potion Health")
                 {
                     
