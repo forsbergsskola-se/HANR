@@ -403,6 +403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInRange: {fileID: 11400000, guid: 63dde8e959fbfea42a14743bfd011da1, type: 2}
   playerInAttackRange: {fileID: 11400000, guid: a1327ebfafbb0ae4cb285095666b73cf, type: 2}
+  playCombatMusic: {fileID: 11400000, guid: aa257ba04d55545ecb6602a7c4170890, type: 2}
   detectionRange: 25
   unDetectionRange: 30
   attackRange: 7
