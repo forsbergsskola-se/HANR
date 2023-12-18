@@ -8,6 +8,7 @@ namespace NPC
         public Dialogue dialogue;
         private bool playerClose;
         public GameObject thisNPC;
+        public Quest quest;
         private void Update()
         {
             if (playerClose)
@@ -15,6 +16,8 @@ namespace NPC
                 if (thisNPC.name == "BearMan")
                 {
                     dialogue.druidToBearMan.Invoke();
+                    if(quest.currentWaterStaffState == Quest.WaterStaffQuestLine.FindingBearMan)
+                        quest.questProgression.Invoke(2);
                     playerClose = false;
                 }
                 if (thisNPC.name == "Ranger")
@@ -40,7 +43,7 @@ namespace NPC
             if (other.CompareTag("Player"))
             {
                 playerClose = false;
-                Debug.Log("Walk away");
+                 Debug.Log("Walk away");
             }
         }
     }

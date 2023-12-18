@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -26,6 +27,7 @@ namespace UI
         
         public enum BossQuestLine
         {
+            TalkToSlime,
             FindBossArea,
             DefeatBoss,
             ReturnToRanger
@@ -52,7 +54,7 @@ namespace UI
             questProgression.RemoveListener(SetState);
         }
 
-        private void Update()
+        private void Update() //Quest Title + Quest Text (Guide)
         {
             if (activeWaterStaffQuest)
             {
@@ -92,7 +94,7 @@ namespace UI
                     case WaterStaffQuestLine.EndQuest:
                         activeWaterStaffQuest = false;
                         activeBossQuest = true;
-                        currentBossState = BossQuestLine.FindBossArea;
+                        currentBossState = BossQuestLine.TalkToSlime;
                         break;
                 }
             }
@@ -101,9 +103,13 @@ namespace UI
             {
                 switch (currentBossState)
                 {
+                    case BossQuestLine.TalkToSlime:
+                        questTitle.text = "Mimmi";
+                        questLog.text = "¤ Talk to Mimmi";
+                        break;
                     case BossQuestLine.FindBossArea:
                         questTitle.text = "Find Boss Area";
-                        questLog.text = "¤ Let's follow the slime";
+                        questLog.text = "¤ Follow Mimmi";
                         break;
                     case BossQuestLine.DefeatBoss:
                         questTitle.text = "Defeat the Stone Creature!";
@@ -140,6 +146,14 @@ namespace UI
             if (activeBossQuest)
             {
                 //TODO: when invoking event. Implement quest state
+                if (part == 1)
+                    currentBossState = BossQuestLine.TalkToSlime;
+                else if (part == 2)
+                    currentBossState = BossQuestLine.FindBossArea;
+                else if (part == 3)
+                    currentBossState = BossQuestLine.DefeatBoss;
+                else if (part == 4)
+                    currentBossState = BossQuestLine.ReturnToRanger;
             }
         }
     }

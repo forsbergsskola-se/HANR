@@ -19,7 +19,7 @@ public class Dialogue : MonoBehaviour
     public UnityEvent druidToBearMan;
     public UnityEvent druidToSlime;
     public TMP_Text chating;
-    public int dialougeCounter = 0;
+    private int dialougeCounter = 0;
 
     [SerializeField] private Image currentlySpeaking; //For dialogue images
     public Sprite faceDruid;
@@ -67,20 +67,22 @@ public class Dialogue : MonoBehaviour
                     PlayerUI.SetActive(true);
                     quest.gameObject.SetActive(true);
                     cameraScript.UnLock();
+                    cameraScript.talkingRanger = false;
+                    cameraScript.talkingBearMan = false;
 
-                    switch (quest.currentWaterStaffState)
+                    if (quest.activeWaterStaffQuest)
                     {
-                        case Quest.WaterStaffQuestLine.TalkingToRanger:
-                            quest.questProgression.Invoke(1); //State goes to next (FindingBearMan)
-                            break;
-                        case Quest.WaterStaffQuestLine.FindingBearMan:
-                            quest.questProgression.Invoke(2); //State goes to next (CollectingCrate)
-                            break;
-                        case Quest.WaterStaffQuestLine.GoBackToRanger: 
-                            quest.questProgression.Invoke(7); //End quest-line, thus start next one
-                            break;
+                        switch (quest.currentWaterStaffState)
+                        {
+                            case Quest.WaterStaffQuestLine.TalkingToRanger:
+                                quest.questProgression.Invoke(1); //State goes to next (FindingBearMan)
+                                break;
+                            case Quest.WaterStaffQuestLine.GoBackToRanger:
+                                quest.questProgression.Invoke(7); //End quest-line, thus start next one
+                                break;
+                        }
                     }
-                    
+
                     currentlySpeaking.sprite = null;
                 }
                 else //Dialogue continues
