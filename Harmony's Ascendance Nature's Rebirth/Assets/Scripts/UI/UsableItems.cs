@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class UsableItems : MonoBehaviour
     public UnityEvent<Item> fireStaffEquipped;
     public UnityEvent<Item> waterStaffEquipped; 
     public UnityEvent UpdateUsedItem;
+    public UnityEvent usedBook;
     
     [SerializeField] private Item defaultItem;
     
@@ -134,6 +136,11 @@ public class UsableItems : MonoBehaviour
                     SFX.SoundManager.PlaySound("Mana & EXP");
                     inventoryHolder.Items[slotIndex] = defaultItem;
                     UpdateUsedItem.Invoke();
+                }
+                else if (itemInSlot.itemID == "Book")
+                {
+                    Console.WriteLine("bookused");
+                    usedBook.Invoke();
                 }
             }
         }

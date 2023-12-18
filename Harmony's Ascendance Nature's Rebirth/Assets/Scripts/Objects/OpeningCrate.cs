@@ -36,7 +36,7 @@ public class OpeningCrate : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && Input.GetKeyDown(KeyCode.G) && quest.currentWaterStaffState == Quest.WaterStaffQuestLine.CollectingCrate)
         {
-            for (int slot = 0; slot < 3; slot++)
+            for (int slot = 0; slot < 4; slot++)
             {
                 float randomPositionX = Random.Range(1f, 5f); //To spawn items in close random positions
                 float randomPositionZ = Random.Range(1f, 5f);
