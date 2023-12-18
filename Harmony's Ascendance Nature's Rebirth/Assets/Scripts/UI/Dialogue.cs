@@ -33,10 +33,11 @@ public class Dialogue : MonoBehaviour
     
     public Quest quest;
     public CameraScript cameraScript;
-
+    [SerializeField] private ClickCheck clickCheck;
     
     private void Start()
     {
+        clickCheck = FindObjectOfType<ClickCheck>().GetComponent<ClickCheck>();
         this.gameObject.SetActive(false);
         druidToRanger.AddListener(InitiateDialogueRanger);
         druidToBearMan.AddListener(InitiateDialogueBearMan);
@@ -55,6 +56,7 @@ public class Dialogue : MonoBehaviour
     {
         if (inConversation)
         {
+            clickCheck.enabled = false;
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 quest.gameObject.SetActive(false);
@@ -69,7 +71,7 @@ public class Dialogue : MonoBehaviour
                     cameraScript.UnLock();
                     cameraScript.talkingRanger = false;
                     cameraScript.talkingBearMan = false;
-
+                    clickCheck.enabled = true;
                     if (quest.activeWaterStaffQuest)
                     {
                         switch (quest.currentWaterStaffState)
