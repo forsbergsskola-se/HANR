@@ -117,7 +117,7 @@ public class EnemyAi : MonoBehaviour
 
                 if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack")) return;
                 StopAgent();
-                SetFace(faces.attackFace);
+                //SetFace(faces.attackFace);
                 animator.SetTrigger("Attack");
 
                // Debug.Log("Attacking");
@@ -133,7 +133,7 @@ public class EnemyAi : MonoBehaviour
                 StopAgent();
                 animator.SetTrigger("Damage");
                 animator.SetInteger("DamageType", damType);
-                SetFace(faces.damageFace);
+                //SetFace(faces.damageFace);
 
                 //Debug.Log("Take Damage");
                 break;

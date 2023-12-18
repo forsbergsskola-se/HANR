@@ -25,8 +25,6 @@ public class PlayerAttack : MonoBehaviour
     private DefaultAttackPool daAttackPool;
     private UsableItems usableItems;
     private CombatStat combatStat;
-
-    [SerializeField] private AudioSource basicAttackSound;
     
     private void Awake()
     {
