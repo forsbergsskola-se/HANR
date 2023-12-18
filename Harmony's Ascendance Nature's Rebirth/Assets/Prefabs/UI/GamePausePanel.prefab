@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2449724570573306676}
   - component: {fileID: 4977002983678119485}
   - component: {fileID: 8091318940569153106}
-  - component: {fileID: 4194912526516057002}
   m_Layer: 5
   m_Name: GamePausePanel
   m_TagString: Untagged
@@ -77,18 +76,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4194912526516057002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2381779983367380561}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c1c02172ff2947ccb98e62d6944491f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4550241219115547855
 GameObject:
   m_ObjectHideFlags: 0
