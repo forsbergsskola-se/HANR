@@ -109,7 +109,7 @@ namespace UI
                         break;
                     case BossQuestLine.FindBossArea:
                         questTitle.text = "Find Boss Area";
-                        questLog.text = "¤ Follow Mimmi";
+                        questLog.text = "¤ Follow Mimi";
                         break;
                     case BossQuestLine.DefeatBoss:
                         questTitle.text = "Defeat the Stone Creature!";
