@@ -8,7 +8,9 @@ public class Teleport : MonoBehaviour
     private GameObject player;
     private NavMeshAgent navMeshAgent;
 
-    [SerializeField] private Transform tpPosition;
+    public Instructions instructions;
+    
+    public Transform tpPosition;
 
     private bool Inside;
 
@@ -53,11 +55,14 @@ public class Teleport : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        instructions.gameObject.SetActive(true);
+        instructions.buttonInput.Invoke("Teleport");
         Inside = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
+        instructions.gameObject.SetActive(false);
         Inside = false;
     }
 }
