@@ -21,7 +21,7 @@ namespace Player
         private void Start()
         {
             //Starting stats when starting play-mode
-            health.setValue(10f);
+            health.setValue(100f);
             maxHealth = 100f;
             magic.setValue(50.5f);
             maxMagic = 100f;
