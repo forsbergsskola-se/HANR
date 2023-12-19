@@ -181,9 +181,9 @@ Material:
     - __dirty: 0
     m_Colors:
     - _Color: {r: 0.5923446, g: 0.8113208, b: 0.27171594, a: 1}
-    - _ColorBottom: {r: 0.13207549, g: 0.12061311, b: 0.120238535, a: 0}
-    - _ColorTop: {r: 0.36862746, g: 0.04713782, b: 0, a: 0}
-    - _ColorTopVariation: {r: 0.1792453, g: 0.07285789, b: 0.07186722, a: 0}
+    - _ColorBottom: {r: 0.21346566, g: 0.38679248, b: 0.24797045, a: 0}
+    - _ColorTop: {r: 0.37138394, g: 0.8018868, b: 0.23073156, a: 0}
+    - _ColorTopVariation: {r: 0.11311853, g: 0.5849056, b: 0.2394383, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GlossRemap: {r: 0, g: 1, b: 0, a: 0}
     - _HSL: {r: 0.02, g: 0.05, b: 0.1, a: 0}
