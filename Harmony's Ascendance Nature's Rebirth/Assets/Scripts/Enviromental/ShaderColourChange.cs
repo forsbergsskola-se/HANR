@@ -21,12 +21,15 @@ public class ColorPropertyOne
 
 public class ShaderColourChange : MonoBehaviour
 {
+    [SerializeField] private Color lightColor;
+    [SerializeField] private float transitionDuration;
+    [SerializeField] private Light mainLight;
     [SerializeField] private List<Material> materials = new List<Material>();
     [SerializeField] private List<ColorPropertyOne> colorProperties = new List<ColorPropertyOne>();
     [SerializeField] private Transform[] colourTransform;
     [SerializeField] private bool findColorObjects;
 
-    public UnityEvent SaveRiver { get; private set; }
+    public UnityEvent SaveRiver;
 
     void Start()
     {
@@ -35,12 +38,12 @@ public class ShaderColourChange : MonoBehaviour
         {
          FindColorProperty();
         }
-        SaveRiver.AddListener(ChangeMaterialColour);
+        SaveRiver.AddListener(RiverSaved);
     }
 
     private void OnDestroy()
     {
-        SaveRiver.RemoveListener(ChangeMaterialColour);
+        SaveRiver.RemoveListener(RiverSaved);
     }
 
     void CollectMaterialsFromChildren()
@@ -63,8 +66,10 @@ public class ShaderColourChange : MonoBehaviour
     
     }
 
-    void ChangeMaterialColour()
+    void RiverSaved()
     {
+        StartCoroutine(LerpLight(lightColor));
+        
         foreach (Material material in materials)
         {
             foreach (ColorPropertyOne colorProperty in colorProperties)
@@ -96,7 +101,6 @@ public class ShaderColourChange : MonoBehaviour
                     Debug.Log($"Material {material.name} has a color property: {propertyName}");
                     
                     
-                    
                     colorProperties.Add(new ColorPropertyOne(propertyName, Color.black));
                     
                 }
@@ -123,6 +127,22 @@ public class ShaderColourChange : MonoBehaviour
         material.SetColor(propertyName, targetColor);
     }
     
+    IEnumerator LerpLight(Color targetColor)
+    {
+
+        Color initialColor = mainLight.color;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < transitionDuration)
+        {
+            mainLight.color = Color.Lerp(initialColor, targetColor, elapsedTime / transitionDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        mainLight.color = targetColor;
+      
+    }
     
 
 

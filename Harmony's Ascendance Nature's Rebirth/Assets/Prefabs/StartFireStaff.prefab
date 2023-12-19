@@ -58,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: -9073503664100586628, guid: e9c060fa71b4e5b468fc8f47bd8e655a, type: 3}
     - target: {fileID: 919132149155446097, guid: 6ebc2c3503899d647817b45515d5ab9d, type: 3}
       propertyPath: m_Name
-      value: Fire Staff (1)
+      value: StartFireStaff
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6ebc2c3503899d647817b45515d5ab9d, type: 3}
       propertyPath: m_Layer
@@ -70,7 +70,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6ebc2c3503899d647817b45515d5ab9d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2816494436680141200}
+      addedObject: {fileID: -9065697091512405819}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6ebc2c3503899d647817b45515d5ab9d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2080447629204464473}
@@ -80,7 +80,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6ebc2c3503899d647817b45515d5ab9d, type: 3}
   m_PrefabInstance: {fileID: 1053739641545312596}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2816494436680141200
+--- !u!114 &-9065697091512405819
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 170797376452391941}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378580bde16354a4e9799b4f71656f34, type: 3}
+  m_Script: {fileID: 11500000, guid: f94b2fb0ee6105b4d81ae76e2d2ad133, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 067d0c77f61af91498f433d3b58eb40e, type: 2}

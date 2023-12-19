@@ -24,8 +24,6 @@ public class TriggerHealTheRiver : MonoBehaviour
 
     private void Start()
     {
-        colourChangeWater.SaveRiver.Invoke();
-
         usableItems.usedBook.AddListener(CheckBookClick);
     }
 
