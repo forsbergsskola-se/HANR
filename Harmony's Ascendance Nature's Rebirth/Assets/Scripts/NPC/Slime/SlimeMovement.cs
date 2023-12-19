@@ -4,6 +4,7 @@ using UI;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Serialization;
 
 namespace NPC.Slime
 {
@@ -17,8 +18,8 @@ namespace NPC.Slime
    
         public Animator animator;
         public NavMeshAgent agent;
-        public Vector3 firstDestination;
-        public Vector3 secondDestination;
+        public GameObject firstDestinationPoint;
+        public GameObject secondDestinationPoint;
 
         public Quest quest;
         
@@ -64,6 +65,20 @@ namespace NPC.Slime
             }
         }
 
+        private void OnTriggerEnter(Collider other)
+        {
+            if (quest.currentBossState == Quest.BossQuestLine.WalkWithMimi)
+            {
+                if (other.gameObject == firstDestinationPoint)
+                    quest.questProgression.Invoke(3); //State goes to DefendMimi
+            }
+            if (quest.currentBossState == Quest.BossQuestLine.WalkWithMimiToBoss)
+            {
+                if (other.gameObject == secondDestinationPoint)
+                    quest.questProgression.Invoke(5); //State goes to WalkWithMimiToBoss
+            }
+        }
+
         public void MoveSlime(bool slimeMoving)
         {
             if (quest.currentBossState == Quest.BossQuestLine.WalkWithMimi)
@@ -71,7 +86,7 @@ namespace NPC.Slime
                 if (this.slimeMoving)
                 {
                     agent.isStopped = false;
-                    agent.SetDestination(firstDestination);
+                    agent.SetDestination(firstDestinationPoint.transform.position);
                     playSlimeMoving.setValue(true);
                 }
                 else
@@ -79,15 +94,13 @@ namespace NPC.Slime
                     agent.isStopped = true;
                     playSlimeMoving.setValue(false);
                 }
-                if(this.gameObject.transform.position == firstDestination)
-                    quest.questProgression.Invoke(3); //State goes to DefendMimi
             }
             else if (quest.currentBossState == Quest.BossQuestLine.WalkWithMimiToBoss)
             {
                 if (this.slimeMoving)
                 {
                     agent.isStopped = false;
-                    agent.SetDestination(secondDestination);
+                    agent.SetDestination(secondDestinationPoint.transform.position);
                     playSlimeMoving.setValue(true);
                 }
                 else
@@ -95,8 +108,6 @@ namespace NPC.Slime
                     agent.isStopped = true;
                     playSlimeMoving.setValue(false);
                 }
-                if (this.gameObject.transform.position == secondDestination)
-                    quest.questProgression.Invoke(5); //State goes to DefeatBoss
             }
         }
         

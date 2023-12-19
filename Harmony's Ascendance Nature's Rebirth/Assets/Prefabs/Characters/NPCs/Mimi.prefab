@@ -326,10 +326,13 @@ MonoBehaviour:
   faces: {fileID: 11400000, guid: 8b8a7554fceb39841840f45a2d8da540, type: 2}
   slimeBody: {fileID: 6162880904627538474}
   slimeMoving: {fileID: 11400000, guid: 74cf94af746864b1ea844bee5a67b983, type: 2}
+  playSlimeMoving: {fileID: 11400000, guid: cd6711c9feeec406c880697b1c61fb0b, type: 2}
   harmony: {fileID: 0}
   animator: {fileID: 7306378875511959392}
   agent: {fileID: 2482656962506303652}
-  firstDestination: {x: 699.41, y: 175.95, z: 751.97}
+  firstDestinationPoint: {fileID: 7398962033073339181, guid: e920cb29b4e847047ae35599e3c97510, type: 3}
+  secondDestinationPoint: {fileID: 5964392940372535799, guid: 7763d06fc1444424dbe57a1bec1fdc1a, type: 3}
+  quest: {fileID: 0}
   turnRate: 20
 --- !u!95 &7306378875511959392
 Animator:
@@ -438,6 +441,7 @@ MonoBehaviour:
   dialogue: {fileID: 0}
   thisNPC: {fileID: 6162880904627538474}
   quest: {fileID: 0}
+  slimeMoving: {fileID: 11400000, guid: 74cf94af746864b1ea844bee5a67b983, type: 2}
 --- !u!136 &1934949816594866032
 CapsuleCollider:
   m_ObjectHideFlags: 0

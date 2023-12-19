@@ -153,23 +153,15 @@ MonoBehaviour:
   druidToBearMan:
     m_PersistentCalls:
       m_Calls: []
-  druidToSlime:
-    m_PersistentCalls:
-      m_Calls: []
   chating: {fileID: 765463412987692889}
   currentlySpeaking: {fileID: 688866989020059205}
-  faceDruid: {fileID: 21300000, guid: cb95072d583572c44ad2435153d94370, type: 3}
-  faceRanger: {fileID: 21300000, guid: 4223773eb278d3245896045d12b752b0, type: 3}
-  faceBearMan: {fileID: 21300000, guid: 7b8cbbad1ca11cd45815bc1aec84d8bf, type: 3}
+  faceDruid: {fileID: 21300000, guid: eca3bf31011a65847ac15c19202aecdd, type: 3}
+  faceRanger: {fileID: 21300000, guid: 0fbea0d2dd3634c40ac575b18dc55bbc, type: 3}
+  faceBearMan: {fileID: 21300000, guid: 84609338b7634cf4cacef9356ff0b068, type: 3}
   agent: {fileID: 0}
-  conversation:
-  - 
-  - 
-  - 
-  - 
-  - 
   quest: {fileID: 0}
   cameraScript: {fileID: 0}
+  clickCheck: {fileID: 0}
 --- !u!1001 &8851415736485950526
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -181,6 +173,10 @@ PrefabInstance:
     - target: {fileID: 4758040488010856923, guid: a0d72fca3c36b1244a53e5b84fa8f437, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4832111154472059445, guid: a0d72fca3c36b1244a53e5b84fa8f437, type: 3}
+      propertyPath: m_text
+      value: Press [Space] to continue...
       objectReference: {fileID: 0}
     - target: {fileID: 5946091105278524487, guid: a0d72fca3c36b1244a53e5b84fa8f437, type: 3}
       propertyPath: m_Name
