@@ -25413,6 +25413,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4161993978296224015, guid: 36e6b28ec0e81486c97f3a662b833045, type: 3}
+      propertyPath: sounds.Array.size
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4161993978296224015, guid: 36e6b28ec0e81486c97f3a662b833045, type: 3}
+      propertyPath: sounds.Array.data[14].volume
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4161993978296224015, guid: 36e6b28ec0e81486c97f3a662b833045, type: 3}
+      propertyPath: sounds.Array.data[14].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4dbfbd1a56081db4ca174255a4d56b1f, type: 3}
+    - target: {fileID: 4161993978296224015, guid: 36e6b28ec0e81486c97f3a662b833045, type: 3}
+      propertyPath: sounds.Array.data[14].soundName
+      value: River
+      objectReference: {fileID: 0}
     - target: {fileID: 5363822705403362747, guid: 36e6b28ec0e81486c97f3a662b833045, type: 3}
       propertyPath: m_LocalPosition.x
       value: 712.4068
