@@ -40,8 +40,6 @@ namespace NPC.Slime
         {
             originPos = transform.position;
             faceMaterial = slimeBody.GetComponent<Renderer>().materials[0];
-            
-            slimeMoving.setValue(true);
         }
 
         private void LateUpdate()
