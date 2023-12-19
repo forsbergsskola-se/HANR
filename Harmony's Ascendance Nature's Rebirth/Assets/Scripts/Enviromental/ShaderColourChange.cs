@@ -31,15 +31,18 @@ public class ShaderColourChange : MonoBehaviour
 
     void CollectMaterialsFromChildren()
     {
-        materials.Clear(); // Clear the list before collecting materials again
-
-        foreach (Transform child in colourTransform)
+        //materials.Clear(); // Clear the list before collecting materials again
+        for (int i = 0; i < colourTransform.Length; i++)
         {
-            Renderer renderer = child.GetComponent<Renderer>();
+          foreach (Transform child in colourTransform[i])
+          {
+            Renderer renderer = child.gameObject.GetComponent<Renderer>();
             if (renderer != null)
             {
-                materials.AddRange(renderer.materials); // AddRange appends materials from the current renderer
+                Debug.Log("Renderer found on: " + transform.name);
+                materials.AddRange(renderer.materials);
             }
+          }
         }
 
         foreach (Material material in materials)
@@ -69,4 +72,8 @@ public class ShaderColourChange : MonoBehaviour
 
         material.SetColor(propertyName, targetColor);
     }
+    
+    
+
+
 }

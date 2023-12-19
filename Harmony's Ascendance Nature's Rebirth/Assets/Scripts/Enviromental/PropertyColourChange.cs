@@ -22,16 +22,16 @@ public class PropertyColourChange : MonoBehaviour
 
     void Start()
     {
-        CollectMaterialsFromChildren();
-        SaveRiver.AddListener(CollectMaterialsFromChildren);
+        SavedRiver();
+        SaveRiver.AddListener(SavedRiver);
     }
 
     private void OnDestroy()
     {
-        SaveRiver.RemoveListener(CollectMaterialsFromChildren);
+        SaveRiver.RemoveListener(SavedRiver);
     }
 
-    void CollectMaterialsFromChildren()
+    void SavedRiver()
     {
         StartCoroutine(LerpLight(SkyColour));
         foreach (Transform child in transform)

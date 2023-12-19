@@ -37,7 +37,7 @@ public class TriggerHealTheRiver : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             instructions.gameObject.SetActive(true);
-            instructions.buttonInput.Invoke("Interact");
+            instructions.buttonInput.Invoke("River");
         }
     }
 
@@ -69,6 +69,7 @@ public class TriggerHealTheRiver : MonoBehaviour
     {
         if (clickable)
         {
+            SFX.SoundManager.PlaySound("River");
             Debug.Log("we click");
             colourChangeWater.SaveRiver.Invoke();
             waterStaff.SetActive(true);
