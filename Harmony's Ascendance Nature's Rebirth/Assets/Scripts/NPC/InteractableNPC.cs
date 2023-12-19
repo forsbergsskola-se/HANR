@@ -1,3 +1,4 @@
+using CustomObjects;
 using NPC.Slime;
 using UI;
 using UnityEngine;
@@ -10,6 +11,7 @@ namespace NPC
         private bool playerClose;
         public GameObject thisNPC;
         public Quest quest;
+        public BoolVariable slimeMoving;
         private void Update()
         {
             if (playerClose)
@@ -27,10 +29,15 @@ namespace NPC
                         playerClose = false;
                         break;
                     case "Mimi":
-                        if (quest.activeBossQuest)
+                        if (quest.activeBossQuest && quest.currentBossState == Quest.BossQuestLine.InteractWithMimi)
                         {
                             quest.questProgression.Invoke(2); //Quest goes to WalkWithMimi
-                            this.gameObject.GetComponent<SlimeMovement>().slimeMoving.setValue(true);
+                            slimeMoving.setValue(true);
+                        }
+
+                        if (quest.currentBossState == Quest.BossQuestLine.WalkWithMimiToBoss)
+                        {
+                            slimeMoving.setValue(true);
                         }
                         break;
                 }

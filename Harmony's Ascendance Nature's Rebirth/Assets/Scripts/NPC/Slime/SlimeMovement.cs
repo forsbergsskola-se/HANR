@@ -77,9 +77,10 @@ namespace NPC.Slime
                 else
                 {
                     agent.isStopped = true;
-                    quest.questProgression.Invoke(3); //State goes to DefendMimi
                     playSlimeMoving.setValue(false);
                 }
+                if(this.gameObject.transform.position == firstDestination)
+                    quest.questProgression.Invoke(3); //State goes to DefendMimi
             }
             else if (quest.currentBossState == Quest.BossQuestLine.WalkWithMimiToBoss)
             {
@@ -92,9 +93,10 @@ namespace NPC.Slime
                 else
                 {
                     agent.isStopped = true;
-                    quest.questProgression.Invoke(5); //State goes to DefeatBoss
                     playSlimeMoving.setValue(false);
                 }
+                if (this.gameObject.transform.position == secondDestination)
+                    quest.questProgression.Invoke(5); //State goes to DefeatBoss
             }
         }
         

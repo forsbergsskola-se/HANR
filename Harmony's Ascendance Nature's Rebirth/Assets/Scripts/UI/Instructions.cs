@@ -37,6 +37,9 @@ public class Instructions : MonoBehaviour
             case "Interact":
                 buttonInstructions.text = "Press [G] to interact";
                 break;
+            case "River":
+                buttonInstructions.text = "Use the book!";
+                break;
         }
     }
 }
