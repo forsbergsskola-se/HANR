@@ -25,7 +25,6 @@ public class TriggerHealTheRiver : MonoBehaviour
     private void Start()
     {
         usableItems.usedBook.AddListener(CheckBookClick);
-        instructions = FindObjectOfType<Instructions>().GetComponent<Instructions>();
     }
 
     private void OnDestroy()

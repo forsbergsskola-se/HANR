@@ -13,11 +13,6 @@ public class OpeningCrate : MonoBehaviour
 
     [SerializeField] private Instructions instructions;
 
-    private void Start()
-    {
-        instructions = FindObjectOfType<Instructions>().GetComponent<Instructions>();
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
