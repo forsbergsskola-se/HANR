@@ -12,7 +12,7 @@ public class TriggerHealTheRiver : MonoBehaviour
 
     public UsableItems usableItems;
 
-    public PropertyColourChange colourChangeWater;
+    public ShaderColourChange colourChangeWater;
     
     public GameObject waterStaff;
 
@@ -24,6 +24,8 @@ public class TriggerHealTheRiver : MonoBehaviour
 
     private void Start()
     {
+        colourChangeWater.SaveRiver.Invoke();
+
         usableItems.usedBook.AddListener(CheckBookClick);
     }
 

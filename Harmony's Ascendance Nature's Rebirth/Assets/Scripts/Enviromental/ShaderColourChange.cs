@@ -6,27 +6,41 @@ using System.Collections.Generic;
 [System.Serializable]
 public class ColorPropertyOne
 {
-    public string propertyName;
-    public Color color;
+    public string PropertyName;
+    public Color Color;
+    
+    public ColorPropertyOne(string propertyName, Color color)
+    {
+       Color = color;
+
+       PropertyName = propertyName;
+           
+    }
 }
+
 
 public class ShaderColourChange : MonoBehaviour
 {
     [SerializeField] private List<Material> materials = new List<Material>();
-    [SerializeField] private ColorPropertyOne[] colorProperties;
+    [SerializeField] private List<ColorPropertyOne> colorProperties = new List<ColorPropertyOne>();
     [SerializeField] private Transform[] colourTransform;
+    [SerializeField] private bool findColorObjects;
 
-    public UnityEvent SaveRiver;
+    public UnityEvent SaveRiver { get; private set; }
 
     void Start()
     {
         CollectMaterialsFromChildren();
-        SaveRiver.AddListener(CollectMaterialsFromChildren);
+        if(findColorObjects)
+        {
+         FindColorProperty();
+        }
+        SaveRiver.AddListener(ChangeMaterialColour);
     }
 
     private void OnDestroy()
     {
-        SaveRiver.RemoveListener(CollectMaterialsFromChildren);
+        SaveRiver.RemoveListener(ChangeMaterialColour);
     }
 
     void CollectMaterialsFromChildren()
@@ -42,20 +56,56 @@ public class ShaderColourChange : MonoBehaviour
                 Debug.Log("Renderer found on: " + transform.name);
                 materials.AddRange(renderer.materials);
             }
+            
           }
         }
 
+    
+    }
+
+    void ChangeMaterialColour()
+    {
         foreach (Material material in materials)
         {
             foreach (ColorPropertyOne colorProperty in colorProperties)
             {
-                Color targetColor = colorProperty.color;
-                Color currentColor = material.GetColor(colorProperty.propertyName);
-                StartCoroutine(LerpColor(material, colorProperty.propertyName, targetColor, currentColor));
+                Color targetColor = colorProperty.Color;
+                
+                Color currentColor = material.GetColor(colorProperty.PropertyName);
+                
+                StartCoroutine(LerpColor(material, colorProperty.PropertyName, targetColor, currentColor));
             }
         }
     }
 
+    void FindColorProperty()
+    {
+        foreach (Material material in materials)
+        {
+            Shader shader = material.shader;
+
+            int propertyCount = shader.GetPropertyCount();
+
+            for (int i = 0; i < propertyCount; i++)
+            {
+                string propertyName = shader.GetPropertyName(i);
+
+                // Assuming that properties with names containing "Color" are color properties
+                if (propertyName.Contains("Color"))
+                {
+                    Debug.Log($"Material {material.name} has a color property: {propertyName}");
+                    
+                    
+                    
+                    colorProperties.Add(new ColorPropertyOne(propertyName, Color.black));
+                    
+                }
+            }
+        }
+    }
+    
+    
+    
     IEnumerator LerpColor(Material material, string propertyName, Color targetColor, Color currentColor)
     {
         float transitionDuration = 5f;
