@@ -2,6 +2,7 @@ using System;
 using CustomObjects;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 namespace SFX
 {
@@ -12,7 +13,7 @@ namespace SFX
         public Sound[] sounds;
         public BoolVariable playCombatMusic;
         public BoolVariable playerWalking;
-        public BoolVariable slimeMoving;
+        public BoolVariable playSlimeMoving;
 
 
         private void Awake()
@@ -21,7 +22,7 @@ namespace SFX
             
             playCombatMusic.ValueChanged.AddListener(ChangeMusic);
             playerWalking.ValueChanged.AddListener(PlayWalkSfx);
-            slimeMoving.ValueChanged.AddListener(PlaySlimeMove);
+            playSlimeMoving.ValueChanged.AddListener(PlaySlimeMove);
 
             foreach (Sound sound in sounds)
             {
@@ -39,6 +40,7 @@ namespace SFX
         {
             playCombatMusic.ValueChanged.RemoveListener(ChangeMusic);
             playerWalking.ValueChanged.RemoveListener(PlayWalkSfx);
+            playSlimeMoving.ValueChanged.RemoveListener(PlaySlimeMove);
         }
         
 
@@ -83,9 +85,9 @@ namespace SFX
             }
         }
         
-        private void PlaySlimeMove(bool slimeMoving)
+        private void PlaySlimeMove(bool PlaylimeMoving)
         {
-            if (slimeMoving)
+            if (playSlimeMoving)
             {
                 PlaySound("Slime Moving");
             }

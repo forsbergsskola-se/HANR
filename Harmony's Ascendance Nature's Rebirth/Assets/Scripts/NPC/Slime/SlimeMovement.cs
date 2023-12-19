@@ -12,6 +12,7 @@ namespace NPC.Slime
         public Face faces;
         public GameObject slimeBody;
         public BoolVariable slimeMoving;
+        public BoolVariable playSlimeMoving;
         public GameObject harmony;
    
         public Animator animator;
@@ -39,6 +40,8 @@ namespace NPC.Slime
         {
             originPos = transform.position;
             faceMaterial = slimeBody.GetComponent<Renderer>().materials[0];
+            
+            slimeMoving.setValue(true);
         }
 
         private void LateUpdate()
@@ -71,11 +74,13 @@ namespace NPC.Slime
                 {
                     agent.isStopped = false;
                     agent.SetDestination(firstDestination);
+                    playSlimeMoving.setValue(true);
                 }
                 else
                 {
                     agent.isStopped = true;
                     quest.questProgression.Invoke(3); //State goes to DefendMimi
+                    playSlimeMoving.setValue(false);
                 }
             }
             else if (quest.currentBossState == Quest.BossQuestLine.WalkWithMimiToBoss)
@@ -84,11 +89,13 @@ namespace NPC.Slime
                 {
                     agent.isStopped = false;
                     agent.SetDestination(secondDestination);
+                    playSlimeMoving.setValue(true);
                 }
                 else
                 {
                     agent.isStopped = true;
                     quest.questProgression.Invoke(5); //State goes to DefeatBoss
+                    playSlimeMoving.setValue(false);
                 }
             }
         }

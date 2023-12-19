@@ -1015,6 +1015,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 48f988a8c9fe7954a90094b6b506ef3e, type: 3}
   m_PrefabInstance: {fileID: 294731381}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &149585106 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5942103219458113677, guid: 2298ad06359e3444fb807b0da31399f7, type: 3}
+  m_PrefabInstance: {fileID: 1271979438}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b58203647177884696af61adb041fb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &151397319
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11404,6 +11415,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 516910576503267183, guid: 05ca4e5887f7d48c09700eecc38ec490, type: 3}
+      propertyPath: quest
+      value: 
+      objectReference: {fileID: 149585106}
     - target: {fileID: 4718287801753836335, guid: 05ca4e5887f7d48c09700eecc38ec490, type: 3}
       propertyPath: m_Name
       value: Critter (purple)
@@ -15407,9 +15422,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4716253334041305480, guid: 956dc9d19c2b44a5bb8ac8ad68deff27, type: 3}
+      propertyPath: quest
+      value: 
+      objectReference: {fileID: 149585106}
+    - target: {fileID: 4716253334041305480, guid: 956dc9d19c2b44a5bb8ac8ad68deff27, type: 3}
       propertyPath: harmony
       value: 
       objectReference: {fileID: 1290377562}
+    - target: {fileID: 4716253334041305480, guid: 956dc9d19c2b44a5bb8ac8ad68deff27, type: 3}
+      propertyPath: playSlimeMoving
+      value: 
+      objectReference: {fileID: 11400000, guid: cd6711c9feeec406c880697b1c61fb0b, type: 2}
     - target: {fileID: 6162880904627538474, guid: 956dc9d19c2b44a5bb8ac8ad68deff27, type: 3}
       propertyPath: m_Name
       value: Mimi
@@ -15453,6 +15476,10 @@ PrefabInstance:
     - target: {fileID: 6274498662744519175, guid: 956dc9d19c2b44a5bb8ac8ad68deff27, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7028979910220082642, guid: 956dc9d19c2b44a5bb8ac8ad68deff27, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25471,36 +25498,8 @@ PrefabInstance:
       value: SoundManager
       objectReference: {fileID: 0}
     - target: {fileID: 4161993978296224015, guid: 36e6b28ec0e81486c97f3a662b833045, type: 3}
-      propertyPath: slimeMoving
-      value: 
-      objectReference: {fileID: 11400000, guid: eb46b4bed1b3d45daa1407631d70f3e6, type: 2}
-    - target: {fileID: 4161993978296224015, guid: 36e6b28ec0e81486c97f3a662b833045, type: 3}
-      propertyPath: sounds.Array.size
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 4161993978296224015, guid: 36e6b28ec0e81486c97f3a662b833045, type: 3}
-      propertyPath: sounds.Array.data[14].volume
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4161993978296224015, guid: 36e6b28ec0e81486c97f3a662b833045, type: 3}
       propertyPath: sounds.Array.data[15].volume
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4161993978296224015, guid: 36e6b28ec0e81486c97f3a662b833045, type: 3}
-      propertyPath: sounds.Array.data[14].audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 4dbfbd1a56081db4ca174255a4d56b1f, type: 3}
-    - target: {fileID: 4161993978296224015, guid: 36e6b28ec0e81486c97f3a662b833045, type: 3}
-      propertyPath: sounds.Array.data[14].soundName
-      value: River
-      objectReference: {fileID: 0}
-    - target: {fileID: 4161993978296224015, guid: 36e6b28ec0e81486c97f3a662b833045, type: 3}
-      propertyPath: sounds.Array.data[15].audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 684d90e2defae1547a1d51bec24e6e9d, type: 3}
-    - target: {fileID: 4161993978296224015, guid: 36e6b28ec0e81486c97f3a662b833045, type: 3}
-      propertyPath: sounds.Array.data[15].soundName
-      value: Slime Moving
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 5363822705403362747, guid: 36e6b28ec0e81486c97f3a662b833045, type: 3}
       propertyPath: m_LocalPosition.x

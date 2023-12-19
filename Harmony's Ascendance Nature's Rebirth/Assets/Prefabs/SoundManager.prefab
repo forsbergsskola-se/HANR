@@ -47,7 +47,7 @@ MonoBehaviour:
   soundVolume: 0.75
   sounds:
   - soundName: Game Music
-    audioClip: {fileID: 8300000, guid: f7c94b00546f2484ea827051a05081a4, type: 3}
+    audioClip: {fileID: 8300000, guid: 6731e26a6085d42619c99070d1bc6287, type: 3}
     volume: 0.2
     loop: 1
     source: {fileID: 0}
@@ -116,5 +116,16 @@ MonoBehaviour:
     volume: 0.2
     loop: 0
     source: {fileID: 0}
+  - soundName: River
+    audioClip: {fileID: 8300000, guid: 4dbfbd1a56081db4ca174255a4d56b1f, type: 3}
+    volume: 0.2
+    loop: 0
+    source: {fileID: 0}
+  - soundName: Slime Moving
+    audioClip: {fileID: 8300000, guid: 684d90e2defae1547a1d51bec24e6e9d, type: 3}
+    volume: 0.2
+    loop: 1
+    source: {fileID: 0}
   playCombatMusic: {fileID: 11400000, guid: aa257ba04d55545ecb6602a7c4170890, type: 2}
   playerWalking: {fileID: 11400000, guid: d72b54557d10b4a9bb0fea503791e0d5, type: 2}
+  playSlimeMoving: {fileID: 11400000, guid: cd6711c9feeec406c880697b1c61fb0b, type: 2}
