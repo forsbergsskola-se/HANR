@@ -39,13 +39,16 @@ namespace Enemy
                 playCombatMusic.setValue(true);
             }
 
-            if (distance >= unDetectionRange && playCombatMusic.getValue())
+            else if (distance >= unDetectionRange && playCombatMusic.getValue())
             {
                 playerInRange.setValue(false);
                 playCombatMusic.setValue(false);
             }
-
-            playerInAttackRange.setValue(distance <= attackRange);
+            else if (distance <= attackRange)
+            {
+                playerInAttackRange.setValue(true);
+            }
+            
         }
     }
 }

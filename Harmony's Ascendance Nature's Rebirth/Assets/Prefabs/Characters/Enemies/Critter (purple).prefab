@@ -832,8 +832,8 @@ MonoBehaviour:
   playerInAttackRange: {fileID: 11400000, guid: c786d175ead9ec44286fbe6576b453c0, type: 2}
   playCombatMusic: {fileID: 11400000, guid: aa257ba04d55545ecb6602a7c4170890, type: 2}
   detectionRange: 10
-  unDetectionRange: 15
-  attackRange: 1
+  unDetectionRange: 12
+  attackRange: 2
 --- !u!114 &5266010472560588685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -866,6 +866,7 @@ MonoBehaviour:
   agent: {fileID: 8338094402280085788}
   deathEffect: {fileID: 100004, guid: 7867af58a6ec48846ae807eb4022fbaa, type: 3}
   exp: {fileID: 11400000, guid: 1a11ff274532c6c48b116faa1b93eb4b, type: 2}
+  quest: {fileID: 0}
 --- !u!114 &5900507210396769317
 MonoBehaviour:
   m_ObjectHideFlags: 0

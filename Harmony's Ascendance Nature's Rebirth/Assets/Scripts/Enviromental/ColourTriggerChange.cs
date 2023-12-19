@@ -1,16 +1,20 @@
 using System.Collections;
+using CustomObjects;
 using UnityEngine;
 
 public class ColourTriggerChange : MonoBehaviour
 {
     private Light mainLight;
     private Coroutine colorTransitionCoroutine;
-
+    
+    [SerializeField] public BoolVariable playBossMusic;
+    
     [SerializeField] private float transitionDuration = 2.0f;
     [SerializeField] private Color bossColor;
     [SerializeField] private Color normalColor;
 
     private bool isTransitioning = false;
+    
 
     void Start()
     {
@@ -27,6 +31,7 @@ public class ColourTriggerChange : MonoBehaviour
     {
         // Start the boss color transition coroutine and store a reference to it
         colorTransitionCoroutine = StartCoroutine(LerpColorboss(bossColor));
+        playBossMusic.setValue(true);
     }
 
     private void OnTriggerExit(Collider other)

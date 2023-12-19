@@ -19,6 +19,7 @@ namespace Enemy.BossEnemy
         [SerializeField] private GameObject deathEffect;
         private PlayerStat playerStat;
         [SerializeField] private Experience exp;
+        public BoolVariable playBossMusic;
 
         public Quest quest;
         private void Start()
@@ -42,6 +43,7 @@ namespace Enemy.BossEnemy
             {
                 animator.SetBool("isDead",true);
                 playCombatMusic.setValue(false);
+                playBossMusic.setValue(false);
             }
         }
 

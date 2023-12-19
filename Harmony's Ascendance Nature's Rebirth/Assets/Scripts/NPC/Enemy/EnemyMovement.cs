@@ -19,9 +19,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float distanceFromPlayer;
     public Animator animator;
     private FloatVariable health;
-
     
-    // Start is called before the first frame update
     void Start()
     {
         health = this.gameObject.GetComponent<EnemyStats>().enemyHealth;

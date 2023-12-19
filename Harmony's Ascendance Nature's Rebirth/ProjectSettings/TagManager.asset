@@ -17,6 +17,7 @@ TagManager:
   - SkillProjectile
   - Canvas
   - MainLight
+  - EnemyHealthBar
   layers:
   - Default
   - TransparentFX

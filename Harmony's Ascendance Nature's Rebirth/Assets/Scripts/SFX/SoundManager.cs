@@ -14,6 +14,7 @@ namespace SFX
         public BoolVariable playCombatMusic;
         public BoolVariable playerWalking;
         public BoolVariable playSlimeMoving;
+        public BoolVariable playBossMusic;
 
 
         private void Awake()
@@ -23,6 +24,7 @@ namespace SFX
             playCombatMusic.ValueChanged.AddListener(ChangeMusic);
             playerWalking.ValueChanged.AddListener(PlayWalkSfx);
             playSlimeMoving.ValueChanged.AddListener(PlaySlimeMove);
+            playBossMusic.ValueChanged.AddListener(ChangeBossMusic);
 
             foreach (Sound sound in sounds)
             {
@@ -41,6 +43,7 @@ namespace SFX
             playCombatMusic.ValueChanged.RemoveListener(ChangeMusic);
             playerWalking.ValueChanged.RemoveListener(PlayWalkSfx);
             playSlimeMoving.ValueChanged.RemoveListener(PlaySlimeMove);
+            playBossMusic.ValueChanged.RemoveListener(ChangeBossMusic);
         }
         
 
@@ -70,6 +73,20 @@ namespace SFX
                 StopSound("Combat Music");
                 PlaySound("Game Music");
                 Debug.Log("Change back");
+            }
+        }
+        
+        private void ChangeBossMusic(bool playBossMusic)
+        {
+            if (playBossMusic)
+            {
+                StopSound("Game Music");
+                PlaySound("Boss Area Music");
+            }
+            else
+            {
+                StopSound("Boss Area Music");
+                PlaySound("Game Music");
             }
         }
         
