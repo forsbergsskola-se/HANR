@@ -28,7 +28,7 @@ namespace UI
         public enum BossQuestLine
         {
             TalkToSlime,
-            FindBossArea,
+            WalkWithMimi,
             DefeatBoss,
             ReturnToRanger
         }
@@ -104,10 +104,10 @@ namespace UI
                 switch (currentBossState)
                 {
                     case BossQuestLine.TalkToSlime:
-                        questTitle.text = "Mimmi";
-                        questLog.text = "¤ Talk to Mimmi";
+                        questTitle.text = "Mimi";
+                        questLog.text = "¤ Talk to Mimi";
                         break;
-                    case BossQuestLine.FindBossArea:
+                    case BossQuestLine.WalkWithMimi:
                         questTitle.text = "Find Boss Area";
                         questLog.text = "¤ Follow Mimi";
                         break;
@@ -145,11 +145,10 @@ namespace UI
 
             if (activeBossQuest)
             {
-                //TODO: when invoking event. Implement quest state
                 if (part == 1)
                     currentBossState = BossQuestLine.TalkToSlime;
                 else if (part == 2)
-                    currentBossState = BossQuestLine.FindBossArea;
+                    currentBossState = BossQuestLine.WalkWithMimi;
                 else if (part == 3)
                     currentBossState = BossQuestLine.DefeatBoss;
                 else if (part == 4)

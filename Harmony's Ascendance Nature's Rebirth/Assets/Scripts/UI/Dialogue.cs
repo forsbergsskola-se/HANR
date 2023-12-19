@@ -17,7 +17,7 @@ public class Dialogue : MonoBehaviour
 {
     public UnityEvent druidToRanger;
     public UnityEvent druidToBearMan;
-    public UnityEvent druidToSlime;
+    public UnityEvent druidToMimi;
     public TMP_Text chating;
     private int dialougeCounter = 0;
 
@@ -25,10 +25,12 @@ public class Dialogue : MonoBehaviour
     public Sprite faceDruid;
     public Sprite faceRanger;
     public Sprite faceBearMan;
+    [FormerlySerializedAs("slimeMimi")] public Sprite faceMimi;
     
     private GameObject PlayerUI;
     [SerializeField] private NavMeshAgent agent;
-    public string[] conversation = new string[5];
+    private string[] conversation = new string[5];
+    private Sprite[] conversationFace = new Sprite[5];
     private bool inConversation;
     
     public Quest quest;
@@ -41,7 +43,7 @@ public class Dialogue : MonoBehaviour
         this.gameObject.SetActive(false);
         druidToRanger.AddListener(InitiateDialogueRanger);
         druidToBearMan.AddListener(InitiateDialogueBearMan);
-        druidToSlime.AddListener(InitiateDialogueSlime);
+        druidToMimi.AddListener(InitiateDialogueMimi);
         PlayerUI = GameObject.FindWithTag("Canvas");
     }
     
@@ -49,7 +51,7 @@ public class Dialogue : MonoBehaviour
     {
         druidToRanger.RemoveListener(InitiateDialogueRanger);
         druidToBearMan.RemoveListener(InitiateDialogueBearMan);
-        druidToSlime.RemoveListener(InitiateDialogueSlime);
+        druidToMimi.RemoveListener(InitiateDialogueMimi);
     }
 
     private void Update()
@@ -72,6 +74,7 @@ public class Dialogue : MonoBehaviour
                     cameraScript.talkingRanger = false;
                     cameraScript.talkingBearMan = false;
                     clickCheck.enabled = true;
+                    
                     if (quest.activeWaterStaffQuest)
                     {
                         switch (quest.currentWaterStaffState)
@@ -90,50 +93,8 @@ public class Dialogue : MonoBehaviour
                 else //Dialogue continues
                 {
                     chating.text = conversation[dialougeCounter];
+                    currentlySpeaking.sprite = conversationFace[dialougeCounter]; //For dialogue face images
                     
-                    //For dialogue face images
-                    if (quest.currentWaterStaffState == Quest.WaterStaffQuestLine.TalkingToRanger) // When talking to ranger first time
-                    {
-                        if (chating.text == conversation[1] || chating.text == conversation[3])
-                        {
-                            currentlySpeaking.sprite = faceDruid;
-                        }
-                        else if (chating.text == conversation[2] ||
-                                 chating.text == conversation[4])
-                        {
-                            currentlySpeaking.sprite = faceRanger;
-                        }
-                    }
-                    else if (quest.currentWaterStaffState == Quest.WaterStaffQuestLine.GoBackToRanger)
-                    {
-                        currentlySpeaking.sprite = faceRanger;
-                    }
-
-                    if (quest.currentWaterStaffState == Quest.WaterStaffQuestLine.FindingBearMan)
-                    {
-                        if (chating.text == conversation[1] || chating.text == conversation[3])
-                        {
-                            currentlySpeaking.sprite = faceDruid;
-                        }
-                        else if (chating.text == conversation[2] ||
-                                 chating.text == conversation[4])
-                        {
-                            currentlySpeaking.sprite = faceBearMan;
-                        }
-                    }
-
-                    if (quest.currentWaterStaffState == Quest.WaterStaffQuestLine.GoBackToRanger)
-                    {
-                        if (chating.text == conversation[1] || chating.text == conversation[3])
-                        {
-                            currentlySpeaking.sprite = faceDruid;
-                        }
-                        else if (chating.text == conversation[2] ||
-                                 chating.text == conversation[4])
-                        {
-                            currentlySpeaking.sprite = faceRanger;
-                        }
-                    }
                     dialougeCounter += 1;
                 }
             }
@@ -171,7 +132,7 @@ public class Dialogue : MonoBehaviour
         }
         
     }
-    private void InitiateDialogueSlime()
+    private void InitiateDialogueMimi()
     {
         if (!inConversation && dialougeCounter  == 0)
         {
@@ -194,23 +155,34 @@ public class Dialogue : MonoBehaviour
             if (quest.currentWaterStaffState == Quest.WaterStaffQuestLine.TalkingToRanger)
             {
                 conversation[0] = "I'm distraught, the water in these woods are vital for all life but has been corrupted by darkness and is slowly killing everything that is dependent on it.";
+                conversationFace[0] = faceRanger;
                 conversation[1] = "Oh hello! What do you mean? Who corrupted the water?";
+                conversationFace[1] = faceDruid;
                 conversation[2] = "Dark forces has spread over these lands lately, it came from deep in the mountains... Those fire rocks are so evil, this forest used to be so beautiful!";
+                conversationFace[2] = faceRanger;
                 conversation[3] = "I know some magic, maybe I can help?";
+                conversationFace[3] = faceDruid;
                 conversation[4] = "There is a tale of a purifying spell crafted by the Bear Man. He keeps to himself and can be hard to find, but I've heard that he likes carving runes in to stone...";
+                conversationFace[4] = faceRanger;
             }
 
             else if (quest.currentWaterStaffState == Quest.WaterStaffQuestLine.GoBackToRanger)
             {
                 conversation[0] = "Thank you so much for your help!";
+                conversationFace[0] = faceRanger;
                 conversation[1] = "Don't mention it! Your home looks so beautiful now that the river is clean.";
+                conversationFace[1] = faceDruid;
                 conversation[2] = "It used to always look at this, but after the this stone creature woke up inside the mountain the forest turned dark.";
+                conversationFace[2] = faceRanger;
                 conversation[3] = "What are those stone creatures?";
+                conversationFace[3] = faceDruid;
                 conversation[4] = "Follow my friend Slimy, he'll show you where it resides.";
+                conversationFace[4] = faceRanger;
             }
             else if (quest.currentWaterStaffState != Quest.WaterStaffQuestLine.TalkingToRanger) //If player tries to retrigger the conversation again
             {
                 conversation[0] = "Go find the BearMan please!";
+                conversationFace[0] = faceRanger;
                 dialougeCounter = 4; //To cut the dialogue short
             }
         }
@@ -223,23 +195,27 @@ public class Dialogue : MonoBehaviour
             if (quest.currentWaterStaffState == Quest.WaterStaffQuestLine.FindingBearMan)
             {
                 conversation[0] = "Rawr! Who goes there?";
-                conversation[1] =
-                    "Don't be alarmed, I'm a friend! I'm searching for a spell to purify the river by the Rangers grounds";
-                conversation[2] =
-                    "Oh, you're a friend of little Ranger? In that case I may be able to help you. It's been a long time since I used magic, other than to carve my masterpieces.";
-                conversation[3] =
-                    "There should be some crates with spell books and potions by the pine trees, feel free to have a look!";
+                conversationFace[0] = faceBearMan;
+                conversation[1] = "Don't be alarmed, I'm a friend! I'm searching for a spell to purify the river by the Rangers grounds";
+                conversationFace[1] = faceDruid;
+                conversation[2] = "Oh, you're a friend of little Ranger? In that case I may be able to help you. It's been a long time since I used magic, other than to carve my masterpieces.";
+                conversationFace[2] = faceBearMan;
+                conversation[3] = "There should be some crates with spell book and potions by the pine trees, feel free to have a look!";
+                conversationFace[3] = faceBearMan;
                 conversation[4] = "Thank you";
+                conversationFace[4] = faceDruid;
             }
             else if (quest.currentWaterStaffState !=
                      Quest.WaterStaffQuestLine.FindingBearMan) //If Druid goes to BearMan to soon
             {
                 conversation[0] = "Growl! GET AWAY FROM ME!";
+                conversationFace[0] = faceBearMan;
                 dialougeCounter = 4; //To cut the dialogue short
             }
             else if (quest.currentWaterStaffState == Quest.WaterStaffQuestLine.GoBackToRanger)
             {
                 conversation[0] = "You have the Water Staff Now go save the forest!";
+                conversationFace[0] = faceBearMan;
                 dialougeCounter = 4; //To cut the dialogue short
             }
         }
@@ -250,11 +226,13 @@ public class Dialogue : MonoBehaviour
         if (!quest.activeBossQuest)
         {
             conversation[0] = "Hello friend!";
+            conversationFace[0] = faceMimi;
             dialougeCounter = 4; //To cut the dialogue short
         } 
         else
         {
             conversation[0] = "Our savior! Let me guide you to the stone creature.";
+            conversationFace[0] = faceMimi;
             dialougeCounter = 4; //To cut the dialogue short
         }
     }

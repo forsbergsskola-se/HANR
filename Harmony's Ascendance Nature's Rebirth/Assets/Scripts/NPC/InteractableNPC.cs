@@ -12,19 +12,27 @@ namespace NPC
         private void Update()
         {
             if (playerClose)
-            { 
-                if (thisNPC.name == "BearMan")
+            {
+                switch (thisNPC.name)
                 {
-                    dialogue.druidToBearMan.Invoke();
-                    if(quest.currentWaterStaffState == Quest.WaterStaffQuestLine.FindingBearMan)
-                        quest.questProgression.Invoke(2);
-                    playerClose = false;
-                }
-                if (thisNPC.name == "Ranger")
-                {
-                    dialogue.druidToRanger.Invoke();
-                    playerClose = false;
-                }
+                    case "BearMan":
+                        dialogue.druidToBearMan.Invoke();
+                        if(quest.currentWaterStaffState == Quest.WaterStaffQuestLine.FindingBearMan)
+                            quest.questProgression.Invoke(2);
+                        playerClose = false;
+                        break;
+                    case "Ranger":
+                        dialogue.druidToRanger.Invoke();
+                        playerClose = false;
+                        break;
+                    case "Mimi":
+                        if(quest.activeBossQuest)
+                            quest.questProgression.Invoke(2); //Quest goes to WalkWithMimi
+                        dialogue.druidToMimi.Invoke();
+                        break;
+                        
+                } 
+               
             }
         }
        

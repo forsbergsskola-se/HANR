@@ -24,7 +24,6 @@ public class ItemPickUp : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.G) && Inside)
         {
-            
             //Adds item Pickup
             PickUp();
         }

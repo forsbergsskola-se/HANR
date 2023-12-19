@@ -25,11 +25,21 @@ public class TriggerHealTheRiver : MonoBehaviour
     private void Start()
     {
         usableItems.usedBook.AddListener(CheckBookClick);
+        instructions = FindObjectOfType<Instructions>().GetComponent<Instructions>();
     }
 
     private void OnDestroy()
     {
         usableItems.usedBook.RemoveListener(CheckBookClick);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            instructions.gameObject.SetActive(true);
+            instructions.buttonInput.Invoke("Interact");
+        }
     }
 
     private void OnTriggerStay(Collider other)

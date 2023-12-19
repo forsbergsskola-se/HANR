@@ -99,8 +99,9 @@ MonoBehaviour:
   itemInside:
   - {fileID: 2533520493896483002, guid: 4dbd6a50b48b7a141bf38a95cb717ffe, type: 3}
   - {fileID: 8907998938104921745, guid: 5dabb0ec02a38a445a09495eb7fb0f5a, type: 3}
-  - {fileID: 5301117808851601948, guid: c9b83f0794604b949aae6c4da67b399a, type: 3}
-  questUI: {fileID: 0}
+  - {fileID: 3047738729261387592, guid: 2163b60514bd77b4fa9e08cf1927d4fc, type: 3}
+  quest: {fileID: 0}
+  instructions: {fileID: 0}
 --- !u!136 &4168069111364566181
 CapsuleCollider:
   m_ObjectHideFlags: 0

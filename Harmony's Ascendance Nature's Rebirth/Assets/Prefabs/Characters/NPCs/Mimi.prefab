@@ -263,6 +263,7 @@ GameObject:
   - component: {fileID: 7306378875511959392}
   - component: {fileID: 512367494975716879}
   - component: {fileID: 7680660572371220421}
+  - component: {fileID: 7028979910220082642}
   m_Layer: 12
   m_Name: Mimi
   m_TagString: Untagged
@@ -421,6 +422,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7028979910220082642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6162880904627538474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 313cd96ef6821954f8b0068ad37be3c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 0}
+  thisNPC: {fileID: 0}
+  quest: {fileID: 0}
 --- !u!1 &8643146319999693514
 GameObject:
   m_ObjectHideFlags: 0
