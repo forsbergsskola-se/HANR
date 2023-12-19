@@ -1,3 +1,4 @@
+using NPC.Slime;
 using UI;
 using UnityEngine;
 
@@ -26,13 +27,13 @@ namespace NPC
                         playerClose = false;
                         break;
                     case "Mimi":
-                        if(quest.activeBossQuest)
+                        if (quest.activeBossQuest)
+                        {
                             quest.questProgression.Invoke(2); //Quest goes to WalkWithMimi
-                        dialogue.druidToMimi.Invoke();
+                            this.gameObject.GetComponent<SlimeMovement>().slimeMoving.setValue(true);
+                        }
                         break;
-                        
-                } 
-               
+                }
             }
         }
        

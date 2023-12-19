@@ -27,8 +27,10 @@ namespace UI
         
         public enum BossQuestLine
         {
-            TalkToSlime,
+            InteractWithMimi,
             WalkWithMimi,
+            DefendMimi,
+            WalkWithMimiToBoss,
             DefeatBoss,
             ReturnToRanger
         }
@@ -42,6 +44,9 @@ namespace UI
         public TMP_Text questLog;
         public WaterStaffQuestLine currentWaterStaffState;
         public BossQuestLine currentBossState;
+
+        public int killCountCritter;
+        public int killCountBoss;
         void Start()
         {
             activeWaterStaffQuest = true;
@@ -66,18 +71,15 @@ namespace UI
                         break;
                     case WaterStaffQuestLine.FindingBearMan: //1
                         questTitle.text = "Find and Talk To the BearMan";
-                        questLog.text =
-                            "¤ I need to find this BearMan. But it's a big forest, he can be anywhere. Wonder if he left a teleport nearby for quicker traversal?";
+                        questLog.text = "¤ I need to find this BearMan. But it's a big forest, he can be anywhere. Wonder if he left a teleport nearby for quicker traversal?";
                         break;
                     case WaterStaffQuestLine.CollectingCrate: //2
                         questTitle.text = "Potion Necessities";
-                        questLog.text =
-                            "¤ O_O a crate! Let's collect the crates content."; //Destroy the crate + spawn items (potion)
+                        questLog.text = "¤ O_O a crate! Let's collect the crates content."; //Destroy the crate + spawn items (potion)
                         break;
                     case WaterStaffQuestLine.FindingRiverByRangerArea: //3
                         questTitle.text = "Find The River";
-                        questLog.text =
-                            "¤ The river by the Rangers camp huh. I think I noticed a partly destroyed bridge as well.";
+                        questLog.text = "¤ The river by the Rangers camp huh. I think I noticed a partly destroyed bridge as well.";
                         break;
                     case WaterStaffQuestLine.SaveTheRiver: //4 //TODO Invoke changing water script
                         questTitle.text = "Save The River!";
@@ -94,7 +96,7 @@ namespace UI
                     case WaterStaffQuestLine.EndQuest:
                         activeWaterStaffQuest = false;
                         activeBossQuest = true;
-                        currentBossState = BossQuestLine.TalkToSlime;
+                        currentBossState = BossQuestLine.InteractWithMimi;
                         break;
                 }
             }
@@ -103,17 +105,31 @@ namespace UI
             {
                 switch (currentBossState)
                 {
-                    case BossQuestLine.TalkToSlime:
-                        questTitle.text = "Mimi";
-                        questLog.text = "¤ Talk to Mimi";
+                    case BossQuestLine.InteractWithMimi:
+                        questTitle.text = "Rangers Friend";
+                        questLog.text = "¤ Go to Mimi";
                         break;
                     case BossQuestLine.WalkWithMimi:
-                        questTitle.text = "Find Boss Area";
+                        questTitle.text = "Mimi";
                         questLog.text = "¤ Follow Mimi";
+                        break;
+                    case BossQuestLine.DefendMimi:
+                        questTitle.text = "Critters!";
+                        questLog.text = $"¤ I need to defend Mimi\n¤ Critters defeated: {killCountCritter}/2";
+                        if (killCountCritter == 2)
+                        {
+                            questProgression.Invoke(4);
+                        }
+                        break;
+                    case BossQuestLine.WalkWithMimiToBoss:
+                        questTitle.text = "Walk";
+                        questLog.text = "¤ Let's continue to follow Mimi";
                         break;
                     case BossQuestLine.DefeatBoss:
                         questTitle.text = "Defeat the Stone Creature!";
                         questLog.text = "0_0 He's big... 0_0";
+                        if (killCountBoss == 1)
+                            questProgression.Invoke(6);
                         break;
                     case BossQuestLine.ReturnToRanger:
                         questTitle.text = "Congratulations!";
@@ -146,12 +162,16 @@ namespace UI
             if (activeBossQuest)
             {
                 if (part == 1)
-                    currentBossState = BossQuestLine.TalkToSlime;
+                    currentBossState = BossQuestLine.InteractWithMimi;
                 else if (part == 2)
                     currentBossState = BossQuestLine.WalkWithMimi;
                 else if (part == 3)
-                    currentBossState = BossQuestLine.DefeatBoss;
+                    currentBossState = BossQuestLine.DefendMimi;
                 else if (part == 4)
+                    currentBossState = BossQuestLine.WalkWithMimiToBoss;
+                else if (part == 5)
+                    currentBossState = BossQuestLine.DefeatBoss;
+                else if (part == 6)
                     currentBossState = BossQuestLine.ReturnToRanger;
             }
         }

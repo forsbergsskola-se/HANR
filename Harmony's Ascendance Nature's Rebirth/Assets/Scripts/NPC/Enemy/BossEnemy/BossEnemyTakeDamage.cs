@@ -4,6 +4,7 @@ using CustomObjects;
 using Player;
 using Player.SkillStats;
 using TMPro;
+using UI;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
@@ -17,6 +18,8 @@ namespace Enemy.BossEnemy
         [SerializeField] private GameObject deathEffect;
         private PlayerStat playerStat;
         [SerializeField] private Experience exp;
+
+        public Quest quest;
         private void Start()
         {
             playerStat = GameObject.FindWithTag("Player").GetComponent<PlayerStat>();
@@ -26,6 +29,7 @@ namespace Enemy.BossEnemy
 
         private void OnDestroy()
         {
+            quest.killCountBoss++;
             float newexp = playerStat.exp.getValue() + exp.exp;
             playerStat.exp.setValue(newexp);
             enemyHealth.ValueChanged.RemoveListener(enemyDead);

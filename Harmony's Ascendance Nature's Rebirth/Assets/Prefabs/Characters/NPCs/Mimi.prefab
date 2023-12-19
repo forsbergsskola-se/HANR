@@ -264,6 +264,7 @@ GameObject:
   - component: {fileID: 512367494975716879}
   - component: {fileID: 7680660572371220421}
   - component: {fileID: 7028979910220082642}
+  - component: {fileID: 1934949816594866032}
   m_Layer: 12
   m_Name: Mimi
   m_TagString: Untagged
@@ -279,7 +280,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6162880904627538474}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.9212775, z: -0, w: -0.388906}
+  m_LocalRotation: {x: 0, y: 0.9212771, z: -0, w: -0.3889068}
   m_LocalPosition: {x: 708.5227, y: 176.34, z: 774.30005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -435,8 +436,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue: {fileID: 0}
-  thisNPC: {fileID: 0}
+  thisNPC: {fileID: 6162880904627538474}
   quest: {fileID: 0}
+--- !u!136 &1934949816594866032
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6162880904627538474}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8643146319999693514
 GameObject:
   m_ObjectHideFlags: 0
