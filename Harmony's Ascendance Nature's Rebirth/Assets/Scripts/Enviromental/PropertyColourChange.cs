@@ -12,13 +12,17 @@ public class ColorProperty
 
 public class PropertyColourChange : MonoBehaviour
 {
+    [SerializeField] private Light mainLight;
+    [SerializeField] private float transitionDuration;
     [SerializeField] private Material[] materials;
     [SerializeField] private ColorProperty[] colorProperties;
+    [SerializeField] private Color SkyColour;
 
     public UnityEvent SaveRiver;
 
     void Start()
     {
+        CollectMaterialsFromChildren();
         SaveRiver.AddListener(CollectMaterialsFromChildren);
     }
 
@@ -29,6 +33,7 @@ public class PropertyColourChange : MonoBehaviour
 
     void CollectMaterialsFromChildren()
     {
+        StartCoroutine(LerpLight(SkyColour));
         foreach (Transform child in transform)
         {
             Renderer renderer = child.GetComponent<Renderer>();
@@ -66,5 +71,22 @@ public class PropertyColourChange : MonoBehaviour
         }
 
         material.SetColor(propertyName, targetColor);
+    }
+    
+    IEnumerator LerpLight(Color targetColor)
+    {
+
+        Color initialColor = mainLight.color;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < transitionDuration)
+        {
+            mainLight.color = Color.Lerp(initialColor, targetColor, elapsedTime / transitionDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        mainLight.color = targetColor;
+      
     }
 }

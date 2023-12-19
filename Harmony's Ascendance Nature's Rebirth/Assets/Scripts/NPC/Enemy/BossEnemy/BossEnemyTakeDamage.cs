@@ -14,6 +14,7 @@ namespace Enemy.BossEnemy
     public class BossEnemyTakeDamage : MonoBehaviour
     {
         public FloatVariable enemyHealth;
+        public BoolVariable playCombatMusic;
         [SerializeField] private Animator animator;
         [SerializeField] private GameObject deathEffect;
         private PlayerStat playerStat;
@@ -40,6 +41,7 @@ namespace Enemy.BossEnemy
             if (health <= 0)
             {
                 animator.SetBool("isDead",true);
+                playCombatMusic.setValue(false);
             }
         }
 

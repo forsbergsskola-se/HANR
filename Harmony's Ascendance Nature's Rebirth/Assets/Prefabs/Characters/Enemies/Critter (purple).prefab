@@ -861,6 +861,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: {fileID: 11400000, guid: 1e024cfec2cd94a769db922439b46896, type: 2}
+  playCombatMusic: {fileID: 11400000, guid: aa257ba04d55545ecb6602a7c4170890, type: 2}
   animator: {fileID: 7575389782524006198}
   agent: {fileID: 8338094402280085788}
   deathEffect: {fileID: 100004, guid: 7867af58a6ec48846ae807eb4022fbaa, type: 3}

@@ -13,6 +13,7 @@ namespace NPC.Enemy.Critters
     public class CritterTakeDamage : MonoBehaviour
     {
         public FloatVariable enemyHealth;
+        public BoolVariable playCombatMusic;
         [SerializeField] private Animator animator;
         [SerializeField] private NavMeshAgent agent;
         [SerializeField] private GameObject deathEffect;
@@ -39,6 +40,7 @@ namespace NPC.Enemy.Critters
             if (health <= 0)
             {
                 animator.SetBool("IsDead",true);
+                playCombatMusic.setValue(false);
             }
         }
 
