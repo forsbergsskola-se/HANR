@@ -45,14 +45,7 @@ namespace Enemy
                 playCombatMusic.setValue(false);
             }
 
-            if (distance <= attackRange)
-            {
-                playerInAttackRange.setValue(true);
-            }
-            else
-            {
-                playerInAttackRange.setValue(false);
-            }
+            playerInAttackRange.setValue(distance <= attackRange);
         }
     }
 }

@@ -29,7 +29,7 @@ namespace NPC.Enemy.Critters
 
         private void OnDestroy()
         {
-            quest.killCountCritter++;
+            //quest.killCountCritter++;
             float newexp = playerstat.exp.getValue() + exp.exp;
             playerstat.exp.setValue(newexp);
             enemyHealth.ValueChanged.RemoveListener(enemyDead);
