@@ -12,6 +12,7 @@ namespace SFX
         public Sound[] sounds;
         public BoolVariable playCombatMusic;
         public BoolVariable playerWalking;
+        public BoolVariable slimeMoving;
 
 
         private void Awake()
@@ -20,6 +21,7 @@ namespace SFX
             
             playCombatMusic.ValueChanged.AddListener(ChangeMusic);
             playerWalking.ValueChanged.AddListener(PlayWalkSfx);
+            slimeMoving.ValueChanged.AddListener(PlaySlimeMove);
 
             foreach (Sound sound in sounds)
             {
@@ -31,6 +33,7 @@ namespace SFX
         }
 
        
+
 
         private void OnDestroy()
         {
@@ -77,6 +80,18 @@ namespace SFX
             else
             {
                 StopSound("Walking");
+            }
+        }
+        
+        private void PlaySlimeMove(bool slimeMoving)
+        {
+            if (slimeMoving)
+            {
+                PlaySound("Slime Moving");
+            }
+            else
+            {
+                StopSound("Slime Moving");
             }
         }
         

@@ -25471,6 +25471,10 @@ PrefabInstance:
       value: SoundManager
       objectReference: {fileID: 0}
     - target: {fileID: 4161993978296224015, guid: 36e6b28ec0e81486c97f3a662b833045, type: 3}
+      propertyPath: slimeMoving
+      value: 
+      objectReference: {fileID: 11400000, guid: eb46b4bed1b3d45daa1407631d70f3e6, type: 2}
+    - target: {fileID: 4161993978296224015, guid: 36e6b28ec0e81486c97f3a662b833045, type: 3}
       propertyPath: sounds.Array.size
       value: 16
       objectReference: {fileID: 0}
