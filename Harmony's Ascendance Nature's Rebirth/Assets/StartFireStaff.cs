@@ -5,7 +5,7 @@ using UI;
 using UnityEditor;
 using UnityEngine;
 
-public class ItemPickUp : MonoBehaviour
+public class ItemPickUpFire : MonoBehaviour
 {
     private InventoryHolder inventoryHolder;
     public Item item;
@@ -26,6 +26,7 @@ public class ItemPickUp : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.G) && Inside)
         {
+            
             //Adds item Pickup
             PickUp();
         }
@@ -38,6 +39,7 @@ public class ItemPickUp : MonoBehaviour
             instructions.gameObject.SetActive(true);
             instructions.buttonInput.Invoke("Item");
             Inside = true;
+            PickUp();
         }
     }
 

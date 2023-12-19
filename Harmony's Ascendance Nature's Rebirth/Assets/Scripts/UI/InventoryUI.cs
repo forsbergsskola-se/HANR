@@ -12,6 +12,7 @@ public class InventoryUI : MonoBehaviour
 {
     public List<Image> slots = new List<Image>(){};
     public Item defaultImage;
+    public Item fireStaff;
     private GameObject player;
     private InventoryHolder inventoryHolder; 
     private UsableItems usableItems;
@@ -43,6 +44,7 @@ public class InventoryUI : MonoBehaviour
             color.a = 0f;
             slots[i].color = color;
         }
+        
     }
 
     void UpdateInventoryHUD()
