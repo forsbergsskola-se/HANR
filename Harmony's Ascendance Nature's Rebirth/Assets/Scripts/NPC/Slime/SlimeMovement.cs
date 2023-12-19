@@ -1,5 +1,6 @@
 using System;
 using CustomObjects;
+using UI;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
@@ -16,7 +17,9 @@ namespace NPC.Slime
         public Animator animator;
         public NavMeshAgent agent;
         public Vector3 firstDestination;
-        
+        public Vector3 secondDestination;
+
+        public Quest quest;
         
         private Material faceMaterial;
         private Vector3 originPos;
@@ -36,8 +39,6 @@ namespace NPC.Slime
         {
             originPos = transform.position;
             faceMaterial = slimeBody.GetComponent<Renderer>().materials[0];
-            
-            slimeMoving.setValue(true);
         }
 
         private void LateUpdate()
@@ -64,16 +65,32 @@ namespace NPC.Slime
 
         public void MoveSlime(bool slimeMoving)
         {
-            if (this.slimeMoving)
+            if (quest.currentBossState == Quest.BossQuestLine.WalkWithMimi)
             {
-                agent.isStopped = false;
-                agent.SetDestination(firstDestination);
+                if (this.slimeMoving)
+                {
+                    agent.isStopped = false;
+                    agent.SetDestination(firstDestination);
+                }
+                else
+                {
+                    agent.isStopped = true;
+                    quest.questProgression.Invoke(3); //State goes to DefendMimi
+                }
             }
-            else
+            else if (quest.currentBossState == Quest.BossQuestLine.WalkWithMimiToBoss)
             {
-                agent.isStopped = true;
+                if (this.slimeMoving)
+                {
+                    agent.isStopped = false;
+                    agent.SetDestination(secondDestination);
+                }
+                else
+                {
+                    agent.isStopped = true;
+                    quest.questProgression.Invoke(5); //State goes to DefeatBoss
+                }
             }
-            
         }
         
         void SetFace(Texture tex)

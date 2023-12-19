@@ -17,7 +17,6 @@ public class Dialogue : MonoBehaviour
 {
     public UnityEvent druidToRanger;
     public UnityEvent druidToBearMan;
-    public UnityEvent druidToMimi;
     public TMP_Text chating;
     private int dialougeCounter = 0;
 
@@ -25,7 +24,6 @@ public class Dialogue : MonoBehaviour
     public Sprite faceDruid;
     public Sprite faceRanger;
     public Sprite faceBearMan;
-    [FormerlySerializedAs("slimeMimi")] public Sprite faceMimi;
     
     private GameObject PlayerUI;
     [SerializeField] private NavMeshAgent agent;
@@ -43,7 +41,6 @@ public class Dialogue : MonoBehaviour
         this.gameObject.SetActive(false);
         druidToRanger.AddListener(InitiateDialogueRanger);
         druidToBearMan.AddListener(InitiateDialogueBearMan);
-        druidToMimi.AddListener(InitiateDialogueMimi);
         PlayerUI = GameObject.FindWithTag("Canvas");
     }
     
@@ -51,7 +48,6 @@ public class Dialogue : MonoBehaviour
     {
         druidToRanger.RemoveListener(InitiateDialogueRanger);
         druidToBearMan.RemoveListener(InitiateDialogueBearMan);
-        druidToMimi.RemoveListener(InitiateDialogueMimi);
     }
 
     private void Update()
@@ -132,22 +128,6 @@ public class Dialogue : MonoBehaviour
         }
         
     }
-    private void InitiateDialogueMimi()
-    {
-        if (!inConversation && dialougeCounter  == 0)
-        {
-            FillArraySlime();
-            PlayerUI.SetActive(false);
-            this.gameObject.SetActive(true);
-            agent.isStopped = true;
-            chating.text = conversation[0];
-            currentlySpeaking.sprite = faceBearMan;
-            dialougeCounter += 1;
-            inConversation = true;
-        }
-        
-    }
-
     private void FillArrayRanger() //Dialogue lines
     {
         if (quest.activeWaterStaffQuest)
@@ -181,7 +161,7 @@ public class Dialogue : MonoBehaviour
             }
             else if (quest.currentWaterStaffState != Quest.WaterStaffQuestLine.TalkingToRanger) //If player tries to retrigger the conversation again
             {
-                conversation[0] = "Go find the BearMan please!";
+                conversation[0] = "Have you healed the river yet?!";
                 conversationFace[0] = faceRanger;
                 dialougeCounter = 4; //To cut the dialogue short
             }
@@ -220,20 +200,5 @@ public class Dialogue : MonoBehaviour
             }
         }
     }
-
-    private void FillArraySlime()
-    {
-        if (!quest.activeBossQuest)
-        {
-            conversation[0] = "Hello friend!";
-            conversationFace[0] = faceMimi;
-            dialougeCounter = 4; //To cut the dialogue short
-        } 
-        else
-        {
-            conversation[0] = "Our savior! Let me guide you to the stone creature.";
-            conversationFace[0] = faceMimi;
-            dialougeCounter = 4; //To cut the dialogue short
-        }
-    }
+    
 }

@@ -4,6 +4,7 @@ using CustomObjects;
 using Enemy;
 using Enemy.BossEnemy;
 using Player;
+using UI;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -19,15 +20,16 @@ namespace NPC.Enemy.Critters
         private PlayerStat playerstat;
         [SerializeField] private Experience exp;
 
+        public Quest quest;
         private void Start()
         {
-            
             playerstat = GameObject.FindWithTag("Player").GetComponent<PlayerStat>();
             enemyHealth.ValueChanged.AddListener(enemyDead);
         }
 
         private void OnDestroy()
         {
+            quest.killCountCritter++;
             float newexp = playerstat.exp.getValue() + exp.exp;
             playerstat.exp.setValue(newexp);
             enemyHealth.ValueChanged.RemoveListener(enemyDead);
