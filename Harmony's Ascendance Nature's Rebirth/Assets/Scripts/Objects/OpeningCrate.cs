@@ -10,26 +10,13 @@ public class OpeningCrate : MonoBehaviour
 {
     public GameObject [] itemInside = new GameObject [3];
     public Quest quest;
+    private bool close;
 
     [SerializeField] private Instructions instructions;
 
-    private void OnTriggerEnter(Collider other)
+    private void Update()
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            instructions.gameObject.SetActive(true);
-            instructions.buttonInput.Invoke("Interact");
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        instructions.gameObject.SetActive(false);
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player") && Input.GetKeyDown(KeyCode.G) && quest.currentWaterStaffState == Quest.WaterStaffQuestLine.CollectingCrate)
+        if (close && Input.GetKeyDown(KeyCode.G) && quest.currentWaterStaffState == Quest.WaterStaffQuestLine.CollectingCrate)
         {
             for (int slot = 0; slot < 3; slot++)
             {
@@ -49,4 +36,22 @@ public class OpeningCrate : MonoBehaviour
                 quest.questProgression.Invoke(3); //State goes to next (FindingRiverByRangerArea)
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player") && quest.currentWaterStaffState == Quest.WaterStaffQuestLine.CollectingCrate)
+        {
+            close = true;
+            instructions.gameObject.SetActive(true);
+            instructions.buttonInput.Invoke("Interact");
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        close = false;
+        instructions.gameObject.SetActive(false);
+    }
+
+ 
 }
