@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5226316510126515040}
   - component: {fileID: 5226316510110644160}
-  - component: {fileID: 5684297370783904850}
+  - component: {fileID: 6025084422247296736}
   m_Layer: 0
   m_Name: Prefab_TreeLarge_04
   m_TagString: Untagged
@@ -68,27 +68,22 @@ LODGroup:
     renderers:
     - renderer: {fileID: 5226316510128808326}
   m_Enabled: 1
---- !u!65 &5684297370783904850
-BoxCollider:
+--- !u!208 &6025084422247296736
+NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5226316510126817088}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 6, y: 19, z: 6}
+  m_Shape: 0
+  m_Extents: {x: 5, y: 1, z: 5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &5226316510126817090
 GameObject:
   m_ObjectHideFlags: 0

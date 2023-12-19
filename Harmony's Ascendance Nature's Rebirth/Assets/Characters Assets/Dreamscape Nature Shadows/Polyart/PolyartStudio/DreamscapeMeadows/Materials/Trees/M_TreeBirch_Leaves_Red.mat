@@ -146,8 +146,8 @@ Material:
     - _ColorBottom: {r: 0.37178555, g: 0.6603774, b: 0.04049486, a: 0}
     - _ColorTop: {r: 0.6954966, g: 0.7254902, b: 0.039215665, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FoliageColorBottom: {r: 0.16981131, g: 0.15497515, b: 0.15138838, a: 1}
-    - _FoliageColorTop: {r: 0, g: 0, b: 0, a: 1}
+    - _FoliageColorBottom: {r: 0.2264151, g: 0.06540666, b: 0.013883951, a: 1}
+    - _FoliageColorTop: {r: 0.29411766, g: 0.09803922, b: 0.03529412, a: 1}
     - _Speed: {r: 0.16, g: 0.29, b: 0, a: 0}
     - _WindSwayDirection: {r: 1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
