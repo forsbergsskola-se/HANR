@@ -129,7 +129,7 @@ namespace UI
                         questTitle.text = "Defeat the Stone Creature!";
                         questLog.text = "0_0 He's big... 0_0";
                         if (killCountBoss == 1)
-                            questProgression.Invoke(6);
+                            questProgression.Invoke(6); //State goes to ReturnToRanger
                         break;
                     case BossQuestLine.ReturnToRanger:
                         questTitle.text = "Congratulations!";

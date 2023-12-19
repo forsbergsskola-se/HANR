@@ -70,9 +70,9 @@ public class TriggerHealTheRiver : MonoBehaviour
         if (clickable)
         {
             SFX.SoundManager.PlaySound("River");
-            Debug.Log("we click");
             colourChangeWater.SaveRiver.Invoke();
             waterStaff.SetActive(true);
+            instructions.buttonInstructions.text = null;
             quest.questProgression.Invoke(5); 
         }
     }
