@@ -33,6 +33,7 @@ public class ShaderColourChange : MonoBehaviour
 
     void Start()
     {
+        
         CollectMaterialsFromChildren();
         if(findColorObjects)
         {
