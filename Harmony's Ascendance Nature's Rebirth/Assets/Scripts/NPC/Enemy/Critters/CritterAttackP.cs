@@ -19,9 +19,9 @@ namespace Enemy.Critters
             PlayerInAttackRangeP.ValueChanged.RemoveListener(meeleAttack);
         }
         
-        private void meeleAttack(bool inRange)
+        private void meeleAttack(bool PlayerInAttackRangeP)
         {
-            animator.SetBool("isInAttackRange",inRange);
+            animator.SetBool("isInAttackRange",PlayerInAttackRangeP);
         }
     }
 }

@@ -10,18 +10,18 @@ namespace Enemy.Critters
         
         private void Awake()
         {
-            PlayerInAttackRangeR.ValueChanged.AddListener(meeleAttack);
+            PlayerInAttackRangeR.ValueChanged.AddListener(MeeleAttack);
         }
         
         private void OnDestroy()
         {
 
-            PlayerInAttackRangeR.ValueChanged.RemoveListener(meeleAttack);
+            PlayerInAttackRangeR.ValueChanged.RemoveListener(MeeleAttack);
         }
         
-        private void meeleAttack(bool inRange)
+        private void MeeleAttack(bool PlayerInAttackRangeR)
         {
-            animator.SetBool("isInAttackRange",inRange);
+            animator.SetBool("isInAttackRange", PlayerInAttackRangeR);
         }
     }
 }

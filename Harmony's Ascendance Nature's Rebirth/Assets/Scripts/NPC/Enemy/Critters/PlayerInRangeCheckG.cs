@@ -50,6 +50,7 @@ using UnityEngine;
             }
             else if (distance <= attackRange)
             {
+                Debug.Log("In range");
                 playerInAttackRangeOfCritterG.setValue(true);
             }
         }
