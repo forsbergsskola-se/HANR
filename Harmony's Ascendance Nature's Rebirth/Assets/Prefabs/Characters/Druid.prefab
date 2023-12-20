@@ -218,27 +218,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c116fdd80fe483b4d9b353b03c4204e4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 709.34
+      value: 716.73
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c116fdd80fe483b4d9b353b03c4204e4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 176.055
+      value: 174.537
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c116fdd80fe483b4d9b353b03c4204e4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 752.88
+      value: 742.68
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c116fdd80fe483b4d9b353b03c4204e4, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.77439266
+      value: -0.011344322
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c116fdd80fe483b4d9b353b03c4204e4, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c116fdd80fe483b4d9b353b03c4204e4, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.63270533
+      value: -0.9999356
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c116fdd80fe483b4d9b353b03c4204e4, type: 3}
       propertyPath: m_LocalRotation.z
@@ -250,7 +250,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c116fdd80fe483b4d9b353b03c4204e4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 78.5
+      value: -181.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c116fdd80fe483b4d9b353b03c4204e4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -984,9 +984,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c116fdd80fe483b4d9b353b03c4204e4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1336422193662639011}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c116fdd80fe483b4d9b353b03c4204e4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1850334883618117207}
     - targetCorrespondingSourceObject: {fileID: 1728280593283003582, guid: c116fdd80fe483b4d9b353b03c4204e4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 725847045379747160}
@@ -1089,7 +1086,7 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1.5
-  m_Height: 1.5
+  m_Height: 30
   m_Direction: 1
   m_Center: {x: 0, y: 0.98, z: 0}
 --- !u!95 &2771500659704570704
@@ -1129,11 +1126,11 @@ MonoBehaviour:
   talkingBearMan: 0
   talkingRanger: 0
   DialoguezoomSpeed: 5
-  zoomDistance: 15
+  zoomDistance: 10
   rotationSpeed: 3
   zoomSpeed: 5
   minZoom: 20
-  maxZoom: 60
+  maxZoom: 110
   verticalOffset: 10
   obstacleLayer:
     serializedVersion: 2
@@ -1275,6 +1272,9 @@ MonoBehaviour:
   UpdateUsedItem:
     m_PersistentCalls:
       m_Calls: []
+  usedBook:
+    m_PersistentCalls:
+      m_Calls: []
   defaultItem: {fileID: 11400000, guid: 2c8ba1ee984a6fa4f85fea1fb4db8da5, type: 2}
   playerHealth: {fileID: 11400000, guid: 65f80b9a019bad14fbdeec9b15d45e25, type: 2}
   playerExperiance: {fileID: 11400000, guid: d29d7232f70248e4986979e70d83da80, type: 2}
@@ -1293,7 +1293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clickEffect: {fileID: 7941266285869916736, guid: e7643c446931441d28f1e7591bec741a, type: 3}
-  size: 5
+  size: 25
 --- !u!114 &2772968948141345308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1357,7 +1357,7 @@ MonoBehaviour:
   maxExp: 0
   level: {fileID: 11400000, guid: 768ba6cdc985dd84aaa639c874e78ed0, type: 2}
   gameOverScreen: {fileID: 0}
-  deathEffect: {fileID: 0}
+  deathEffect: {fileID: 4772634663576830964, guid: e1385af346f4e624eb313ec1ea4fcd7e, type: 3}
 --- !u!114 &8755595750374796902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1443,27 +1443,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 3477285135773224165, guid: 04fbb9ab38829e54381701e5712da9e3, type: 3}
   size: 30
---- !u!114 &1850334883618117207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1777774259798216206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71184e9254ca4b869ffe379d63336cb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: {fileID: 11400000, guid: 65f80b9a019bad14fbdeec9b15d45e25, type: 2}
-  maxHealth: 0
-  magic: {fileID: 11400000, guid: e1409a8b6970b024da13fb5fba92b53f, type: 2}
-  maxMagic: 0
-  exp: {fileID: 11400000, guid: d29d7232f70248e4986979e70d83da80, type: 2}
-  maxExp: 0
-  level: {fileID: 11400000, guid: 768ba6cdc985dd84aaa639c874e78ed0, type: 2}
-  gameOverScreen: {fileID: 0}
-  deathEffect: {fileID: 0}
 --- !u!4 &1907429574684393820 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1013882226241532419, guid: c116fdd80fe483b4d9b353b03c4204e4, type: 3}

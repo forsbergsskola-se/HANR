@@ -38,7 +38,6 @@ using UnityEngine;
             float distance = Vector3.Distance(playerPosition, this.transform.position);
             
             
-            Debug.Log(distance);
             
             if (distance <= detectionRange)
             { 
@@ -56,7 +55,6 @@ using UnityEngine;
             
             if (distance <= attackRange)
             {
-                Debug.Log("In range3");
                 playerInAttackRangeOfCritterG.setValue(true);
             }
             
