@@ -3,7 +3,10 @@ guid: 7b58203647177884696af61adb041fb3
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - questTitle: {instanceID: 0}
+  - questLog: {instanceID: 0}
+  - bossLockObsticle: {fileID: 885347493691753154, guid: ee30fb1c17a4ab045b0c6617c39feaf9, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
