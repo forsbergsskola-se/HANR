@@ -50,7 +50,7 @@ public class ClickCheck : MonoBehaviour
                         GameObject effectInstance = clickEffectPool.GetPooledEffects();
                         if (effectInstance != null)
                         {
-                            effectInstance.transform.position = raycastHit.point += new Vector3(0,0.3f,0);
+                            effectInstance.transform.position = raycastHit.point += new Vector3(0,0.5f,0);
                         }
                     }
                     if (raycastHit.transform.CompareTag("Enemy"))
