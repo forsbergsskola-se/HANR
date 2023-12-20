@@ -19,7 +19,9 @@ public class BossLockObsticle : MonoBehaviour
     {
         if (playerNear)
         {
-            playerHealth.setValue(Time.deltaTime);
+            float currentHealth = playerHealth.getValue();
+            currentHealth -= 3 * Time.deltaTime;
+            playerHealth.setValue(currentHealth);
         }
     }
     private void OnTriggerExit(Collider other)

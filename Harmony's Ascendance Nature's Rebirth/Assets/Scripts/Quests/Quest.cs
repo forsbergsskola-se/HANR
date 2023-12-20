@@ -168,7 +168,10 @@ namespace UI
                 else if (part == 2)
                     currentBossState = BossQuestLine.WalkWithMimi;
                 else if (part == 3)
+                {
+                    killCountCritter = 0; //To not register any previous Critter kill
                     currentBossState = BossQuestLine.DefendMimi;
+                }
                 else if (part == 4)
                 {
                     currentBossState = BossQuestLine.WalkWithMimiToBoss;
