@@ -720,7 +720,7 @@ Transform:
   - {fileID: 7834887264026047551}
   - {fileID: 3292436182360390662}
   - {fileID: 1202820644168942300}
-  - {fileID: 807790287871459365}
+  - {fileID: 5129409799357073122}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &7575389782524006198
@@ -830,10 +830,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInRange: {fileID: 11400000, guid: dd6ecffd096df8d43b1d0b5927fccb56, type: 2}
   playerInAttackRange: {fileID: 11400000, guid: c786d175ead9ec44286fbe6576b453c0, type: 2}
-  playCombatMusic: {fileID: 11400000, guid: aa257ba04d55545ecb6602a7c4170890, type: 2}
+  playCombatMusicG: {fileID: 11400000, guid: 7eae0fdbcb8564fbe85a174eaafb45be, type: 2}
+  playCombatMusicP: {fileID: 11400000, guid: aa257ba04d55545ecb6602a7c4170890, type: 2}
+  playCombatMusicR: {fileID: 11400000, guid: c1b85e9827dea47cab8a5668abe29819, type: 2}
   detectionRange: 10
   unDetectionRange: 12
   attackRange: 2
+  CritterG: {fileID: 3325484133823997347, guid: 237fa3101949740aa95654d86766efeb, type: 3}
+  CritterP: {fileID: 4718287801753836335}
+  CritterR: {fileID: 2441396445529796109, guid: cf88a0a6d8e1b4ea8a32eeb92e6cd672, type: 3}
 --- !u!114 &5266010472560588685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1919,7 +1924,7 @@ Transform:
   - {fileID: 3105276248922540943}
   m_Father: {fileID: 1217240991307291459}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1682416102229753782
+--- !u!1001 &6576292787037010289
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -2007,22 +2012,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3458130782148216911, guid: 156df7900112f3341b7b44ae300e8e42, type: 3}
-      propertyPath: m_fontColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3458130782148216911, guid: 156df7900112f3341b7b44ae300e8e42, type: 3}
-      propertyPath: m_fontColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3458130782148216911, guid: 156df7900112f3341b7b44ae300e8e42, type: 3}
-      propertyPath: m_fontColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3458130782148216911, guid: 156df7900112f3341b7b44ae300e8e42, type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 5607320806969188320, guid: 156df7900112f3341b7b44ae300e8e42, type: 3}
       propertyPath: m_Name
       value: EnemyHealthCanvas
@@ -2044,8 +2033,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 156df7900112f3341b7b44ae300e8e42, type: 3}
---- !u!224 &807790287871459365 stripped
+--- !u!224 &5129409799357073122 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2048289537106116499, guid: 156df7900112f3341b7b44ae300e8e42, type: 3}
-  m_PrefabInstance: {fileID: 1682416102229753782}
+  m_PrefabInstance: {fileID: 6576292787037010289}
   m_PrefabAsset: {fileID: 0}

@@ -44,6 +44,6 @@ public class EnemyHealthbar : MonoBehaviour
     private void UpdateHealthBar(float value)
     {
         enemyHealthSlider.value = value;
-        healthText.text = enemyHealth.getValue().ToString();
+        healthText.text = Mathf.RoundToInt(enemyHealth.getValue()).ToString();
     }
 }
