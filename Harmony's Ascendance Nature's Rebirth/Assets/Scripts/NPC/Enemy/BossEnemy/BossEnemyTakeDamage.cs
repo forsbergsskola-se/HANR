@@ -7,6 +7,7 @@ using TMPro;
 using UI;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 namespace Enemy.BossEnemy
@@ -20,6 +21,7 @@ namespace Enemy.BossEnemy
         private PlayerStat playerStat;
         [SerializeField] private Experience exp;
         public BoolVariable playBossMusic;
+        public UnityEvent bossKilled ;
 
         public Quest quest;
         private void Start()
@@ -31,6 +33,7 @@ namespace Enemy.BossEnemy
 
         private void OnDestroy()
         {
+            bossKilled.Invoke();
             quest.killCountBoss++;
             float newexp = playerStat.exp.getValue() + exp.exp;
             playerStat.exp.setValue(newexp);
@@ -61,5 +64,7 @@ namespace Enemy.BossEnemy
             Destroy(effect);
             Destroy(this.gameObject);
         }
+        
+        
     }
 }

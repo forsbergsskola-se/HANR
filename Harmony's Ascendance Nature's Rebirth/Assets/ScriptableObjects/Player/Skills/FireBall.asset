@@ -16,11 +16,11 @@ MonoBehaviour:
   mana: 15
   range: 15
   damage: 30
-  cooldown: 60
+  cooldown: 15
   pointClick: 1
   icon: {fileID: 21300000, guid: 742115b09648641ab9f106639948cc2f, type: 3}
   skillObject: {fileID: 8571159334589146555, guid: 51d1294399eb0944b8c0419e249c1653, type: 3}
-  currentCooldown: 23
+  currentCooldown: 20
   valueChanged:
     m_PersistentCalls:
       m_Calls: []

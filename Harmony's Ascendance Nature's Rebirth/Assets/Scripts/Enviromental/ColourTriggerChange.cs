@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using CustomObjects;
+using Enemy.BossEnemy;
 using UnityEngine;
 
 public class ColourTriggerChange : MonoBehaviour
@@ -13,12 +15,15 @@ public class ColourTriggerChange : MonoBehaviour
     [SerializeField] private Color bossColor;
     [SerializeField] private Color normalColor;
 
+    public BossEnemyTakeDamage bossDeath;
     private bool isTransitioning = false;
     
 
     void Start()
     {
         mainLight = GameObject.FindWithTag("MainLight")?.GetComponent<Light>();
+        
+        bossDeath.bossKilled.AddListener(Stop);
 
         if (mainLight == null)
         {
@@ -26,7 +31,12 @@ public class ColourTriggerChange : MonoBehaviour
         }
     }
 
-  
+
+    private void OnDestroy()
+    {
+        bossDeath.bossKilled.RemoveListener(Stop);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         // Start the boss color transition coroutine and store a reference to it
@@ -34,9 +44,9 @@ public class ColourTriggerChange : MonoBehaviour
         playBossMusic.setValue(true);
     }
 
-    private void OnTriggerExit(Collider other)
+
+    private void Stop()
     {
-        // Stop the boss color transition coroutine if it's running
         if (colorTransitionCoroutine != null)
         {
             StopCoroutine(colorTransitionCoroutine);
@@ -45,7 +55,7 @@ public class ColourTriggerChange : MonoBehaviour
         // Start the normal color transition coroutine
         StartCoroutine(LerpColor(normalColor));
     }
-
+    
 
     IEnumerator LerpColorboss(Color targetColor)
     {
