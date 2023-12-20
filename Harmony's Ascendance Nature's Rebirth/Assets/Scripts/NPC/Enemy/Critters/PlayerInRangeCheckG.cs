@@ -7,10 +7,11 @@ using UnityEngine;
 
     namespace Enemy
 {
-    public class PlayerInRangeCheck : MonoBehaviour
+    public class PlayerInRangeCheckG : MonoBehaviour
     {
-        public BoolVariable playerInRange;
-        public BoolVariable playerInAttackRange;
+        public BoolVariable playerInRangeOfCritterG;
+        public BoolVariable playerInAttackRangeOfCritterG;
+        public BoolVariable playCombatMusicG;
         private Vector3 playerPosition;
         private GameObject player;
         [SerializeField] private float detectionRange;
@@ -38,17 +39,18 @@ using UnityEngine;
 
             if (distance <= detectionRange)
             {
-                playerInRange.setValue(true);
+                playerInRangeOfCritterG.setValue(true);
+                playCombatMusicG.setValue(true);
             }
 
             else if (distance >= unDetectionRange)
             {
-                playerInRange.setValue(false);
-
+                playerInRangeOfCritterG.setValue(false);
+                playCombatMusicG.setValue(false);
             }
             else if (distance <= attackRange)
             {
-                playerInAttackRange.setValue(true);
+                playerInAttackRangeOfCritterG.setValue(true);
             }
         }
     }

@@ -11,17 +11,22 @@ namespace SFX
         public float soundVolume = 0.75f;
         static SoundManager i;
         public Sound[] sounds;
-        public BoolVariable playCombatMusic;
+        public BoolVariable playCombatMusicG;
+        public BoolVariable playCombatMusicP;
+        public BoolVariable playCombatMusicR;
         public BoolVariable playerWalking;
         public BoolVariable playSlimeMoving;
         public BoolVariable playBossMusic;
+        private bool gameMusic;
 
 
         private void Awake()
         {
             i = this;
             
-            playCombatMusic.ValueChanged.AddListener(ChangeMusic);
+            playCombatMusicG.ValueChanged.AddListener(ChangeMusicG);
+            playCombatMusicP.ValueChanged.AddListener(ChangeMusicP);
+            playCombatMusicR.ValueChanged.AddListener(ChangeMusicR);
             playerWalking.ValueChanged.AddListener(PlayWalkSfx);
             playSlimeMoving.ValueChanged.AddListener(PlaySlimeMove);
             playBossMusic.ValueChanged.AddListener(ChangeBossMusic);
@@ -35,12 +40,12 @@ namespace SFX
             }
         }
 
-       
-
 
         private void OnDestroy()
         {
-            playCombatMusic.ValueChanged.RemoveListener(ChangeMusic);
+            playCombatMusicG.ValueChanged.RemoveListener(ChangeMusicG);
+            playCombatMusicP.ValueChanged.RemoveListener(ChangeMusicP);
+            playCombatMusicR.ValueChanged.RemoveListener(ChangeMusicR);
             playerWalking.ValueChanged.RemoveListener(PlayWalkSfx);
             playSlimeMoving.ValueChanged.RemoveListener(PlaySlimeMove);
             playBossMusic.ValueChanged.RemoveListener(ChangeBossMusic);
@@ -52,6 +57,7 @@ namespace SFX
             if (SceneManager.GetActiveScene().name == "Game Scene" || SceneManager.GetActiveScene().name == "Game Scene 1")
             {
                 PlaySound("Game Music");
+                gameMusic = true;
             }
 
             if (SceneManager.GetActiveScene().name == "Main Menu")
@@ -59,20 +65,85 @@ namespace SFX
                 PlaySound("Menu Music");
             }    
         }
-        
-        private void ChangeMusic(bool playCombatMusic)
+
+        private void ChangeMusicG(bool playCombatMusicG)
         {
-            if (playCombatMusic)
+            if (playCombatMusicG && gameMusic)
             {
-                StopSound("Game Music");
-                PlaySound("Combat Music");
-                Debug.Log("Change Music");
+                if (playCombatMusicP.getValue() == false 
+                    && playCombatMusicR.getValue() == false)
+                {
+                    StopSound("Game Music");
+                    PlaySound("Combat Music");
+                    gameMusic = false;
+                    Debug.Log("Change Music"); 
+                }
             }
-            else
+
+            if (!playCombatMusicG && !gameMusic)
             {
-                StopSound("Combat Music");
-                PlaySound("Game Music");
-                Debug.Log("Change back");
+                if (playCombatMusicP.getValue() == false 
+                    && playCombatMusicR.getValue() == false)
+                {
+                    StopSound("Combat Music");
+                    PlaySound("Game Music");
+                    gameMusic = true;
+                    Debug.Log("Change back");
+                }
+            }
+        }
+        
+        private void ChangeMusicP(bool playCombatMusicP)
+        {
+            if (playCombatMusicP && gameMusic)
+            {
+                if (playCombatMusicG.getValue() == false 
+                    && playCombatMusicR.getValue() == false)
+                {
+                    StopSound("Game Music");
+                    PlaySound("Combat Music");
+                    gameMusic = false;
+                    Debug.Log("Change Music"); 
+                }
+            }
+
+            if (!playCombatMusicP && !gameMusic)
+            {
+                if (playCombatMusicG.getValue() == false 
+                    && playCombatMusicR.getValue() == false)
+                {
+                    StopSound("Combat Music");
+                    PlaySound("Game Music");
+                    gameMusic = true;
+                    Debug.Log("Change back");
+                }
+            }
+        }
+        
+        private void ChangeMusicR(bool playCombatMusicR)
+        {
+            if (playCombatMusicR && gameMusic)
+            {
+                if (playCombatMusicG.getValue() == false 
+                    && playCombatMusicP.getValue() == false)
+                {
+                    StopSound("Game Music");
+                    PlaySound("Combat Music");
+                    gameMusic = false;
+                    Debug.Log("Change Music"); 
+                }
+            }
+
+            if (!playCombatMusicR && !gameMusic)
+            {
+                if (playCombatMusicG.getValue() == false 
+                    && playCombatMusicP.getValue() == false)
+                {
+                    StopSound("Combat Music");
+                    PlaySound("Game Music");
+                    gameMusic = true;
+                    Debug.Log("Change back");
+                }
             }
         }
         
