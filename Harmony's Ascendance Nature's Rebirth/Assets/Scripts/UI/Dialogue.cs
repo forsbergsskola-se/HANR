@@ -84,6 +84,11 @@ public class Dialogue : MonoBehaviour
                         }
                     }
 
+                    if (quest.currentBossState == Quest.BossQuestLine.ReturnToRanger)
+                    {
+                        
+                    }
+
                     currentlySpeaking.sprite = null;
                 }
                 else //Dialogue continues
@@ -156,7 +161,7 @@ public class Dialogue : MonoBehaviour
                 conversationFace[2] = faceRanger;
                 conversation[3] = "What are those stone creatures?";
                 conversationFace[3] = faceDruid;
-                conversation[4] = "Follow my friend Slimy, he'll show you where it resides.";
+                conversation[4] = "Follow my friend Slimy, she'll show you where it resides.";
                 conversationFace[4] = faceRanger;
             }
             else if (quest.currentWaterStaffState != Quest.WaterStaffQuestLine.TalkingToRanger) //If player tries to retrigger the conversation again
@@ -174,7 +179,6 @@ public class Dialogue : MonoBehaviour
                 conversation[2] = "You have to protect us!";
                 conversationFace[2] = faceRanger;
             }
-            
         }
     }
 
@@ -195,10 +199,9 @@ public class Dialogue : MonoBehaviour
                 conversation[4] = "Thank you";
                 conversationFace[4] = faceDruid;
             }
-            else if (quest.currentWaterStaffState !=
-                     Quest.WaterStaffQuestLine.FindingBearMan) //If Druid goes to BearMan to soon
+            else if (quest.currentWaterStaffState != Quest.WaterStaffQuestLine.FindingBearMan) //If Druid goes to BearMan to soon
             {
-                conversation[0] = "Growl! GET AWAY FROM ME!";
+                conversation[0] = "Growl!";
                 conversationFace[0] = faceBearMan;
                 dialougeCounter = 4; //To cut the dialogue short
             }
