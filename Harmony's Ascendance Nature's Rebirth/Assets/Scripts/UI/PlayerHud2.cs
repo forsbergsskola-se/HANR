@@ -54,19 +54,19 @@ public class PlayerHud2 : MonoBehaviour
 
     private void updateHealth(float value)
     {
-        healthText.text = value.ToString();
+        healthText.text = Mathf.RoundToInt(health.getValue()).ToString();
         healthSlider.value = value;
     }
     
     private void updateMagic(float value)
     {
-        magicText.text = value.ToString();
+        magicText.text = Mathf.RoundToInt(magic.getValue()).ToString();
         magicSlider.value = value;
     }
     
     private void updateExp(float value)
     {
-        expSlider.value = value;
+        expSlider.value = exp.getValue();
     }
     
     private void updateLevel(int value)
