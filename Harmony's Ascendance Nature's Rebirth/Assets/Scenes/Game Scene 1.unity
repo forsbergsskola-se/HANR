@@ -11435,6 +11435,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Critter (purple)
       objectReference: {fileID: 0}
+    - target: {fileID: 4718287801753836335, guid: 05ca4e5887f7d48c09700eecc38ec490, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397495564986993226, guid: 05ca4e5887f7d48c09700eecc38ec490, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7207482744270717814, guid: 05ca4e5887f7d48c09700eecc38ec490, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -12884,17 +12892,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Critter (red)
       objectReference: {fileID: 0}
+    - target: {fileID: 2441396445529796109, guid: cf88a0a6d8e1b4ea8a32eeb92e6cd672, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3756935177490647357, guid: cf88a0a6d8e1b4ea8a32eeb92e6cd672, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 611.46173
+      value: 612.8
       objectReference: {fileID: 0}
     - target: {fileID: 3756935177490647357, guid: cf88a0a6d8e1b4ea8a32eeb92e6cd672, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 162.01486
+      value: 161.86
       objectReference: {fileID: 0}
     - target: {fileID: 3756935177490647357, guid: cf88a0a6d8e1b4ea8a32eeb92e6cd672, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 696.4433
+      value: 690.7
       objectReference: {fileID: 0}
     - target: {fileID: 3756935177490647357, guid: cf88a0a6d8e1b4ea8a32eeb92e6cd672, type: 3}
       propertyPath: m_LocalRotation.w
@@ -12923,6 +12935,10 @@ PrefabInstance:
     - target: {fileID: 3756935177490647357, guid: cf88a0a6d8e1b4ea8a32eeb92e6cd672, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7343980378391154416, guid: cf88a0a6d8e1b4ea8a32eeb92e6cd672, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7726776545223182790, guid: cf88a0a6d8e1b4ea8a32eeb92e6cd672, type: 3}
       propertyPath: m_AnchorMax.x
@@ -18735,10 +18751,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Critter (green)
       objectReference: {fileID: 0}
+    - target: {fileID: 3325484133823997347, guid: 237fa3101949740aa95654d86766efeb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4891924852225103091, guid: 237fa3101949740aa95654d86766efeb, type: 3}
       propertyPath: screen
       value: 
       objectReference: {fileID: 1764157715}
+    - target: {fileID: 4923867936557476026, guid: 237fa3101949740aa95654d86766efeb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6132793019819977429, guid: 237fa3101949740aa95654d86766efeb, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -18753,11 +18777,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8511852621165901157, guid: 237fa3101949740aa95654d86766efeb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 163.76859
+      value: 163.72
       objectReference: {fileID: 0}
     - target: {fileID: 8511852621165901157, guid: 237fa3101949740aa95654d86766efeb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 705.1385
+      value: 704.24
       objectReference: {fileID: 0}
     - target: {fileID: 8511852621165901157, guid: 237fa3101949740aa95654d86766efeb, type: 3}
       propertyPath: m_LocalRotation.w

@@ -673,7 +673,6 @@ GameObject:
   - component: {fileID: 8338094402280085788}
   - component: {fileID: 7481797227415376643}
   - component: {fileID: 6921584795211011734}
-  - component: {fileID: 4264209978007226508}
   - component: {fileID: 5266010472560588685}
   - component: {fileID: 516910576503267183}
   - component: {fileID: 5900507210396769317}
@@ -681,6 +680,7 @@ GameObject:
   - component: {fileID: 4201553723988307520}
   - component: {fileID: 3519382052693834891}
   - component: {fileID: 773443028192024940}
+  - component: {fileID: 8983038280391915838}
   m_Layer: 8
   m_Name: Critter (purple)
   m_TagString: Enemy
@@ -816,29 +816,6 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4264209978007226508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4718287801753836335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39a562caf34b4ebba2493a72871479f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerInRange: {fileID: 11400000, guid: dd6ecffd096df8d43b1d0b5927fccb56, type: 2}
-  playerInAttackRange: {fileID: 11400000, guid: c786d175ead9ec44286fbe6576b453c0, type: 2}
-  playCombatMusicG: {fileID: 11400000, guid: 7eae0fdbcb8564fbe85a174eaafb45be, type: 2}
-  playCombatMusicP: {fileID: 11400000, guid: aa257ba04d55545ecb6602a7c4170890, type: 2}
-  playCombatMusicR: {fileID: 11400000, guid: c1b85e9827dea47cab8a5668abe29819, type: 2}
-  detectionRange: 10
-  unDetectionRange: 12
-  attackRange: 2
-  CritterG: {fileID: 3325484133823997347, guid: 237fa3101949740aa95654d86766efeb, type: 3}
-  CritterP: {fileID: 4718287801753836335}
-  CritterR: {fileID: 2441396445529796109, guid: cf88a0a6d8e1b4ea8a32eeb92e6cd672, type: 3}
 --- !u!114 &5266010472560588685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -866,12 +843,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: {fileID: 11400000, guid: 1e024cfec2cd94a769db922439b46896, type: 2}
-  playCombatMusic: {fileID: 11400000, guid: aa257ba04d55545ecb6602a7c4170890, type: 2}
+  playCombatMusic: {fileID: 11400000, guid: 4de41cb228fba47f5a898d705bb22cf3, type: 2}
   animator: {fileID: 7575389782524006198}
   agent: {fileID: 8338094402280085788}
   deathEffect: {fileID: 100004, guid: 7867af58a6ec48846ae807eb4022fbaa, type: 3}
   exp: {fileID: 11400000, guid: 1a11ff274532c6c48b116faa1b93eb4b, type: 2}
-  quest: {fileID: 0}
+  quest: {fileID: 2865092757253621005, guid: fcf4c6cebf66fef4d8ce2a5ea1133a9a, type: 3}
 --- !u!114 &5900507210396769317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -951,6 +928,24 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 1.76
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8983038280391915838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4718287801753836335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaee013321dd43f790f57f8513ef1e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInRangeOfCritterP: {fileID: 11400000, guid: c786d175ead9ec44286fbe6576b453c0, type: 2}
+  playerInAttackRangeOfCritterP: {fileID: 11400000, guid: c786d175ead9ec44286fbe6576b453c0, type: 2}
+  playCombatMusicP: {fileID: 11400000, guid: 4de41cb228fba47f5a898d705bb22cf3, type: 2}
+  detectionRange: 10
+  unDetectionRange: 12
+  attackRange: 1
 --- !u!1 &4877808906011629551
 GameObject:
   m_ObjectHideFlags: 0

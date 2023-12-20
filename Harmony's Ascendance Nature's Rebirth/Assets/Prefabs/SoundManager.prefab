@@ -126,7 +126,9 @@ MonoBehaviour:
     volume: 0.2
     loop: 1
     source: {fileID: 0}
-  playCombatMusic: {fileID: 11400000, guid: aa257ba04d55545ecb6602a7c4170890, type: 2}
+  playCombatMusicG: {fileID: 11400000, guid: 8ef53477b938144b68bbe720a9e1ba25, type: 2}
+  playCombatMusicP: {fileID: 11400000, guid: 4de41cb228fba47f5a898d705bb22cf3, type: 2}
+  playCombatMusicR: {fileID: 11400000, guid: 0583360f012c44e63b46da77b4acbe50, type: 2}
   playerWalking: {fileID: 11400000, guid: d72b54557d10b4a9bb0fea503791e0d5, type: 2}
   playSlimeMoving: {fileID: 11400000, guid: cd6711c9feeec406c880697b1c61fb0b, type: 2}
   playBossMusic: {fileID: 11400000, guid: 4d0af712de6a6481d91def6a16fde7b4, type: 2}
