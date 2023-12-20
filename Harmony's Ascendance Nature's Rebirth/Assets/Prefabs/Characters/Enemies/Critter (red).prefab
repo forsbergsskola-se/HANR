@@ -658,7 +658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInEnemyRange: {fileID: 11400000, guid: 5d5dcfcf3681b4fb39b5beaf91d53c15, type: 2}
-  walkSpeed: 5
+  walkSpeed: 3.4
   turnRate: 20
   distanceFromPlayer: 4
   animator: {fileID: 2817579698906651430}
@@ -713,7 +713,7 @@ MonoBehaviour:
   playCombatMusicR: {fileID: 11400000, guid: 0583360f012c44e63b46da77b4acbe50, type: 2}
   detectionRange: 10
   unDetectionRange: 12
-  attackRange: 1
+  attackRange: 4.3
 --- !u!1 &2494548791742450627
 GameObject:
   m_ObjectHideFlags: 0

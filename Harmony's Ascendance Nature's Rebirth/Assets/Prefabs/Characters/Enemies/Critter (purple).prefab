@@ -875,7 +875,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInEnemyRange: {fileID: 11400000, guid: dd6ecffd096df8d43b1d0b5927fccb56, type: 2}
-  walkSpeed: 5
+  walkSpeed: 3.4
   turnRate: 20
   distanceFromPlayer: 4
   animator: {fileID: 7575389782524006198}
@@ -939,12 +939,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaee013321dd43f790f57f8513ef1e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInRangeOfCritterP: {fileID: 11400000, guid: c786d175ead9ec44286fbe6576b453c0, type: 2}
+  playerInRangeOfCritterP: {fileID: 11400000, guid: dd6ecffd096df8d43b1d0b5927fccb56, type: 2}
   playerInAttackRangeOfCritterP: {fileID: 11400000, guid: c786d175ead9ec44286fbe6576b453c0, type: 2}
   playCombatMusicP: {fileID: 11400000, guid: 4de41cb228fba47f5a898d705bb22cf3, type: 2}
   detectionRange: 10
   unDetectionRange: 12
-  attackRange: 1
+  attackRange: 4.3
 --- !u!1 &4877808906011629551
 GameObject:
   m_ObjectHideFlags: 0

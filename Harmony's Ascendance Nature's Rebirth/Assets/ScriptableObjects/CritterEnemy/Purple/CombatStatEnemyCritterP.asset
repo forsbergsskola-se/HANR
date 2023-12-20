@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: CombatStatEnemyCritterP
   m_EditorClassIdentifier: 
   normalAttackDamage: 2
-  normalAttackSpeed: 5
+  normalAttackSpeed: 1

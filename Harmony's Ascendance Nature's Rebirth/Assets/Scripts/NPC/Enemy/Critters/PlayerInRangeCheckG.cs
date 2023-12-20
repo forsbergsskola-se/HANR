@@ -36,23 +36,37 @@ using UnityEngine;
         private void checkIfPlayerInRange(Vector3 playerPosition)
         {
             float distance = Vector3.Distance(playerPosition, this.transform.position);
-
+            
+            
+            Debug.Log(distance);
+            
             if (distance <= detectionRange)
-            {
+            { 
+               
                 playerInRangeOfCritterG.setValue(true);
                 playCombatMusicG.setValue(true);
             }
 
             else if (distance >= unDetectionRange)
             {
+                
                 playerInRangeOfCritterG.setValue(false);
                 playCombatMusicG.setValue(false);
             }
-            else if (distance <= attackRange)
+            
+            if (distance <= attackRange)
             {
-                Debug.Log("In range");
+                Debug.Log("In range3");
                 playerInAttackRangeOfCritterG.setValue(true);
             }
+            
+            
+            if (distance >= attackRange)
+            {
+                playerInAttackRangeOfCritterG.setValue(false);
+            }
+            
+            
         }
     }
 }

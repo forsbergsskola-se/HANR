@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60dd8284ec91f3640b51792cf3c026ea, type: 3}
   m_Name: CritterExpR
   m_EditorClassIdentifier: 
-  exp: 0
+  exp: 25

@@ -48,9 +48,15 @@ using UnityEngine;
                 playerInRangeOfCritterP.setValue(false);
                 playCombatMusicP.setValue(false);
             }
-            else if (distance <= attackRange)
+            
+            if (distance <= attackRange)
             {
                 playerInAttackRangeOfCritterP.setValue(true);
+            }
+            
+            if (distance >= attackRange)
+            {
+                playerInAttackRangeOfCritterP.setValue(false);
             }
         }
     }
