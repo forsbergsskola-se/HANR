@@ -18,8 +18,8 @@ namespace NPC.Enemy.Critters
         [SerializeField] private GameObject deathEffect;
         private PlayerStat playerstat;
         [SerializeField] private Experience exp;
-
         public Quest quest;
+        
         private void Start()
         {
             playerstat = GameObject.FindWithTag("Player").GetComponent<PlayerStat>();
@@ -28,7 +28,7 @@ namespace NPC.Enemy.Critters
 
         private void OnDestroy()
         {
-            //quest.killCountCritter++;
+            quest.killCountCritter++;
             float newexp = playerstat.exp.getValue() + exp.exp;
             playerstat.exp.setValue(newexp);
             CritterHealthR.ValueChanged.RemoveListener(enemyDead);
