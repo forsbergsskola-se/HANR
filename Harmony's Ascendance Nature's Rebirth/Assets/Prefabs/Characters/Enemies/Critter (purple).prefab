@@ -673,8 +673,8 @@ GameObject:
   - component: {fileID: 8338094402280085788}
   - component: {fileID: 7481797227415376643}
   - component: {fileID: 6921584795211011734}
-  - component: {fileID: 5266010472560588685}
-  - component: {fileID: 516910576503267183}
+  - component: {fileID: 333252376503625658}
+  - component: {fileID: 6887621081751386346}
   - component: {fileID: 5900507210396769317}
   - component: {fileID: 5397495564986993226}
   - component: {fileID: 4201553723988307520}
@@ -816,7 +816,7 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5266010472560588685
+--- !u!114 &333252376503625658
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -825,30 +825,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 4718287801753836335}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59f2bc51135e41e19421889824a5af0e, type: 3}
+  m_Script: {fileID: 11500000, guid: b806f126139a4e3a89864e7310ae9c07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerInAttackRange: {fileID: 11400000, guid: dd6ecffd096df8d43b1d0b5927fccb56, type: 2}
-  animator: {fileID: 7575389782524006198}
---- !u!114 &516910576503267183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4718287801753836335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63bf24564b0b405abd49063c6baf559c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyHealth: {fileID: 11400000, guid: 1e024cfec2cd94a769db922439b46896, type: 2}
-  playCombatMusic: {fileID: 11400000, guid: 4de41cb228fba47f5a898d705bb22cf3, type: 2}
+  CritterHealthP: {fileID: 11400000, guid: 1e024cfec2cd94a769db922439b46896, type: 2}
   animator: {fileID: 7575389782524006198}
   agent: {fileID: 8338094402280085788}
   deathEffect: {fileID: 100004, guid: 7867af58a6ec48846ae807eb4022fbaa, type: 3}
   exp: {fileID: 11400000, guid: 1a11ff274532c6c48b116faa1b93eb4b, type: 2}
   quest: {fileID: 2865092757253621005, guid: fcf4c6cebf66fef4d8ce2a5ea1133a9a, type: 3}
+--- !u!114 &6887621081751386346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4718287801753836335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 429ff00b161140c3b49d8daecf005b44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerInAttackRangeP: {fileID: 11400000, guid: c786d175ead9ec44286fbe6576b453c0, type: 2}
+  animator: {fileID: 7575389782524006198}
 --- !u!114 &5900507210396769317
 MonoBehaviour:
   m_ObjectHideFlags: 0

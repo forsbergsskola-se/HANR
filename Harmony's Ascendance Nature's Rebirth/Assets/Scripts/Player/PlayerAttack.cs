@@ -123,7 +123,8 @@ public class PlayerAttack : MonoBehaviour
         Vector3 direction = (-projectile.transform.position + enemyToAttack.GetComponentInChildren<HitPoint>().transform.position).normalized;
         Rigidbody rb = projectile.GetComponent<Rigidbody>();
         ProjectileStats ps = projectile.GetComponent<ProjectileStats>();
-        rb.velocity = new Vector3(direction.x * combatStat.projectileSpeed, direction.y * combatStat.projectileSpeed, direction.z * combatStat.projectileSpeed);
+        rb.velocity = new Vector3(direction.x * combatStat.projectileSpeed, 
+            direction.y * combatStat.projectileSpeed, direction.z * combatStat.projectileSpeed);
         ps.cs = combatStat;
     }
     
