@@ -40,6 +40,9 @@ public class Instructions : MonoBehaviour
             case "River":
                 buttonInstructions.text = "Use the book!";
                 break;
+            case null:
+                buttonInstructions.text = null;
+                break;
         }
     }
 }

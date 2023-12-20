@@ -47,6 +47,8 @@ namespace UI
 
         public int killCountCritter;
         public int killCountBoss;
+
+        public GameObject bossLockObsticle;
         void Start()
         {
             activeWaterStaffQuest = true;
@@ -81,7 +83,7 @@ namespace UI
                         questTitle.text = "Find The River";
                         questLog.text = "¤ The river by the Rangers camp huh. I think I noticed a partly destroyed bridge as well.";
                         break;
-                    case WaterStaffQuestLine.SaveTheRiver: //4 //TODO Invoke changing water script
+                    case WaterStaffQuestLine.SaveTheRiver: //4
                         questTitle.text = "Save The River!";
                         questLog.text = "¤ Heal the river.";
                         break;
@@ -138,7 +140,7 @@ namespace UI
                 }
             }
         }
-
+        
         void SetState(int part)
         {
             if (activeWaterStaffQuest)
@@ -168,7 +170,10 @@ namespace UI
                 else if (part == 3)
                     currentBossState = BossQuestLine.DefendMimi;
                 else if (part == 4)
+                {
                     currentBossState = BossQuestLine.WalkWithMimiToBoss;
+                    Destroy(bossLockObsticle);
+                }
                 else if (part == 5)
                     currentBossState = BossQuestLine.DefeatBoss;
                 else if (part == 6)

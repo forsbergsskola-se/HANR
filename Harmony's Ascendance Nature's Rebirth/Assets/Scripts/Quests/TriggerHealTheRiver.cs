@@ -72,8 +72,8 @@ public class TriggerHealTheRiver : MonoBehaviour
             SFX.SoundManager.PlaySound("River");
             colourChangeWater.SaveRiver.Invoke();
             waterStaff.SetActive(true);
-            instructions.buttonInstructions.text = null;
-            quest.questProgression.Invoke(5); 
+            instructions.buttonInput.Invoke(null);
+            quest.questProgression.Invoke(5); //State goes to GettingReward
         }
     }
 }
