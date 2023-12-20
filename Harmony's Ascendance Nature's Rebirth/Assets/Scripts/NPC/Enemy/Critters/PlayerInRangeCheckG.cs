@@ -14,6 +14,7 @@ using UnityEngine;
         public BoolVariable playCombatMusicG;
         private Vector3 playerPosition;
         private GameObject player;
+        [SerializeField] private GameObject healthBar;
         [SerializeField] private float detectionRange;
         [SerializeField] private float unDetectionRange;
         [SerializeField] private float attackRange;
@@ -24,6 +25,7 @@ using UnityEngine;
         private void Start()
         {
             player = GameObject.FindGameObjectWithTag("Player");
+            healthBar.SetActive(false);
         }
 
         private void Update()
@@ -41,16 +43,16 @@ using UnityEngine;
             
             if (distance <= detectionRange)
             { 
-               
                 playerInRangeOfCritterG.setValue(true);
                 playCombatMusicG.setValue(true);
+                healthBar.SetActive(true);
             }
 
             else if (distance >= unDetectionRange)
             {
-                
                 playerInRangeOfCritterG.setValue(false);
                 playCombatMusicG.setValue(false);
+                healthBar.SetActive(false);
             }
             
             if (distance <= attackRange)

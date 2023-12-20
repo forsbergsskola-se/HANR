@@ -784,6 +784,7 @@ MonoBehaviour:
   playerInRangeOfCritterG: {fileID: 11400000, guid: 88fdb869bb38444ef9b93f6ab63fdc2e, type: 2}
   playerInAttackRangeOfCritterG: {fileID: 11400000, guid: 13489ea82e3bf4571bd5d85198c0977e, type: 2}
   playCombatMusicG: {fileID: 11400000, guid: 8ef53477b938144b68bbe720a9e1ba25, type: 2}
+  healthBar: {fileID: 7751259605616675317}
   detectionRange: 10
   unDetectionRange: 12
   attackRange: 4.3
@@ -2039,5 +2040,10 @@ PrefabInstance:
 --- !u!224 &4192791196080810374 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2048289537106116499, guid: 156df7900112f3341b7b44ae300e8e42, type: 3}
+  m_PrefabInstance: {fileID: 2757105789974074901}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7751259605616675317 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5607320806969188320, guid: 156df7900112f3341b7b44ae300e8e42, type: 3}
   m_PrefabInstance: {fileID: 2757105789974074901}
   m_PrefabAsset: {fileID: 0}
