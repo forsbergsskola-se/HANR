@@ -7,8 +7,6 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
-
-
 namespace UI
 {
     public class Quest : MonoBehaviour
