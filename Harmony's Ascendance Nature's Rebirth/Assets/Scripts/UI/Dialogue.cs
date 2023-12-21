@@ -35,6 +35,8 @@ public class Dialogue : MonoBehaviour
     public CameraScript cameraScript;
     [SerializeField] private ClickCheck clickCheck;
     
+    public ThanksForPlayingEnd thanksForPlayingEnd;
+    
     private void Start()
     {
         clickCheck = FindObjectOfType<ClickCheck>().GetComponent<ClickCheck>();
@@ -84,9 +86,9 @@ public class Dialogue : MonoBehaviour
                         }
                     }
 
-                    if (quest.currentBossState == Quest.BossQuestLine.ReturnToRanger)
+                    if (quest.currentBossState == Quest.BossQuestLine.ReturnToRanger) //End of Game
                     {
-                        
+                        thanksForPlayingEnd.gameObject.SetActive(true);
                     }
 
                     currentlySpeaking.sprite = null;
