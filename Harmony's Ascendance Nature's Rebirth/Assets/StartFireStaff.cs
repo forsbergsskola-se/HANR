@@ -18,8 +18,6 @@ public class ItemPickUpFire : MonoBehaviour
     {
         inventoryHolder = GameObject.FindGameObjectWithTag("Player").GetComponent<InventoryHolder>();
         instructions = FindObjectOfType<Instructions>().GetComponent<Instructions>();
-        
-        
     }
 
     private void Update()
