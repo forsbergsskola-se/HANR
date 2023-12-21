@@ -703,6 +703,8 @@ MonoBehaviour:
   agent: {fileID: 3931343532245171778}
   deathEffect: {fileID: 100004, guid: 7867af58a6ec48846ae807eb4022fbaa, type: 3}
   exp: {fileID: 11400000, guid: 1a11ff274532c6c48b116faa1b93eb4b, type: 2}
+  playerInRangeOfCritterG: {fileID: 11400000, guid: 88fdb869bb38444ef9b93f6ab63fdc2e, type: 2}
+  playerInAttackRangeOfCritterG: {fileID: 11400000, guid: 13489ea82e3bf4571bd5d85198c0977e, type: 2}
   quest: {fileID: 2865092757253621005, guid: fcf4c6cebf66fef4d8ce2a5ea1133a9a, type: 3}
 --- !u!114 &578377614694721777
 MonoBehaviour:

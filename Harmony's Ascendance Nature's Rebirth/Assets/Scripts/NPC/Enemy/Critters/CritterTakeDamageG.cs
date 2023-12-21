@@ -18,6 +18,8 @@ namespace NPC.Enemy.Critters
         [SerializeField] private GameObject deathEffect;
         private PlayerStat playerstat;
         [SerializeField] private Experience exp;
+        public BoolVariable playerInRangeOfCritterG;
+        public BoolVariable playerInAttackRangeOfCritterG;
         public Quest quest;
         
         private void Start()
@@ -39,6 +41,8 @@ namespace NPC.Enemy.Critters
             if (health <= 0)
             {
                 animator.SetBool("IsDead",true);
+                playerInRangeOfCritterG.setValue(false);
+                playerInAttackRangeOfCritterG.setValue(false);
             }
         }
 
