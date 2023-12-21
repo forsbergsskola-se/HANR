@@ -126,6 +126,11 @@ MonoBehaviour:
     volume: 0.2
     loop: 1
     source: {fileID: 0}
+  - soundName: Objective
+    audioClip: {fileID: 8300000, guid: b83bf8726a7fac349a54389f0c57cda6, type: 3}
+    volume: 0.2
+    loop: 0
+    source: {fileID: 0}
   playCombatMusicG: {fileID: 11400000, guid: 8ef53477b938144b68bbe720a9e1ba25, type: 2}
   playCombatMusicP: {fileID: 11400000, guid: 4de41cb228fba47f5a898d705bb22cf3, type: 2}
   playCombatMusicR: {fileID: 11400000, guid: 0583360f012c44e63b46da77b4acbe50, type: 2}

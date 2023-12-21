@@ -146,19 +146,37 @@ namespace UI
             if (activeWaterStaffQuest)
             {
                 if (part == 1)
+                {
                     currentWaterStaffState = WaterStaffQuestLine.FindingBearMan;
+                    SFX.SoundManager.PlaySound("Objective");
+                }
                 else if (part == 2)
+                {
                     currentWaterStaffState = WaterStaffQuestLine.CollectingCrate;
+                }
                 else if (part == 3)
+                { 
                     currentWaterStaffState = WaterStaffQuestLine.FindingRiverByRangerArea;
+                    SFX.SoundManager.PlaySound("Objective");
+                }
                 else if (part == 4)
+                {
                     currentWaterStaffState = WaterStaffQuestLine.SaveTheRiver;
+                    //Play Save River sound
+                }
                 else if (part == 5)
                     currentWaterStaffState = WaterStaffQuestLine.GettingReward;
+                    //Play Pick Up Water Staff sound
                 else if (part == 6)
+                {
                     currentWaterStaffState = WaterStaffQuestLine.GoBackToRanger;
+                    SFX.SoundManager.PlaySound("Objective");
+                }
                 else if (part == 7)
+                {
                     currentWaterStaffState = WaterStaffQuestLine.EndQuest;
+                    SFX.SoundManager.PlaySound("Objective");
+                }
             }
 
             if (activeBossQuest)
@@ -166,19 +184,24 @@ namespace UI
                 if (part == 1)
                     currentBossState = BossQuestLine.InteractWithMimi;
                 else if (part == 2)
-                    currentBossState = BossQuestLine.WalkWithMimi;
-                else if (part == 3)
                 {
-                    killCountCritter = 0; //To not register any previous Critter kill
-                    currentBossState = BossQuestLine.DefendMimi;
+                    currentBossState = BossQuestLine.WalkWithMimi;
+                    SFX.SoundManager.PlaySound("Objective");
                 }
+                else if (part == 3)
+                    currentBossState = BossQuestLine.DefendMimi;
+                    //Play Battle Music
                 else if (part == 4)
                 {
                     currentBossState = BossQuestLine.WalkWithMimiToBoss;
+                    SFX.SoundManager.PlaySound("Objective");
                     Destroy(bossLockObsticle);
                 }
                 else if (part == 5)
+                {
                     currentBossState = BossQuestLine.DefeatBoss;
+                    SFX.SoundManager.PlaySound("Objective");
+                }
                 else if (part == 6)
                     currentBossState = BossQuestLine.ReturnToRanger;
             }
