@@ -76,7 +76,6 @@ namespace SFX
                     StopSound("Game Music");
                     PlaySound("Combat Music");
                     gameMusic = false;
-                    Debug.Log("Change Music"); 
                 }
             }
 
@@ -88,7 +87,6 @@ namespace SFX
                     StopSound("Combat Music");
                     PlaySound("Game Music");
                     gameMusic = true;
-                    Debug.Log("Change back");
                 }
             }
         }
@@ -103,7 +101,6 @@ namespace SFX
                     StopSound("Game Music");
                     PlaySound("Combat Music");
                     gameMusic = false;
-                    Debug.Log("Change Music"); 
                 }
             }
 
@@ -115,7 +112,6 @@ namespace SFX
                     StopSound("Combat Music");
                     PlaySound("Game Music");
                     gameMusic = true;
-                    Debug.Log("Change back");
                 }
             }
         }
@@ -130,7 +126,6 @@ namespace SFX
                     StopSound("Game Music");
                     PlaySound("Combat Music");
                     gameMusic = false;
-                    Debug.Log("Change Music"); 
                 }
             }
 
@@ -142,7 +137,6 @@ namespace SFX
                     StopSound("Combat Music");
                     PlaySound("Game Music");
                     gameMusic = true;
-                    Debug.Log("Change back");
                 }
             }
         }
@@ -213,22 +207,13 @@ namespace SFX
             sound.source.Stop();
             sound.source.Play();
         }
-        
-        public static void StopSound(string soundName)
+
+        private static void StopSound(string soundName)
         {
             Sound sound = i.GetSound(soundName);
             if(sound == null)
                 return;
             sound.source.Stop();
         }
-        
-        /*
-        public static void SetVolume(string soundName, float volume)
-        {
-            Sound sound = i.GetSound(soundName);
-            if(sound == null)
-                return;
-            sound.source.volume = volume;
-        }*/
     }
 }
