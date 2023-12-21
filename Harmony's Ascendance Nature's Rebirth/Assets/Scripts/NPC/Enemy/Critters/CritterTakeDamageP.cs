@@ -19,8 +19,7 @@ namespace NPC.Enemy.Critters
         private PlayerStat playerstat;
         [SerializeField] private Experience exp;
         public Quest quest;
-        public BoolVariable playerInRangeOfCritterP;
-        public BoolVariable playerInAttackRangeOfCritterP;
+        public BoolVariable playCombatMusicP;
         
         private void Start()
         {
@@ -30,6 +29,7 @@ namespace NPC.Enemy.Critters
 
         private void OnDestroy()
         {
+            playCombatMusicP.setValue(false);
             quest.killCountCritter++;
             float newexp = playerstat.exp.getValue() + exp.exp;
             playerstat.exp.setValue(newexp);
@@ -41,8 +41,6 @@ namespace NPC.Enemy.Critters
             if (health <= 0)
             {
                 animator.SetBool("IsDead",true);
-                playerInRangeOfCritterP.setValue(false);
-                playerInAttackRangeOfCritterP.setValue(false);
             }
         }
 

@@ -60,7 +60,7 @@ namespace SFX
                 gameMusic = true;
             }
 
-            if (SceneManager.GetActiveScene().name == "Main Menu")
+            if (SceneManager.GetActiveScene().name == "Start Scene")
             {
                 PlaySound("Menu Music");
             }    

@@ -617,8 +617,7 @@ MonoBehaviour:
   deathEffect: {fileID: 100004, guid: 7867af58a6ec48846ae807eb4022fbaa, type: 3}
   exp: {fileID: 11400000, guid: 819e5cc0df33447518de7daa1583610f, type: 2}
   quest: {fileID: 2865092757253621005, guid: fcf4c6cebf66fef4d8ce2a5ea1133a9a, type: 3}
-  playerInRangeOfCritterR: {fileID: 11400000, guid: 5d5dcfcf3681b4fb39b5beaf91d53c15, type: 2}
-  playerInAttackRangeOfCritterR: {fileID: 11400000, guid: 697b7cf14b8794c24ba3350957b0ba03, type: 2}
+  playCombatMusicR: {fileID: 11400000, guid: 0583360f012c44e63b46da77b4acbe50, type: 2}
 --- !u!114 &8244518342395480089
 MonoBehaviour:
   m_ObjectHideFlags: 0
