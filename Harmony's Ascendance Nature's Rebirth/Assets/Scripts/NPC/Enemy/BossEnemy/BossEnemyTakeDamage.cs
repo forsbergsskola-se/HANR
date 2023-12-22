@@ -20,7 +20,7 @@ namespace Enemy.BossEnemy
         private PlayerStat playerStat;
         [SerializeField] private Experience exp;
         public BoolVariable playBossMusic;
-        public UnityEvent bossKilled ;
+        public UnityEvent bossKilled;
 
         public Quest quest;
         private void Start()
@@ -34,6 +34,7 @@ namespace Enemy.BossEnemy
         {
             bossKilled.Invoke();
             quest.killCountBoss++;
+            playBossMusic.setValue(false);
             float newexp = playerStat.exp.getValue() + exp.exp;
             playerStat.exp.setValue(newexp);
             enemyHealth.ValueChanged.RemoveListener(enemyDead);
@@ -44,7 +45,6 @@ namespace Enemy.BossEnemy
             if (health <= 0)
             {
                 animator.SetBool("isDead",true);
-                playBossMusic.setValue(false);
             }
         }
 
@@ -62,7 +62,5 @@ namespace Enemy.BossEnemy
             Destroy(effect);
             Destroy(this.gameObject);
         }
-        
-        
     }
 }
