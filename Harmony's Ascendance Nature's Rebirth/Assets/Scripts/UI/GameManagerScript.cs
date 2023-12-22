@@ -26,7 +26,7 @@ public class GameManagerScript : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Game Scene B");
+        SceneManager.LoadScene("Game Scene");
     }
     
     

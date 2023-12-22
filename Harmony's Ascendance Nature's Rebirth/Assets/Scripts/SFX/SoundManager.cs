@@ -54,13 +54,13 @@ namespace SFX
 
         private void Start()
         {
-            if (SceneManager.GetActiveScene().name == "Game Scene" || SceneManager.GetActiveScene().name == "Game Scene 1")
+            if (SceneManager.GetActiveScene().name == "Game Scene")
             {
                 PlaySound("Game Music");
                 gameMusic = true;
             }
 
-            if (SceneManager.GetActiveScene().name == "Start Scene")
+            if (SceneManager.GetActiveScene().name == "StartScene")
             {
                 PlaySound("Menu Music");
             }    
