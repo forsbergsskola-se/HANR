@@ -16,6 +16,8 @@ public class TriggerHealTheRiver : MonoBehaviour
     
     public GameObject waterStaff;
 
+    public GameObject riverEffect;
+
     [SerializeField] private Instructions instructions;
 
     private bool clickable = false;
@@ -25,6 +27,7 @@ public class TriggerHealTheRiver : MonoBehaviour
     private void Start()
     {
         usableItems.usedBook.AddListener(CheckBookClick);
+        riverEffect.SetActive(false);
     }
 
     private void OnDestroy()
@@ -63,6 +66,7 @@ public class TriggerHealTheRiver : MonoBehaviour
         if(other.CompareTag("Player") && quest.currentWaterStaffState == Quest.WaterStaffQuestLine.GettingReward)
             quest.questProgression.Invoke(6);
         instructions.gameObject.SetActive(false);
+        riverEffect.SetActive(false);
     }
 
     private void CheckBookClick()
@@ -70,6 +74,7 @@ public class TriggerHealTheRiver : MonoBehaviour
         if (clickable)
         {
             SFX.SoundManager.PlaySound("River");
+            riverEffect.SetActive(true);
             colourChangeWater.SaveRiver.Invoke();
             waterStaff.SetActive(true);
             instructions.buttonInput.Invoke(null);

@@ -92,6 +92,7 @@ namespace NPC.Slime
                 else
                 {
                     agent.isStopped = true;
+                    this.slimeMoving.setValue(false);
                     playSlimeMoving.setValue(false);
                 }
             }
@@ -106,6 +107,7 @@ namespace NPC.Slime
                 else
                 {
                     agent.isStopped = true;
+                    this.slimeMoving.setValue(false);
                     playSlimeMoving.setValue(false);
                 }
             }
