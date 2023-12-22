@@ -87,13 +87,10 @@ namespace NPC.Slime
                 {
                     agent.isStopped = false;
                     agent.SetDestination(firstDestinationPoint.transform.position);
-                    playSlimeMoving.setValue(true);
                 }
                 else
                 {
                     agent.isStopped = true;
-                    this.slimeMoving.setValue(false);
-                    playSlimeMoving.setValue(false);
                 }
             }
             else if (quest.currentBossState == Quest.BossQuestLine.WalkWithMimiToBoss)
@@ -102,13 +99,10 @@ namespace NPC.Slime
                 {
                     agent.isStopped = false;
                     agent.SetDestination(secondDestinationPoint.transform.position);
-                    playSlimeMoving.setValue(true);
                 }
                 else
                 {
                     agent.isStopped = true;
-                    this.slimeMoving.setValue(false);
-                    playSlimeMoving.setValue(false);
                 }
             }
         }
