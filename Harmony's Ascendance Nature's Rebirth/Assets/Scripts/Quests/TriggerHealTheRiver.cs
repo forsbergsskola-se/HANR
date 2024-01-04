@@ -37,7 +37,7 @@ public class TriggerHealTheRiver : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && quest.currentWaterStaffState == Quest.WaterStaffQuestLine.SaveTheRiver)
         {
             instructions.gameObject.SetActive(true);
             instructions.buttonInput.Invoke("River");
