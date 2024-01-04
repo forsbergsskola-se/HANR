@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eaff9554e2f49c0933446542b1b1f37, type: 3}
   m_Name: CombatStatFireStaff
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 10
   projectileSpeed: 6
   attackRate: 2
   range: 10
