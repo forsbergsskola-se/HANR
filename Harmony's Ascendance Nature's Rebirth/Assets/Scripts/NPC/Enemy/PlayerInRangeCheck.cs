@@ -13,6 +13,7 @@ using UnityEngine;
         public BoolVariable playerInAttackRange;
         private Vector3 playerPosition;
         private GameObject player;
+        [SerializeField] private GameObject healthBar;
         [SerializeField] private float detectionRange;
         [SerializeField] private float unDetectionRange;
         [SerializeField] private float attackRange;
