@@ -141,7 +141,7 @@ public class Dialogue : MonoBehaviour
         {
             if (quest.currentWaterStaffState == Quest.WaterStaffQuestLine.TalkingToRanger)
             {
-                conversation[0] = "I'm distraught, the water in these woods are vital for all life but has been corrupted by darkness and is slowly killing everything that is dependent on it.";
+                conversation[0] = "Please help me! The water in these woods are vital for all life but has been corrupted by darkness and is slowly killing everything that is dependent on it.";
                 conversationFace[0] = faceRanger;
                 conversation[1] = "Oh hello! What do you mean? Who corrupted the water?";
                 conversationFace[1] = faceDruid;
@@ -157,13 +157,13 @@ public class Dialogue : MonoBehaviour
             {
                 conversation[0] = "Thank you so much for your help!";
                 conversationFace[0] = faceRanger;
-                conversation[1] = "Don't mention it! Your home looks so beautiful now that the river is clean.";
+                conversation[1] = "Don't mention it! The river looks cleaner now.";
                 conversationFace[1] = faceDruid;
                 conversation[2] = "It used to always look at this, but after the this stone creature woke up inside the mountain the forest turned dark.";
                 conversationFace[2] = faceRanger;
                 conversation[3] = "What are those stone creatures?";
                 conversationFace[3] = faceDruid;
-                conversation[4] = "Follow my friend Slimy, she'll show you where it resides.";
+                conversation[4] = "Follow my friend Mimi, she'll show you where it resides.";
                 conversationFace[4] = faceRanger;
             }
             else if (quest.currentWaterStaffState != Quest.WaterStaffQuestLine.TalkingToRanger) //If player tries to retrigger the conversation again
@@ -196,7 +196,7 @@ public class Dialogue : MonoBehaviour
                 conversationFace[1] = faceDruid;
                 conversation[2] = "Oh, you're a friend of little Ranger? In that case I may be able to help you. It's been a long time since I used magic, other than to carve my masterpieces.";
                 conversationFace[2] = faceBearMan;
-                conversation[3] = "There should be some crates with spell book and potions by the pine trees, feel free to have a look!";
+                conversation[3] = "There should be a crate with a spell book and potions nearby, feel free to have a look!";
                 conversationFace[3] = faceBearMan;
                 conversation[4] = "Thank you";
                 conversationFace[4] = faceDruid;
@@ -209,7 +209,7 @@ public class Dialogue : MonoBehaviour
             }
             else if (quest.currentWaterStaffState == Quest.WaterStaffQuestLine.GoBackToRanger)
             {
-                conversation[0] = "You have the Water Staff Now go save the forest!";
+                conversation[0] = "You have the Water Staff, go save the forest!";
                 conversationFace[0] = faceBearMan;
                 dialougeCounter = 4; //To cut the dialogue short
             }
