@@ -959,9 +959,6 @@ PrefabInstance:
       addedObject: {fileID: 2772968948141345308}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c116fdd80fe483b4d9b353b03c4204e4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 965842567615465044}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c116fdd80fe483b4d9b353b03c4204e4, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 6137900692454830907}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c116fdd80fe483b4d9b353b03c4204e4, type: 3}
       insertIndex: -1
@@ -975,15 +972,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c116fdd80fe483b4d9b353b03c4204e4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3941418470837079999}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c116fdd80fe483b4d9b353b03c4204e4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5140707685417896551}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c116fdd80fe483b4d9b353b03c4204e4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2550793953114020636}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c116fdd80fe483b4d9b353b03c4204e4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1336422193662639011}
     - targetCorrespondingSourceObject: {fileID: 1728280593283003582, guid: c116fdd80fe483b4d9b353b03c4204e4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 725847045379747160}
@@ -1309,20 +1297,6 @@ MonoBehaviour:
   Health: {fileID: 11400000, guid: 65f80b9a019bad14fbdeec9b15d45e25, type: 2}
   combatStatEnemyBoss: {fileID: 11400000, guid: d05046bcdcf768240a50de5ceba89958, type: 2}
   combatStatEnemyCritter: {fileID: 11400000, guid: 152ee0e922c6d5f49b91d0b52b0e89d8, type: 2}
---- !u!114 &965842567615465044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1777774259798216206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8650d12b4abc49da9017ebd4b4a8e582, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clickEffect: {fileID: 7941266285869916736, guid: e7643c446931441d28f1e7591bec741a, type: 3}
-  size: 15
 --- !u!114 &6137900692454830907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1400,49 +1374,6 @@ MonoBehaviour:
   skillPressed:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5140707685417896551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1777774259798216206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c9dd511907447b0852823e0f1b9a89b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Health: {fileID: 11400000, guid: 65f80b9a019bad14fbdeec9b15d45e25, type: 2}
-  combatStatEnemyBoss: {fileID: 11400000, guid: d05046bcdcf768240a50de5ceba89958, type: 2}
-  combatStatEnemyCritter: {fileID: 11400000, guid: 152ee0e922c6d5f49b91d0b52b0e89d8, type: 2}
---- !u!114 &2550793953114020636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1777774259798216206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8650d12b4abc49da9017ebd4b4a8e582, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clickEffect: {fileID: 7941266285869916736, guid: e7643c446931441d28f1e7591bec741a, type: 3}
-  size: 15
---- !u!114 &1336422193662639011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1777774259798216206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05ada0f2d8e84b9a82908ecfc717bc74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectile: {fileID: 3477285135773224165, guid: 04fbb9ab38829e54381701e5712da9e3, type: 3}
-  size: 30
 --- !u!4 &1907429574684393820 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1013882226241532419, guid: c116fdd80fe483b4d9b353b03c4204e4, type: 3}
