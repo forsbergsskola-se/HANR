@@ -403,7 +403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInRange: {fileID: 11400000, guid: 63dde8e959fbfea42a14743bfd011da1, type: 2}
   playerInAttackRange: {fileID: 11400000, guid: a1327ebfafbb0ae4cb285095666b73cf, type: 2}
-  playCombatMusic: {fileID: 11400000, guid: aa257ba04d55545ecb6602a7c4170890, type: 2}
+  healthBar: {fileID: 659528240518303211}
   detectionRange: 25
   unDetectionRange: 30
   attackRange: 7
@@ -470,10 +470,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: {fileID: 11400000, guid: fae8d58fbc089264c83b291f3ee8ed65, type: 2}
-  playCombatMusic: {fileID: 11400000, guid: aa257ba04d55545ecb6602a7c4170890, type: 2}
   animator: {fileID: 9208709403535238140}
   deathEffect: {fileID: 1247311384876784, guid: 4adffb0018aeda44e9263f901167af1f, type: 3}
   exp: {fileID: 11400000, guid: 1833ab375aa91854593d752f8d0518f1, type: 2}
+  playBossMusic: {fileID: 11400000, guid: 4d0af712de6a6481d91def6a16fde7b4, type: 2}
+  bossKilled:
+    m_PersistentCalls:
+      m_Calls: []
+  quest: {fileID: 0}
 --- !u!114 &454811766674727700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1257,6 +1261,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 156df7900112f3341b7b44ae300e8e42, type: 3}
+--- !u!1 &659528240518303211 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5607320806969188320, guid: 156df7900112f3341b7b44ae300e8e42, type: 3}
+  m_PrefabInstance: {fileID: 4969205281274761739}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &6384650284626046360 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2048289537106116499, guid: 156df7900112f3341b7b44ae300e8e42, type: 3}

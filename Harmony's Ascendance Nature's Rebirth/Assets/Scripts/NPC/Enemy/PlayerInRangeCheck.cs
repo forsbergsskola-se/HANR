@@ -24,6 +24,7 @@ using UnityEngine;
         private void Start()
         {
             player = GameObject.FindGameObjectWithTag("Player");
+            healthBar.SetActive(false);
         }
 
         private void Update()
@@ -40,12 +41,13 @@ using UnityEngine;
             if (distance <= detectionRange)
             {
                 playerInRange.setValue(true);
+                healthBar.SetActive(true);
             }
 
             else if (distance >= unDetectionRange)
             {
                 playerInRange.setValue(false);
-
+                healthBar.SetActive(false);
             }
             else if (distance <= attackRange)
             {
