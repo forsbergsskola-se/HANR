@@ -16,7 +16,7 @@ public class ColourTriggerChange : MonoBehaviour
     [SerializeField] private Color normalColor;
 
     public BossEnemyTakeDamage bossDeath;
-    private bool isTransitioning;
+    //private bool isTransitioning;
     private bool bosskilled;
     
 
@@ -40,9 +40,12 @@ public class ColourTriggerChange : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Start the boss color transition coroutine and store a reference to it
-        colorTransitionCoroutine = StartCoroutine(LerpColorboss(bossColor));
-        playBossMusic.setValue(true);
+        if (!bosskilled)
+        {
+            // Start the boss color transition coroutine and store a reference to it
+            colorTransitionCoroutine = StartCoroutine(LerpColorboss(bossColor));
+            playBossMusic.setValue(true);
+        }
     }
 
     private void Stop()
@@ -60,7 +63,7 @@ public class ColourTriggerChange : MonoBehaviour
 
     IEnumerator LerpColorboss(Color targetColor)
     {
-        isTransitioning = true;
+        //isTransitioning = true;
 
         Color initialColor = mainLight.color;
         float elapsedTime = 0f;
@@ -73,7 +76,7 @@ public class ColourTriggerChange : MonoBehaviour
         }
 
         mainLight.color = targetColor;
-        isTransitioning = false;
+        //isTransitioning = false;
     }
     IEnumerator LerpColor(Color targetColor)
     {

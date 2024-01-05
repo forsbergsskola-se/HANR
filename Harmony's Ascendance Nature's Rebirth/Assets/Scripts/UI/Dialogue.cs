@@ -172,15 +172,16 @@ public class Dialogue : MonoBehaviour
                 conversationFace[0] = faceRanger;
                 dialougeCounter = 4; //To cut the dialogue short
             }
-            else if (quest.currentBossState == Quest.BossQuestLine.ReturnToRanger)
-            {
-                conversation[0] = "You have defeated the stone creature!";
-                conversationFace[0] = faceRanger;
-                conversation[1] = "But this will not be the last time something like this happens";
-                conversationFace[1] = faceRanger;
-                conversation[2] = "You have to protect us!";
-                conversationFace[2] = faceRanger;
-            }
+        }
+        if (quest.currentBossState == Quest.BossQuestLine.ReturnToRanger)
+        {
+            conversation[0] = "You have defeated the stone creature!";
+            conversationFace[0] = faceRanger;
+            conversation[1] = "But this will not be the last time something like this happens";
+            conversationFace[1] = faceRanger;
+            conversation[2] = "You have to protect us!";
+            conversationFace[2] = faceRanger;
+            dialougeCounter = 4; //To cut the dialogue short
         }
     }
 

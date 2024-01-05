@@ -9,7 +9,7 @@ using UnityEngine.Events;
 [CreateAssetMenu(fileName = "Skills", menuName = "SO/Skills", order = 0)]
 public class Skills : ScriptableObject
 {
-    public string name;
+    public new string name;
     public float mana;
     public float range;
     public float damage;
