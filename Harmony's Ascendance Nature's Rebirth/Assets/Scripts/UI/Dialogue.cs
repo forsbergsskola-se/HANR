@@ -181,7 +181,7 @@ public class Dialogue : MonoBehaviour
             conversationFace[1] = faceRanger;
             conversation[2] = "You have to protect us!";
             conversationFace[2] = faceRanger;
-            dialougeCounter = 2; //To cut the dialogue short
+            dialougeCounter = 4; //To cut the dialogue short
         }
     }
 
