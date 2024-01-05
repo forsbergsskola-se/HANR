@@ -90,13 +90,11 @@ public class UsableItems : MonoBehaviour
 
                 if (itemInSlot.itemID == "Fire Staff")
                 {
-                    Debug.Log("Fire Weapon");
                     fireStaffEquipped.Invoke(itemInSlot);
                 }
 
                 if (itemInSlot.itemID == "Water Staff")
                 {
-                    Debug.Log("Water Weapon");
                     waterStaffEquipped.Invoke(itemInSlot);
                 }
 

@@ -15,19 +15,22 @@ namespace Enemy.BossEnemy
     public class BossEnemyTakeDamage : MonoBehaviour
     {
         public FloatVariable enemyHealth;
+        public BoolVariable playBossMusic;
+        public BoolVariable isBossKilled;
+        public UnityEvent bossKilled;
+        
         [SerializeField] private Animator animator;
         [SerializeField] private GameObject deathEffect;
-        private PlayerStat playerStat;
         [SerializeField] private Experience exp;
-        public BoolVariable playBossMusic;
-        public UnityEvent bossKilled;
+        private PlayerStat playerStat;
+        
 
         public Quest quest;
         private void Start()
         {
             playerStat = GameObject.FindWithTag("Player").GetComponent<PlayerStat>();
             enemyHealth.ValueChanged.AddListener(enemyDead);
-          
+            
         }
 
         private void OnDestroy()
@@ -52,6 +55,8 @@ namespace Enemy.BossEnemy
         {
             GameObject effect  = Instantiate(deathEffect, this.transform);
             effect.transform.position = this.transform.position;
+            
+            isBossKilled.setValue(true);
             
             StartCoroutine(removeObjects(effect));
         }
