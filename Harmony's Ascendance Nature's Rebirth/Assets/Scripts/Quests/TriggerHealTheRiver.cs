@@ -19,6 +19,8 @@ public class TriggerHealTheRiver : MonoBehaviour
     public GameObject riverEffect;
 
     [SerializeField] private Instructions instructions;
+    
+    [SerializeField] private GameObject bubbles;
 
     private bool clickable = false;
     
@@ -28,6 +30,7 @@ public class TriggerHealTheRiver : MonoBehaviour
     {
         usableItems.usedBook.AddListener(CheckBookClick);
         riverEffect.SetActive(false);
+        bubbles.SetActive(false);
     }
 
     private void OnDestroy()
@@ -75,6 +78,7 @@ public class TriggerHealTheRiver : MonoBehaviour
         {
             SFX.SoundManager.PlaySound("River");
             riverEffect.SetActive(true);
+            bubbles.SetActive(true);
             colourChangeWater.SaveRiver.Invoke();
             waterStaff.SetActive(true);
             instructions.buttonInput.Invoke(null);
