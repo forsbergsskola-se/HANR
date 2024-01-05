@@ -25,7 +25,7 @@ public class ThanksForPlayingEnd : MonoBehaviour
 
         if (this.gameObject.activeSelf)
         {
-            Invoke("ReloadMenu", 3);
+            Invoke("ReloadMenu", 6);
         }
     }
 
