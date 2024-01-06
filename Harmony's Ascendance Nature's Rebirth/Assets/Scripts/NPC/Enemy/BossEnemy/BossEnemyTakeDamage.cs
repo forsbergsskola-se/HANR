@@ -35,7 +35,6 @@ namespace Enemy.BossEnemy
 
         private void OnDestroy()
         {
-            bossKilled.Invoke();
             quest.killCountBoss++;
             playBossMusic.setValue(false);
             float newexp = playerStat.exp.getValue() + exp.exp;
@@ -56,6 +55,8 @@ namespace Enemy.BossEnemy
             GameObject effect  = Instantiate(deathEffect, this.transform);
             effect.transform.position = this.transform.position;
             
+            
+            bossKilled.Invoke();
             isBossKilled.setValue(true);
             
             StartCoroutine(removeObjects(effect));
