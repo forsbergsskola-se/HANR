@@ -111,7 +111,7 @@ public class PlayerAttack : MonoBehaviour
             
                 ShootProjectile(projectileInstance);
                 
-                float newMana = playerMana.getValue() - 2;
+                float newMana = playerMana.getValue() - 1;
                 playerMana.setValue(newMana);
             }
         }
