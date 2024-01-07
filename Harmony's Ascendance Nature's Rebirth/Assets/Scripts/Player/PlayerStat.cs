@@ -67,6 +67,7 @@ namespace Player
         private void LimiterMagic(float currentValues) //Limiter for magic
         {
             if(currentValues > maxMagic) magic.setValue(maxMagic);
+            if(currentValues <= 0) magic.setValue(0);
         }
         
         private void DeathEffect()

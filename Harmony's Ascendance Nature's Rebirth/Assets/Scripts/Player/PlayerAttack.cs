@@ -1,4 +1,4 @@
-using System;
+using System; 
 using System.Collections;
 using System.Collections.Generic;
 using CustomObjects;
@@ -13,6 +13,7 @@ using UnityEngine.Serialization;
 
 public class PlayerAttack : MonoBehaviour
 {
+    public FloatVariable playerMana;
     public BoolVariable playerMoving;
     public Animator animator;
     public GameObjectVariable currentClickedEnemy;
@@ -109,6 +110,9 @@ public class PlayerAttack : MonoBehaviour
                 mr.material = combatStat.material;
             
                 ShootProjectile(projectileInstance);
+                
+                float newMana = playerMana.getValue() - 5;
+                playerMana.setValue(newMana);
             }
         }
         else
