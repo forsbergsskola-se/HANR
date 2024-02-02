@@ -9,7 +9,6 @@ namespace SFX
     public class SoundManager : MonoBehaviour
     {
         public float soundVolume = 0.75f;
-        static SoundManager i;
         public Sound[] sounds;
         public BoolVariable playCombatMusicG;
         public BoolVariable playCombatMusicP;
