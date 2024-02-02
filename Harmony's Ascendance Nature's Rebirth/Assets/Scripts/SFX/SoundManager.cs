@@ -18,6 +18,7 @@ namespace SFX
         public BoolVariable playBossMusic;
         private bool gameMusic;
 
+        private static SoundManager i;
 
         private void Awake()
         {
