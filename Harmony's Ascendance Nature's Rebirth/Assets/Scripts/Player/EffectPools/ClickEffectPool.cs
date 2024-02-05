@@ -1,7 +1,4 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using CustomObjects;
 using UnityEngine;
 
 namespace Player
@@ -11,11 +8,10 @@ namespace Player
         public GameObject clickEffect;
         public int size = 5;
 
-        private List<GameObject> effectPool;
+        private List<GameObject> effectPool  = new();
         
         private void Start()
         {
-            effectPool = new List<GameObject>();
             SetUpPool();
         }
 
