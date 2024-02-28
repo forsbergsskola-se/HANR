@@ -64,7 +64,7 @@ Material:
     - _WorldtoObjectPosition: 0
     - __dirty: 0
     m_Colors:
-    - _ColorDeep: {r: 0.1981132, g: 0.04018334, b: 0.159278, a: 0}
+    - _ColorDeep: {r: 0.3773585, g: 0, b: 0.27903, a: 0}
     - _ColorShallow: {r: 0.3773585, g: 0, b: 0.27903, a: 0}
     - _FoamColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
