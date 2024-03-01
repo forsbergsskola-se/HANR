@@ -178,8 +178,8 @@ Material:
     - _ColorTop: {r: 0.6954966, g: 0.7254902, b: 0.039215665, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissiveColor: {r: 0, g: 0, b: 0, a: 0}
-    - _FoliageColorBottom: {r: 0.18867922, g: 0.10083658, b: 0.063189745, a: 1}
-    - _FoliageColorTop: {r: 0.4245283, g: 0.17641954, b: 0.07008721, a: 1}
+    - _FoliageColorBottom: {r: 0.4811321, g: 0.16456684, b: 0, a: 0}
+    - _FoliageColorTop: {r: 0.509434, g: 0.20103613, b: 0, a: 0}
     - _FoliageEmissiveColor: {r: 0, g: 0, b: 0, a: 0}
     - _Speed: {r: 0.16, g: 0.29, b: 0, a: 0}
     - _WindSwayDirection: {r: 1, g: 0, b: 0, a: 0}

@@ -50,6 +50,6 @@ Material:
     - _VerticalSpeed: 1
     - __dirty: 0
     m_Colors:
-    - _Color0: {r: 0.7169812, g: 0.037201855, b: 0.5349717, a: 0}
-    - _Color1: {r: 0, g: 0, b: 0, a: 0}
+    - _Color0: {r: 0.5188679, g: 0, b: 0.43407118, a: 0}
+    - _Color1: {r: 0.5849056, g: 0, b: 0.48703545, a: 0}
   m_BuildTextureStacks: []

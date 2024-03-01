@@ -106,8 +106,8 @@ Material:
     - _WaveTiling3: 3
     - __dirty: 0
     m_Colors:
-    - _ColorDeep: {r: 0.3773585, g: 0, b: 0.3185425, a: 0}
-    - _ColorShallow: {r: 0.31315815, g: 0.03270737, b: 0.3301887, a: 1}
+    - _ColorDeep: {r: 0.3773585, g: 0.023139918, b: 0.33608058, a: 0}
+    - _ColorShallow: {r: 0.3679245, g: 0, b: 0.3243231, a: 0}
     - _DisplacementMovement: {r: 0, g: 1, b: 0, a: 0}
     - _LineColor: {r: 0.44811314, g: 1, b: 0.9224879, a: 1}
   m_BuildTextureStacks: []

@@ -7,39 +7,49 @@ using System.Collections.Generic;
 public class MaterialColorPair
 {
     public Material Material;
-    public Color OriginalColor;
-    public string ColorPropertyName; // Name of the color property in the material
-    public Color TargetColor; // Target color for lerping
+    public List<MaterialColorProperty> ColorProperties = new List<MaterialColorProperty>();
 
-    public MaterialColorPair(Material material, Color originalColor, string colorPropertyName, Color targetColor)
+    public MaterialColorPair(Material material, Dictionary<string, Color> targetColors)
     {
         Material = material;
+
+        // Initialize MaterialColorProperty objects with both original and target colors
+        foreach (KeyValuePair<string, Color> entry in targetColors)
+        {
+            Color originalColor = material.GetColor(entry.Key);
+            Color targetColor = entry.Value;
+            ColorProperties.Add(new MaterialColorProperty(entry.Key, originalColor, targetColor));
+        }
+    }
+}
+
+[System.Serializable]
+public class MaterialColorProperty
+{
+    public string PropertyName;
+    public Color OriginalColor;
+    public Color TargetColor;
+
+    public MaterialColorProperty(string propertyName, Color originalColor, Color targetColor)
+    {
+        PropertyName = propertyName;
         OriginalColor = originalColor;
-        ColorPropertyName = colorPropertyName;
         TargetColor = targetColor;
     }
 }
 
 public class ShaderColourChange : MonoBehaviour
 {
-    [SerializeField] private Color targetColor;
     [SerializeField] private float transitionDuration;
     [SerializeField] private Light mainLight;
-    [SerializeField] private List<MaterialColorPair> materialsWithOriginalColors = new List<MaterialColorPair>();
+    [SerializeField] private List<MaterialColorPair> materialsWithColorProperties = new List<MaterialColorPair>();
 
     public UnityEvent SaveRiver;
-
-    public Color TargetColor
-    {
-        get { return targetColor; }
-        set { targetColor = value; }
-    }
 
     private void Start()
     {
         SaveRiver.AddListener(RiverSaved);
-        StoreOriginalColors();
-        RiverSaved();
+
     }
 
     private void OnDestroy()
@@ -47,39 +57,39 @@ public class ShaderColourChange : MonoBehaviour
         ResetMaterialColors();
     }
 
-    private void StoreOriginalColors()
-    {
-        foreach (MaterialColorPair pair in materialsWithOriginalColors)
-        {
-            pair.OriginalColor = pair.Material.GetColor(pair.ColorPropertyName);
-        }
-    }
-
     private void RiverSaved()
     {
-        StartCoroutine(LerpLight(targetColor));
-        foreach (MaterialColorPair pair in materialsWithOriginalColors)
+        StartCoroutine(LerpLight());
+        foreach (MaterialColorPair pair in materialsWithColorProperties)
         {
             Material material = pair.Material;
-            Color originalColor = pair.OriginalColor;
-            string colorPropertyName = pair.ColorPropertyName;
-            Color targetColor = pair.TargetColor;
-            LerpMaterialColor(material, targetColor, originalColor, colorPropertyName);
+            foreach (MaterialColorProperty colorProperty in pair.ColorProperties)
+            {
+                StartCoroutine(LerpColor(material, colorProperty.TargetColor, colorProperty.PropertyName));
+            }
         }
     }
 
-    private void LerpMaterialColor(Material material, Color targetColor, Color originalColor, string colorPropertyName)
+    private void ResetMaterialColors()
     {
-        StartCoroutine(LerpColor(material, targetColor, originalColor, colorPropertyName));
+        foreach (MaterialColorPair pair in materialsWithColorProperties)
+        {
+            Material material = pair.Material;
+            foreach (MaterialColorProperty colorProperty in pair.ColorProperties)
+            {
+                material.SetColor(colorProperty.PropertyName, colorProperty.OriginalColor);
+            }
+        }
     }
 
-    private IEnumerator LerpColor(Material material, Color targetColor, Color originalColor, string colorPropertyName)
+    private IEnumerator LerpColor(Material material, Color targetColor, string colorPropertyName)
     {
+        Color initialColor = material.GetColor(colorPropertyName);
         float elapsedTime = 0f;
 
         while (elapsedTime < transitionDuration)
         {
-            material.SetColor(colorPropertyName, Color.Lerp(originalColor, targetColor, elapsedTime / transitionDuration));
+            material.SetColor(colorPropertyName, Color.Lerp(initialColor, targetColor, elapsedTime / transitionDuration));
             elapsedTime += Time.deltaTime;
             yield return null;
         }
@@ -87,29 +97,18 @@ public class ShaderColourChange : MonoBehaviour
         material.SetColor(colorPropertyName, targetColor);
     }
 
-    private IEnumerator LerpLight(Color targetColor)
+    private IEnumerator LerpLight()
     {
         Color initialColor = mainLight.color;
         float elapsedTime = 0f;
 
         while (elapsedTime < transitionDuration)
         {
-            mainLight.color = Color.Lerp(initialColor, targetColor, elapsedTime / transitionDuration);
+            mainLight.color = Color.Lerp(initialColor, Color.white, elapsedTime / transitionDuration);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        mainLight.color = targetColor;
-    }
-
-    private void ResetMaterialColors()
-    {
-        foreach (MaterialColorPair pair in materialsWithOriginalColors)
-        {
-            Material material = pair.Material;
-            Color originalColor = pair.OriginalColor;
-            string colorPropertyName = pair.ColorPropertyName;
-            material.SetColor(colorPropertyName, originalColor);
-        }
+        mainLight.color = Color.white;
     }
 }
