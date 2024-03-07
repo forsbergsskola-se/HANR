@@ -64,7 +64,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 7395863077241875820}
-  - screenRelativeHeight: 0.025537323
+  - screenRelativeHeight: 0.14227451
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 707264832951326557}
@@ -135,7 +135,7 @@ Transform:
   m_GameObject: {fileID: 4045122837289148780}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 40, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
