@@ -13,26 +13,27 @@ public class OpeningCrate : MonoBehaviour
     private bool close;
 
     [SerializeField] private Instructions instructions;
+    
 
     private void Update()
     {
         if (close && Input.GetKeyDown(KeyCode.G) && quest.currentWaterStaffState == Quest.WaterStaffQuestLine.CollectingCrate)
         {
+            Vector3 offsetstart = new Vector3(-0.5f, 0.25f, 0);
             for (int slot = 0; slot < 3; slot++)
             {
-                float randomPositionX = Random.Range(1f, 5f); //To spawn items in close random positions
-                float randomPositionZ = Random.Range(1f, 5f);
-                  
-                Vector3 setPosition = transform.position;
-                Quaternion setRotation = transform.rotation;
-                Vector3 offset = setRotation * new Vector3(randomPositionX, 0f, randomPositionZ);
-                Vector3 newPosition = setPosition + offset;
-                
-                Instantiate(itemInside[slot], newPosition, setRotation);
+
+
+                offsetstart += new Vector3(0.5f, 0, 0);
+                Debug.Log(offsetstart);
+
+                Instantiate(itemInside[slot], transform.position + offsetstart, itemInside[slot].transform.rotation);
             }
+
             Destroy(gameObject);
             instructions.gameObject.SetActive(false);
-            if(quest.currentWaterStaffState == Quest.WaterStaffQuestLine.CollectingCrate) //To not retrigger same quest-objective 
+            if (quest.currentWaterStaffState ==
+                Quest.WaterStaffQuestLine.CollectingCrate) //To not retrigger same quest-objective 
                 quest.questProgression.Invoke(3); //State goes to next (FindingRiverByRangerArea)
         }
     }

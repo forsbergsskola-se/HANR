@@ -30,10 +30,6 @@ namespace Player.UseSkills
                 pc.skill = skill;
                 pc.playerMoving = playerMoving;
             }
-            else
-            {
-                
-            }
         }
         
     }

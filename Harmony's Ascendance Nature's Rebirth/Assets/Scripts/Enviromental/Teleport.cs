@@ -12,6 +12,8 @@ public class Teleport : MonoBehaviour
     
     public Transform tpPosition;
 
+    public Camera camera;
+
     private bool Inside;
 
     void Start()
@@ -46,6 +48,7 @@ public class Teleport : MonoBehaviour
             // Update the agent's position and destination
             navMeshAgent.Warp(tpPosition.position);
             navMeshAgent.SetDestination(tpPosition.position);
+            camera.transform.position = tpPosition.position;
         }
         else
         {
