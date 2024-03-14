@@ -11,16 +11,17 @@ namespace Player
         public BoolVariable playerMoving;
         public BoolVariable playerWalking;
         public TargetPoint targetPoint;
-        private Quaternion toRotation;
         private Vector3 moveToPoint;
-        public NavMeshAgent agent;
-        public Animator animator;
+        private NavMeshAgent agent;
+        private Animator animator;
         [SerializeField] private float walkSpeed;
         [SerializeField] private float turnRate;
         
         
         private void Awake()
         {
+            animator = gameObject.GetComponent<Animator>();
+            agent = gameObject.GetComponent<NavMeshAgent>();
             playerMoving.ValueChanged.AddListener(MoveToClick);
         }
 
@@ -91,6 +92,7 @@ namespace Player
         
         private void RotateToClick() //I put this method in Update for now/ Mandel
         {
+            Quaternion toRotation;
             if (agent.velocity.magnitude > 0.01f && agent.hasPath)
             {
                 Vector3 direction = agent.velocity.normalized;
@@ -100,6 +102,8 @@ namespace Player
             }
             else if(agent.remainingDistance < 0.05f && agent.hasPath)
             {
+                Vector3 direction = agent.velocity.normalized;
+                toRotation = Quaternion.LookRotation(direction);
                 transform.rotation = toRotation;
             }
         }

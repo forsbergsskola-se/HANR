@@ -1,10 +1,8 @@
-using System;
 using CustomObjects;
 using UI;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Serialization;
+
 
 namespace NPC.Slime
 {
@@ -13,7 +11,6 @@ namespace NPC.Slime
         public Face faces;
         public GameObject slimeBody;
         public BoolVariable slimeMoving;
-        public BoolVariable playSlimeMoving;
         public GameObject harmony;
    
         public Animator animator;

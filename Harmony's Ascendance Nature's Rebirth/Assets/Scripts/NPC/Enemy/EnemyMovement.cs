@@ -29,7 +29,7 @@ public class EnemyMovement : MonoBehaviour
         agent = this.gameObject.GetComponent<NavMeshAgent>();
         if (!agent)
         {
-            agent = this.gameObject.GetComponentInChildren<NavMeshAgent>();
+            agent = this.gameObject.GetComponent<NavMeshAgent>();
         }
         
     }
@@ -92,20 +92,17 @@ public class EnemyMovement : MonoBehaviour
             Vector3 direction = agent.velocity.normalized;
             direction.y = 0;
             Quaternion toRotation = Quaternion.LookRotation(direction);
-            transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, Time.fixedDeltaTime*turnRate);
+            transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, Time.fixedDeltaTime * turnRate);
         }
 
-        if (agent.velocity == Vector3.zero && !playerInEnemyRange.getValue() && health.getValue() > 0)
-        {
-            transform.rotation = Quaternion.Slerp(transform.rotation, player.transform.rotation, Time.fixedDeltaTime*turnRate);
-        }
         if (agent.velocity == Vector3.zero && playerInEnemyRange.getValue() && health.getValue() > 0)
         {
             Vector3 direction = (player.transform.position - agent.transform.position).normalized;
             direction.y = 0;
             Quaternion toRotation = Quaternion.LookRotation(direction);
-            transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, Time.fixedDeltaTime*turnRate);
+            transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, Time.fixedDeltaTime * turnRate);
         }
     }
+
     
 }
