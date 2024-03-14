@@ -27,6 +27,7 @@ namespace NPC.Slime
         private void Awake()
         {
             slimeMoving.ValueChanged.AddListener(MoveSlime);
+            
         }
 
         private void OnDestroy()
@@ -46,7 +47,7 @@ namespace NPC.Slime
             {
                 if (agent.velocity.magnitude > 0)
                 {
-                    animator.SetBool("SlimeWalking",true);
+                    animator.SetBool("SlimeWalking", true);
                     SetFace(faces.WalkFace);
                 }
                 else
