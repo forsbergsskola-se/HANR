@@ -12,9 +12,3 @@ Our vertical slice of Harmony's Ascendance: Nature's Rebirth aims to show a ques
 - Unnie Jansson
 - Angelo Panghulan
 
-## Planning
-- [Project Plan](https://miro.com/app/board/uXjVNO2nCFM=/)
-- [TDD](https://docs.google.com/document/d/1vFzMrl_1hrRWOFS3tJV-UQz5XAxMUdg9X9hNh3mlygQ/edit)
-- [Board](https://trello.com/b/CZAInfq1/epic)
-
-
